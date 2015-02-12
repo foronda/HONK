@@ -14,20 +14,10 @@ namespace HONK
 
         }
 
-        protected void HalauFV_ItemInserted(object sender, FormViewInsertedEventArgs e)
-        {
-            ContestantsFV.DataBind();
-            ContestantsFVUP.Update();
-        }
-
         protected void UpdateContestantsFV(object sender, FormViewInsertedEventArgs e)
         {
             ContestantsFV.DataBind();
             ContestantsFVUP.Update();
-        }
-        protected void KumuFV_ItemInserted(object sender, FormViewInsertedEventArgs e)
-        {
-
         }
 
     }
