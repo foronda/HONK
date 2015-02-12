@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="HONK" Class="HONKDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HONK.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="HONKDBContext" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Age" Member="Ages">
+    <Type Name="Age">
+      <Column Name="age_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Age_Contestant" Member="Contestants" ThisKey="age_id" OtherKey="age_age_id" Type="Contestant" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Score" Member="Scores">
+    <Type Name="Score">
+      <Column Name="score_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="judge_judges_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="contestant_contestant_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="interview" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="oli" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="auana" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="kahiko" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="music" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="auana_costume" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="kahiko_costume" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="palapala" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Association Name="Contestant_Score" Member="Contestant" ThisKey="contestant_contestant_id" OtherKey="contestant_id" Type="Contestant" IsForeignKey="true" />
+      <Association Name="Judge_Score" Member="Judge" ThisKey="judge_judges_id" OtherKey="judge_id" Type="Judge" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Contestant" Member="Contestants">
+    <Type Name="Contestant">
+      <Column Name="contestant_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="age_age_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="gender_gender_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="division_division_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="halau_halua_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="kumu_kumu_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="first_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="last_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="entry_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="Contestant_Score" Member="Scores" ThisKey="contestant_id" OtherKey="contestant_contestant_id" Type="Score" />
+      <Association Name="Contestant_MasterScore" Member="MasterScores" ThisKey="contestant_id" OtherKey="contestants_contestant_id" Type="MasterScore" />
+      <Association Name="Age_Contestant" Member="Age" ThisKey="age_age_id" OtherKey="age_id" Type="Age" IsForeignKey="true" />
+      <Association Name="Division_Contestant" Member="Division" ThisKey="division_division_id" OtherKey="division_id" Type="Division" IsForeignKey="true" />
+      <Association Name="Gender_Contestant" Member="Gender" ThisKey="gender_gender_id" OtherKey="gender_id" Type="Gender" IsForeignKey="true" />
+      <Association Name="Halau_Contestant" Member="Halau" ThisKey="halau_halua_id" OtherKey="halua_id" Type="Halau" IsForeignKey="true" />
+      <Association Name="Kumu_Contestant" Member="Kumu" ThisKey="kumu_kumu_id" OtherKey="kumu_id" Type="Kumu" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Costume" Member="Costumes">
+    <Type Name="Costume">
+      <Column Name="costume_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Division" Member="Divisions">
+    <Type Name="Division">
+      <Column Name="division_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Division_Contestant" Member="Contestants" ThisKey="division_id" OtherKey="division_division_id" Type="Contestant" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Gender" Member="Genders">
+    <Type Name="Gender">
+      <Column Name="gender_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Gender_Contestant" Member="Contestants" ThisKey="gender_id" OtherKey="gender_gender_id" Type="Contestant" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Halau" Member="Halaus">
+    <Type Name="Halau">
+      <Column Name="halua_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Halau_Contestant" Member="Contestants" ThisKey="halua_id" OtherKey="halau_halua_id" Type="Contestant" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Judge" Member="Judges">
+    <Type Name="Judge">
+      <Column Name="judge_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="first_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="last_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Judge_Score" Member="Scores" ThisKey="judge_id" OtherKey="judge_judges_id" Type="Score" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Kumu" Member="Kumus">
+    <Type Name="Kumu">
+      <Column Name="kumu_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="first_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="last_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Kumu_Contestant" Member="Contestants" ThisKey="kumu_id" OtherKey="kumu_kumu_id" Type="Contestant" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MasterScore" Member="MasterScores">
+    <Type Name="MasterScore">
+      <Column Name="masterscores_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="contestants_contestant_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="interview" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="auana_costume" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="kahiko_costume" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="oli" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="hula" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="overall" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="music" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Contestant_MasterScore" Member="Contestant" ThisKey="contestants_contestant_id" OtherKey="contestant_id" Type="Contestant" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
