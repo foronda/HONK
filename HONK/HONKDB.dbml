@@ -106,4 +106,79 @@
       <Association Name="Kumu_Contestant" Member="Contestants" ThisKey="id" OtherKey="kumu_id" Type="Contestant" />
     </Type>
   </Table>
+  <Table Name="dbo.vw_BreakingScore" Member="vw_BreakingScores">
+    <Type Name="vw_BreakingScore">
+      <Column Name="contestant_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="interview_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="costume_auana_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="costume_kahiko_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="costume_palua_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_auana_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_kahiko_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_palua_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vw_ContestantDetails" Member="vw_ContestantDetails">
+    <Type Name="vw_ContestantDetail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="full_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="age_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="gender_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="division_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="halau_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="kumu_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="entry_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="entry_num_fri" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="entry_num_sat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vw_BreakingScoreNet" Member="vw_BreakingScoreNets">
+    <Type Name="vw_BreakingScoreNet">
+      <Column Name="contestant_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="palapala" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="interview_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="oli" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="hula_auana_net" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_kahiko_net" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_palua_net" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="out_of_order_deduction" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vw_MasterScoreDetails" Member="vw_MasterScoreDetails">
+    <Type Name="vw_MasterScoreDetail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="entry_num_fri" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="entry_num_sat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="full_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="age_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="gender_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="division_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="interview" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="interview_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="overall_score" Type="System.Decimal" DbType="Decimal(24,3)" CanBeNull="true" />
+      <Column Name="overall_break_score" Type="System.Decimal" DbType="Decimal(22,3)" CanBeNull="true" />
+      <Column Name="music" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="halau_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="kumu_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="entry_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vw_OverallBreakingScore" Member="vw_OverallBreakingScores">
+    <Type Name="vw_OverallBreakingScore">
+      <Column Name="contestant_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="combined_hula_score" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="overall_break_score" Type="System.Decimal" DbType="Decimal(22,3)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vw_OverallScore" Member="vw_OverallScores">
+    <Type Name="vw_OverallScore">
+      <Column Name="contestant_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="interview" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="interview_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="overall_score" Type="System.Decimal" DbType="Decimal(24,3)" CanBeNull="true" />
+      <Column Name="overall_break_score" Type="System.Decimal" DbType="Decimal(22,3)" CanBeNull="true" />
+      <Column Name="music" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="combined_hula_score" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>
