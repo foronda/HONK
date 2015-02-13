@@ -13,22 +13,31 @@ namespace HONK {
     public partial class Contestants {
         
         /// <summary>
-        /// ContestantsFVUP control.
+        /// ContestantFVUP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel ContestantsFVUP;
+        protected global::System.Web.UI.UpdatePanel ContestantFVUP;
         
         /// <summary>
-        /// ContestantsFV control.
+        /// ContestantFV control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView ContestantsFV;
+        protected global::System.Web.UI.WebControls.FormView ContestantFV;
+        
+        /// <summary>
+        /// ContestantGVUP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel ContestantGVUP;
         
         /// <summary>
         /// ContestantGV control.
@@ -67,15 +76,6 @@ namespace HONK {
         protected global::System.Web.UI.WebControls.LinqDataSource ContestantsLDS;
         
         /// <summary>
-        /// KumuDELDS control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinqDataSource KumuDELDS;
-        
-        /// <summary>
         /// AgeLDS control.
         /// </summary>
         /// <remarks>
@@ -92,6 +92,15 @@ namespace HONK {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinqDataSource GenderLDS;
+        
+        /// <summary>
+        /// DivisionLDS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinqDataSource DivisionLDS;
         
         /// <summary>
         /// HalauLDS control.
