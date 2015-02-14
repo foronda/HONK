@@ -16,6 +16,7 @@
 
     <%-- Enabled during development to enable CSS Intellisense --%>
     <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap-custom-styles.css" rel="stylesheet" />
     <link href="Content/Site.css" rel="stylesheet" />
 </head>
 <body>
@@ -42,26 +43,45 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
+                    
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">HULA O NA KEIKI</a>
+                    <img src="Images/honk_logo_bw.png" style="height: 75px;" class="navbar-brand" />
+                    <a class="navbar-brand" runat="server" href="~/" style="line-height:50px">HULA O NA KEIKI </a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/Contestants">Contestants</a></li>
+                        <li><a runat="server" href="~/About">Event Results</a></li>
+                        <li><a runat="server" href="~/ContestantScores">Contestant Scores</a></li>
+                        <%--                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Manage Scores<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a runat="server" href="~/MasterScores">Master Scores</a></li>
+                                <li><a runat="server" href="#">Judge's Scores</a></li>
+                                <li><a runat="server" href="#">Etc...</a></li>
+                            </ul>
+                        </li>--%>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Manage Data<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a runat="server" href="~/Contestants">Contestants</a></li>
+                                <li><a runat="server" href="#">Halau's</a></li>
+                                <li><a runat="server" href="#">Kumu's</a></li>
+                                <li><a runat="server" href="#">Event Awards</a></li>
+                            </ul>
+                        </li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                     </ul>
                     <ul class="nav navbar-nav  navbar-right">
-                        <li class="navbar-text">Hello,
+                        <li class="navbar-text" style="line-height:50px;">Hello,
                             <asp:LoginName runat="server" />
                             !</li>
                     </ul>

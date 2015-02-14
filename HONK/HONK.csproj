@@ -107,6 +107,7 @@
       <DependentUpon>HONK.mdf</DependentUpon>
     </Content>
     <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-custom-styles.css" />
     <Content Include="Content\bootstrap-datetimepicker.css" />
     <Content Include="Content\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -115,7 +116,11 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Contestants.aspx" />
+    <Content Include="ContestantScores.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Images\honk_banner.png" />
+    <Content Include="Images\honk_footer.png" />
+    <Content Include="Images\honk_logo_bw.png" />
     <Content Include="MasterScores.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -212,6 +217,13 @@
     </Compile>
     <Compile Include="Contestants.aspx.designer.cs">
       <DependentUpon>Contestants.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContestantScores.aspx.cs">
+      <DependentUpon>ContestantScores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContestantScores.aspx.designer.cs">
+      <DependentUpon>ContestantScores.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
