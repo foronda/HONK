@@ -13,6 +13,42 @@ namespace HONK {
     public partial class ContestantScores {
         
         /// <summary>
+        /// ConstestantDDL control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ConstestantDDL;
+        
+        /// <summary>
+        /// EntryYearLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label EntryYearLbl;
+        
+        /// <summary>
+        /// ContestantScoresFV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FormView ContestantScoresFV;
+        
+        /// <summary>
+        /// ContestantMasterScoreFV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FormView ContestantMasterScoreFV;
+        
+        /// <summary>
         /// LinqDataSource1 control.
         /// </summary>
         /// <remarks>
@@ -20,5 +56,32 @@ namespace HONK {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinqDataSource LinqDataSource1;
+        
+        /// <summary>
+        /// MasterScoresLDS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinqDataSource MasterScoresLDS;
+        
+        /// <summary>
+        /// ContestantLDS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinqDataSource ContestantLDS;
+        
+        /// <summary>
+        /// ContestantScoreDetailsLDS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinqDataSource ContestantScoreDetailsLDS;
     }
 }

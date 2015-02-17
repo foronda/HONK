@@ -181,4 +181,43 @@
       <Column Name="combined_hula_score" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.vw_ContestantScoreDetails" Member="vw_ContestantScoreDetails">
+    <Type Name="vw_ContestantScoreDetail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="judge_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="judge_score_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="master_score_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="full_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="age_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="gender_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="division_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="halau_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="kumu_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="entry_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="entry_num_fri" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="entry_num_sat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="judge_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="palapala" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="interview" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="oli" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="music" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="hula_auana" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_auana_deduction" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_kahiko" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_kahiko_deduction" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_palua" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_palua_deduction" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="costume_auana" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="costume_kahiko" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="costume_palua" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="out_of_order_deduction" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="judge_score_interview" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="judge_score_costume_auana" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="judge_score_costume_kahiko" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="judge_score_costume_palua" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="judge_score_hula_auana" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="judge_score_hula_kahiko" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="judge_score_hula_palua" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

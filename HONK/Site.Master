@@ -15,8 +15,8 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <%-- Enabled during development to enable CSS Intellisense --%>
-    <link href="Content/bootstrap.css" rel="stylesheet" />
-    <link href="Content/bootstrap-custom-styles.css" rel="stylesheet" />
+<%--    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap-custom-styles.css" rel="stylesheet" />--%>
     <link href="Content/Site.css" rel="stylesheet" />
 </head>
 <body>

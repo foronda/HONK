@@ -32,13 +32,13 @@
                                         <div class="row form-group">
                                             <label class="col-lg-2 control-label">Age</label>
                                             <div class="col-lg-4">
-                                                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="AgeLDS" DataTextField="name" DataValueField="id" SelectedValue='<%# Bind("id") %>' AppendDataBoundItems="true" CssClass="form-control" OnSelectedIndexChanged="CalculateDivision" AutoPostBack="true">
+                                                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="AgeLDS" DataTextField="name" DataValueField="id" SelectedValue='<%# Bind("age_id") %>' AppendDataBoundItems="true" CssClass="form-control" OnSelectedIndexChanged="CalculateDivision" AutoPostBack="true">
                                                     <asp:ListItem Text="Select Age" Value=""></asp:ListItem>
                                                 </asp:DropDownList>
                                             </div>
                                             <label class="col-lg-2 control-label">Gender</label>
                                             <div class="col-lg-4">
-                                                <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="GenderLDS" DataTextField="name" DataValueField="id" SelectedValue='<%# Bind("id") %>' AppendDataBoundItems="true" CssClass="form-control" OnSelectedIndexChanged="CalculateDivision" AutoPostBack="true">
+                                                <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="GenderLDS" DataTextField="name" DataValueField="id" SelectedValue='<%# Bind("gender_id") %>' AppendDataBoundItems="true" CssClass="form-control" OnSelectedIndexChanged="CalculateDivision" AutoPostBack="true">
                                                     <asp:ListItem Text="Select Gender" Value=""></asp:ListItem>
                                                 </asp:DropDownList>
                                             </div>
@@ -54,7 +54,7 @@
                                         <div class="row form-group">
                                             <label class="col-lg-2 control-label">Halau</label>
                                             <div class="col-lg-4">
-                                                <asp:DropDownList ID="DropDownList4" runat="server" DataSourceID="HalauLDS" DataTextField="name" DataValueField="id" SelectedValue='<%# Bind("id") %>' AppendDataBoundItems="True" CssClass="form-control">
+                                                <asp:DropDownList ID="DropDownList4" runat="server" DataSourceID="HalauLDS" DataTextField="name" DataValueField="id" SelectedValue='<%# Bind("halau_id") %>' AppendDataBoundItems="True" CssClass="form-control">
                                                     <asp:ListItem Text="Select Halau" Value=""></asp:ListItem>
                                                 </asp:DropDownList>
                                             </div>
@@ -67,7 +67,7 @@
                                         <div class="row form-group">
                                             <label class="col-lg-2 control-label">Kumu</label>
                                             <div class="col-lg-4">
-                                                <asp:DropDownList ID="DropDownList5" runat="server" DataSourceID="KumuLDS" DataTextField="full_name" DataValueField="id" SelectedValue='<%# Bind("id") %>' AppendDataBoundItems="True" CssClass="form-control">
+                                                <asp:DropDownList ID="DropDownList5" runat="server" DataSourceID="KumuLDS" DataTextField="full_name" DataValueField="id" SelectedValue='<%# Bind("kumu_id") %>' AppendDataBoundItems="True" CssClass="form-control">
                                                     <asp:ListItem Text="Select Kumu" Value=""></asp:ListItem>
                                                 </asp:DropDownList>
                                             </div>
@@ -81,7 +81,7 @@
                                             <label class="col-lg-2 control-label">Entry Year</label>
                                             <div class="col-md-3">
                                                 <div class="input-group" id="entrydatepicker">
-                                                    <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" type="text"></asp:TextBox>
+                                                    <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" Text='<%# Bind("entry_date") %>'></asp:TextBox>
                                                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar" /></span>
                                                 </div>
                                                 <script type="text/javascript">
@@ -101,16 +101,7 @@
                         </script>--%>
                                             </div>
                                         </div>
-                                        <div class="row form-group">
-                                            <label class="col-lg-2 control-label">Friday Entry No.</label>
-                                            <div class="col-lg-4">
-                                                <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" Text='<%# Bind("entry_num_fri") %>'></asp:TextBox>
-                                            </div>
-                                            <label class="col-lg-2 control-label">Saturday Entry No.</label>
-                                            <div class="col-lg-4">
-                                                <asp:TextBox ID="TextBox4" runat="server" CssClass="form-control" Text='<%# Bind("entry_num_sat") %>'></asp:TextBox>
-                                            </div>
-                                        </div>
+                                        </span>
                                         <div class="row form-group">
                                             <div class="col-lg-10 col-lg-offset-2">
                                                 <asp:Button ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" CssClass="btn btn-primary" />
@@ -135,7 +126,7 @@
                     <div class="panel-body">
                         <asp:UpdatePanel runat="server" ID="ContestantGVUP" ChildrenAsTriggers="true" UpdateMode="Always">
                             <ContentTemplate>
-                                <asp:GridView ID="ContestantGV" runat="server" AllowPaging="True" DataSourceID="ContestantsLDS" AutoGenerateColumns="False" CssClass="table table-striped table-hover" AllowSorting="True">
+                                <asp:GridView ID="ContestantGV" runat="server" AllowPaging="True" DataSourceID="ContestantsLDS" AutoGenerateColumns="False" CssClass="table table-striped table-hover" AllowSorting="True" DataKeyNames="id">
                                     <Columns>
                                         <asp:TemplateField HeaderText="Actions" ShowHeader="False">
                                             <EditItemTemplate>
@@ -222,7 +213,7 @@
         </div>
     </div>
 
-    <asp:LinqDataSource ID="ContestantsLDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" TableName="Contestants"></asp:LinqDataSource>
+    <asp:LinqDataSource ID="ContestantsLDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" TableName="Contestants" EnableInsert="True" EnableUpdate="True"></asp:LinqDataSource>
     <%-- LOOKUP TABLES --%>
 
     <asp:LinqDataSource ID="AgeLDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" TableName="Ages" OrderBy="name" Select="new (name, id)"></asp:LinqDataSource>
