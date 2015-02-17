@@ -13,7 +13,7 @@ namespace HONK
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void ContestantScoreDetailsLDS_Selecting(object sender, LinqDataSourceSelectEventArgs e)
@@ -47,14 +47,20 @@ namespace HONK
 
                 i++;
             }
-
             ContestantScoresFV.Visible = true;
-
+            ContestantMasterScoreFV.DataBind();
         }
 
-        protected void MasterScoresLDS_Selecting(object sender, LinqDataSourceSelectEventArgs e)
+        protected void ContestantMasterScoreFV_ItemInserting(object sender, FormViewInsertEventArgs e)
         {
-            if (e.Result == null && ConstestantDDL.SelectedValue != "")
+            e.Values["contestant_id"] = ConstestantDDL.SelectedValue;
+        }
+
+        protected void MasterScoresLDS_Selected(object sender, LinqDataSourceStatusEventArgs e)
+        {
+            var results = (IEnumerable<object>)e.Result;
+
+            if (results.Count() == 0 && ConstestantDDL.SelectedValue != "")
             {
                 ContestantMasterScoreFV.ChangeMode(FormViewMode.Insert);
             }
@@ -62,11 +68,6 @@ namespace HONK
             {
                 ContestantMasterScoreFV.ChangeMode(FormViewMode.Edit);
             }
-        }
-
-        protected void ContestantMasterScoreFV_ItemInserting(object sender, FormViewInsertEventArgs e)
-        {
-            e.Values["contestant_id"] = ConstestantDDL.SelectedValue;
         }
 
     }

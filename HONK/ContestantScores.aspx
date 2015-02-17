@@ -20,7 +20,7 @@
             <asp:Label ID="EntryYearLbl" runat="server" Text="2014"></asp:Label>
         </div>
     </div>
-    <asp:FormView ID="ContestantScoresFV" runat="server" DefaultMode="Edit" DataSourceID="ContestantScoreDetailsLDS" Visible="false">
+    <asp:FormView ID="ContestantScoresFV" runat="server" DefaultMode="Edit" DataSourceID="ContestantScoreDetailsLDS">
         <EditItemTemplate>
             <hr />
             <h4>Contestant Judges Scores</h4>
@@ -286,7 +286,7 @@
 
     <asp:LinqDataSource ID="LinqDataSource1" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" TableName="JudgeScores">
     </asp:LinqDataSource>
-    <asp:LinqDataSource ID="MasterScoresLDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EnableInsert="True" EnableUpdate="True" EntityTypeName="" TableName="MasterScores" Where="contestant_id == @contestant_id" OnSelecting="MasterScoresLDS_Selecting">
+    <asp:LinqDataSource ID="MasterScoresLDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EnableInsert="True" EnableUpdate="True" EntityTypeName="" TableName="MasterScores" Where="contestant_id == @contestant_id" OnSelected="MasterScoresLDS_Selected">
         <WhereParameters>
             <asp:ControlParameter ControlID="ConstestantDDL" DefaultValue="0" Name="contestant_id" PropertyName="SelectedValue" Type="Int32" />
         </WhereParameters>
