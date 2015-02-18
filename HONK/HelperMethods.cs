@@ -17,6 +17,11 @@ namespace HONK
                     select c.age_name).ToString() == "Palua";
         }
 
+        //SQL INSERT METHODS
+        /// <summary>
+        /// Function
+        /// </summary>
+        /// <param name="contestant_id"></param>
         public static void InsertJudgeScores(int contestant_id)
         {
             HONKDBDataContext db = new HONKDBDataContext();
@@ -135,6 +140,13 @@ namespace HONK
 
     public static class HonkExtension
     {
+        /// <summary>
+        /// Converts Empty string values to DB.Null
+        /// </summary>
+        /// <param name="collection"></param>
+        /// <param name="parameterName"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static SqlParameter AddWithEmptyStringValue(this SqlParameterCollection collection, string parameterName, object value)
         {
             if (value == string.Empty)

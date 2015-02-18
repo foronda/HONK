@@ -19,11 +19,6 @@ namespace HONK
 
         }
 
-        protected void ContestantScoreDetailsLDS_Selecting(object sender, LinqDataSourceSelectEventArgs e)
-        {
-            //var data = db.vw_ContestantScoreDetails.Where(x => DateTime.Compare(x.entry_date.Year, DateTime.Now.Year)).ToList();
-        }
-
         protected void ConstestantDDL_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -43,6 +38,7 @@ namespace HONK
 
                 ContestantScoresFV.DataBind();
                 ContestantMasterScoreFV.DataBind();
+                LoadBreakingScores(contestant_id);
 
                 //Check if Palua or Not
                 if (HelperMethods.IsPalua(contestant_id))
@@ -159,9 +155,17 @@ namespace HONK
 
         }
 
-        private bool TextBoxHasValue(TextBox tb)
+        private void LoadBreakingScores(int contestant_id)
         {
-            return !String.IsNullOrWhiteSpace(tb.Text);
+            var breaking_scores = (from s in db.vw_BreakingScores
+                                   where s.contestant_id == contestant_id
+                                   select s).ToList();
+            foreach (var bs in breaking_scores)
+            {
+                ((Label)ContestantMasterScoreFV.FindControl("masterInterviewTie")).Text = bs.interview_tie.ToString();
+                //((Label)ContestantMasterScoreFV.FindControl("masterInterviewTie")).Text = "FUCK YEA!";
+
+            }
         }
     }
 }

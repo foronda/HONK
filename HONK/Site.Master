@@ -20,7 +20,7 @@
     <link href="Content/Site.css" rel="stylesheet" />
 </head>
 <body>
-    <form runat="server">
+    <form runat="server" class="form-horizontal">
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
