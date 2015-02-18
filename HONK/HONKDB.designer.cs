@@ -227,6 +227,14 @@ namespace HONK
 				return this.GetTable<vw_ContestantScoreDetail>();
 			}
 		}
+		
+		public System.Data.Linq.Table<vw_Contestant_JudgeScore> vw_Contestant_JudgeScores
+		{
+			get
+			{
+				return this.GetTable<vw_Contestant_JudgeScore>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Age")]
@@ -3343,7 +3351,7 @@ namespace HONK
 		
 		private int _judge_score_id;
 		
-		private int _master_score_id;
+		private System.Nullable<int> _master_score_id;
 		
 		private string _full_name;
 		
@@ -3365,13 +3373,13 @@ namespace HONK
 		
 		private string _judge_name;
 		
-		private int _palapala;
+		private System.Nullable<int> _palapala;
 		
 		private System.Nullable<int> _interview;
 		
 		private System.Nullable<decimal> _oli;
 		
-		private int _music;
+		private System.Nullable<int> _music;
 		
 		private System.Nullable<int> _hula_auana;
 		
@@ -3459,8 +3467,8 @@ namespace HONK
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_master_score_id", DbType="Int NOT NULL")]
-		public int master_score_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_master_score_id", DbType="Int")]
+		public System.Nullable<int> master_score_id
 		{
 			get
 			{
@@ -3635,8 +3643,8 @@ namespace HONK
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_palapala", DbType="Int NOT NULL")]
-		public int palapala
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_palapala", DbType="Int")]
+		public System.Nullable<int> palapala
 		{
 			get
 			{
@@ -3683,8 +3691,8 @@ namespace HONK
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_music", DbType="Int NOT NULL")]
-		public int music
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_music", DbType="Int")]
+		public System.Nullable<int> music
 		{
 			get
 			{
@@ -3967,6 +3975,339 @@ namespace HONK
 				if ((this._judge_score_hula_palua != value))
 				{
 					this._judge_score_hula_palua = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_Contestant_JudgeScore")]
+	public partial class vw_Contestant_JudgeScore
+	{
+		
+		private int _id;
+		
+		private int _judge_id;
+		
+		private string _full_name;
+		
+		private string _age_name;
+		
+		private string _gender_name;
+		
+		private string _division_name;
+		
+		private string _halau_name;
+		
+		private string _kumu_name;
+		
+		private System.DateTime _entry_date;
+		
+		private System.Nullable<int> _entry_num_fri;
+		
+		private System.Nullable<int> _entry_num_sat;
+		
+		private System.Nullable<int> _interview;
+		
+		private System.Nullable<int> _costume_auana;
+		
+		private System.Nullable<int> _costume_kahiko;
+		
+		private System.Nullable<int> _costume_palua;
+		
+		private System.Nullable<int> _hula_auana;
+		
+		private System.Nullable<int> _hula_kahiko;
+		
+		private System.Nullable<int> _hula_palua;
+		
+		public vw_Contestant_JudgeScore()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_judge_id", DbType="Int NOT NULL")]
+		public int judge_id
+		{
+			get
+			{
+				return this._judge_id;
+			}
+			set
+			{
+				if ((this._judge_id != value))
+				{
+					this._judge_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_full_name", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string full_name
+		{
+			get
+			{
+				return this._full_name;
+			}
+			set
+			{
+				if ((this._full_name != value))
+				{
+					this._full_name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_age_name", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string age_name
+		{
+			get
+			{
+				return this._age_name;
+			}
+			set
+			{
+				if ((this._age_name != value))
+				{
+					this._age_name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gender_name", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string gender_name
+		{
+			get
+			{
+				return this._gender_name;
+			}
+			set
+			{
+				if ((this._gender_name != value))
+				{
+					this._gender_name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_division_name", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string division_name
+		{
+			get
+			{
+				return this._division_name;
+			}
+			set
+			{
+				if ((this._division_name != value))
+				{
+					this._division_name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_halau_name", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string halau_name
+		{
+			get
+			{
+				return this._halau_name;
+			}
+			set
+			{
+				if ((this._halau_name != value))
+				{
+					this._halau_name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_kumu_name", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string kumu_name
+		{
+			get
+			{
+				return this._kumu_name;
+			}
+			set
+			{
+				if ((this._kumu_name != value))
+				{
+					this._kumu_name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_entry_date", DbType="Date NOT NULL")]
+		public System.DateTime entry_date
+		{
+			get
+			{
+				return this._entry_date;
+			}
+			set
+			{
+				if ((this._entry_date != value))
+				{
+					this._entry_date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_entry_num_fri", DbType="Int")]
+		public System.Nullable<int> entry_num_fri
+		{
+			get
+			{
+				return this._entry_num_fri;
+			}
+			set
+			{
+				if ((this._entry_num_fri != value))
+				{
+					this._entry_num_fri = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_entry_num_sat", DbType="Int")]
+		public System.Nullable<int> entry_num_sat
+		{
+			get
+			{
+				return this._entry_num_sat;
+			}
+			set
+			{
+				if ((this._entry_num_sat != value))
+				{
+					this._entry_num_sat = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_interview", DbType="Int")]
+		public System.Nullable<int> interview
+		{
+			get
+			{
+				return this._interview;
+			}
+			set
+			{
+				if ((this._interview != value))
+				{
+					this._interview = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_auana", DbType="Int")]
+		public System.Nullable<int> costume_auana
+		{
+			get
+			{
+				return this._costume_auana;
+			}
+			set
+			{
+				if ((this._costume_auana != value))
+				{
+					this._costume_auana = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_kahiko", DbType="Int")]
+		public System.Nullable<int> costume_kahiko
+		{
+			get
+			{
+				return this._costume_kahiko;
+			}
+			set
+			{
+				if ((this._costume_kahiko != value))
+				{
+					this._costume_kahiko = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_palua", DbType="Int")]
+		public System.Nullable<int> costume_palua
+		{
+			get
+			{
+				return this._costume_palua;
+			}
+			set
+			{
+				if ((this._costume_palua != value))
+				{
+					this._costume_palua = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_auana", DbType="Int")]
+		public System.Nullable<int> hula_auana
+		{
+			get
+			{
+				return this._hula_auana;
+			}
+			set
+			{
+				if ((this._hula_auana != value))
+				{
+					this._hula_auana = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_kahiko", DbType="Int")]
+		public System.Nullable<int> hula_kahiko
+		{
+			get
+			{
+				return this._hula_kahiko;
+			}
+			set
+			{
+				if ((this._hula_kahiko != value))
+				{
+					this._hula_kahiko = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_palua", DbType="Int")]
+		public System.Nullable<int> hula_palua
+		{
+			get
+			{
+				return this._hula_palua;
+			}
+			set
+			{
+				if ((this._hula_palua != value))
+				{
+					this._hula_palua = value;
 				}
 			}
 		}

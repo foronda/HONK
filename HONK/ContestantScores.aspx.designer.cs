@@ -13,13 +13,13 @@ namespace HONK {
     public partial class ContestantScores {
         
         /// <summary>
-        /// ConstestantDDL control.
+        /// ContestantDDL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ConstestantDDL;
+        protected global::System.Web.UI.WebControls.DropDownList ContestantDDL;
         
         /// <summary>
         /// EntryYearLbl control.
@@ -31,6 +31,15 @@ namespace HONK {
         protected global::System.Web.UI.WebControls.Label EntryYearLbl;
         
         /// <summary>
+        /// divJudgeScores control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divJudgeScores;
+        
+        /// <summary>
         /// ContestantScoresFV control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace HONK {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FormView ContestantScoresFV;
+        
+        /// <summary>
+        /// divMasterScores control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divMasterScores;
         
         /// <summary>
         /// ContestantMasterScoreFV control.
@@ -49,13 +67,13 @@ namespace HONK {
         protected global::System.Web.UI.WebControls.FormView ContestantMasterScoreFV;
         
         /// <summary>
-        /// LinqDataSource1 control.
+        /// SubmitBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinqDataSource LinqDataSource1;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor SubmitBtn;
         
         /// <summary>
         /// MasterScoresLDS control.
