@@ -157,15 +157,23 @@ namespace HONK
 
         private void LoadBreakingScores(int contestant_id)
         {
-            var breaking_scores = (from s in db.vw_BreakingScores
-                                   where s.contestant_id == contestant_id
-                                   select s).ToList();
+            var breaking_scores = from s in db.vw_BreakingScores
+                                  where s.contestant_id == contestant_id
+                                  select s;
+
             foreach (var bs in breaking_scores)
             {
-                ((Label)ContestantMasterScoreFV.FindControl("masterInterviewTie")).Text = bs.interview_tie.ToString();
-                //((Label)ContestantMasterScoreFV.FindControl("masterInterviewTie")).Text = "FUCK YEA!";
-
+                ((Label)ContestantMasterScoreFV.FindControl("masterInterviewTie")).Text = bs.interview_tie.HasValue ? bs.interview_tie.ToString() : "N/A";
+                ((Label)ContestantMasterScoreFV.FindControl("masterCostumeATie")).Text = bs.costume_auana_tie.HasValue ? bs.costume_auana_tie.ToString() : "N/A";
+                ((Label)ContestantMasterScoreFV.FindControl("masterCostumeKTie")).Text = bs.costume_kahiko_tie.HasValue ? bs.costume_kahiko_tie.ToString() : "N/A";
+                ((Label)ContestantMasterScoreFV.FindControl("masterHulaATie")).Text = bs.hula_auana_tie.HasValue ? bs.hula_auana_tie.ToString() : "N/A";
+                ((Label)ContestantMasterScoreFV.FindControl("masterHulaKTie")).Text = bs.hula_kahiko_tie.HasValue ? bs.hula_kahiko_tie.ToString() : "N/A";
             }
+        }
+
+        protected void CalculateMasterScores_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
