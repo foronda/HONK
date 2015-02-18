@@ -12,7 +12,7 @@
     <%-- END PAGE HEADER --%>
 
     <%-- START CONTESTANT DROPDOWN --%>
-    <div class="well well-lg">
+    <div class="well well-lg bg-success">
         <div class="row form-group">
             <label class="col-sm-2 control-label">Select Contestant: </label>
             <div class="col-sm-4">
@@ -29,7 +29,7 @@
     <%-- END CONTESTANT DROPDOWN --%>
 
     <%-- JUDGES SCORES PANEL --%>
-    <div runat="server" id="divJudgeScores" class="panel panel-default" visible="false">
+    <div runat="server" id="divJudgeScores" class="panel panel-primary" visible="false">
         <div class="panel-heading">
             <h3 class="panel-title">Judges Scores</h3>
         </div>
@@ -170,7 +170,7 @@
     <%-- END JUDGES SCORES PANEL --%>
 
     <%-- MASTER SCORES PANEL --%>
-    <div runat="server" id="divMasterScores" class="panel panel-default" visible="false">
+    <div runat="server" id="divMasterScores" class="panel panel-primary" visible="false">
         <div class="panel-heading" role="tab">
             <h3 class="panel-title">Master Scores</h3>
         </div>
