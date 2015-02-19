@@ -23,6 +23,9 @@ namespace HONK
         {
             if (!String.IsNullOrEmpty(((DropDownList)sender).SelectedValue))
             {
+                // Counter for iterating through Textbox Controls
+                int i = 1;
+
                 int contestant_id = Convert.ToInt32(((DropDownList)sender).SelectedValue);
 
                 var contestant = from c in db.vw_Contestant_JudgeScores
@@ -30,37 +33,53 @@ namespace HONK
                                  where c.entry_date.Year == EventYear
                                  select c;
 
-                // INSERT CONTESTANT -> JUDGES SCORES w/ NULL VALUES
+                // INSERT Contestant_JudgeScores w/ NULL VALUES
                 if (contestant.Count() == 0) HelperMethods.InsertJudgeScores(contestant_id);
 
+                // Initialize Contestant Formviews
                 ContestantScoresFV.ChangeMode(FormViewMode.Edit);
-
                 ContestantScoresFV.DataBind();
+
                 ContestantMasterScoreFV.DataBind();
 
-                //Check if Palua or Not
+                //Check if Gender Name is Palua
                 if (HelperMethods.IsPalua(contestant_id))
                 {
+                    // Hide Sections which does not pertain to Palua
                     ContestantScoresFV.FindControl("isNotPalua").Visible = false;
                     ContestantMasterScoreFV.FindControl("isNotPaluaMS").Visible = false;
-                }
-                int i = 1;
-                foreach (var c in contestant)
-                {
-                    ((TextBox)ContestantScoresFV.FindControl("judgeInterview" + i)).Text = String.IsNullOrEmpty(c.interview.ToString()) ? "" : c.interview.ToString();
-                    if (i == 7)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        ((TextBox)ContestantScoresFV.FindControl("judgeCostumeA" + i)).Text = String.IsNullOrEmpty(c.costume_auana.ToString()) ? "" : c.costume_auana.ToString();
-                        ((TextBox)ContestantScoresFV.FindControl("judgeCostumeK" + i)).Text = String.IsNullOrEmpty(c.costume_kahiko.ToString()) ? "" : c.costume_kahiko.ToString();
-                        ((TextBox)ContestantScoresFV.FindControl("judgeHulaA" + i)).Text = String.IsNullOrEmpty(c.hula_auana.ToString()) ? "" : c.hula_auana.ToString();
-                        ((TextBox)ContestantScoresFV.FindControl("judgeHulaK" + i)).Text = String.IsNullOrEmpty(c.hula_kahiko.ToString()) ? "" : c.hula_kahiko.ToString();
-                    }
 
-                    i++;
+                    // Show Palua Form Section
+                    ContestantScoresFV.FindControl("isPalua").Visible = true;
+                    ContestantMasterScoreFV.FindControl("isPaluaMS").Visible = true;
+
+                    foreach (var c in contestant)
+                    {
+                        ((TextBox)ContestantScoresFV.FindControl("judgeHulaP" + i)).Text = String.IsNullOrEmpty(c.hula_palua.ToString()) ? "" : c.hula_palua.ToString();
+                        ((TextBox)ContestantScoresFV.FindControl("judgeCostumeP" + i)).Text = String.IsNullOrEmpty(c.costume_palua.ToString()) ? "" : c.costume_palua.ToString();
+                        i++;
+                    }
+                }
+                // Gender Name is NOT Palua
+                else
+                {
+                    foreach (var c in contestant)
+                    {
+                        ((TextBox)ContestantScoresFV.FindControl("judgeInterview" + i)).Text = String.IsNullOrEmpty(c.interview.ToString()) ? "" : c.interview.ToString();
+                        if (i == 7)
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            ((TextBox)ContestantScoresFV.FindControl("judgeCostumeA" + i)).Text = String.IsNullOrEmpty(c.costume_auana.ToString()) ? "" : c.costume_auana.ToString();
+                            ((TextBox)ContestantScoresFV.FindControl("judgeCostumeK" + i)).Text = String.IsNullOrEmpty(c.costume_kahiko.ToString()) ? "" : c.costume_kahiko.ToString();
+                            ((TextBox)ContestantScoresFV.FindControl("judgeHulaA" + i)).Text = String.IsNullOrEmpty(c.hula_auana.ToString()) ? "" : c.hula_auana.ToString();
+                            ((TextBox)ContestantScoresFV.FindControl("judgeHulaK" + i)).Text = String.IsNullOrEmpty(c.hula_kahiko.ToString()) ? "" : c.hula_kahiko.ToString();
+                        }
+
+                        i++;
+                    }
                 }
 
                 divJudgeScores.Visible = true;
@@ -103,14 +122,18 @@ namespace HONK
             if (ContestantMasterScoreFV.CurrentMode == FormViewMode.Insert)
             {
                 ContestantMasterScoreFV.InsertItem(true);
+                ContestantMasterScoreFV.DataBind();
             }
             else if (ContestantMasterScoreFV.CurrentMode == FormViewMode.Edit)
             {
                 ContestantMasterScoreFV.UpdateItem(true);
+                ContestantMasterScoreFV.DataBind();
             }
 
             ContestantScoresFV_UpdateItems();
-            CalculateHiLow_MasterScores(null, null);
+
+            // Reinitialize Formview by Checking Currently Selected Value on Dropdownlist
+            ContestantDDL_SelectedIndexChanged(ContestantDDL, null);
         }
         /// <summary>
         /// Updates JudgeScore table based on ContestantScoreFV Textbox values
@@ -119,33 +142,17 @@ namespace HONK
         {
             int contestant_id = Convert.ToInt32(ContestantDDL.SelectedValue);
 
-            for (int judge_id = 1; judge_id <= HelperMethods.TotalJudges(); judge_id++)
+            if (HelperMethods.IsPalua(contestant_id))
             {
-
-                if (judge_id == 7)
+                for (int judge_id = 1; judge_id < HelperMethods.TotalJudges(); judge_id++)
                 {
+
                     try
                     {
-                        string interview = ((TextBox)ContestantScoresFV.FindControl("judgeInterview" + judge_id)).Text;
-                        HelperMethods.UpdateJudgeScore(contestant_id, judge_id, interview);
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine("{0} Exception caught.", ex);
-                    }
+                        string hula_palua = ((TextBox)ContestantScoresFV.FindControl("judgeHulaP" + judge_id)).Text;
+                        string costume_palua = ((TextBox)ContestantScoresFV.FindControl("judgeCostumeP" + judge_id)).Text;
 
-                }
-                else
-                {
-                    try
-                    {
-                        string interview = ((TextBox)ContestantScoresFV.FindControl("judgeInterview" + judge_id)).Text;
-                        string costume_auana = ((TextBox)ContestantScoresFV.FindControl("judgeCostumeA" + judge_id)).Text;
-                        string costume_kahiko = ((TextBox)ContestantScoresFV.FindControl("judgeCostumeK" + judge_id)).Text;
-                        string hula_auana = ((TextBox)ContestantScoresFV.FindControl("judgeHulaA" + judge_id)).Text;
-                        string hula_kahiko = ((TextBox)ContestantScoresFV.FindControl("judgeHulaK" + judge_id)).Text;
-
-                        HelperMethods.UpdateJudgeScore(contestant_id, judge_id, interview, costume_auana, costume_kahiko, hula_auana, hula_kahiko);
+                        HelperMethods.UpdateJudgeScore(contestant_id, judge_id, hula_palua, costume_palua);
                     }
                     catch (Exception ex)
                     {
@@ -153,6 +160,44 @@ namespace HONK
                     }
                 }
             }
+            else
+            {
+                for (int judge_id = 1; judge_id <= HelperMethods.TotalJudges(); judge_id++)
+                {
+
+                    if (judge_id == 7)
+                    {
+                        try
+                        {
+                            string interview = ((TextBox)ContestantScoresFV.FindControl("judgeInterview" + judge_id)).Text;
+                            HelperMethods.UpdateJudgeScore(contestant_id, judge_id, interview);
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("{0} Exception caught.", ex);
+                        }
+
+                    }
+                    else
+                    {
+                        try
+                        {
+                            string interview = ((TextBox)ContestantScoresFV.FindControl("judgeInterview" + judge_id)).Text;
+                            string costume_auana = ((TextBox)ContestantScoresFV.FindControl("judgeCostumeA" + judge_id)).Text;
+                            string costume_kahiko = ((TextBox)ContestantScoresFV.FindControl("judgeCostumeK" + judge_id)).Text;
+                            string hula_auana = ((TextBox)ContestantScoresFV.FindControl("judgeHulaA" + judge_id)).Text;
+                            string hula_kahiko = ((TextBox)ContestantScoresFV.FindControl("judgeHulaK" + judge_id)).Text;
+
+                            HelperMethods.UpdateJudgeScore(contestant_id, judge_id, interview, costume_auana, costume_kahiko, hula_auana, hula_kahiko);
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("{0} Exception caught.", ex);
+                        }
+                    }
+                }
+            }
+
 
         }
 
@@ -165,19 +210,30 @@ namespace HONK
         /// <param name="e"></param>
         protected void CalculateHiLow_MasterScores(object sender, EventArgs e)
         {
-            ((TextBox)ContestantMasterScoreFV.FindControl("masterInterview")).Text = GetHiLoSum("judgeInterview", 7).HasValue ? GetHiLoSum("judgeInterview", 7).ToString() : "";
-            ((TextBox)ContestantMasterScoreFV.FindControl("masterCostumeA")).Text = GetHiLoSum("judgeCostumeA", 6).HasValue ? GetHiLoSum("judgeCostumeA", 6).ToString() : "";
-            ((TextBox)ContestantMasterScoreFV.FindControl("masterCostumeK")).Text = GetHiLoSum("judgeCostumeK", 6).HasValue ? GetHiLoSum("judgeCostumeK", 6).ToString() : "";
-            ((TextBox)ContestantMasterScoreFV.FindControl("masterHulaA")).Text = GetHiLoSum("judgeHulaA", 6).HasValue ? GetHiLoSum("judgeHulaA", 6).ToString() : "";
-            ((TextBox)ContestantMasterScoreFV.FindControl("masterHulaK")).Text = GetHiLoSum("judgeHulaK", 6).HasValue ? GetHiLoSum("judgeHulaK", 6).ToString() : "";
+            if (HelperMethods.IsPalua(Convert.ToInt32(ContestantDDL.SelectedValue)))
+            {
+                ((TextBox)ContestantMasterScoreFV.FindControl("masterHulaP")).Text = GetHiLoSum("judgeHulaP", 6).HasValue ? GetHiLoSum("judgeHulaP", 6).ToString() : "";
+                ((TextBox)ContestantMasterScoreFV.FindControl("masterCostumeP")).Text = GetHiLoSum("judgeCostumeP", 6).HasValue ? GetHiLoSum("judgeCostumeP", 6).ToString() : "";
 
-            ((Label)ContestantMasterScoreFV.FindControl("masterInterviewTie")).Text = GetSum("judgeInterview", 7).HasValue ? GetSum("judgeInterview", 7).ToString() : "N/A";
-            ((Label)ContestantMasterScoreFV.FindControl("masterCostumeATie")).Text = GetSum("judgeCostumeA", 6).HasValue ? GetSum("judgeCostumeA", 6).ToString() : "N/A";
-            ((Label)ContestantMasterScoreFV.FindControl("masterCostumeKTie")).Text = GetSum("judgeCostumeK", 6).HasValue ? GetSum("judgeCostumeK", 6).ToString() : "N/A";
-            ((Label)ContestantMasterScoreFV.FindControl("masterHulaATie")).Text = GetSum("judgeHulaA", 6).HasValue ? GetSum("judgeHulaA", 6).ToString() : "N/A";
-            ((Label)ContestantMasterScoreFV.FindControl("masterHulaKTie")).Text = GetSum("judgeHulaK", 6).HasValue ? GetSum("judgeHulaK", 6).ToString() : "N/A";
+                ((Label)ContestantMasterScoreFV.FindControl("masterHulaPTie")).Text = GetSum("judgeHulaP", 6).HasValue ? GetSum("judgeHulaP", 6).ToString() : "N/A";
+                ((Label)ContestantMasterScoreFV.FindControl("masterCostumePTie")).Text = GetSum("judgeCostumeP", 6).HasValue ? GetSum("judgeCostumeP", 6).ToString() : "N/A";
+            }
+            else
+            {
+                ((TextBox)ContestantMasterScoreFV.FindControl("masterInterview")).Text = GetHiLoSum("judgeInterview", 7).HasValue ? GetHiLoSum("judgeInterview", 7).ToString() : "";
+                ((TextBox)ContestantMasterScoreFV.FindControl("masterCostumeA")).Text = GetHiLoSum("judgeCostumeA", 6).HasValue ? GetHiLoSum("judgeCostumeA", 6).ToString() : "";
+                ((TextBox)ContestantMasterScoreFV.FindControl("masterCostumeK")).Text = GetHiLoSum("judgeCostumeK", 6).HasValue ? GetHiLoSum("judgeCostumeK", 6).ToString() : "";
+                ((TextBox)ContestantMasterScoreFV.FindControl("masterHulaA")).Text = GetHiLoSum("judgeHulaA", 6).HasValue ? GetHiLoSum("judgeHulaA", 6).ToString() : "";
+                ((TextBox)ContestantMasterScoreFV.FindControl("masterHulaK")).Text = GetHiLoSum("judgeHulaK", 6).HasValue ? GetHiLoSum("judgeHulaK", 6).ToString() : "";
 
+                ((Label)ContestantMasterScoreFV.FindControl("masterInterviewTie")).Text = GetSum("judgeInterview", 7).HasValue ? GetSum("judgeInterview", 7).ToString() : "N/A";
+                ((Label)ContestantMasterScoreFV.FindControl("masterCostumeATie")).Text = GetSum("judgeCostumeA", 6).HasValue ? GetSum("judgeCostumeA", 6).ToString() : "N/A";
+                ((Label)ContestantMasterScoreFV.FindControl("masterCostumeKTie")).Text = GetSum("judgeCostumeK", 6).HasValue ? GetSum("judgeCostumeK", 6).ToString() : "N/A";
+                ((Label)ContestantMasterScoreFV.FindControl("masterHulaATie")).Text = GetSum("judgeHulaA", 6).HasValue ? GetSum("judgeHulaA", 6).ToString() : "N/A";
+                ((Label)ContestantMasterScoreFV.FindControl("masterHulaKTie")).Text = GetSum("judgeHulaK", 6).HasValue ? GetSum("judgeHulaK", 6).ToString() : "N/A";
+            }
         }
+
 
         // MASTER SCORE ACCESSORS
         protected string InterviewTie
@@ -255,6 +311,35 @@ namespace HONK
 
             }
         }
+        protected string HulaPaluaTie
+        {
+            get
+            {
+                var score = from s in db.vw_BreakingScores
+                            where s.contestant_id == Convert.ToInt32(ContestantDDL.SelectedValue)
+                            select s.hula_palua_tie;
+                foreach (var bs in score)
+                {
+                    return bs.HasValue ? bs.ToString() : "N/A";
+                }
+                return string.Empty;
+            }
+        }
+        protected string CostumePaluaTie
+        {
+            get
+            {
+                var score = from s in db.vw_BreakingScores
+                            where s.contestant_id == Convert.ToInt32(ContestantDDL.SelectedValue)
+                            select s.costume_palua_tie;
+                foreach (var bs in score)
+                {
+                    return bs.HasValue ? bs.ToString() : "N/A";
+                }
+                return string.Empty;
+            }
+        }
+
 
         // MASTER SCORES HELPER FUNCTIONS
         private bool HiLowIsChecked()

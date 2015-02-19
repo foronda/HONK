@@ -95,6 +95,42 @@ namespace HONK
                 Console.WriteLine(ex.Message);
             }
         }
+        
+        /// <summary>
+        /// Method for updating a Palua Contestant's Individual Judge Score. Age Gene is Palua
+        /// </summary>
+        /// <param name="contestant_id"></param>
+        /// <param name="judge_id"></param>
+        /// <param name="hula_palua"></param>
+        /// <param name="costume_palua"></param>
+        public static void UpdateJudgeScore(int contestant_id, int judge_id, string hula_palua, string costume_palua)
+        {
+            HONKDBDataContext db = new HONKDBDataContext();
+
+            try
+            {
+                string command = "UPDATE  JudgeScore SET hula_palua = @hula_palua,  costume_palua = @costume_palua Where contestant_id = @contestant_id and judge_id = @judge_id ";
+
+                string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["HONKDBContext"].ConnectionString;
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    SqlCommand sqlCmd = new SqlCommand(command, connection);
+                    sqlCmd.Parameters.AddWithValue("@contestant_id", contestant_id);
+                    sqlCmd.Parameters.AddWithValue("@judge_id", judge_id);
+                    sqlCmd.Parameters.AddWithEmptyStringValue("@hula_palua", hula_palua);
+                    sqlCmd.Parameters.AddWithEmptyStringValue("@costume_palua", costume_palua);
+
+                    sqlCmd.ExecuteNonQuery();
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+        }
 
         public static void UpdateJudgeScore(int contestant_id, int judge_id, string interview)
         {
@@ -121,7 +157,6 @@ namespace HONK
             {
                 Console.WriteLine(ex.Message);
             }
-
         }
 
         public static int TotalJudges()

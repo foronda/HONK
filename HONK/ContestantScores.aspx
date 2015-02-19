@@ -41,6 +41,58 @@
                     <ContentTemplate>
                         <asp:FormView ID="ContestantScoresFV" runat="server" DataSourceID="ContestantScoreDetailsLDS" CssClass="col-lg-12">
                             <EditItemTemplate>
+                                <div class="container" id="isPalua" runat="server" visible="false">
+                                    <div class="row form-group">
+                                        <label class="col-sm-1 col-sm-offset-2">Score 1</label>
+                                        <label class="col-sm-1">Score 2</label>
+                                        <label class="col-sm-1">Score 3</label>
+                                        <label class="col-sm-1">Score 4</label>
+                                        <label class="col-sm-1">Score 5</label>
+                                        <label class="col-sm-1">Score 6</label>
+                                    </div>
+                                    <div class="row form-group">
+                                        <label class="col-sm-2 control-label">Hula Palua: </label>
+                                        <div class="col-sm-1">
+                                            <asp:TextBox ID="judgeHulaP1" runat="server" class="form-control"></asp:TextBox>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <asp:TextBox ID="judgeHulaP2" runat="server" class="form-control"></asp:TextBox>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <asp:TextBox ID="judgeHulaP3" runat="server" class="form-control"></asp:TextBox>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <asp:TextBox ID="judgeHulaP4" runat="server" class="form-control"></asp:TextBox>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <asp:TextBox ID="judgeHulaP5" runat="server" class="form-control"></asp:TextBox>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <asp:TextBox ID="judgeHulaP6" runat="server" class="form-control"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <label class="col-sm-2 control-label">Costume (Palua): </label>
+                                        <div class="col-sm-1">
+                                            <asp:TextBox ID="judgeCostumeP1" runat="server" class="form-control"></asp:TextBox>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <asp:TextBox ID="judgeCostumeP2" runat="server" class="form-control"></asp:TextBox>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <asp:TextBox ID="judgeCostumeP3" runat="server" class="form-control"></asp:TextBox>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <asp:TextBox ID="judgeCostumeP4" runat="server" class="form-control"></asp:TextBox>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <asp:TextBox ID="judgeCostumeP5" runat="server" class="form-control"></asp:TextBox>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <asp:TextBox ID="judgeCostumeP6" runat="server" class="form-control"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="container" runat="server" id="isNotPalua">
                                     <div class="row form-group">
                                         <label class="col-sm-1 col-sm-offset-2">Score 1</label>
@@ -182,6 +234,36 @@
                         <asp:FormView ID="ContestantMasterScoreFV" runat="server" DataSourceID="MasterScoresLDS" DefaultMode="ReadOnly" DataKeyNames="id"
                             OnItemInserting="ContestantMasterScoreFV_ItemInserting">
                             <InsertItemTemplate>
+                                <div class="container" id="isPaluaMS" runat="server" visible="false">
+                                    <div class="row form-group">
+                                        <label class="col-sm-2 control-label">Total Hula Palua: </label>
+                                        <div class="col-sm-3">
+                                            <div class="input-group">
+                                                <asp:TextBox ID="masterHulaP" runat="server" class="form-control" Text='<%# Bind("hula_palua") %>'></asp:TextBox>
+                                                <span class="input-group-addon"><span class="badge" />
+                                                    <asp:Label runat="server" ID="masterHulaPTie" CssClass="control-label" Text='<%# HulaAuanaTie %>' ToolTip="Hula Palua Breaking Score" data-toggle="tooltip"></asp:Label></span>
+                                            </div>
+                                        </div>
+                                        <label class="col-sm-2 control-label">Deduction for Overtime: </label>
+                                        <div class="col-sm-3">
+                                            <div class="input-group">
+                                                <asp:TextBox ID="masterHulaPDed" runat="server" class="form-control" Text='<%# Bind("hula_palua_deduction") %>'></asp:TextBox>
+                                                <span class="input-group-addon"><span class="badge" />
+                                                    <asp:Label runat="server" ID="Label2" CssClass="control-label" Text='<%# HulaAuanaTie %>' ToolTip="Hula Palua Net Score" data-toggle="tooltip"></asp:Label></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <label class="col-sm-2 control-label">Total Costume: </label>
+                                        <div class="col-sm-3">
+                                            <div class="input-group">
+                                                <asp:TextBox ID="masterCostumeP" runat="server" class="form-control" Text='<%# Bind("costume_palua") %>'></asp:TextBox>
+                                                <span class="input-group-addon"><span class="badge" />
+                                                    <asp:Label runat="server" ID="masterCostumePTie" CssClass="control-label" Text='<%# HulaAuanaTie %>' ToolTip="Costume Palua Breaking Score" data-toggle="tooltip"></asp:Label></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="container" id="isNotPaluaMS" runat="server">
                                     <div class="row form-group" runat="server">
                                         <label class="col-sm-2 control-label">Total Interview: </label>
@@ -249,7 +331,7 @@
                                             <div class="input-group">
                                                 <asp:TextBox ID="masterHulaKDed" runat="server" class="form-control" Text='<%# Bind("hula_kahiko_deduction") %>'></asp:TextBox>
                                                 <span class="input-group-addon"><span class="badge" />
-                                                    <asp:Label runat="server" ID="masterHulaKNet" CssClass="control-label" Text='<%# HulaAuanaTie %>' ToolTip="Hula Kahiko Net Score" data-toggle="tooltip" ></asp:Label></span>
+                                                    <asp:Label runat="server" ID="masterHulaKNet" CssClass="control-label" Text='<%# HulaAuanaTie %>' ToolTip="Hula Kahiko Net Score" data-toggle="tooltip"></asp:Label></span>
                                             </div>
                                         </div>
                                     </div>
@@ -285,6 +367,36 @@
                                 </div>
                             </InsertItemTemplate>
                             <EditItemTemplate>
+                                <div class="container" id="isPaluaMS" runat="server" visible="false">
+                                    <div class="row form-group">
+                                        <label class="col-sm-2 control-label">Total Hula Palua: </label>
+                                        <div class="col-sm-3">
+                                            <div class="input-group">
+                                                <asp:TextBox ID="masterHulaP" runat="server" class="form-control" Text='<%# Bind("hula_palua") %>'></asp:TextBox>
+                                                <span class="input-group-addon"><span class="badge" />
+                                                    <asp:Label runat="server" ID="masterHulaPTie" CssClass="control-label" Text='<%# HulaPaluaTie %>' ToolTip="Hula Palua Breaking Score" data-toggle="tooltip"></asp:Label></span>
+                                            </div>
+                                        </div>
+                                        <label class="col-sm-2 control-label">Deduction for Overtime: </label>
+                                        <div class="col-sm-3">
+                                            <div class="input-group">
+                                                <asp:TextBox ID="masterHulaPDed" runat="server" class="form-control" Text='<%# Bind("hula_palua_deduction") %>'></asp:TextBox>
+                                                <span class="input-group-addon"><span class="badge" />
+                                                    <asp:Label runat="server" ID="Label2" CssClass="control-label" Text='<%# HulaAuanaTie %>' ToolTip="Hula Palua Net Score" data-toggle="tooltip"></asp:Label></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <label class="col-sm-2 control-label">Total Costume: </label>
+                                        <div class="col-sm-3">
+                                            <div class="input-group">
+                                                <asp:TextBox ID="masterCostumeP" runat="server" class="form-control" Text='<%# Bind("costume_palua") %>'></asp:TextBox>
+                                                <span class="input-group-addon"><span class="badge" />
+                                                    <asp:Label runat="server" ID="masterCostumePTie" CssClass="control-label" Text='<%# CostumePaluaTie %>' ToolTip="Costume Palua Breaking Score" data-toggle="tooltip"></asp:Label></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="container" id="isNotPaluaMS" runat="server">
                                     <div class="row form-group" runat="server">
                                         <label class="col-sm-2 control-label">Total Interview: </label>
@@ -352,7 +464,7 @@
                                             <div class="input-group">
                                                 <asp:TextBox ID="masterHulaKDed" runat="server" class="form-control" Text='<%# Bind("hula_kahiko_deduction") %>'></asp:TextBox>
                                                 <span class="input-group-addon"><span class="badge" />
-                                                    <asp:Label runat="server" ID="masterHulaKNet" CssClass="control-label" Text='<%# HulaAuanaTie %>' ToolTip="Hula Kahiko Net Score" data-toggle="tooltip" ></asp:Label></span>
+                                                    <asp:Label runat="server" ID="masterHulaKNet" CssClass="control-label" Text='<%# HulaAuanaTie %>' ToolTip="Hula Kahiko Net Score" data-toggle="tooltip"></asp:Label></span>
                                             </div>
                                         </div>
                                     </div>
