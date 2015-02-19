@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ContestantScores.aspx.cs" Inherits="HONK.ContestantScores" %>
+﻿<%@ Page Title="Contestant Scores" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ContestantScores.aspx.cs" Inherits="HONK.ContestantScores" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <%-- START PAGE HEADER SECTION--%>
@@ -16,7 +16,7 @@
         <div class="row form-group">
             <label class="col-sm-2 control-label">Select Contestant: </label>
             <div class="col-sm-3">
-                <asp:DropDownList ID="ContestantDDL" runat="server" DataSourceID="ContestantLDS" DataTextField="full_name" DataValueField="id" AppendDataBoundItems="true" AutoPostBack="true" CssClass="form-control " OnSelectedIndexChanged="ContestantDDL_SelectedIndexChanged">
+                <asp:DropDownList ID="ContestantDDL" runat="server" DataSourceID="ContestantLDS" DataTextField="full_name" DataValueField="id" AppendDataBoundItems="true" AutoPostBack="true" CssClass="form-control Col-sm-3" OnSelectedIndexChanged="ContestantDDL_SelectedIndexChanged">
                     <asp:ListItem Text="Select Contestant" Value=""></asp:ListItem>
                 </asp:DropDownList>
             </div>
