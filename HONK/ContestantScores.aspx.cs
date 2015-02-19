@@ -12,11 +12,13 @@ namespace HONK
     public partial class ContestantScores : System.Web.UI.Page
     {
         HONKDBDataContext db = new HONKDBDataContext();
-        private static int EventYear = DateTime.Now.AddYears(-1).Year;
+        protected static int EventYear = DateTime.Now.AddYears(-1).Year;
 
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void ContestantDDL_SelectedIndexChanged(object sender, EventArgs e)
@@ -30,7 +32,7 @@ namespace HONK
 
                 var contestant = from c in db.vw_Contestant_JudgeScores
                                  where c.id == contestant_id
-                                 where c.entry_date.Year == EventYear
+                                 //where c.entry_date.Year == EventYear
                                  select c;
 
                 // INSERT Contestant_JudgeScores w/ NULL VALUES
@@ -84,6 +86,7 @@ namespace HONK
 
                 divJudgeScores.Visible = true;
                 divMasterScores.Visible = true;
+                EntryYearTb.Enabled = false;
                 SubmitBtn.Visible = true;
             }
             else
@@ -93,6 +96,7 @@ namespace HONK
 
                 divJudgeScores.Visible = false;
                 divMasterScores.Visible = false;
+                EntryYearTb.Enabled = true;
                 SubmitBtn.Visible = false;
             }
 
@@ -412,6 +416,37 @@ namespace HONK
             {
                 return null;
             }
+        }
+
+        protected void EntryYearTb_TextChanged(object sender, EventArgs e)
+        {
+            // Remove Items and Add "Select Value" list item
+            var listItem = ContestantDDL.Items[0];
+            ContestantDDL.Items.Clear();
+            ContestantDDL.Items.Add(listItem);
+
+            // Rebinds DDL Triggers LINQ Selecting Event.
+            ContestantDDL.DataBind();
+        }
+
+        /// <summary>
+        /// Assigns LINQ query contestants results where entry_date is entered year.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void ContestantLDS_Selecting(object sender, LinqDataSourceSelectEventArgs e)
+        {
+            DateTime date;
+
+            if (String.IsNullOrEmpty(EntryYearTb.Text)) { date = DateTime.Now; }
+            else { DateTime.TryParse("01/01/" + EntryYearTb.Text, out date); }
+
+            var contestants = from conts in db.Contestants
+                              where conts.entry_date.Year == date.Year
+                              orderby conts.full_name
+                              select new { conts.id, conts.full_name };
+
+            e.Result = contestants;
         }
     }
 }

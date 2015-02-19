@@ -22,9 +22,19 @@
             </div>
             <label class="col-sm-2 control-label">Entry Year:</label>
             <div class="col-sm-3">
-                <asp:Label ID="EntryYearLbl" runat="server" Text="2014"></asp:Label>
+                <div class="input-group" id="entrydatepicker">
+                    <asp:TextBox ID="EntryYearTb" runat="server" CssClass="form-control" OnTextChanged="EntryYearTb_TextChanged" AutoPostBack="true"></asp:TextBox>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar" /></span>
+                </div>
+                <script type="text/javascript">
+                    $(function () {
+                        $('#entrydatepicker').datetimepicker({
+                            viewMode: 'years',
+                            format: 'YYYY'
+                        });
+                    });
+                </script>
             </div>
-
         </div>
     </div>
     <%-- END CONTESTANT DROPDOWN SECTION--%>
@@ -563,6 +573,8 @@
             <asp:Parameter Name="out_of_order_deduction" ConvertEmptyStringToNull="true" />
         </UpdateParameters>
     </asp:LinqDataSource>
-    <asp:LinqDataSource ID="ContestantLDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" OrderBy="full_name" Select="new (id, full_name)" TableName="Contestants"></asp:LinqDataSource>
+    <asp:LinqDataSource ID="ContestantLDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" OnSelecting="ContestantLDS_Selecting">
+    </asp:LinqDataSource>
     <%-- END OF LINQ DECLARATIONS --%>
+    </span>
 </asp:Content>
