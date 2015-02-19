@@ -13,8 +13,9 @@ namespace HONK
             HONKDBDataContext db = new HONKDBDataContext();
 
             return (from c in db.vw_ContestantDetails
-                    where c.id == contestant_id
-                    select c.age_name).ToString() == "Palua";
+                         where c.id == contestant_id
+                         && c.gender_name == "Palua"
+                         select c).Any();
         }
 
         //SQL INSERT METHODS
@@ -98,27 +99,22 @@ namespace HONK
         public static void UpdateJudgeScore(int contestant_id, int judge_id, string interview)
         {
             HONKDBDataContext db = new HONKDBDataContext();
-            int judgeCount = TotalJudges();
 
             try
             {
-                string command = "UPDATE  JudgeScore SET interview = @interview Where contestant_id @contestant_id = and judge_id = @judge_id ";
+                string command = "UPDATE  JudgeScore SET interview = @interview Where contestant_id = @contestant_id and judge_id = @judge_id ";
 
                 string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["HONKDBContext"].ConnectionString;
-
-                for (int i = 1; i <= judgeCount; i++)
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    using (SqlConnection connection = new SqlConnection(connectionString))
-                    {
-                        connection.Open();
+                    connection.Open();
 
-                        SqlCommand sqlCmd = new SqlCommand(command, connection);
-                        sqlCmd.Parameters.AddWithValue("@contestant_id", contestant_id);
-                        sqlCmd.Parameters.AddWithValue("@judge_id", judge_id);
-                        sqlCmd.Parameters.AddWithEmptyStringValue("@interview", interview);
+                    SqlCommand sqlCmd = new SqlCommand(command, connection);
+                    sqlCmd.Parameters.AddWithValue("@contestant_id", contestant_id);
+                    sqlCmd.Parameters.AddWithValue("@judge_id", judge_id);
+                    sqlCmd.Parameters.AddWithEmptyStringValue("@interview", interview);
 
-                        sqlCmd.ExecuteNonQuery();
-                    }
+                    sqlCmd.ExecuteNonQuery();
                 }
             }
             catch (SqlException ex)

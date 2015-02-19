@@ -40,6 +40,15 @@ namespace HONK {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divJudgeScores;
         
         /// <summary>
+        /// ContestantScoresFVUP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel ContestantScoresFVUP;
+        
+        /// <summary>
         /// ContestantScoresFV control.
         /// </summary>
         /// <remarks>
@@ -56,6 +65,15 @@ namespace HONK {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divMasterScores;
+        
+        /// <summary>
+        /// ContesantMasterScoreFVUP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel ContesantMasterScoreFVUP;
         
         /// <summary>
         /// ContestantMasterScoreFV control.
@@ -76,6 +94,15 @@ namespace HONK {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor SubmitBtn;
         
         /// <summary>
+        /// ContestantScoreDetailsLDS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinqDataSource ContestantScoreDetailsLDS;
+        
+        /// <summary>
         /// MasterScoresLDS control.
         /// </summary>
         /// <remarks>
@@ -92,14 +119,5 @@ namespace HONK {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinqDataSource ContestantLDS;
-        
-        /// <summary>
-        /// ContestantScoreDetailsLDS control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinqDataSource ContestantScoreDetailsLDS;
     }
 }

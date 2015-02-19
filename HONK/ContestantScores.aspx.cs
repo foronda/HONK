@@ -19,9 +19,8 @@ namespace HONK
 
         }
 
-        protected void ConstestantDDL_SelectedIndexChanged(object sender, EventArgs e)
+        protected void ContestantDDL_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             if (!String.IsNullOrEmpty(((DropDownList)sender).SelectedValue))
             {
                 int contestant_id = Convert.ToInt32(((DropDownList)sender).SelectedValue);
@@ -38,12 +37,12 @@ namespace HONK
 
                 ContestantScoresFV.DataBind();
                 ContestantMasterScoreFV.DataBind();
-                LoadBreakingScores(contestant_id);
 
                 //Check if Palua or Not
                 if (HelperMethods.IsPalua(contestant_id))
                 {
-
+                    ContestantScoresFV.FindControl("isNotPalua").Visible = false;
+                    ContestantMasterScoreFV.FindControl("isNotPaluaMS").Visible = false;
                 }
                 int i = 1;
                 foreach (var c in contestant)
@@ -104,7 +103,6 @@ namespace HONK
             if (ContestantMasterScoreFV.CurrentMode == FormViewMode.Insert)
             {
                 ContestantMasterScoreFV.InsertItem(true);
-
             }
             else if (ContestantMasterScoreFV.CurrentMode == FormViewMode.Edit)
             {
@@ -112,8 +110,11 @@ namespace HONK
             }
 
             ContestantScoresFV_UpdateItems();
+            CalculateHiLow_MasterScores(null, null);
         }
-
+        /// <summary>
+        /// Updates JudgeScore table based on ContestantScoreFV Textbox values
+        /// </summary>
         private void ContestantScoresFV_UpdateItems()
         {
             int contestant_id = Convert.ToInt32(ContestantDDL.SelectedValue);
@@ -155,25 +156,177 @@ namespace HONK
 
         }
 
-        private void LoadBreakingScores(int contestant_id)
+        /// <summary>
+        /// Calculates MasterScores; dropping high and low values
+        /// Interview: 7 Judges, if needed add 0 or max fillers.
+        /// Other Scores: 6 Judges, if needed add 0 or max fillers.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void CalculateHiLow_MasterScores(object sender, EventArgs e)
         {
-            var breaking_scores = from s in db.vw_BreakingScores
-                                  where s.contestant_id == contestant_id
-                                  select s;
+            ((TextBox)ContestantMasterScoreFV.FindControl("masterInterview")).Text = GetHiLoSum("judgeInterview", 7).HasValue ? GetHiLoSum("judgeInterview", 7).ToString() : "";
+            ((TextBox)ContestantMasterScoreFV.FindControl("masterCostumeA")).Text = GetHiLoSum("judgeCostumeA", 6).HasValue ? GetHiLoSum("judgeCostumeA", 6).ToString() : "";
+            ((TextBox)ContestantMasterScoreFV.FindControl("masterCostumeK")).Text = GetHiLoSum("judgeCostumeK", 6).HasValue ? GetHiLoSum("judgeCostumeK", 6).ToString() : "";
+            ((TextBox)ContestantMasterScoreFV.FindControl("masterHulaA")).Text = GetHiLoSum("judgeHulaA", 6).HasValue ? GetHiLoSum("judgeHulaA", 6).ToString() : "";
+            ((TextBox)ContestantMasterScoreFV.FindControl("masterHulaK")).Text = GetHiLoSum("judgeHulaK", 6).HasValue ? GetHiLoSum("judgeHulaK", 6).ToString() : "";
 
-            foreach (var bs in breaking_scores)
+            ((Label)ContestantMasterScoreFV.FindControl("masterInterviewTie")).Text = GetSum("judgeInterview", 7).HasValue ? GetSum("judgeInterview", 7).ToString() : "N/A";
+            ((Label)ContestantMasterScoreFV.FindControl("masterCostumeATie")).Text = GetSum("judgeCostumeA", 6).HasValue ? GetSum("judgeCostumeA", 6).ToString() : "N/A";
+            ((Label)ContestantMasterScoreFV.FindControl("masterCostumeKTie")).Text = GetSum("judgeCostumeK", 6).HasValue ? GetSum("judgeCostumeK", 6).ToString() : "N/A";
+            ((Label)ContestantMasterScoreFV.FindControl("masterHulaATie")).Text = GetSum("judgeHulaA", 6).HasValue ? GetSum("judgeHulaA", 6).ToString() : "N/A";
+            ((Label)ContestantMasterScoreFV.FindControl("masterHulaKTie")).Text = GetSum("judgeHulaK", 6).HasValue ? GetSum("judgeHulaK", 6).ToString() : "N/A";
+
+        }
+
+        // MASTER SCORE ACCESSORS
+        protected string InterviewTie
+        {
+            get
             {
-                ((Label)ContestantMasterScoreFV.FindControl("masterInterviewTie")).Text = bs.interview_tie.HasValue ? bs.interview_tie.ToString() : "N/A";
-                ((Label)ContestantMasterScoreFV.FindControl("masterCostumeATie")).Text = bs.costume_auana_tie.HasValue ? bs.costume_auana_tie.ToString() : "N/A";
-                ((Label)ContestantMasterScoreFV.FindControl("masterCostumeKTie")).Text = bs.costume_kahiko_tie.HasValue ? bs.costume_kahiko_tie.ToString() : "N/A";
-                ((Label)ContestantMasterScoreFV.FindControl("masterHulaATie")).Text = bs.hula_auana_tie.HasValue ? bs.hula_auana_tie.ToString() : "N/A";
-                ((Label)ContestantMasterScoreFV.FindControl("masterHulaKTie")).Text = bs.hula_kahiko_tie.HasValue ? bs.hula_kahiko_tie.ToString() : "N/A";
+                var score = from s in db.vw_BreakingScores
+                            where s.contestant_id == Convert.ToInt32(ContestantDDL.SelectedValue)
+                            select s.interview_tie;
+
+                foreach (var bs in score)
+                {
+                    return bs.HasValue ? bs.ToString() : "N/A";
+                }
+                return string.Empty;
+            }
+        }
+        protected string CostmeAuanaTie
+        {
+            get
+            {
+                var score = from s in db.vw_BreakingScores
+                            where s.contestant_id == Convert.ToInt32(ContestantDDL.SelectedValue)
+                            select s.costume_auana_tie;
+
+                foreach (var bs in score)
+                {
+                    return bs.HasValue ? bs.ToString() : "N/A";
+                }
+                return string.Empty;
+            }
+        }
+        protected string CostmeKahikoTie
+        {
+            get
+            {
+                var score = from s in db.vw_BreakingScores
+                            where s.contestant_id == Convert.ToInt32(ContestantDDL.SelectedValue)
+                            select s.costume_kahiko_tie;
+
+                foreach (var bs in score)
+                {
+                    return bs.HasValue ? bs.ToString() : "N/A";
+                }
+                return string.Empty;
+            }
+        }
+        protected string HulaAuanaTie
+        {
+            get
+            {
+                var score = from s in db.vw_BreakingScores
+                            where s.contestant_id == Convert.ToInt32(ContestantDDL.SelectedValue)
+                            select s.hula_auana_tie;
+
+                foreach (var bs in score)
+                {
+                    return bs.HasValue ? bs.ToString() : "N/A";
+                }
+                return string.Empty;
+            }
+        }
+        protected string HulaKahikoTie
+        {
+            get
+            {
+                var score = from s in db.vw_BreakingScores
+                            where s.contestant_id == Convert.ToInt32(ContestantDDL.SelectedValue)
+                            select s.hula_kahiko_tie;
+                foreach (var bs in score)
+                {
+                    return bs.HasValue ? bs.ToString() : "N/A";
+                }
+                return string.Empty;
+
             }
         }
 
-        protected void CalculateMasterScores_Click(object sender, EventArgs e)
+        // MASTER SCORES HELPER FUNCTIONS
+        private bool HiLowIsChecked()
         {
+            return ((CheckBox)ContestantMasterScoreFV.FindControl("HiLow")).Checked;
+        }
+        private int? GetSum(string tbName, int totalTb)
+        {
+            List<int?> ScoreList = GetScoreList(tbName, totalTb);
 
+            if (ScoreList.Any())
+            {
+                return Convert.ToInt32(ScoreList.Sum());
+            }
+            else
+            {
+                return null;
+            }
+        }
+        private int? GetHiLoSum(string tbName, int totalTb)
+        {
+            List<int?> ScoreList = GetScoreList(tbName, totalTb);
+
+            if (ScoreList.Any())
+            {
+                // All Scores Entered && User Checked HiLow CB, Drop Hi & Low Scores
+                if (ScoreList.Count() == totalTb && HiLowIsChecked())
+                {
+                    ScoreList.Remove(ScoreList.Max());
+                    ScoreList.Remove(ScoreList.Min());
+                }
+
+                return Convert.ToInt32(ScoreList.Sum());
+            }
+            else
+            {
+                return null;
+            }
+        }
+        private List<int?> GetScoreList(string tbName, int totalTb)
+        {
+            List<int?> ScoreList = new List<int?>(totalTb);
+
+            for (int i = 1; i <= totalTb; i++)
+            {
+                int? score = GetScore((TextBox)ContestantScoresFV.FindControl(tbName + i));
+                if (score.HasValue)
+                {
+                    ScoreList.Add(score.Value);
+                }
+            }
+
+            return ScoreList;
+        }
+        private int? GetScore(TextBox tb)
+        {
+            int parsedValue;
+            if (tb.Text != "")
+            {
+                if (int.TryParse(tb.Text, out parsedValue))
+                {
+                    return parsedValue;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }
