@@ -57,8 +57,15 @@ namespace HONK
 
                     foreach (var c in contestant)
                     {
-                        ((TextBox)ContestantScoresFV.FindControl("judgeHulaP" + i)).Text = String.IsNullOrEmpty(c.hula_palua.ToString()) ? "" : c.hula_palua.ToString();
-                        ((TextBox)ContestantScoresFV.FindControl("judgeCostumeP" + i)).Text = String.IsNullOrEmpty(c.costume_palua.ToString()) ? "" : c.costume_palua.ToString();
+                        if (i < 7)
+                        {
+                            ((TextBox)ContestantScoresFV.FindControl("judgeHulaP" + i)).Text = String.IsNullOrEmpty(c.hula_palua.ToString()) ? "" : c.hula_palua.ToString();
+                            ((TextBox)ContestantScoresFV.FindControl("judgeCostumeP" + i)).Text = String.IsNullOrEmpty(c.costume_palua.ToString()) ? "" : c.costume_palua.ToString();
+                        }
+                        else
+                        {
+                            break;
+                        }
                         i++;
                     }
                 }
@@ -451,7 +458,7 @@ namespace HONK
 
         protected void exportMasterTab_Click(object sender, EventArgs e)
         {
-            MasterTabulationScore.DownloadReport("01/01/2014");
+            MasterTabulationScore.DownloadReport("01/01/" + EntryYearTb.Text);
         }
     }
 }

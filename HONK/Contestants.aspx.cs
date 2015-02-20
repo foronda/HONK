@@ -25,7 +25,7 @@ namespace HONK
             DropDownList ageDD = (DropDownList)ContestantFV.FindControl("DropDownList1");
             DropDownList genderDD = (DropDownList)ContestantFV.FindControl("DropDownList2");
             DropDownList divDD = (DropDownList)ContestantFV.FindControl("DropDownList3");
-            
+
             // Clear selection to prevent multiple select error.
             divDD.ClearSelection();
 
@@ -39,7 +39,7 @@ namespace HONK
                 {
                     if (genderDD.SelectedItem.Text == "Kane")
                     {
-                      divDD.Items.FindByText("Keiki Kane").Selected = true;
+                        divDD.Items.FindByText("Keiki Kane").Selected = true;
                     }
                     else if (genderDD.SelectedItem.Text == "Wahine")
                     {
@@ -66,6 +66,13 @@ namespace HONK
             }
 
             ContestantFVUP.Update();
+        }
+
+        protected void ContestantFV_ItemInserting(object sender, FormViewInsertEventArgs e)
+        {
+            TextBox entry_date = (TextBox)ContestantFV.FindControl("entryDateTb");
+
+            e.Values["entry_date"] = DateTime.Parse("01/01/" + entry_date.Text);
         }
 
     }

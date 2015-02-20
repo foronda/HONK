@@ -21,7 +21,7 @@
                     <div class="panel-body">
                         <asp:UpdatePanel ID="ContestantFVUP" runat="server" UpdateMode="Conditional">
                             <ContentTemplate>
-                                <asp:FormView ID="ContestantFV" runat="server" DataSourceID="ContestantsLDS" DefaultMode="Insert" CssClass="col-lg-12">
+                                <asp:FormView ID="ContestantFV" runat="server" DataSourceID="ContestantsLDS" DefaultMode="Insert" CssClass="col-lg-12" OnItemInserting="ContestantFV_ItemInserting">
                                     <InsertItemTemplate>
                                         <div class="row form-group">
                                             <label class="col-lg-2 control-label">Name</label>
@@ -78,10 +78,20 @@
                                             </div>
                                         </div>
                                         <div class="row form-group">
+                                            <label class="col-lg-2 control-label">Friday Entry No.</label>
+                                            <div class="col-lg-3">
+                                                <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" Text='<%# Bind("entry_num_fri") %>'></asp:TextBox>
+                                            </div>
+                                            <label class="col-lg-2 control-label">Saturday Entry No.</label>
+                                            <div class="col-lg-3">
+                                                <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" Text='<%# Bind("entry_num_sat") %>'></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
                                             <label class="col-lg-2 control-label">Entry Year</label>
                                             <div class="col-md-3">
                                                 <div class="input-group" id="entrydatepicker">
-                                                    <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" Text='<%# Bind("entry_date") %>'></asp:TextBox>
+                                                    <asp:TextBox ID="entryDateTb" runat="server" CssClass="form-control" Text='<%# Bind("entry_date") %>'></asp:TextBox>
                                                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar" /></span>
                                                 </div>
                                                 <script type="text/javascript">
@@ -101,7 +111,6 @@
                         </script>--%>
                                             </div>
                                         </div>
-                                        </span>
                                         <div class="row form-group">
                                             <div class="col-lg-10 col-lg-offset-2">
                                                 <asp:Button ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" CssClass="btn btn-primary" />
@@ -144,6 +153,8 @@
                                         <asp:BoundField DataField="Halau.name" HeaderText="Halau" SortExpression="Halau.name" />
                                         <asp:BoundField DataField="Kumu.full_name" HeaderText="Kumu" SortExpression="Kumu.full_name" />
                                         <asp:BoundField DataField="entry_date" HeaderText="Entry Year" SortExpression="entry_date" DataFormatString="{0:yyyy}" />
+                                        <asp:BoundField DataField="entry_num_fri" HeaderText="Fri Entry No." SortExpression="entry_num_fri"/>
+                                        <asp:BoundField DataField="entry_num_sat" HeaderText="Sat Entry No." SortExpression="entry_num_sat"/>
                                     </Columns>
                                 </asp:GridView>
                             </ContentTemplate>
@@ -213,7 +224,12 @@
         </div>
     </div>
 
-    <asp:LinqDataSource ID="ContestantsLDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" TableName="Contestants" EnableInsert="True" EnableUpdate="True"></asp:LinqDataSource>
+    <asp:LinqDataSource ID="ContestantsLDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" TableName="Contestants" EnableInsert="True" EnableUpdate="True">
+        <InsertParameters>
+            <asp:Parameter Name="entry_num_fri" ConvertEmptyStringToNull="true" />
+            <asp:Parameter Name="entry_num_sat" ConvertEmptyStringToNull="true" />
+        </InsertParameters>
+    </asp:LinqDataSource>
     <%-- LOOKUP TABLES --%>
 
     <asp:LinqDataSource ID="AgeLDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" TableName="Ages" OrderBy="name" Select="new (name, id)"></asp:LinqDataSource>
