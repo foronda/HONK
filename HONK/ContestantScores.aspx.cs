@@ -448,5 +448,10 @@ namespace HONK
 
             e.Result = contestants;
         }
+
+        protected void exportMasterTab_Click(object sender, EventArgs e)
+        {
+            MasterTabulationScore.DownloadReport("01/01/2014");
+        }
     }
 }

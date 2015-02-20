@@ -6,7 +6,8 @@
     AsyncRendering="False" SizeToReportContent="True">
     <LocalReport ReportPath="Reports\MasterTabulationScore.rdlc">
         <DataSources>
-            <rsweb:ReportDataSource DataSourceId="MasterScoreDetailsDS" Name="MasterReportDateset_Tabulation" />
+            <rsweb:ReportDataSource DataSourceId="MasterScoreDetailsDS" Name="MasterReportDataset_Tabulation" />
+            <rsweb:ReportDataSource DataSourceId="MasterScoreDetailsDS" Name="MasterReportPaluaDataset_Tabulation" />
         </DataSources>
     </LocalReport>
 </rsweb:ReportViewer>
@@ -15,4 +16,6 @@
         <asp:Parameter Name="entry_date" Type="DateTime" />
     </WhereParameters>
 </asp:LinqDataSource>
+
+
 

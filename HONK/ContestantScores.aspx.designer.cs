@@ -13,6 +13,15 @@ namespace HONK {
     public partial class ContestantScores {
         
         /// <summary>
+        /// MasterTabulationScore control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::HONK.Reports.MasterTabulationScore MasterTabulationScore;
+        
+        /// <summary>
         /// ContestantDDL control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace HONK {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox EntryYearTb;
+        
+        /// <summary>
+        /// exportMasterTab control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton exportMasterTab;
         
         /// <summary>
         /// divJudgeScores control.

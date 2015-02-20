@@ -1,6 +1,20 @@
 ﻿<%@ Page Title="Contestant Scores" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ContestantScores.aspx.cs" Inherits="HONK.ContestantScores" %>
 
+<%@ Register Src="~/Reports/MasterTabulationScore.ascx" TagName="MasterTabulationScore" TagPrefix="uc1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+    <%-- MASTER TABULATION REPORT POPUP --%>
+    <div id="masterTabScoreReport" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="assRepLbl" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="H1">Master Tabulation Score Report</h3>
+        </div>
+        <div class="modal-body">
+            <uc1:MasterTabulationScore ID="MasterTabulationScore" runat="server"></uc1:MasterTabulationScore>
+        </div>
+    </div>
+
     <%-- START PAGE HEADER SECTION--%>
     <div class="page-header">
         <div class="row">
@@ -38,6 +52,16 @@
         </div>
     </div>
     <%-- END CONTESTANT DROPDOWN SECTION--%>
+
+    <%-- START REPORT EXPORT BREADCRUMB --%>
+
+    <ul class="breadcrumb">
+        <li>
+            <asp:LinkButton ID="exportMasterTab" runat="server" OnClick="exportMasterTab_Click" Text="MASTER TABULATION"/></li>
+        <li><a href="#">Library</a></li>
+        <li class="active">Data</li>
+    </ul>
+    <%-- END REPOT EXPORT BREADCRUMB --%>
 
     <%-- JUDGES SCORES SECTION --%>
     <div runat="server" id="divJudgeScores" class="panel panel-primary" visible="false">

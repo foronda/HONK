@@ -26,6 +26,8 @@ namespace HONK.Reports {
         
         private vw_MasterScoreDetailsDataTable tablevw_MasterScoreDetails;
         
+        private vw_MasterScoreDetails_PaluaDataTable tablevw_MasterScoreDetails_Palua;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -57,6 +59,9 @@ namespace HONK.Reports {
                 if ((ds.Tables["vw_MasterScoreDetails"] != null)) {
                     base.Tables.Add(new vw_MasterScoreDetailsDataTable(ds.Tables["vw_MasterScoreDetails"]));
                 }
+                if ((ds.Tables["vw_MasterScoreDetails_Palua"] != null)) {
+                    base.Tables.Add(new vw_MasterScoreDetails_PaluaDataTable(ds.Tables["vw_MasterScoreDetails_Palua"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -82,6 +87,16 @@ namespace HONK.Reports {
         public vw_MasterScoreDetailsDataTable vw_MasterScoreDetails {
             get {
                 return this.tablevw_MasterScoreDetails;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public vw_MasterScoreDetails_PaluaDataTable vw_MasterScoreDetails_Palua {
+            get {
+                return this.tablevw_MasterScoreDetails_Palua;
             }
         }
         
@@ -155,6 +170,9 @@ namespace HONK.Reports {
                 if ((ds.Tables["vw_MasterScoreDetails"] != null)) {
                     base.Tables.Add(new vw_MasterScoreDetailsDataTable(ds.Tables["vw_MasterScoreDetails"]));
                 }
+                if ((ds.Tables["vw_MasterScoreDetails_Palua"] != null)) {
+                    base.Tables.Add(new vw_MasterScoreDetails_PaluaDataTable(ds.Tables["vw_MasterScoreDetails_Palua"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -194,6 +212,12 @@ namespace HONK.Reports {
                     this.tablevw_MasterScoreDetails.InitVars();
                 }
             }
+            this.tablevw_MasterScoreDetails_Palua = ((vw_MasterScoreDetails_PaluaDataTable)(base.Tables["vw_MasterScoreDetails_Palua"]));
+            if ((initTable == true)) {
+                if ((this.tablevw_MasterScoreDetails_Palua != null)) {
+                    this.tablevw_MasterScoreDetails_Palua.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -206,11 +230,19 @@ namespace HONK.Reports {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tablevw_MasterScoreDetails = new vw_MasterScoreDetailsDataTable();
             base.Tables.Add(this.tablevw_MasterScoreDetails);
+            this.tablevw_MasterScoreDetails_Palua = new vw_MasterScoreDetails_PaluaDataTable();
+            base.Tables.Add(this.tablevw_MasterScoreDetails_Palua);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializevw_MasterScoreDetails() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializevw_MasterScoreDetails_Palua() {
             return false;
         }
         
@@ -271,6 +303,9 @@ namespace HONK.Reports {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void vw_MasterScoreDetailsRowChangeEventHandler(object sender, vw_MasterScoreDetailsRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void vw_MasterScoreDetails_PaluaRowChangeEventHandler(object sender, vw_MasterScoreDetails_PaluaRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -742,6 +777,475 @@ namespace HONK.Reports {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class vw_MasterScoreDetails_PaluaDataTable : global::System.Data.TypedTableBase<vw_MasterScoreDetails_PaluaRow> {
+            
+            private global::System.Data.DataColumn columnid;
+            
+            private global::System.Data.DataColumn columnentry_num_fri;
+            
+            private global::System.Data.DataColumn columnentry_num_sat;
+            
+            private global::System.Data.DataColumn columnfull_name;
+            
+            private global::System.Data.DataColumn columnage_name;
+            
+            private global::System.Data.DataColumn columngender_name;
+            
+            private global::System.Data.DataColumn columndivision_name;
+            
+            private global::System.Data.DataColumn columninterview;
+            
+            private global::System.Data.DataColumn columninterview_tie;
+            
+            private global::System.Data.DataColumn columnoverall_score;
+            
+            private global::System.Data.DataColumn columnoverall_break_score;
+            
+            private global::System.Data.DataColumn columnmusic;
+            
+            private global::System.Data.DataColumn columnhalau_name;
+            
+            private global::System.Data.DataColumn columnkumu_name;
+            
+            private global::System.Data.DataColumn columnentry_date;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vw_MasterScoreDetails_PaluaDataTable() {
+                this.TableName = "vw_MasterScoreDetails_Palua";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal vw_MasterScoreDetails_PaluaDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected vw_MasterScoreDetails_PaluaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idColumn {
+                get {
+                    return this.columnid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn entry_num_friColumn {
+                get {
+                    return this.columnentry_num_fri;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn entry_num_satColumn {
+                get {
+                    return this.columnentry_num_sat;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn full_nameColumn {
+                get {
+                    return this.columnfull_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn age_nameColumn {
+                get {
+                    return this.columnage_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn gender_nameColumn {
+                get {
+                    return this.columngender_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn division_nameColumn {
+                get {
+                    return this.columndivision_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn interviewColumn {
+                get {
+                    return this.columninterview;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn interview_tieColumn {
+                get {
+                    return this.columninterview_tie;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn overall_scoreColumn {
+                get {
+                    return this.columnoverall_score;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn overall_break_scoreColumn {
+                get {
+                    return this.columnoverall_break_score;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn musicColumn {
+                get {
+                    return this.columnmusic;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn halau_nameColumn {
+                get {
+                    return this.columnhalau_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn kumu_nameColumn {
+                get {
+                    return this.columnkumu_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn entry_dateColumn {
+                get {
+                    return this.columnentry_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vw_MasterScoreDetails_PaluaRow this[int index] {
+                get {
+                    return ((vw_MasterScoreDetails_PaluaRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event vw_MasterScoreDetails_PaluaRowChangeEventHandler vw_MasterScoreDetails_PaluaRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event vw_MasterScoreDetails_PaluaRowChangeEventHandler vw_MasterScoreDetails_PaluaRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event vw_MasterScoreDetails_PaluaRowChangeEventHandler vw_MasterScoreDetails_PaluaRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event vw_MasterScoreDetails_PaluaRowChangeEventHandler vw_MasterScoreDetails_PaluaRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Addvw_MasterScoreDetails_PaluaRow(vw_MasterScoreDetails_PaluaRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vw_MasterScoreDetails_PaluaRow Addvw_MasterScoreDetails_PaluaRow(int id, int entry_num_fri, int entry_num_sat, string full_name, string age_name, string gender_name, string division_name, int interview, int interview_tie, decimal overall_score, decimal overall_break_score, int music, string halau_name, string kumu_name, System.DateTime entry_date) {
+                vw_MasterScoreDetails_PaluaRow rowvw_MasterScoreDetails_PaluaRow = ((vw_MasterScoreDetails_PaluaRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        id,
+                        entry_num_fri,
+                        entry_num_sat,
+                        full_name,
+                        age_name,
+                        gender_name,
+                        division_name,
+                        interview,
+                        interview_tie,
+                        overall_score,
+                        overall_break_score,
+                        music,
+                        halau_name,
+                        kumu_name,
+                        entry_date};
+                rowvw_MasterScoreDetails_PaluaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowvw_MasterScoreDetails_PaluaRow);
+                return rowvw_MasterScoreDetails_PaluaRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vw_MasterScoreDetails_PaluaRow FindByid(int id) {
+                return ((vw_MasterScoreDetails_PaluaRow)(this.Rows.Find(new object[] {
+                            id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                vw_MasterScoreDetails_PaluaDataTable cln = ((vw_MasterScoreDetails_PaluaDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new vw_MasterScoreDetails_PaluaDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnid = base.Columns["id"];
+                this.columnentry_num_fri = base.Columns["entry_num_fri"];
+                this.columnentry_num_sat = base.Columns["entry_num_sat"];
+                this.columnfull_name = base.Columns["full_name"];
+                this.columnage_name = base.Columns["age_name"];
+                this.columngender_name = base.Columns["gender_name"];
+                this.columndivision_name = base.Columns["division_name"];
+                this.columninterview = base.Columns["interview"];
+                this.columninterview_tie = base.Columns["interview_tie"];
+                this.columnoverall_score = base.Columns["overall_score"];
+                this.columnoverall_break_score = base.Columns["overall_break_score"];
+                this.columnmusic = base.Columns["music"];
+                this.columnhalau_name = base.Columns["halau_name"];
+                this.columnkumu_name = base.Columns["kumu_name"];
+                this.columnentry_date = base.Columns["entry_date"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
+                this.columnentry_num_fri = new global::System.Data.DataColumn("entry_num_fri", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnentry_num_fri);
+                this.columnentry_num_sat = new global::System.Data.DataColumn("entry_num_sat", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnentry_num_sat);
+                this.columnfull_name = new global::System.Data.DataColumn("full_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfull_name);
+                this.columnage_name = new global::System.Data.DataColumn("age_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnage_name);
+                this.columngender_name = new global::System.Data.DataColumn("gender_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columngender_name);
+                this.columndivision_name = new global::System.Data.DataColumn("division_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndivision_name);
+                this.columninterview = new global::System.Data.DataColumn("interview", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columninterview);
+                this.columninterview_tie = new global::System.Data.DataColumn("interview_tie", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columninterview_tie);
+                this.columnoverall_score = new global::System.Data.DataColumn("overall_score", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnoverall_score);
+                this.columnoverall_break_score = new global::System.Data.DataColumn("overall_break_score", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnoverall_break_score);
+                this.columnmusic = new global::System.Data.DataColumn("music", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmusic);
+                this.columnhalau_name = new global::System.Data.DataColumn("halau_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhalau_name);
+                this.columnkumu_name = new global::System.Data.DataColumn("kumu_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkumu_name);
+                this.columnentry_date = new global::System.Data.DataColumn("entry_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnentry_date);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid}, true));
+                this.columnid.AllowDBNull = false;
+                this.columnid.Unique = true;
+                this.columnfull_name.AllowDBNull = false;
+                this.columnfull_name.MaxLength = 2147483647;
+                this.columnage_name.AllowDBNull = false;
+                this.columnage_name.MaxLength = 2147483647;
+                this.columngender_name.AllowDBNull = false;
+                this.columngender_name.MaxLength = 2147483647;
+                this.columndivision_name.AllowDBNull = false;
+                this.columndivision_name.MaxLength = 2147483647;
+                this.columnoverall_score.ReadOnly = true;
+                this.columnoverall_break_score.ReadOnly = true;
+                this.columnhalau_name.AllowDBNull = false;
+                this.columnhalau_name.MaxLength = 2147483647;
+                this.columnkumu_name.AllowDBNull = false;
+                this.columnkumu_name.MaxLength = 2147483647;
+                this.columnentry_date.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vw_MasterScoreDetails_PaluaRow Newvw_MasterScoreDetails_PaluaRow() {
+                return ((vw_MasterScoreDetails_PaluaRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new vw_MasterScoreDetails_PaluaRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(vw_MasterScoreDetails_PaluaRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.vw_MasterScoreDetails_PaluaRowChanged != null)) {
+                    this.vw_MasterScoreDetails_PaluaRowChanged(this, new vw_MasterScoreDetails_PaluaRowChangeEvent(((vw_MasterScoreDetails_PaluaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.vw_MasterScoreDetails_PaluaRowChanging != null)) {
+                    this.vw_MasterScoreDetails_PaluaRowChanging(this, new vw_MasterScoreDetails_PaluaRowChangeEvent(((vw_MasterScoreDetails_PaluaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.vw_MasterScoreDetails_PaluaRowDeleted != null)) {
+                    this.vw_MasterScoreDetails_PaluaRowDeleted(this, new vw_MasterScoreDetails_PaluaRowChangeEvent(((vw_MasterScoreDetails_PaluaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.vw_MasterScoreDetails_PaluaRowDeleting != null)) {
+                    this.vw_MasterScoreDetails_PaluaRowDeleting(this, new vw_MasterScoreDetails_PaluaRowChangeEvent(((vw_MasterScoreDetails_PaluaRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removevw_MasterScoreDetails_PaluaRow(vw_MasterScoreDetails_PaluaRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                MasterReportDataset ds = new MasterReportDataset();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "vw_MasterScoreDetails_PaluaDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class vw_MasterScoreDetailsRow : global::System.Data.DataRow {
@@ -1042,6 +1546,311 @@ namespace HONK.Reports {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class vw_MasterScoreDetails_PaluaRow : global::System.Data.DataRow {
+            
+            private vw_MasterScoreDetails_PaluaDataTable tablevw_MasterScoreDetails_Palua;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal vw_MasterScoreDetails_PaluaRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablevw_MasterScoreDetails_Palua = ((vw_MasterScoreDetails_PaluaDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id {
+                get {
+                    return ((int)(this[this.tablevw_MasterScoreDetails_Palua.idColumn]));
+                }
+                set {
+                    this[this.tablevw_MasterScoreDetails_Palua.idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int entry_num_fri {
+                get {
+                    try {
+                        return ((int)(this[this.tablevw_MasterScoreDetails_Palua.entry_num_friColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'entry_num_fri\' in table \'vw_MasterScoreDetails_Palua\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_MasterScoreDetails_Palua.entry_num_friColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int entry_num_sat {
+                get {
+                    try {
+                        return ((int)(this[this.tablevw_MasterScoreDetails_Palua.entry_num_satColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'entry_num_sat\' in table \'vw_MasterScoreDetails_Palua\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_MasterScoreDetails_Palua.entry_num_satColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string full_name {
+                get {
+                    return ((string)(this[this.tablevw_MasterScoreDetails_Palua.full_nameColumn]));
+                }
+                set {
+                    this[this.tablevw_MasterScoreDetails_Palua.full_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string age_name {
+                get {
+                    return ((string)(this[this.tablevw_MasterScoreDetails_Palua.age_nameColumn]));
+                }
+                set {
+                    this[this.tablevw_MasterScoreDetails_Palua.age_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string gender_name {
+                get {
+                    return ((string)(this[this.tablevw_MasterScoreDetails_Palua.gender_nameColumn]));
+                }
+                set {
+                    this[this.tablevw_MasterScoreDetails_Palua.gender_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string division_name {
+                get {
+                    return ((string)(this[this.tablevw_MasterScoreDetails_Palua.division_nameColumn]));
+                }
+                set {
+                    this[this.tablevw_MasterScoreDetails_Palua.division_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int interview {
+                get {
+                    try {
+                        return ((int)(this[this.tablevw_MasterScoreDetails_Palua.interviewColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'interview\' in table \'vw_MasterScoreDetails_Palua\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_MasterScoreDetails_Palua.interviewColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int interview_tie {
+                get {
+                    try {
+                        return ((int)(this[this.tablevw_MasterScoreDetails_Palua.interview_tieColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'interview_tie\' in table \'vw_MasterScoreDetails_Palua\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_MasterScoreDetails_Palua.interview_tieColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal overall_score {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablevw_MasterScoreDetails_Palua.overall_scoreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'overall_score\' in table \'vw_MasterScoreDetails_Palua\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_MasterScoreDetails_Palua.overall_scoreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal overall_break_score {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablevw_MasterScoreDetails_Palua.overall_break_scoreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'overall_break_score\' in table \'vw_MasterScoreDetails_Palua\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_MasterScoreDetails_Palua.overall_break_scoreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int music {
+                get {
+                    try {
+                        return ((int)(this[this.tablevw_MasterScoreDetails_Palua.musicColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'music\' in table \'vw_MasterScoreDetails_Palua\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_MasterScoreDetails_Palua.musicColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string halau_name {
+                get {
+                    return ((string)(this[this.tablevw_MasterScoreDetails_Palua.halau_nameColumn]));
+                }
+                set {
+                    this[this.tablevw_MasterScoreDetails_Palua.halau_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string kumu_name {
+                get {
+                    return ((string)(this[this.tablevw_MasterScoreDetails_Palua.kumu_nameColumn]));
+                }
+                set {
+                    this[this.tablevw_MasterScoreDetails_Palua.kumu_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime entry_date {
+                get {
+                    return ((global::System.DateTime)(this[this.tablevw_MasterScoreDetails_Palua.entry_dateColumn]));
+                }
+                set {
+                    this[this.tablevw_MasterScoreDetails_Palua.entry_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isentry_num_friNull() {
+                return this.IsNull(this.tablevw_MasterScoreDetails_Palua.entry_num_friColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setentry_num_friNull() {
+                this[this.tablevw_MasterScoreDetails_Palua.entry_num_friColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isentry_num_satNull() {
+                return this.IsNull(this.tablevw_MasterScoreDetails_Palua.entry_num_satColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setentry_num_satNull() {
+                this[this.tablevw_MasterScoreDetails_Palua.entry_num_satColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsinterviewNull() {
+                return this.IsNull(this.tablevw_MasterScoreDetails_Palua.interviewColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetinterviewNull() {
+                this[this.tablevw_MasterScoreDetails_Palua.interviewColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isinterview_tieNull() {
+                return this.IsNull(this.tablevw_MasterScoreDetails_Palua.interview_tieColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setinterview_tieNull() {
+                this[this.tablevw_MasterScoreDetails_Palua.interview_tieColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isoverall_scoreNull() {
+                return this.IsNull(this.tablevw_MasterScoreDetails_Palua.overall_scoreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setoverall_scoreNull() {
+                this[this.tablevw_MasterScoreDetails_Palua.overall_scoreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isoverall_break_scoreNull() {
+                return this.IsNull(this.tablevw_MasterScoreDetails_Palua.overall_break_scoreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setoverall_break_scoreNull() {
+                this[this.tablevw_MasterScoreDetails_Palua.overall_break_scoreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsmusicNull() {
+                return this.IsNull(this.tablevw_MasterScoreDetails_Palua.musicColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetmusicNull() {
+                this[this.tablevw_MasterScoreDetails_Palua.musicColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1061,6 +1870,40 @@ namespace HONK.Reports {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public vw_MasterScoreDetailsRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class vw_MasterScoreDetails_PaluaRowChangeEvent : global::System.EventArgs {
+            
+            private vw_MasterScoreDetails_PaluaRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vw_MasterScoreDetails_PaluaRowChangeEvent(vw_MasterScoreDetails_PaluaRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vw_MasterScoreDetails_PaluaRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1233,7 +2076,7 @@ namespace HONK.Reports.MasterReportDatasetTableAdapters {
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        id, entry_num_fri, entry_num_sat, full_name, age_name, gender_name, division_name, interview, interview_tie, overall_score, overall_break_score, music, halau_name, kumu_name, entry_date
 FROM            vw_MasterScoreDetails
-WHERE        (entry_date = @entry_date)";
+WHERE        (entry_date = @entry_date) AND (gender_name <> 'Palua')";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@entry_date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "entry_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -1270,6 +2113,202 @@ WHERE        (entry_date = @entry_date)";
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(entry_date));
             }
             MasterReportDataset.vw_MasterScoreDetailsDataTable dataTable = new MasterReportDataset.vw_MasterScoreDetailsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class vw_MasterScoreDetails_PaluaTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public vw_MasterScoreDetails_PaluaTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "vw_MasterScoreDetails_Palua";
+            tableMapping.ColumnMappings.Add("id", "id");
+            tableMapping.ColumnMappings.Add("entry_num_fri", "entry_num_fri");
+            tableMapping.ColumnMappings.Add("entry_num_sat", "entry_num_sat");
+            tableMapping.ColumnMappings.Add("full_name", "full_name");
+            tableMapping.ColumnMappings.Add("age_name", "age_name");
+            tableMapping.ColumnMappings.Add("gender_name", "gender_name");
+            tableMapping.ColumnMappings.Add("division_name", "division_name");
+            tableMapping.ColumnMappings.Add("interview", "interview");
+            tableMapping.ColumnMappings.Add("interview_tie", "interview_tie");
+            tableMapping.ColumnMappings.Add("overall_score", "overall_score");
+            tableMapping.ColumnMappings.Add("overall_break_score", "overall_break_score");
+            tableMapping.ColumnMappings.Add("music", "music");
+            tableMapping.ColumnMappings.Add("halau_name", "halau_name");
+            tableMapping.ColumnMappings.Add("kumu_name", "kumu_name");
+            tableMapping.ColumnMappings.Add("entry_date", "entry_date");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::HONK.Properties.Settings.Default.HONKDBContext;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT        id, entry_num_fri, entry_num_sat, full_name, age_name, gender_name, division_name, interview, interview_tie, overall_score, overall_break_score, music, halau_name, kumu_name, entry_date
+FROM            vw_MasterScoreDetails
+WHERE        (entry_date = @entry_date) AND (gender_name = 'Palua')";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@entry_date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "entry_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(MasterReportDataset.vw_MasterScoreDetails_PaluaDataTable dataTable, string entry_date) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((entry_date == null)) {
+                throw new global::System.ArgumentNullException("entry_date");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(entry_date));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual MasterReportDataset.vw_MasterScoreDetails_PaluaDataTable GetData(string entry_date) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((entry_date == null)) {
+                throw new global::System.ArgumentNullException("entry_date");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(entry_date));
+            }
+            MasterReportDataset.vw_MasterScoreDetails_PaluaDataTable dataTable = new MasterReportDataset.vw_MasterScoreDetails_PaluaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
