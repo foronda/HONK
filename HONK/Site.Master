@@ -58,12 +58,12 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">Event Results</a></li>
-                        <li><a runat="server" href="~/ContestantScores">Contestant Scores</a></li>
-                        <%--                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Manage Scores<span class="caret"></span></a>
+                        <li><a runat="server" href="~/EventResults">Event Results</a></li>
+
+                        <%--<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Reports<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a runat="server" href="~/MasterScores">Master Scores</a></li>
+                                <li><a runat="server" href="~/MasterScores">Master Tabulation</a></li>
                                 <li><a runat="server" href="#">Judge's Scores</a></li>
                                 <li><a runat="server" href="#">Etc...</a></li>
                             </ul>
@@ -72,6 +72,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Manage Data<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a runat="server" href="~/Contestants">Contestants</a></li>
+                                <li><a runat="server" href="~/ContestantScores">Contestant Scores</a></li>
                                 <li><a runat="server" href="#">Halau's</a></li>
                                 <li><a runat="server" href="#">Kumu's</a></li>
                                 <li><a runat="server" href="#">Event Awards</a></li>

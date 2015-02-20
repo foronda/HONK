@@ -166,5 +166,11 @@
         <elementListCompartment Id="287320e4-06f4-497d-a51c-daedfb6e6347" absoluteBounds="14.64, 2.21, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="5582ab10-ddb6-403d-8503-3ae64786fc35" absoluteBounds="8.875, 5.625, 2, 7.1553369140625">
+      <DataClassMoniker Name="/HONKDBDataContext/vw_MasterScoreReport" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4beec2d3-dd24-4295-9064-9884fa3a289a" absoluteBounds="8.89, 6.085, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

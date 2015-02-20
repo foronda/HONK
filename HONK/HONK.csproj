@@ -131,11 +131,11 @@
     <Content Include="Content\Site.css" />
     <Content Include="Contestants.aspx" />
     <Content Include="ContestantScores.aspx" />
+    <Content Include="EventResults.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Images\honk_banner.png" />
     <Content Include="Images\honk_footer.png" />
     <Content Include="Images\honk_logo_bw.png" />
-    <Content Include="MasterScores.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -260,6 +260,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EventResults.aspx.cs">
+      <DependentUpon>EventResults.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EventResults.aspx.designer.cs">
+      <DependentUpon>EventResults.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -268,13 +275,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HONKDB.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="MasterScores.aspx.cs">
-      <DependentUpon>MasterScores.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MasterScores.aspx.designer.cs">
-      <DependentUpon>MasterScores.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
