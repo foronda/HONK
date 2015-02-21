@@ -563,7 +563,7 @@
         })
     </script>
     <%-- START OF LINQ DECLARATIONS --%>
-    <asp:LinqDataSource ID="ContestantScoreDetailsLDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" TableName="vw_ContestantScoreDetails" EnableInsert="True" EnableUpdate="True" Where="id == @id">
+    <asp:LinqDataSource ID="ContestantScoreDetailsLDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" TableName="vw_ContestantDetailsAllScores" EnableInsert="True" EnableUpdate="True" Where="id == @id">
         <WhereParameters>
             <asp:ControlParameter ControlID="ContestantDDL" DefaultValue="0" Name="id" PropertyName="SelectedValue" Type="Int32" />
         </WhereParameters>
@@ -604,5 +604,5 @@
     <asp:LinqDataSource ID="ContestantLDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" OnSelecting="ContestantLDS_Selecting">
     </asp:LinqDataSource>
     <%-- END OF LINQ DECLARATIONS --%>
-    </span>
+    <span></span>
 </asp:Content>

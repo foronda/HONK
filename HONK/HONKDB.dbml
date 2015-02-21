@@ -31,7 +31,18 @@
   <Table Name="dbo.Award" Member="Awards">
     <Type Name="Award">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="description" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Award_ContestantAward" Member="ContestantAwards" ThisKey="id" OtherKey="award_id" Type="ContestantAward" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CashPrize" Member="CashPrizes">
+    <Type Name="CashPrize">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="amount" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="CashPrize_CashPrize" Member="CashPrize2" ThisKey="id" OtherKey="id" Type="CashPrize" Cardinality="One" />
+      <Association Name="CashPrize_ContestantAward" Member="ContestantAwards" ThisKey="id" OtherKey="cashprize_id" Type="ContestantAward" />
+      <Association Name="CashPrize_CashPrize" Member="CashPrize1" ThisKey="id" OtherKey="id" Type="CashPrize" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Contestant" Member="Contestants">
@@ -47,12 +58,34 @@
       <Column Name="entry_num_fri" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="entry_num_sat" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Contestant_MasterScore" Member="MasterScores" ThisKey="id" OtherKey="contestant_id" Type="MasterScore" />
+      <Association Name="Contestant_ContestantAward" Member="ContestantAwards" ThisKey="id" OtherKey="contestant_id" Type="ContestantAward" />
       <Association Name="Contestant_JudgeScore" Member="JudgeScores" ThisKey="id" OtherKey="contestant_id" Type="JudgeScore" />
       <Association Name="Age_Contestant" Member="Age" ThisKey="age_id" OtherKey="id" Type="Age" IsForeignKey="true" />
       <Association Name="Division_Contestant" Member="Division" ThisKey="division_id" OtherKey="id" Type="Division" IsForeignKey="true" />
       <Association Name="Gender_Contestant" Member="Gender" ThisKey="gender_id" OtherKey="id" Type="Gender" IsForeignKey="true" />
       <Association Name="Halau_Contestant" Member="Halau" ThisKey="halau_id" OtherKey="id" Type="Halau" IsForeignKey="true" />
       <Association Name="Kumu_Contestant" Member="Kumu" ThisKey="kumu_id" OtherKey="id" Type="Kumu" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ContestantAward" Member="ContestantAwards">
+    <Type Name="ContestantAward">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="award_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="contestant_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cashprize_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ContestantAward_ContestantAwardGiftPrize" Member="ContestantAwardGiftPrizes" ThisKey="id" OtherKey="contestantaward_id" Type="ContestantAwardGiftPrize" />
+      <Association Name="Award_ContestantAward" Member="Award" ThisKey="award_id" OtherKey="id" Type="Award" IsForeignKey="true" />
+      <Association Name="CashPrize_ContestantAward" Member="CashPrize" ThisKey="cashprize_id" OtherKey="id" Type="CashPrize" IsForeignKey="true" />
+      <Association Name="Contestant_ContestantAward" Member="Contestant" ThisKey="contestant_id" OtherKey="id" Type="Contestant" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ContestantAwardGiftPrize" Member="ContestantAwardGiftPrizes">
+    <Type Name="ContestantAwardGiftPrize">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="contestantaward_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="giftprize_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ContestantAward_ContestantAwardGiftPrize" Member="ContestantAward" ThisKey="contestantaward_id" OtherKey="id" Type="ContestantAward" IsForeignKey="true" />
+      <Association Name="GiftPrize_ContestantAwardGiftPrize" Member="GiftPrize" ThisKey="giftprize_id" OtherKey="id" Type="GiftPrize" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Division" Member="Divisions">
@@ -67,6 +100,13 @@
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Association Name="Gender_Contestant" Member="Contestants" ThisKey="id" OtherKey="gender_id" Type="Contestant" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GiftPrize" Member="GiftPrizes">
+    <Type Name="GiftPrize">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="GiftPrize_ContestantAwardGiftPrize" Member="ContestantAwardGiftPrizes" ThisKey="id" OtherKey="giftprize_id" Type="ContestantAwardGiftPrize" />
     </Type>
   </Table>
   <Table Name="dbo.Halau" Member="Halaus">
@@ -123,11 +163,23 @@
       <Column Name="contestant_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="interview" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="interview_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="overall_score" Type="System.Decimal" DbType="Decimal(24,3)" CanBeNull="true" />
+      <Column Name="costume_auana" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="costume_auana_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="costume_kahiko" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="costume_kahiko_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="costume_palua" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="costume_palua_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_auana_net" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_auana_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_kahiko_net" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_kahiko_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_palua_net" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_palua_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="combined_hula_score" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="combined_hula_break_score" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="music" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="overall_score" Type="System.Decimal" DbType="Decimal(26,3)" CanBeNull="true" />
       <Column Name="overall_break_score" Type="System.Decimal" DbType="Decimal(23,3)" CanBeNull="true" />
+      <Column Name="music" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.vw_BreakingScoreNet" Member="vw_BreakingScoreNets">
@@ -138,26 +190,34 @@
       <Column Name="hula_palua_tie_net" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.vw_Contestant_JudgeScore" Member="vw_Contestant_JudgeScores">
-    <Type Name="vw_Contestant_JudgeScore">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="judge_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+  <Table Name="dbo.vw_ContestantAwardScores" Member="vw_ContestantAwardScores">
+    <Type Name="vw_ContestantAwardScore">
+      <Column Name="contestant_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="full_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="age_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="gender_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="division_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="halau_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="kumu_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="entry_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="entry_num_fri" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="entry_num_sat" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="interview" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="interview_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="costume_auana" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="costume_auana_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="costume_kahiko" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="costume_kahiko_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="costume_palua" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="hula_auana" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="hula_kahiko" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="hula_palua" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="costume_palua_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_auana_net" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_auana_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_kahiko_net" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_kahiko_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_palua_net" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_palua_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="combined_hula_score" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="combined_hula_break_score" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="overall_score" Type="System.Decimal" DbType="Decimal(26,3)" CanBeNull="true" />
+      <Column Name="overall_break_score" Type="System.Decimal" DbType="Decimal(23,3)" CanBeNull="true" />
+      <Column Name="music" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.vw_ContestantCurrentYear" Member="vw_ContestantCurrentYears">
@@ -188,8 +248,8 @@
       <Column Name="entry_num_sat" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.vw_ContestantScoreDetails" Member="vw_ContestantScoreDetails">
-    <Type Name="vw_ContestantScoreDetail">
+  <Table Name="dbo.vw_ContestantDetailsAllScores" Member="vw_ContestantDetailsAllScores">
+    <Type Name="vw_ContestantDetailsAllScore">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="judge_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="judge_score_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -227,23 +287,26 @@
       <Column Name="judge_score_hula_palua" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.vw_KeikiWahineDetails" Member="vw_KeikiWahineDetails">
-    <Type Name="vw_KeikiWahineDetail">
+  <Table Name="dbo.vw_ContestantJudgeScores" Member="vw_ContestantJudgeScores">
+    <Type Name="vw_ContestantJudgeScore">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="entry_num_fri" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="entry_num_sat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="judge_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="full_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="age_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="gender_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="division_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="interview" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="interview_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="overall_score" Type="System.Decimal" DbType="Decimal(24,3)" CanBeNull="true" />
-      <Column Name="overall_break_score" Type="System.Decimal" DbType="Decimal(22,3)" CanBeNull="true" />
-      <Column Name="music" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="halau_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="kumu_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="entry_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="entry_num_fri" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="entry_num_sat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="interview" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="costume_auana" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="costume_kahiko" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="costume_palua" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_auana" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_kahiko" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_palua" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.vw_MasterScoreDetails" Member="vw_MasterScoreDetails">
@@ -311,6 +374,9 @@
       <Column Name="costume_auana_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="costume_kahiko_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="costume_palua_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_auana_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_kahiko_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_palua_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="combined_hula_break_score" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="overall_break_score" Type="System.Decimal" DbType="Decimal(23,3)" CanBeNull="true" />
     </Type>

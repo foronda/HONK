@@ -1,187 +1,253 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 17.625, 17.75" name="HONKDB">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 18, 22.5" name="HONKDB">
   <DataContextMoniker Name="/HONKDBDataContext" />
   <nestedChildShapes>
-    <classShape Id="9ad01dde-f257-45da-8416-6f93c0ee6427" absoluteBounds="0.75, 4.25, 2, 1.1939925130208344">
+    <classShape Id="3227053a-ee71-4b72-8e28-ded803b9681e" absoluteBounds="0.75, 6.75, 2, 1.1939925130208327">
       <DataClassMoniker Name="/HONKDBDataContext/Age" />
       <nestedChildShapes>
-        <elementListCompartment Id="104bdf44-9aea-479b-9758-48a343819ffc" absoluteBounds="0.765, 4.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ea3186e2-a501-4fc0-afc5-95b693f22eca" absoluteBounds="0.765, 7.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="32bcc14d-6b4f-4b23-9c09-2270545f4ae3" absoluteBounds="6.25, 6.375, 2, 3.8862125651041666">
+    <classShape Id="e64daf9a-0046-4e20-af72-dc4efdd7a1dc" absoluteBounds="6.25, 11.25, 2, 3.8862125651041666">
       <DataClassMoniker Name="/HONKDBDataContext/MasterScore" />
       <nestedChildShapes>
-        <elementListCompartment Id="4b2fa607-fcc1-42b2-8016-a4955974fba4" absoluteBounds="6.265, 6.835, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a24f548b-15b1-495e-9382-dc63311b0862" absoluteBounds="6.265, 11.71, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="40928490-ca1a-429f-96df-21bb2ac5fe40" absoluteBounds="8.75, 0.75, 2, 1.1939925130208335">
+    <classShape Id="960f8df6-f49c-4764-8283-69e8ff3db770" absoluteBounds="3.5, 9.625, 2, 1.3862939453124987">
       <DataClassMoniker Name="/HONKDBDataContext/Award" />
       <nestedChildShapes>
-        <elementListCompartment Id="205388ac-822f-4b59-976e-661d16580de2" absoluteBounds="8.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c6f8bfa7-feca-48a4-bd76-33382fccbf2d" absoluteBounds="3.515, 10.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="250e6880-72d1-4fc6-9bb2-5da92ec18af9" absoluteBounds="3.5, 3.5, 2, 2.7324039713541666">
+    <classShape Id="8d804b6d-1891-4036-94d6-e17c97eb4353" absoluteBounds="3.5, 1.625, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/HONKDBDataContext/CashPrize" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b040c71b-44cf-4a13-a4d0-d1d10899c3d3" absoluteBounds="3.515, 2.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="82fde020-c779-4f12-8915-006b8c9620c9" absoluteBounds="3.5, 6, 2, 2.7324039713541666">
       <DataClassMoniker Name="/HONKDBDataContext/Contestant" />
       <nestedChildShapes>
-        <elementListCompartment Id="4022946e-ba4b-4876-bed3-b96fd39c22dd" absoluteBounds="3.515, 3.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="db7bfa1d-927e-4f3e-aa44-9b6af0da2029" absoluteBounds="3.515, 6.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f7f5f7a0-a75d-4c16-9b78-62df2d42d933" absoluteBounds="0.75, 1.375, 2, 1.1939925130208335">
+    <classShape Id="ab2efa0e-8c01-4c5d-99a8-12021f6e52e6" absoluteBounds="6.25, 6.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/HONKDBDataContext/ContestantAward" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3dda8c25-ec66-4e01-9560-cb34d5a9dc52" absoluteBounds="6.265, 6.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="32564de6-0187-45b5-87bb-ddc0ded447ed" absoluteBounds="9, 6.625, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/HONKDBDataContext/ContestantAwardGiftPrize" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e1e82e1f-bb3d-4676-9b63-125789d0f1c2" absoluteBounds="9.015, 7.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b1b57b90-245c-4c80-bd00-fe3967900954" absoluteBounds="0.75, 3.875, 2, 1.193992513020834">
       <DataClassMoniker Name="/HONKDBDataContext/Division" />
       <nestedChildShapes>
-        <elementListCompartment Id="da52dc96-e902-49f4-865c-0c420957a1ad" absoluteBounds="0.765, 1.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="971df2a3-ea92-468c-9536-b621a087c033" absoluteBounds="0.765, 4.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e5716275-4bd5-4a45-941b-ab47dc91358f" absoluteBounds="0.75, 6.25, 2, 1.1939925130208344">
+    <classShape Id="0a722222-304b-46bb-8c48-101a15995230" absoluteBounds="0.75, 8.75, 2, 1.1939925130208344">
       <DataClassMoniker Name="/HONKDBDataContext/Gender" />
       <nestedChildShapes>
-        <elementListCompartment Id="e747a040-f341-43b4-a715-9362d5ded3b3" absoluteBounds="0.765, 6.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="369225d7-6822-4df8-a3b0-8cdf83fd73d7" absoluteBounds="0.765, 9.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4de0d5d9-4f2b-4576-8b4d-b010e82d75ea" absoluteBounds="0.75, 8.25, 2, 1.1939925130208344">
+    <classShape Id="b7fbabf3-5a68-4c67-a7a6-c7c28112c541" absoluteBounds="6.25, 0.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/HONKDBDataContext/GiftPrize" />
+      <nestedChildShapes>
+        <elementListCompartment Id="071f7adc-990d-4916-a3de-616b4da9edc0" absoluteBounds="6.265, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a2b7a2a4-985c-4a41-b6ed-1e4db996ad29" absoluteBounds="0.75, 10.75, 2, 1.1939925130208344">
       <DataClassMoniker Name="/HONKDBDataContext/Halau" />
       <nestedChildShapes>
-        <elementListCompartment Id="424928c7-7ec2-410d-ac31-94820e617995" absoluteBounds="0.765, 8.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a295eb4d-78ff-4250-8f0e-919ef701475e" absoluteBounds="0.765, 11.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="47e3ba3f-c34b-42b3-8b7c-b9d770bd295d" absoluteBounds="3.5, 1.25, 2, 1.1939925130208335">
+    <classShape Id="22d9fda5-b762-4637-81a4-09c0c826d5a6" absoluteBounds="3.5, 3.75, 2, 1.1939925130208335">
       <DataClassMoniker Name="/HONKDBDataContext/Judge" />
       <nestedChildShapes>
-        <elementListCompartment Id="4c8b3781-dd98-4a60-979e-f5b8de7ac096" absoluteBounds="3.515, 1.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d11115b9-efc3-454b-911a-371b6189b2d1" absoluteBounds="3.515, 4.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ff972932-a750-4c8e-a9fa-e2723557e1c3" absoluteBounds="6.25, 2.5, 2, 2.7324039713541666">
+    <classShape Id="4f15800f-3e31-4b26-a75e-e3d520677eb6" absoluteBounds="6.25, 3, 2, 2.7324039713541661">
       <DataClassMoniker Name="/HONKDBDataContext/JudgeScore" />
       <nestedChildShapes>
-        <elementListCompartment Id="96661981-fca3-47ab-b4d4-232c4d07bd7f" absoluteBounds="6.265, 2.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="70cc6fc1-7885-4535-a06b-db8e9138b103" absoluteBounds="6.265, 3.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="3ccc91b4-47a4-4d4f-a51c-cb66ab2d0f11" absoluteBounds="0.75, 10.25, 2, 1.1939925130208344">
+    <classShape Id="3ce08e0f-afc0-4c52-8b23-34b22118ea15" absoluteBounds="0.75, 12.625, 2, 1.1939925130208344">
       <DataClassMoniker Name="/HONKDBDataContext/Kumu" />
       <nestedChildShapes>
-        <elementListCompartment Id="3bda54ab-e528-40fe-bdb0-c9b06f4f3443" absoluteBounds="0.765, 10.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9418689b-b536-4dbb-b491-6fdb73aebe63" absoluteBounds="0.765, 13.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.5 : 6.23240397135417); (4.5 : 8.31810628255208); (6.25 : 8.31810628255208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(4.19621064828726 : 2.81899251302083); (4.19621064828726 : 3.06899251302083); (4.81825551131811 : 3.06899251302083); (4.81825551131811 : 2.81899251302083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HONKDBDataContext/CashPrize/CashPrize_CashPrize" />
+      <nodes>
+        <classShapeMoniker Id="8d804b6d-1891-4036-94d6-e17c97eb4353" />
+        <classShapeMoniker Id="8d804b6d-1891-4036-94d6-e17c97eb4353" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 8.73240397135417); (5.875 : 9.10740397135417); (5.875 : 13.1931062825521); (6.25 : 13.1931062825521)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/HONKDBDataContext/Contestant/Contestant_MasterScore" />
       <nodes>
-        <classShapeMoniker Id="250e6880-72d1-4fc6-9bb2-5da92ec18af9" />
-        <classShapeMoniker Id="32bcc14d-6b4f-4b23-9c09-2270545f4ae3" />
+        <classShapeMoniker Id="82fde020-c779-4f12-8915-006b8c9620c9" />
+        <classShapeMoniker Id="e64daf9a-0046-4e20-af72-dc4efdd7a1dc" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.84699625651042); (3.04166666666667 : 4.84699625651042 : JumpStart); (3.20833333333333 : 4.84699625651042 : JumpEnd); (3.5 : 4.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 7.34699625651042); (3.04166666666667 : 7.34699625651042 : JumpStart); (3.20833333333333 : 7.34699625651042 : JumpEnd); (3.5 : 7.34699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/HONKDBDataContext/Age/Age_Contestant" />
       <nodes>
-        <classShapeMoniker Id="9ad01dde-f257-45da-8416-6f93c0ee6427" />
-        <classShapeMoniker Id="250e6880-72d1-4fc6-9bb2-5da92ec18af9" />
+        <classShapeMoniker Id="3227053a-ee71-4b72-8e28-ded803b9681e" />
+        <classShapeMoniker Id="82fde020-c779-4f12-8915-006b8c9620c9" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.56899251302083); (3.125 : 2.94399251302083); (3.125 : 5.57095211393229); (3.5 : 5.57095211393229)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 10.3181469726562); (5.79166666666667 : 10.3181469726562 : JumpStart); (5.95833333333333 : 10.3181469726562 : JumpEnd); (7.25 : 10.3181469726562); (7.25 : 8.07859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HONKDBDataContext/Award/Award_ContestantAward" />
+      <nodes>
+        <classShapeMoniker Id="960f8df6-f49c-4764-8283-69e8ff3db770" />
+        <classShapeMoniker Id="ab2efa0e-8c01-4c5d-99a8-12021f6e52e6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.81807305724159); (5.875 : 3.19307305724159); (5.875 : 7.28929768880208); (6.25 : 7.28929768880208)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HONKDBDataContext/CashPrize/CashPrize_ContestantAward" />
+      <nodes>
+        <classShapeMoniker Id="8d804b6d-1891-4036-94d6-e17c97eb4353" />
+        <classShapeMoniker Id="ab2efa0e-8c01-4c5d-99a8-12021f6e52e6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 6.83214884440104); (5.79166666666667 : 6.83214884440104 : JumpStart); (5.95833333333333 : 6.83214884440104 : JumpEnd); (6.25 : 6.83214884440104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HONKDBDataContext/Contestant/Contestant_ContestantAward" />
+      <nodes>
+        <classShapeMoniker Id="82fde020-c779-4f12-8915-006b8c9620c9" />
+        <classShapeMoniker Id="ab2efa0e-8c01-4c5d-99a8-12021f6e52e6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 7.31814697265625); (9 : 7.31814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HONKDBDataContext/ContestantAward/ContestantAward_ContestantAwardGiftPrize" />
+      <nodes>
+        <classShapeMoniker Id="ab2efa0e-8c01-4c5d-99a8-12021f6e52e6" />
+        <classShapeMoniker Id="32564de6-0187-45b5-87bb-ddc0ded447ed" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.06899251302083); (3.125 : 5.44399251302083); (3.125 : 8.07095211393229); (3.5 : 8.07095211393229)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/HONKDBDataContext/Division/Division_Contestant" />
       <nodes>
-        <classShapeMoniker Id="f7f5f7a0-a75d-4c16-9b78-62df2d42d933" />
-        <classShapeMoniker Id="250e6880-72d1-4fc6-9bb2-5da92ec18af9" />
+        <classShapeMoniker Id="b1b57b90-245c-4c80-bd00-fe3967900954" />
+        <classShapeMoniker Id="82fde020-c779-4f12-8915-006b8c9620c9" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 6.84699625651042); (3.61978791666667 : 6.84699625651042 : JumpStart); (3.78645458333333 : 6.84699625651042 : JumpEnd); (4.101560625 : 6.84699625651042); (4.101560625 : 6.23240397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 8.75); (3.125 : 8.375); (3.125 : 9.10894143289263); (3.22232443490112 : 9.01161699799151 : JumpStart); (3.34017556509888 : 8.89376586779375 : JumpEnd); (3.50153746153846 : 8.73240397135417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/HONKDBDataContext/Gender/Gender_Contestant" />
       <nodes>
-        <classShapeMoniker Id="e5716275-4bd5-4a45-941b-ab47dc91358f" />
-        <classShapeMoniker Id="250e6880-72d1-4fc6-9bb2-5da92ec18af9" />
+        <classShapeMoniker Id="0a722222-304b-46bb-8c48-101a15995230" />
+        <classShapeMoniker Id="82fde020-c779-4f12-8915-006b8c9620c9" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 8.88104939778646); (3.61978791666667 : 8.88104939778646 : JumpStart); (3.78645458333333 : 8.88104939778646 : JumpEnd); (5.0312525 : 8.88104939778646); (5.0312525 : 6.23240397135417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.25 : 1.94399251302083); (8.625 : 2.31899251302083); (8.625 : 6.94032148632813); (9 : 6.94032148632813)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HONKDBDataContext/GiftPrize/GiftPrize_ContestantAwardGiftPrize" />
+      <nodes>
+        <classShapeMoniker Id="b7fbabf3-5a68-4c67-a7a6-c7c28112c541" />
+        <classShapeMoniker Id="32564de6-0187-45b5-87bb-ddc0ded447ed" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.125 : 10.2499764964944); (3.26910981146615 : 9.2713236152 : JumpStart); (3.29339018853385 : 9.10643504353044 : JumpEnd); (3.65625 : 6.64224612825521); (3.65625 : 6.64224612825521); (3.875 : 6.64224612825521)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/HONKDBDataContext/Halau/Halau_Contestant" />
       <nodes>
-        <classShapeMoniker Id="4de0d5d9-4f2b-4576-8b4d-b010e82d75ea" />
-        <classShapeMoniker Id="250e6880-72d1-4fc6-9bb2-5da92ec18af9" />
+        <classShapeMoniker Id="a2b7a2a4-985c-4a41-b6ed-1e4db996ad29" />
+        <classShapeMoniker Id="82fde020-c779-4f12-8915-006b8c9620c9" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 4.36620198567708); (6.25 : 4.36620198567708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 6.06153746153846); (5.81607443490112 : 5.74546302663734 : JumpStart); (5.93392556509888 : 5.62761189643958 : JumpEnd); (6.0625 : 5.49903746153846); (6.0625 : 5.91990397135417); (6.25 : 5.73240397135417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/HONKDBDataContext/Contestant/Contestant_JudgeScore" />
       <nodes>
-        <classShapeMoniker Id="250e6880-72d1-4fc6-9bb2-5da92ec18af9" />
-        <classShapeMoniker Id="ff972932-a750-4c8e-a9fa-e2723557e1c3" />
+        <classShapeMoniker Id="82fde020-c779-4f12-8915-006b8c9620c9" />
+        <classShapeMoniker Id="4f15800f-3e31-4b26-a75e-e3d520677eb6" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 1.84699625651042); (7.25 : 1.84699625651042); (7.25 : 2.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 4.34699625651042); (5.79166666666667 : 4.34699625651042 : JumpStart); (5.95833333333333 : 4.34699625651042 : JumpEnd); (6.25 : 4.34699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/HONKDBDataContext/Judge/Judge_JudgeScore" />
       <nodes>
-        <classShapeMoniker Id="47e3ba3f-c34b-42b3-8b7c-b9d770bd295d" />
-        <classShapeMoniker Id="ff972932-a750-4c8e-a9fa-e2723557e1c3" />
+        <classShapeMoniker Id="22d9fda5-b762-4637-81a4-09c0c826d5a6" />
+        <classShapeMoniker Id="4f15800f-3e31-4b26-a75e-e3d520677eb6" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 10.8469962565104); (3.70312125 : 10.8469962565104); (3.70312125 : 6.23240397135417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 12.6562264964944); (3.28125 : 12.1249764964944); (3.28125 : 8.43293004264323); (3.5 : 8.43293004264323)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/HONKDBDataContext/Kumu/Kumu_Contestant" />
       <nodes>
-        <classShapeMoniker Id="3ccc91b4-47a4-4d4f-a51c-cb66ab2d0f11" />
-        <classShapeMoniker Id="250e6880-72d1-4fc6-9bb2-5da92ec18af9" />
+        <classShapeMoniker Id="3ce08e0f-afc0-4c52-8b23-34b22118ea15" />
+        <classShapeMoniker Id="82fde020-c779-4f12-8915-006b8c9620c9" />
       </nodes>
     </associationConnector>
-    <classShape Id="7193ac75-a55b-4eac-a2bb-ea45481528cf" absoluteBounds="9.375, 2.75, 2, 2.347801106770834">
+    <classShape Id="e17af092-9e66-427b-a6ed-4c2151c97e5d" absoluteBounds="9.75, 0.75, 2, 2.3478011067708335">
       <DataClassMoniker Name="/HONKDBDataContext/vw_BreakingScore" />
       <nestedChildShapes>
-        <elementListCompartment Id="2f7e9991-e3d2-4c00-ac2f-a67b96dce1e1" absoluteBounds="9.39, 3.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="29cae3d1-579f-4f03-9bb2-495b940a7678" absoluteBounds="9.765, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="98cdbb16-546b-4b83-b49f-2e364333f3e1" absoluteBounds="9.375, 6.75, 2, 2.3478011067708344">
+    <classShape Id="239568ae-2524-485a-a324-822f22622704" absoluteBounds="9.75, 9.75, 2, 4.6554182942708309">
       <DataClassMoniker Name="/HONKDBDataContext/vw_OverallScore" />
       <nestedChildShapes>
-        <elementListCompartment Id="f2a896b0-b399-4107-8df5-74efc44156a6" absoluteBounds="9.39, 7.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a8b256d8-3d47-42ef-ab07-22e0e2066f7b" absoluteBounds="9.765, 10.21, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="45c45838-0ac4-4ba2-80ff-ad55921365b5" absoluteBounds="9.375, 10.75, 2, 1.5785953776041666">
+    <classShape Id="fb27a868-dd05-4275-bb12-0f91702bbe10" absoluteBounds="12.75, 0.75, 2, 1.5785953776041666">
       <DataClassMoniker Name="/HONKDBDataContext/vw_BreakingScoreNet" />
       <nestedChildShapes>
-        <elementListCompartment Id="1f986d33-d89a-4b03-b0bd-55fa7c91b9b1" absoluteBounds="9.39, 11.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="8b7c8fe2-2f75-4185-aa54-e7d2af828681" absoluteBounds="12.765, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="b08872c8-f5fb-4d0d-b860-a2d0c4b8fe6b" absoluteBounds="3.375, 11.75, 2, 4.2708154296874987">
-      <DataClassMoniker Name="/HONKDBDataContext/vw_Contestant_JudgeScore" />
+    <classShape Id="456307f2-4c32-4b24-8b65-199623626372" absoluteBounds="12.75, 3.75, 2, 5.8092268880208318">
+      <DataClassMoniker Name="/HONKDBDataContext/vw_ContestantAwardScore" />
       <nestedChildShapes>
-        <elementListCompartment Id="4ebbff34-7690-436b-a466-f2187e9465d4" absoluteBounds="3.39, 12.21, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="579add14-ca0d-4b91-8888-756b71cda349" absoluteBounds="12.765, 4.21, 1.9700000000000002, 5.249226888020833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e2facd8f-4603-45f1-971a-d70b4fafa1e0" absoluteBounds="12.375, 0.75, 2, 2.7324039713541666">
+    <classShape Id="8eaca60c-392e-41a2-8dcb-ad65f7829ad5" absoluteBounds="12.75, 10.75, 2, 2.7324039713541666">
       <DataClassMoniker Name="/HONKDBDataContext/vw_ContestantCurrentYear" />
       <nestedChildShapes>
-        <elementListCompartment Id="5e625182-ea4c-4d77-b52a-535b3acb3e1e" absoluteBounds="12.39, 1.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9524c162-815c-46c7-a947-da6f04355716" absoluteBounds="12.765, 11.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="d76992e3-4682-4bc9-b5ba-aa1cd2b08fb4" absoluteBounds="12.375, 4.75, 2, 2.7324039713541666">
+    <classShape Id="788e8f15-c479-4d68-a994-9fc24df7bc52" absoluteBounds="0.75, 14.75, 2, 2.7324039713541666">
       <DataClassMoniker Name="/HONKDBDataContext/vw_ContestantDetail" />
       <nestedChildShapes>
-        <elementListCompartment Id="518e0447-fafa-435d-a544-15b53e7f1010" absoluteBounds="12.39, 5.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="787b9c28-3285-4a1c-97f2-b9b5735d3bf4" absoluteBounds="0.765, 15.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="3aa7cdf5-a6b3-4b70-8c79-e4491059eb4c" absoluteBounds="12.375, 8.75, 2, 7.5399397786458309">
-      <DataClassMoniker Name="/HONKDBDataContext/vw_ContestantScoreDetail" />
+    <classShape Id="c4395e0d-b4c9-469d-a1a7-4140f5d3e694" absoluteBounds="12.75, 14.75, 2, 7.5399397786458309">
+      <DataClassMoniker Name="/HONKDBDataContext/vw_ContestantDetailsAllScore" />
       <nestedChildShapes>
-        <elementListCompartment Id="f2a8b473-dab4-4519-af99-49fafdc65598" absoluteBounds="12.39, 9.21, 1.9700000000000002, 6.979939778645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="8955091b-a772-4679-b9ba-fb7f62cc0508" absoluteBounds="12.765, 15.21, 1.9700000000000002, 6.979939778645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="707b61b3-29cf-40b9-896d-f88314eaca9f" absoluteBounds="6.375, 13.75, 2, 3.6939111328124987">
-      <DataClassMoniker Name="/HONKDBDataContext/vw_KeikiWahineDetail" />
+    <classShape Id="173f3285-8bbb-44f4-b973-5c220d5234b7" absoluteBounds="15.75, 0.75, 2, 4.2708154296874987">
+      <DataClassMoniker Name="/HONKDBDataContext/vw_ContestantJudgeScore" />
       <nestedChildShapes>
-        <elementListCompartment Id="ccaf2a57-b3c7-4e53-8501-c0e915a3dfbe" absoluteBounds="6.39, 14.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6275d6fb-ceb8-4b09-bf63-656261644468" absoluteBounds="15.765, 1.21, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="b49a0f67-e09d-4dd5-bc81-173c877924bc" absoluteBounds="15.375, 0.75, 2, 4.0785139973958326">
+    <classShape Id="e9a42c19-e087-42be-88c1-c7f8221acf26" absoluteBounds="15.75, 6.75, 2, 4.0785139973958318">
       <DataClassMoniker Name="/HONKDBDataContext/vw_MasterScoreDetail" />
       <nestedChildShapes>
-        <elementListCompartment Id="5d6456be-c499-41eb-9e26-0bb2a7342c56" absoluteBounds="15.39, 1.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a4fbe36e-e127-437a-8fb0-309ba8b6f8d3" absoluteBounds="15.765, 7.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="54cf7b4d-b891-44bf-8491-2d80394cab0b" absoluteBounds="15.375, 5.75, 2, 7.1553369140624987">
+    <classShape Id="adb9c77f-379c-4975-8642-d9751e0abaf5" absoluteBounds="15.75, 11.75, 2, 7.1553369140624987">
       <DataClassMoniker Name="/HONKDBDataContext/vw_MasterScoreReport" />
       <nestedChildShapes>
-        <elementListCompartment Id="f2f3cccb-716e-4684-b7a5-53e552f98bb3" absoluteBounds="15.39, 6.21, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5c502150-018a-4356-a08e-9a8cbe07ed40" absoluteBounds="15.765, 12.21, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="fea5c27b-c602-4d77-95fb-d01233f52813" absoluteBounds="15.375, 13.75, 2, 2.1554996744791666">
+    <classShape Id="590f919c-fe14-41dd-872c-98b97034a930" absoluteBounds="3.75, 16.75, 2, 2.7324039713541666">
       <DataClassMoniker Name="/HONKDBDataContext/vw_OverallBreakingScore" />
       <nestedChildShapes>
-        <elementListCompartment Id="fce891b0-8ea3-486f-8a5d-d50a32bc284c" absoluteBounds="15.39, 14.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4c7e9add-124d-45f6-bfbb-f91674278540" absoluteBounds="3.765, 17.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

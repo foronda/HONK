@@ -30,7 +30,7 @@ namespace HONK
 
                 int contestant_id = Convert.ToInt32(((DropDownList)sender).SelectedValue);
 
-                var contestant = from c in db.vw_Contestant_JudgeScores
+                var contestant = from c in db.vw_ContestantJudgeScores
                                  where c.id == contestant_id
                                  //where c.entry_date.Year == EventYear
                                  select c;

@@ -39,15 +39,27 @@ namespace HONK
     partial void InsertAward(Award instance);
     partial void UpdateAward(Award instance);
     partial void DeleteAward(Award instance);
+    partial void InsertCashPrize(CashPrize instance);
+    partial void UpdateCashPrize(CashPrize instance);
+    partial void DeleteCashPrize(CashPrize instance);
     partial void InsertContestant(Contestant instance);
     partial void UpdateContestant(Contestant instance);
     partial void DeleteContestant(Contestant instance);
+    partial void InsertContestantAward(ContestantAward instance);
+    partial void UpdateContestantAward(ContestantAward instance);
+    partial void DeleteContestantAward(ContestantAward instance);
+    partial void InsertContestantAwardGiftPrize(ContestantAwardGiftPrize instance);
+    partial void UpdateContestantAwardGiftPrize(ContestantAwardGiftPrize instance);
+    partial void DeleteContestantAwardGiftPrize(ContestantAwardGiftPrize instance);
     partial void InsertDivision(Division instance);
     partial void UpdateDivision(Division instance);
     partial void DeleteDivision(Division instance);
     partial void InsertGender(Gender instance);
     partial void UpdateGender(Gender instance);
     partial void DeleteGender(Gender instance);
+    partial void InsertGiftPrize(GiftPrize instance);
+    partial void UpdateGiftPrize(GiftPrize instance);
+    partial void DeleteGiftPrize(GiftPrize instance);
     partial void InsertHalau(Halau instance);
     partial void UpdateHalau(Halau instance);
     partial void DeleteHalau(Halau instance);
@@ -116,11 +128,35 @@ namespace HONK
 			}
 		}
 		
+		public System.Data.Linq.Table<CashPrize> CashPrizes
+		{
+			get
+			{
+				return this.GetTable<CashPrize>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Contestant> Contestants
 		{
 			get
 			{
 				return this.GetTable<Contestant>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ContestantAward> ContestantAwards
+		{
+			get
+			{
+				return this.GetTable<ContestantAward>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ContestantAwardGiftPrize> ContestantAwardGiftPrizes
+		{
+			get
+			{
+				return this.GetTable<ContestantAwardGiftPrize>();
 			}
 		}
 		
@@ -137,6 +173,14 @@ namespace HONK
 			get
 			{
 				return this.GetTable<Gender>();
+			}
+		}
+		
+		public System.Data.Linq.Table<GiftPrize> GiftPrizes
+		{
+			get
+			{
+				return this.GetTable<GiftPrize>();
 			}
 		}
 		
@@ -196,11 +240,11 @@ namespace HONK
 			}
 		}
 		
-		public System.Data.Linq.Table<vw_Contestant_JudgeScore> vw_Contestant_JudgeScores
+		public System.Data.Linq.Table<vw_ContestantAwardScore> vw_ContestantAwardScores
 		{
 			get
 			{
-				return this.GetTable<vw_Contestant_JudgeScore>();
+				return this.GetTable<vw_ContestantAwardScore>();
 			}
 		}
 		
@@ -220,19 +264,19 @@ namespace HONK
 			}
 		}
 		
-		public System.Data.Linq.Table<vw_ContestantScoreDetail> vw_ContestantScoreDetails
+		public System.Data.Linq.Table<vw_ContestantDetailsAllScore> vw_ContestantDetailsAllScores
 		{
 			get
 			{
-				return this.GetTable<vw_ContestantScoreDetail>();
+				return this.GetTable<vw_ContestantDetailsAllScore>();
 			}
 		}
 		
-		public System.Data.Linq.Table<vw_KeikiWahineDetail> vw_KeikiWahineDetails
+		public System.Data.Linq.Table<vw_ContestantJudgeScore> vw_ContestantJudgeScores
 		{
 			get
 			{
-				return this.GetTable<vw_KeikiWahineDetail>();
+				return this.GetTable<vw_ContestantJudgeScore>();
 			}
 		}
 		
@@ -846,7 +890,11 @@ namespace HONK
 		
 		private int _id;
 		
+		private string _title;
+		
 		private string _description;
+		
+		private EntitySet<ContestantAward> _ContestantAwards;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -854,12 +902,15 @@ namespace HONK
     partial void OnCreated();
     partial void OnidChanging(int value);
     partial void OnidChanged();
+    partial void OntitleChanging(string value);
+    partial void OntitleChanged();
     partial void OndescriptionChanging(string value);
     partial void OndescriptionChanged();
     #endregion
 		
 		public Award()
 		{
+			this._ContestantAwards = new EntitySet<ContestantAward>(new Action<ContestantAward>(this.attach_ContestantAwards), new Action<ContestantAward>(this.detach_ContestantAwards));
 			OnCreated();
 		}
 		
@@ -883,7 +934,27 @@ namespace HONK
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_description", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_title", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string title
+		{
+			get
+			{
+				return this._title;
+			}
+			set
+			{
+				if ((this._title != value))
+				{
+					this.OntitleChanging(value);
+					this.SendPropertyChanging();
+					this._title = value;
+					this.SendPropertyChanged("title");
+					this.OntitleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_description", DbType="Text", UpdateCheck=UpdateCheck.Never)]
 		public string description
 		{
 			get
@@ -899,6 +970,206 @@ namespace HONK
 					this._description = value;
 					this.SendPropertyChanged("description");
 					this.OndescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Award_ContestantAward", Storage="_ContestantAwards", ThisKey="id", OtherKey="award_id")]
+		public EntitySet<ContestantAward> ContestantAwards
+		{
+			get
+			{
+				return this._ContestantAwards;
+			}
+			set
+			{
+				this._ContestantAwards.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_ContestantAwards(ContestantAward entity)
+		{
+			this.SendPropertyChanging();
+			entity.Award = this;
+		}
+		
+		private void detach_ContestantAwards(ContestantAward entity)
+		{
+			this.SendPropertyChanging();
+			entity.Award = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CashPrize")]
+	public partial class CashPrize : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _amount;
+		
+		private EntityRef<CashPrize> _CashPrize2;
+		
+		private EntitySet<ContestantAward> _ContestantAwards;
+		
+		private EntityRef<CashPrize> _CashPrize1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnamountChanging(string value);
+    partial void OnamountChanged();
+    #endregion
+		
+		public CashPrize()
+		{
+			this._CashPrize2 = default(EntityRef<CashPrize>);
+			this._ContestantAwards = new EntitySet<ContestantAward>(new Action<ContestantAward>(this.attach_ContestantAwards), new Action<ContestantAward>(this.detach_ContestantAwards));
+			this._CashPrize1 = default(EntityRef<CashPrize>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					if (this._CashPrize1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_amount", DbType="NVarChar(50)")]
+		public string amount
+		{
+			get
+			{
+				return this._amount;
+			}
+			set
+			{
+				if ((this._amount != value))
+				{
+					this.OnamountChanging(value);
+					this.SendPropertyChanging();
+					this._amount = value;
+					this.SendPropertyChanged("amount");
+					this.OnamountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CashPrize_CashPrize", Storage="_CashPrize2", ThisKey="id", OtherKey="id", IsUnique=true, IsForeignKey=false)]
+		public CashPrize CashPrize2
+		{
+			get
+			{
+				return this._CashPrize2.Entity;
+			}
+			set
+			{
+				CashPrize previousValue = this._CashPrize2.Entity;
+				if (((previousValue != value) 
+							|| (this._CashPrize2.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._CashPrize2.Entity = null;
+						previousValue.CashPrize1 = null;
+					}
+					this._CashPrize2.Entity = value;
+					if ((value != null))
+					{
+						value.CashPrize1 = this;
+					}
+					this.SendPropertyChanged("CashPrize2");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CashPrize_ContestantAward", Storage="_ContestantAwards", ThisKey="id", OtherKey="cashprize_id")]
+		public EntitySet<ContestantAward> ContestantAwards
+		{
+			get
+			{
+				return this._ContestantAwards;
+			}
+			set
+			{
+				this._ContestantAwards.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CashPrize_CashPrize", Storage="_CashPrize1", ThisKey="id", OtherKey="id", IsForeignKey=true)]
+		public CashPrize CashPrize1
+		{
+			get
+			{
+				return this._CashPrize1.Entity;
+			}
+			set
+			{
+				CashPrize previousValue = this._CashPrize1.Entity;
+				if (((previousValue != value) 
+							|| (this._CashPrize1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._CashPrize1.Entity = null;
+						previousValue.CashPrize2 = null;
+					}
+					this._CashPrize1.Entity = value;
+					if ((value != null))
+					{
+						value.CashPrize2 = this;
+						this._id = value.id;
+					}
+					else
+					{
+						this._id = default(int);
+					}
+					this.SendPropertyChanged("CashPrize1");
 				}
 			}
 		}
@@ -921,6 +1192,18 @@ namespace HONK
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_ContestantAwards(ContestantAward entity)
+		{
+			this.SendPropertyChanging();
+			entity.CashPrize = this;
+		}
+		
+		private void detach_ContestantAwards(ContestantAward entity)
+		{
+			this.SendPropertyChanging();
+			entity.CashPrize = null;
 		}
 	}
 	
@@ -951,6 +1234,8 @@ namespace HONK
 		private System.Nullable<int> _entry_num_sat;
 		
 		private EntitySet<MasterScore> _MasterScores;
+		
+		private EntitySet<ContestantAward> _ContestantAwards;
 		
 		private EntitySet<JudgeScore> _JudgeScores;
 		
@@ -993,6 +1278,7 @@ namespace HONK
 		public Contestant()
 		{
 			this._MasterScores = new EntitySet<MasterScore>(new Action<MasterScore>(this.attach_MasterScores), new Action<MasterScore>(this.detach_MasterScores));
+			this._ContestantAwards = new EntitySet<ContestantAward>(new Action<ContestantAward>(this.attach_ContestantAwards), new Action<ContestantAward>(this.detach_ContestantAwards));
 			this._JudgeScores = new EntitySet<JudgeScore>(new Action<JudgeScore>(this.attach_JudgeScores), new Action<JudgeScore>(this.detach_JudgeScores));
 			this._Age = default(EntityRef<Age>);
 			this._Division = default(EntityRef<Division>);
@@ -1235,6 +1521,19 @@ namespace HONK
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Contestant_ContestantAward", Storage="_ContestantAwards", ThisKey="id", OtherKey="contestant_id")]
+		public EntitySet<ContestantAward> ContestantAwards
+		{
+			get
+			{
+				return this._ContestantAwards;
+			}
+			set
+			{
+				this._ContestantAwards.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Contestant_JudgeScore", Storage="_JudgeScores", ThisKey="id", OtherKey="contestant_id")]
 		public EntitySet<JudgeScore> JudgeScores
 		{
@@ -1450,6 +1749,18 @@ namespace HONK
 			entity.Contestant = null;
 		}
 		
+		private void attach_ContestantAwards(ContestantAward entity)
+		{
+			this.SendPropertyChanging();
+			entity.Contestant = this;
+		}
+		
+		private void detach_ContestantAwards(ContestantAward entity)
+		{
+			this.SendPropertyChanging();
+			entity.Contestant = null;
+		}
+		
 		private void attach_JudgeScores(JudgeScore entity)
 		{
 			this.SendPropertyChanging();
@@ -1460,6 +1771,483 @@ namespace HONK
 		{
 			this.SendPropertyChanging();
 			entity.Contestant = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ContestantAward")]
+	public partial class ContestantAward : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private System.Nullable<int> _award_id;
+		
+		private System.Nullable<int> _contestant_id;
+		
+		private System.Nullable<int> _cashprize_id;
+		
+		private EntitySet<ContestantAwardGiftPrize> _ContestantAwardGiftPrizes;
+		
+		private EntityRef<Award> _Award;
+		
+		private EntityRef<CashPrize> _CashPrize;
+		
+		private EntityRef<Contestant> _Contestant;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onaward_idChanging(System.Nullable<int> value);
+    partial void Onaward_idChanged();
+    partial void Oncontestant_idChanging(System.Nullable<int> value);
+    partial void Oncontestant_idChanged();
+    partial void Oncashprize_idChanging(System.Nullable<int> value);
+    partial void Oncashprize_idChanged();
+    #endregion
+		
+		public ContestantAward()
+		{
+			this._ContestantAwardGiftPrizes = new EntitySet<ContestantAwardGiftPrize>(new Action<ContestantAwardGiftPrize>(this.attach_ContestantAwardGiftPrizes), new Action<ContestantAwardGiftPrize>(this.detach_ContestantAwardGiftPrizes));
+			this._Award = default(EntityRef<Award>);
+			this._CashPrize = default(EntityRef<CashPrize>);
+			this._Contestant = default(EntityRef<Contestant>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_award_id", DbType="Int")]
+		public System.Nullable<int> award_id
+		{
+			get
+			{
+				return this._award_id;
+			}
+			set
+			{
+				if ((this._award_id != value))
+				{
+					if (this._Award.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onaward_idChanging(value);
+					this.SendPropertyChanging();
+					this._award_id = value;
+					this.SendPropertyChanged("award_id");
+					this.Onaward_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contestant_id", DbType="Int")]
+		public System.Nullable<int> contestant_id
+		{
+			get
+			{
+				return this._contestant_id;
+			}
+			set
+			{
+				if ((this._contestant_id != value))
+				{
+					if (this._Contestant.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Oncontestant_idChanging(value);
+					this.SendPropertyChanging();
+					this._contestant_id = value;
+					this.SendPropertyChanged("contestant_id");
+					this.Oncontestant_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cashprize_id", DbType="Int")]
+		public System.Nullable<int> cashprize_id
+		{
+			get
+			{
+				return this._cashprize_id;
+			}
+			set
+			{
+				if ((this._cashprize_id != value))
+				{
+					if (this._CashPrize.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Oncashprize_idChanging(value);
+					this.SendPropertyChanging();
+					this._cashprize_id = value;
+					this.SendPropertyChanged("cashprize_id");
+					this.Oncashprize_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ContestantAward_ContestantAwardGiftPrize", Storage="_ContestantAwardGiftPrizes", ThisKey="id", OtherKey="contestantaward_id")]
+		public EntitySet<ContestantAwardGiftPrize> ContestantAwardGiftPrizes
+		{
+			get
+			{
+				return this._ContestantAwardGiftPrizes;
+			}
+			set
+			{
+				this._ContestantAwardGiftPrizes.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Award_ContestantAward", Storage="_Award", ThisKey="award_id", OtherKey="id", IsForeignKey=true)]
+		public Award Award
+		{
+			get
+			{
+				return this._Award.Entity;
+			}
+			set
+			{
+				Award previousValue = this._Award.Entity;
+				if (((previousValue != value) 
+							|| (this._Award.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Award.Entity = null;
+						previousValue.ContestantAwards.Remove(this);
+					}
+					this._Award.Entity = value;
+					if ((value != null))
+					{
+						value.ContestantAwards.Add(this);
+						this._award_id = value.id;
+					}
+					else
+					{
+						this._award_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Award");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CashPrize_ContestantAward", Storage="_CashPrize", ThisKey="cashprize_id", OtherKey="id", IsForeignKey=true)]
+		public CashPrize CashPrize
+		{
+			get
+			{
+				return this._CashPrize.Entity;
+			}
+			set
+			{
+				CashPrize previousValue = this._CashPrize.Entity;
+				if (((previousValue != value) 
+							|| (this._CashPrize.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._CashPrize.Entity = null;
+						previousValue.ContestantAwards.Remove(this);
+					}
+					this._CashPrize.Entity = value;
+					if ((value != null))
+					{
+						value.ContestantAwards.Add(this);
+						this._cashprize_id = value.id;
+					}
+					else
+					{
+						this._cashprize_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("CashPrize");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Contestant_ContestantAward", Storage="_Contestant", ThisKey="contestant_id", OtherKey="id", IsForeignKey=true)]
+		public Contestant Contestant
+		{
+			get
+			{
+				return this._Contestant.Entity;
+			}
+			set
+			{
+				Contestant previousValue = this._Contestant.Entity;
+				if (((previousValue != value) 
+							|| (this._Contestant.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Contestant.Entity = null;
+						previousValue.ContestantAwards.Remove(this);
+					}
+					this._Contestant.Entity = value;
+					if ((value != null))
+					{
+						value.ContestantAwards.Add(this);
+						this._contestant_id = value.id;
+					}
+					else
+					{
+						this._contestant_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Contestant");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_ContestantAwardGiftPrizes(ContestantAwardGiftPrize entity)
+		{
+			this.SendPropertyChanging();
+			entity.ContestantAward = this;
+		}
+		
+		private void detach_ContestantAwardGiftPrizes(ContestantAwardGiftPrize entity)
+		{
+			this.SendPropertyChanging();
+			entity.ContestantAward = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ContestantAwardGiftPrize")]
+	public partial class ContestantAwardGiftPrize : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private int _contestantaward_id;
+		
+		private int _giftprize_id;
+		
+		private EntityRef<ContestantAward> _ContestantAward;
+		
+		private EntityRef<GiftPrize> _GiftPrize;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Oncontestantaward_idChanging(int value);
+    partial void Oncontestantaward_idChanged();
+    partial void Ongiftprize_idChanging(int value);
+    partial void Ongiftprize_idChanged();
+    #endregion
+		
+		public ContestantAwardGiftPrize()
+		{
+			this._ContestantAward = default(EntityRef<ContestantAward>);
+			this._GiftPrize = default(EntityRef<GiftPrize>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contestantaward_id", DbType="Int NOT NULL")]
+		public int contestantaward_id
+		{
+			get
+			{
+				return this._contestantaward_id;
+			}
+			set
+			{
+				if ((this._contestantaward_id != value))
+				{
+					if (this._ContestantAward.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Oncontestantaward_idChanging(value);
+					this.SendPropertyChanging();
+					this._contestantaward_id = value;
+					this.SendPropertyChanged("contestantaward_id");
+					this.Oncontestantaward_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_giftprize_id", DbType="Int NOT NULL")]
+		public int giftprize_id
+		{
+			get
+			{
+				return this._giftprize_id;
+			}
+			set
+			{
+				if ((this._giftprize_id != value))
+				{
+					if (this._GiftPrize.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Ongiftprize_idChanging(value);
+					this.SendPropertyChanging();
+					this._giftprize_id = value;
+					this.SendPropertyChanged("giftprize_id");
+					this.Ongiftprize_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ContestantAward_ContestantAwardGiftPrize", Storage="_ContestantAward", ThisKey="contestantaward_id", OtherKey="id", IsForeignKey=true)]
+		public ContestantAward ContestantAward
+		{
+			get
+			{
+				return this._ContestantAward.Entity;
+			}
+			set
+			{
+				ContestantAward previousValue = this._ContestantAward.Entity;
+				if (((previousValue != value) 
+							|| (this._ContestantAward.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ContestantAward.Entity = null;
+						previousValue.ContestantAwardGiftPrizes.Remove(this);
+					}
+					this._ContestantAward.Entity = value;
+					if ((value != null))
+					{
+						value.ContestantAwardGiftPrizes.Add(this);
+						this._contestantaward_id = value.id;
+					}
+					else
+					{
+						this._contestantaward_id = default(int);
+					}
+					this.SendPropertyChanged("ContestantAward");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GiftPrize_ContestantAwardGiftPrize", Storage="_GiftPrize", ThisKey="giftprize_id", OtherKey="id", IsForeignKey=true)]
+		public GiftPrize GiftPrize
+		{
+			get
+			{
+				return this._GiftPrize.Entity;
+			}
+			set
+			{
+				GiftPrize previousValue = this._GiftPrize.Entity;
+				if (((previousValue != value) 
+							|| (this._GiftPrize.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._GiftPrize.Entity = null;
+						previousValue.ContestantAwardGiftPrizes.Remove(this);
+					}
+					this._GiftPrize.Entity = value;
+					if ((value != null))
+					{
+						value.ContestantAwardGiftPrizes.Add(this);
+						this._giftprize_id = value.id;
+					}
+					else
+					{
+						this._giftprize_id = default(int);
+					}
+					this.SendPropertyChanged("GiftPrize");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -1688,6 +2476,120 @@ namespace HONK
 		{
 			this.SendPropertyChanging();
 			entity.Gender = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.GiftPrize")]
+	public partial class GiftPrize : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _name;
+		
+		private EntitySet<ContestantAwardGiftPrize> _ContestantAwardGiftPrizes;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    #endregion
+		
+		public GiftPrize()
+		{
+			this._ContestantAwardGiftPrizes = new EntitySet<ContestantAwardGiftPrize>(new Action<ContestantAwardGiftPrize>(this.attach_ContestantAwardGiftPrizes), new Action<ContestantAwardGiftPrize>(this.detach_ContestantAwardGiftPrizes));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="VarChar(MAX)")]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this.OnnameChanging(value);
+					this.SendPropertyChanging();
+					this._name = value;
+					this.SendPropertyChanged("name");
+					this.OnnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GiftPrize_ContestantAwardGiftPrize", Storage="_ContestantAwardGiftPrizes", ThisKey="id", OtherKey="giftprize_id")]
+		public EntitySet<ContestantAwardGiftPrize> ContestantAwardGiftPrizes
+		{
+			get
+			{
+				return this._ContestantAwardGiftPrizes;
+			}
+			set
+			{
+				this._ContestantAwardGiftPrizes.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_ContestantAwardGiftPrizes(ContestantAwardGiftPrize entity)
+		{
+			this.SendPropertyChanging();
+			entity.GiftPrize = this;
+		}
+		
+		private void detach_ContestantAwardGiftPrizes(ContestantAwardGiftPrize entity)
+		{
+			this.SendPropertyChanging();
+			entity.GiftPrize = null;
 		}
 	}
 	
@@ -2556,15 +3458,39 @@ namespace HONK
 		
 		private System.Nullable<int> _interview_tie;
 		
-		private System.Nullable<decimal> _overall_score;
+		private System.Nullable<int> _costume_auana;
+		
+		private System.Nullable<int> _costume_auana_tie;
+		
+		private System.Nullable<int> _costume_kahiko;
+		
+		private System.Nullable<int> _costume_kahiko_tie;
+		
+		private System.Nullable<int> _costume_palua;
+		
+		private System.Nullable<int> _costume_palua_tie;
+		
+		private System.Nullable<int> _hula_auana_net;
+		
+		private System.Nullable<int> _hula_auana_tie;
+		
+		private System.Nullable<int> _hula_kahiko_net;
+		
+		private System.Nullable<int> _hula_kahiko_tie;
+		
+		private System.Nullable<int> _hula_palua_net;
+		
+		private System.Nullable<int> _hula_palua_tie;
 		
 		private System.Nullable<int> _combined_hula_score;
 		
 		private System.Nullable<int> _combined_hula_break_score;
 		
-		private int _music;
+		private System.Nullable<decimal> _overall_score;
 		
 		private System.Nullable<decimal> _overall_break_score;
+		
+		private int _music;
 		
 		public vw_OverallScore()
 		{
@@ -2618,18 +3544,194 @@ namespace HONK
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_overall_score", DbType="Decimal(24,3)")]
-		public System.Nullable<decimal> overall_score
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_auana", DbType="Int")]
+		public System.Nullable<int> costume_auana
 		{
 			get
 			{
-				return this._overall_score;
+				return this._costume_auana;
 			}
 			set
 			{
-				if ((this._overall_score != value))
+				if ((this._costume_auana != value))
 				{
-					this._overall_score = value;
+					this._costume_auana = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_auana_tie", DbType="Int")]
+		public System.Nullable<int> costume_auana_tie
+		{
+			get
+			{
+				return this._costume_auana_tie;
+			}
+			set
+			{
+				if ((this._costume_auana_tie != value))
+				{
+					this._costume_auana_tie = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_kahiko", DbType="Int")]
+		public System.Nullable<int> costume_kahiko
+		{
+			get
+			{
+				return this._costume_kahiko;
+			}
+			set
+			{
+				if ((this._costume_kahiko != value))
+				{
+					this._costume_kahiko = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_kahiko_tie", DbType="Int")]
+		public System.Nullable<int> costume_kahiko_tie
+		{
+			get
+			{
+				return this._costume_kahiko_tie;
+			}
+			set
+			{
+				if ((this._costume_kahiko_tie != value))
+				{
+					this._costume_kahiko_tie = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_palua", DbType="Int")]
+		public System.Nullable<int> costume_palua
+		{
+			get
+			{
+				return this._costume_palua;
+			}
+			set
+			{
+				if ((this._costume_palua != value))
+				{
+					this._costume_palua = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_palua_tie", DbType="Int")]
+		public System.Nullable<int> costume_palua_tie
+		{
+			get
+			{
+				return this._costume_palua_tie;
+			}
+			set
+			{
+				if ((this._costume_palua_tie != value))
+				{
+					this._costume_palua_tie = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_auana_net", DbType="Int")]
+		public System.Nullable<int> hula_auana_net
+		{
+			get
+			{
+				return this._hula_auana_net;
+			}
+			set
+			{
+				if ((this._hula_auana_net != value))
+				{
+					this._hula_auana_net = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_auana_tie", DbType="Int")]
+		public System.Nullable<int> hula_auana_tie
+		{
+			get
+			{
+				return this._hula_auana_tie;
+			}
+			set
+			{
+				if ((this._hula_auana_tie != value))
+				{
+					this._hula_auana_tie = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_kahiko_net", DbType="Int")]
+		public System.Nullable<int> hula_kahiko_net
+		{
+			get
+			{
+				return this._hula_kahiko_net;
+			}
+			set
+			{
+				if ((this._hula_kahiko_net != value))
+				{
+					this._hula_kahiko_net = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_kahiko_tie", DbType="Int")]
+		public System.Nullable<int> hula_kahiko_tie
+		{
+			get
+			{
+				return this._hula_kahiko_tie;
+			}
+			set
+			{
+				if ((this._hula_kahiko_tie != value))
+				{
+					this._hula_kahiko_tie = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_palua_net", DbType="Int")]
+		public System.Nullable<int> hula_palua_net
+		{
+			get
+			{
+				return this._hula_palua_net;
+			}
+			set
+			{
+				if ((this._hula_palua_net != value))
+				{
+					this._hula_palua_net = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_palua_tie", DbType="Int")]
+		public System.Nullable<int> hula_palua_tie
+		{
+			get
+			{
+				return this._hula_palua_tie;
+			}
+			set
+			{
+				if ((this._hula_palua_tie != value))
+				{
+					this._hula_palua_tie = value;
 				}
 			}
 		}
@@ -2666,18 +3768,18 @@ namespace HONK
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_music", DbType="Int NOT NULL")]
-		public int music
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_overall_score", DbType="Decimal(26,3)")]
+		public System.Nullable<decimal> overall_score
 		{
 			get
 			{
-				return this._music;
+				return this._overall_score;
 			}
 			set
 			{
-				if ((this._music != value))
+				if ((this._overall_score != value))
 				{
-					this._music = value;
+					this._overall_score = value;
 				}
 			}
 		}
@@ -2694,6 +3796,22 @@ namespace HONK
 				if ((this._overall_break_score != value))
 				{
 					this._overall_break_score = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_music", DbType="Int NOT NULL")]
+		public int music
+		{
+			get
+			{
+				return this._music;
+			}
+			set
+			{
+				if ((this._music != value))
+				{
+					this._music = value;
 				}
 			}
 		}
@@ -2780,13 +3898,11 @@ namespace HONK
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_Contestant_JudgeScore")]
-	public partial class vw_Contestant_JudgeScore
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_ContestantAwardScores")]
+	public partial class vw_ContestantAwardScore
 	{
 		
-		private int _id;
-		
-		private int _judge_id;
+		private int _contestant_id;
 		
 		private string _full_name;
 		
@@ -2794,64 +3910,66 @@ namespace HONK
 		
 		private string _gender_name;
 		
-		private string _division_name;
-		
 		private string _halau_name;
 		
 		private string _kumu_name;
 		
 		private System.DateTime _entry_date;
 		
-		private System.Nullable<int> _entry_num_fri;
-		
-		private System.Nullable<int> _entry_num_sat;
-		
 		private System.Nullable<int> _interview;
+		
+		private System.Nullable<int> _interview_tie;
 		
 		private System.Nullable<int> _costume_auana;
 		
+		private System.Nullable<int> _costume_auana_tie;
+		
 		private System.Nullable<int> _costume_kahiko;
+		
+		private System.Nullable<int> _costume_kahiko_tie;
 		
 		private System.Nullable<int> _costume_palua;
 		
-		private System.Nullable<int> _hula_auana;
+		private System.Nullable<int> _costume_palua_tie;
 		
-		private System.Nullable<int> _hula_kahiko;
+		private System.Nullable<int> _hula_auana_net;
 		
-		private System.Nullable<int> _hula_palua;
+		private System.Nullable<int> _hula_auana_tie;
 		
-		public vw_Contestant_JudgeScore()
+		private System.Nullable<int> _hula_kahiko_net;
+		
+		private System.Nullable<int> _hula_kahiko_tie;
+		
+		private System.Nullable<int> _hula_palua_net;
+		
+		private System.Nullable<int> _hula_palua_tie;
+		
+		private System.Nullable<int> _combined_hula_score;
+		
+		private System.Nullable<int> _combined_hula_break_score;
+		
+		private System.Nullable<decimal> _overall_score;
+		
+		private System.Nullable<decimal> _overall_break_score;
+		
+		private int _music;
+		
+		public vw_ContestantAwardScore()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
-		public int id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contestant_id", DbType="Int NOT NULL")]
+		public int contestant_id
 		{
 			get
 			{
-				return this._id;
+				return this._contestant_id;
 			}
 			set
 			{
-				if ((this._id != value))
+				if ((this._contestant_id != value))
 				{
-					this._id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_judge_id", DbType="Int NOT NULL")]
-		public int judge_id
-		{
-			get
-			{
-				return this._judge_id;
-			}
-			set
-			{
-				if ((this._judge_id != value))
-				{
-					this._judge_id = value;
+					this._contestant_id = value;
 				}
 			}
 		}
@@ -2904,22 +4022,6 @@ namespace HONK
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_division_name", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string division_name
-		{
-			get
-			{
-				return this._division_name;
-			}
-			set
-			{
-				if ((this._division_name != value))
-				{
-					this._division_name = value;
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_halau_name", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
 		public string halau_name
 		{
@@ -2968,38 +4070,6 @@ namespace HONK
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_entry_num_fri", DbType="Int")]
-		public System.Nullable<int> entry_num_fri
-		{
-			get
-			{
-				return this._entry_num_fri;
-			}
-			set
-			{
-				if ((this._entry_num_fri != value))
-				{
-					this._entry_num_fri = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_entry_num_sat", DbType="Int")]
-		public System.Nullable<int> entry_num_sat
-		{
-			get
-			{
-				return this._entry_num_sat;
-			}
-			set
-			{
-				if ((this._entry_num_sat != value))
-				{
-					this._entry_num_sat = value;
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_interview", DbType="Int")]
 		public System.Nullable<int> interview
 		{
@@ -3012,6 +4082,22 @@ namespace HONK
 				if ((this._interview != value))
 				{
 					this._interview = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_interview_tie", DbType="Int")]
+		public System.Nullable<int> interview_tie
+		{
+			get
+			{
+				return this._interview_tie;
+			}
+			set
+			{
+				if ((this._interview_tie != value))
+				{
+					this._interview_tie = value;
 				}
 			}
 		}
@@ -3032,6 +4118,22 @@ namespace HONK
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_auana_tie", DbType="Int")]
+		public System.Nullable<int> costume_auana_tie
+		{
+			get
+			{
+				return this._costume_auana_tie;
+			}
+			set
+			{
+				if ((this._costume_auana_tie != value))
+				{
+					this._costume_auana_tie = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_kahiko", DbType="Int")]
 		public System.Nullable<int> costume_kahiko
 		{
@@ -3044,6 +4146,22 @@ namespace HONK
 				if ((this._costume_kahiko != value))
 				{
 					this._costume_kahiko = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_kahiko_tie", DbType="Int")]
+		public System.Nullable<int> costume_kahiko_tie
+		{
+			get
+			{
+				return this._costume_kahiko_tie;
+			}
+			set
+			{
+				if ((this._costume_kahiko_tie != value))
+				{
+					this._costume_kahiko_tie = value;
 				}
 			}
 		}
@@ -3064,50 +4182,194 @@ namespace HONK
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_auana", DbType="Int")]
-		public System.Nullable<int> hula_auana
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_palua_tie", DbType="Int")]
+		public System.Nullable<int> costume_palua_tie
 		{
 			get
 			{
-				return this._hula_auana;
+				return this._costume_palua_tie;
 			}
 			set
 			{
-				if ((this._hula_auana != value))
+				if ((this._costume_palua_tie != value))
 				{
-					this._hula_auana = value;
+					this._costume_palua_tie = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_kahiko", DbType="Int")]
-		public System.Nullable<int> hula_kahiko
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_auana_net", DbType="Int")]
+		public System.Nullable<int> hula_auana_net
 		{
 			get
 			{
-				return this._hula_kahiko;
+				return this._hula_auana_net;
 			}
 			set
 			{
-				if ((this._hula_kahiko != value))
+				if ((this._hula_auana_net != value))
 				{
-					this._hula_kahiko = value;
+					this._hula_auana_net = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_palua", DbType="Int")]
-		public System.Nullable<int> hula_palua
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_auana_tie", DbType="Int")]
+		public System.Nullable<int> hula_auana_tie
 		{
 			get
 			{
-				return this._hula_palua;
+				return this._hula_auana_tie;
 			}
 			set
 			{
-				if ((this._hula_palua != value))
+				if ((this._hula_auana_tie != value))
 				{
-					this._hula_palua = value;
+					this._hula_auana_tie = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_kahiko_net", DbType="Int")]
+		public System.Nullable<int> hula_kahiko_net
+		{
+			get
+			{
+				return this._hula_kahiko_net;
+			}
+			set
+			{
+				if ((this._hula_kahiko_net != value))
+				{
+					this._hula_kahiko_net = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_kahiko_tie", DbType="Int")]
+		public System.Nullable<int> hula_kahiko_tie
+		{
+			get
+			{
+				return this._hula_kahiko_tie;
+			}
+			set
+			{
+				if ((this._hula_kahiko_tie != value))
+				{
+					this._hula_kahiko_tie = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_palua_net", DbType="Int")]
+		public System.Nullable<int> hula_palua_net
+		{
+			get
+			{
+				return this._hula_palua_net;
+			}
+			set
+			{
+				if ((this._hula_palua_net != value))
+				{
+					this._hula_palua_net = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_palua_tie", DbType="Int")]
+		public System.Nullable<int> hula_palua_tie
+		{
+			get
+			{
+				return this._hula_palua_tie;
+			}
+			set
+			{
+				if ((this._hula_palua_tie != value))
+				{
+					this._hula_palua_tie = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_combined_hula_score", DbType="Int")]
+		public System.Nullable<int> combined_hula_score
+		{
+			get
+			{
+				return this._combined_hula_score;
+			}
+			set
+			{
+				if ((this._combined_hula_score != value))
+				{
+					this._combined_hula_score = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_combined_hula_break_score", DbType="Int")]
+		public System.Nullable<int> combined_hula_break_score
+		{
+			get
+			{
+				return this._combined_hula_break_score;
+			}
+			set
+			{
+				if ((this._combined_hula_break_score != value))
+				{
+					this._combined_hula_break_score = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_overall_score", DbType="Decimal(26,3)")]
+		public System.Nullable<decimal> overall_score
+		{
+			get
+			{
+				return this._overall_score;
+			}
+			set
+			{
+				if ((this._overall_score != value))
+				{
+					this._overall_score = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_overall_break_score", DbType="Decimal(23,3)")]
+		public System.Nullable<decimal> overall_break_score
+		{
+			get
+			{
+				return this._overall_break_score;
+			}
+			set
+			{
+				if ((this._overall_break_score != value))
+				{
+					this._overall_break_score = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_music", DbType="Int NOT NULL")]
+		public int music
+		{
+			get
+			{
+				return this._music;
+			}
+			set
+			{
+				if ((this._music != value))
+				{
+					this._music = value;
 				}
 			}
 		}
@@ -3491,8 +4753,8 @@ namespace HONK
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_ContestantScoreDetails")]
-	public partial class vw_ContestantScoreDetail
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_ContestantDetailsAllScores")]
+	public partial class vw_ContestantDetailsAllScore
 	{
 		
 		private int _id;
@@ -3565,7 +4827,7 @@ namespace HONK
 		
 		private System.Nullable<int> _judge_score_hula_palua;
 		
-		public vw_ContestantScoreDetail()
+		public vw_ContestantDetailsAllScore()
 		{
 		}
 		
@@ -4130,15 +5392,13 @@ namespace HONK
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_KeikiWahineDetails")]
-	public partial class vw_KeikiWahineDetail
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_ContestantJudgeScores")]
+	public partial class vw_ContestantJudgeScore
 	{
 		
 		private int _id;
 		
-		private System.Nullable<int> _entry_num_fri;
-		
-		private System.Nullable<int> _entry_num_sat;
+		private int _judge_id;
 		
 		private string _full_name;
 		
@@ -4148,23 +5408,31 @@ namespace HONK
 		
 		private string _division_name;
 		
-		private System.Nullable<int> _interview;
-		
-		private System.Nullable<int> _interview_tie;
-		
-		private System.Nullable<decimal> _overall_score;
-		
-		private System.Nullable<decimal> _overall_break_score;
-		
-		private System.Nullable<int> _music;
-		
 		private string _halau_name;
 		
 		private string _kumu_name;
 		
 		private System.DateTime _entry_date;
 		
-		public vw_KeikiWahineDetail()
+		private System.Nullable<int> _entry_num_fri;
+		
+		private System.Nullable<int> _entry_num_sat;
+		
+		private System.Nullable<int> _interview;
+		
+		private System.Nullable<int> _costume_auana;
+		
+		private System.Nullable<int> _costume_kahiko;
+		
+		private System.Nullable<int> _costume_palua;
+		
+		private System.Nullable<int> _hula_auana;
+		
+		private System.Nullable<int> _hula_kahiko;
+		
+		private System.Nullable<int> _hula_palua;
+		
+		public vw_ContestantJudgeScore()
 		{
 		}
 		
@@ -4184,34 +5452,18 @@ namespace HONK
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_entry_num_fri", DbType="Int")]
-		public System.Nullable<int> entry_num_fri
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_judge_id", DbType="Int NOT NULL")]
+		public int judge_id
 		{
 			get
 			{
-				return this._entry_num_fri;
+				return this._judge_id;
 			}
 			set
 			{
-				if ((this._entry_num_fri != value))
+				if ((this._judge_id != value))
 				{
-					this._entry_num_fri = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_entry_num_sat", DbType="Int")]
-		public System.Nullable<int> entry_num_sat
-		{
-			get
-			{
-				return this._entry_num_sat;
-			}
-			set
-			{
-				if ((this._entry_num_sat != value))
-				{
-					this._entry_num_sat = value;
+					this._judge_id = value;
 				}
 			}
 		}
@@ -4280,86 +5532,6 @@ namespace HONK
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_interview", DbType="Int")]
-		public System.Nullable<int> interview
-		{
-			get
-			{
-				return this._interview;
-			}
-			set
-			{
-				if ((this._interview != value))
-				{
-					this._interview = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_interview_tie", DbType="Int")]
-		public System.Nullable<int> interview_tie
-		{
-			get
-			{
-				return this._interview_tie;
-			}
-			set
-			{
-				if ((this._interview_tie != value))
-				{
-					this._interview_tie = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_overall_score", DbType="Decimal(24,3)")]
-		public System.Nullable<decimal> overall_score
-		{
-			get
-			{
-				return this._overall_score;
-			}
-			set
-			{
-				if ((this._overall_score != value))
-				{
-					this._overall_score = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_overall_break_score", DbType="Decimal(22,3)")]
-		public System.Nullable<decimal> overall_break_score
-		{
-			get
-			{
-				return this._overall_break_score;
-			}
-			set
-			{
-				if ((this._overall_break_score != value))
-				{
-					this._overall_break_score = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_music", DbType="Int")]
-		public System.Nullable<int> music
-		{
-			get
-			{
-				return this._music;
-			}
-			set
-			{
-				if ((this._music != value))
-				{
-					this._music = value;
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_halau_name", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
 		public string halau_name
 		{
@@ -4404,6 +5576,150 @@ namespace HONK
 				if ((this._entry_date != value))
 				{
 					this._entry_date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_entry_num_fri", DbType="Int")]
+		public System.Nullable<int> entry_num_fri
+		{
+			get
+			{
+				return this._entry_num_fri;
+			}
+			set
+			{
+				if ((this._entry_num_fri != value))
+				{
+					this._entry_num_fri = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_entry_num_sat", DbType="Int")]
+		public System.Nullable<int> entry_num_sat
+		{
+			get
+			{
+				return this._entry_num_sat;
+			}
+			set
+			{
+				if ((this._entry_num_sat != value))
+				{
+					this._entry_num_sat = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_interview", DbType="Int")]
+		public System.Nullable<int> interview
+		{
+			get
+			{
+				return this._interview;
+			}
+			set
+			{
+				if ((this._interview != value))
+				{
+					this._interview = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_auana", DbType="Int")]
+		public System.Nullable<int> costume_auana
+		{
+			get
+			{
+				return this._costume_auana;
+			}
+			set
+			{
+				if ((this._costume_auana != value))
+				{
+					this._costume_auana = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_kahiko", DbType="Int")]
+		public System.Nullable<int> costume_kahiko
+		{
+			get
+			{
+				return this._costume_kahiko;
+			}
+			set
+			{
+				if ((this._costume_kahiko != value))
+				{
+					this._costume_kahiko = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_palua", DbType="Int")]
+		public System.Nullable<int> costume_palua
+		{
+			get
+			{
+				return this._costume_palua;
+			}
+			set
+			{
+				if ((this._costume_palua != value))
+				{
+					this._costume_palua = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_auana", DbType="Int")]
+		public System.Nullable<int> hula_auana
+		{
+			get
+			{
+				return this._hula_auana;
+			}
+			set
+			{
+				if ((this._hula_auana != value))
+				{
+					this._hula_auana = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_kahiko", DbType="Int")]
+		public System.Nullable<int> hula_kahiko
+		{
+			get
+			{
+				return this._hula_kahiko;
+			}
+			set
+			{
+				if ((this._hula_kahiko != value))
+				{
+					this._hula_kahiko = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_palua", DbType="Int")]
+		public System.Nullable<int> hula_palua
+		{
+			get
+			{
+				return this._hula_palua;
+			}
+			set
+			{
+				if ((this._hula_palua != value))
+				{
+					this._hula_palua = value;
 				}
 			}
 		}
@@ -5341,6 +6657,12 @@ namespace HONK
 		
 		private System.Nullable<int> _costume_palua_tie;
 		
+		private System.Nullable<int> _hula_auana_tie;
+		
+		private System.Nullable<int> _hula_kahiko_tie;
+		
+		private System.Nullable<int> _hula_palua_tie;
+		
 		private System.Nullable<int> _combined_hula_break_score;
 		
 		private System.Nullable<decimal> _overall_break_score;
@@ -5425,6 +6747,54 @@ namespace HONK
 				if ((this._costume_palua_tie != value))
 				{
 					this._costume_palua_tie = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_auana_tie", DbType="Int")]
+		public System.Nullable<int> hula_auana_tie
+		{
+			get
+			{
+				return this._hula_auana_tie;
+			}
+			set
+			{
+				if ((this._hula_auana_tie != value))
+				{
+					this._hula_auana_tie = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_kahiko_tie", DbType="Int")]
+		public System.Nullable<int> hula_kahiko_tie
+		{
+			get
+			{
+				return this._hula_kahiko_tie;
+			}
+			set
+			{
+				if ((this._hula_kahiko_tie != value))
+				{
+					this._hula_kahiko_tie = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_palua_tie", DbType="Int")]
+		public System.Nullable<int> hula_palua_tie
+		{
+			get
+			{
+				return this._hula_palua_tie;
+			}
+			set
+			{
+				if ((this._hula_palua_tie != value))
+				{
+					this._hula_palua_tie = value;
 				}
 			}
 		}
