@@ -153,8 +153,8 @@
                                         <asp:BoundField DataField="Halau.name" HeaderText="Halau" SortExpression="Halau.name" />
                                         <asp:BoundField DataField="Kumu.full_name" HeaderText="Kumu" SortExpression="Kumu.full_name" />
                                         <asp:BoundField DataField="entry_date" HeaderText="Entry Year" SortExpression="entry_date" DataFormatString="{0:yyyy}" />
-                                        <asp:BoundField DataField="entry_num_fri" HeaderText="Fri Entry No." SortExpression="entry_num_fri"/>
-                                        <asp:BoundField DataField="entry_num_sat" HeaderText="Sat Entry No." SortExpression="entry_num_sat"/>
+                                        <asp:BoundField DataField="entry_num_fri" HeaderText="Fri Entry No." SortExpression="entry_num_fri" />
+                                        <asp:BoundField DataField="entry_num_sat" HeaderText="Sat Entry No." SortExpression="entry_num_sat" />
                                     </Columns>
                                 </asp:GridView>
                             </ContentTemplate>
@@ -164,8 +164,8 @@
             </div>
         </div>
     </div>
-    <%-- LOOKUP TABLES --%>
-    <!-- Modal -->
+
+    <!-- MODAL FORMVIEWS -->
     <div class="modal fade" id="halauModal" tabindex="-1" role="dialog" aria-labelledby="haluaModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -194,7 +194,7 @@
             </div>
         </div>
     </div>
-
+    <%-- KUMU FORMVEW MODAL POPUP --%>
     <div class="modal fade" id="kumuModal" tabindex="-1" role="dialog" aria-labelledby="kumuModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -223,15 +223,21 @@
             </div>
         </div>
     </div>
+    <%-- END OF MODAL FORMVIEWS --%>
 
+    <%-- LINQ DATA SOURCES --%>
     <asp:LinqDataSource ID="ContestantsLDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" TableName="Contestants" EnableInsert="True" EnableUpdate="True">
         <InsertParameters>
             <asp:Parameter Name="entry_num_fri" ConvertEmptyStringToNull="true" />
             <asp:Parameter Name="entry_num_sat" ConvertEmptyStringToNull="true" />
         </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="entry_num_fri" ConvertEmptyStringToNull="true" />
+            <asp:Parameter Name="entry_num_sat" ConvertEmptyStringToNull="true" />
+        </UpdateParameters>
     </asp:LinqDataSource>
-    <%-- LOOKUP TABLES --%>
 
+    <%-- LOOKUP TABLES --%>
     <asp:LinqDataSource ID="AgeLDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" TableName="Ages" OrderBy="name" Select="new (name, id)"></asp:LinqDataSource>
     <asp:LinqDataSource ID="GenderLDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" OrderBy="name" Select="new (id, name)" TableName="Genders"></asp:LinqDataSource>
     <asp:LinqDataSource ID="DivisionLDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" OrderBy="name" TableName="Divisions"></asp:LinqDataSource>

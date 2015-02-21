@@ -31,11 +31,7 @@ namespace HONK
 
             if (ageDD.SelectedValue != "" && genderDD.SelectedValue != "")
             {
-                if (genderDD.SelectedItem.Text == "Palua")
-                {
-                    divDD.Items.FindByText("Palua").Selected = true;
-                }
-                else if (ageDD.SelectedItem.Text == "Keiki")
+                if (ageDD.SelectedItem.Text == "Keiki")
                 {
                     if (genderDD.SelectedItem.Text == "Kane")
                     {
@@ -44,6 +40,10 @@ namespace HONK
                     else if (genderDD.SelectedItem.Text == "Wahine")
                     {
                         divDD.Items.FindByText("Keiki Wahine").Selected = true;
+                    }
+                    else if (genderDD.SelectedItem.Text == "Palua")
+                    {
+                        divDD.Items.FindByText("Keiki Palua").Selected = true;
                     }
                 }
                 else if (ageDD.SelectedItem.Text == "'Opio")
@@ -56,8 +56,11 @@ namespace HONK
                     {
                         divDD.Items.FindByText("'Opio Wahine").Selected = true;
                     }
+                    else if (genderDD.SelectedItem.Text == "Palua")
+                    {
+                        divDD.Items.FindByText("'Opio Palua").Selected = true;
+                    }
                 }
-
             }
 
             else
