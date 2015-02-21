@@ -6,46 +6,84 @@ using System.Data.SqlClient;
 
 namespace HONK
 {
-    public class HelperMethods
+    public class DBMethods
     {
+
+        // LINQ METHODS
         public static bool IsPalua(int contestant_id)
         {
             HONKDBDataContext db = new HONKDBDataContext();
 
             return (from c in db.vw_ContestantDetails
-                         where c.id == contestant_id
-                         && c.gender_name == "Palua"
-                         select c).Any();
+                    where c.id == contestant_id
+                    && c.gender_name == "Palua"
+                    select c).Any();
         }
+        public static int TotalJudges()
+        {
+            HONKDBDataContext db = new HONKDBDataContext();
+            return (from j in db.Judges
+                    select j).Count();
+        }
+
+        /// <summary>
+        /// Intializes JudgeScore collection with null values for a given contestant.
+        /// </summary>
+        /// <param name="contestant_id"></param>
+        public static void InitializeJudgeScores(int contestant_id)
+        {
+            HONKDBDataContext db = new HONKDBDataContext();
+
+            // Create a JudgeScore object and add the object to the JudgeScore collection
+            for (int i = 1; i <= TotalJudges(); i++)
+            {
+                JudgeScore judge_score = new JudgeScore();
+                judge_score.contestant_id = contestant_id;
+                judge_score.judge_id = i;
+                db.JudgeScores.InsertOnSubmit(judge_score);
+            }
+
+            // Submit the change to the database
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+        public static void UpdateJudgeScores()
+        { }
 
         //SQL INSERT METHODS
         /// <summary>
         /// Function
         /// </summary>
         /// <param name="contestant_id"></param>
-        public static void InsertJudgeScores(int contestant_id)
-        {
-            HONKDBDataContext db = new HONKDBDataContext();
-            int judgeCount = TotalJudges();
+        //public static void InsertJudgeScores(int contestant_id)
+        //{
+        //    HONKDBDataContext db = new HONKDBDataContext();
+        //    int judgeCount = TotalJudges();
 
-            string command = "INSERT INTO JudgeScore (contestant_id, judge_id) VALUES (@contestant_id, @judge_id)  ";
-            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["HONKDBContext"].ConnectionString;
+        //    string command = "INSERT INTO JudgeScore (contestant_id, judge_id) VALUES (@contestant_id, @judge_id)  ";
+        //    string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["HONKDBContext"].ConnectionString;
 
-            for (int i = 1; i <= judgeCount; i++)
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
+        //    for (int i = 1; i <= judgeCount; i++)
+        //    {
+        //        using (SqlConnection connection = new SqlConnection(connectionString))
+        //        {
+        //            connection.Open();
 
-                    SqlCommand sqlCmd = new SqlCommand(command, connection);
-                    sqlCmd.Parameters.AddWithValue("@contestant_id", contestant_id);
-                    sqlCmd.Parameters.AddWithValue("@judge_id", i);
+        //            SqlCommand sqlCmd = new SqlCommand(command, connection);
+        //            sqlCmd.Parameters.AddWithValue("@contestant_id", contestant_id);
+        //            sqlCmd.Parameters.AddWithValue("@judge_id", i);
 
-                    SqlDataReader reader = sqlCmd.ExecuteReader();
-                    reader.Close();
-                }
-            }
-        }
+        //            SqlDataReader reader = sqlCmd.ExecuteReader();
+        //            reader.Close();
+        //        }
+        //    }
+        //}
 
         // SQL UPDATE METHODS
 
@@ -95,7 +133,7 @@ namespace HONK
                 Console.WriteLine(ex.Message);
             }
         }
-        
+
         /// <summary>
         /// Method for updating a Palua Contestant's Individual Judge Score. Age Gene is Palua
         /// </summary>
@@ -159,12 +197,6 @@ namespace HONK
             }
         }
 
-        public static int TotalJudges()
-        {
-            HONKDBDataContext db = new HONKDBDataContext();
-            return (from j in db.Judges
-                    select j).Count();
-        }
 
 
     }

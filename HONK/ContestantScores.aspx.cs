@@ -36,7 +36,7 @@ namespace HONK
                                  select c;
 
                 // INSERT Contestant_JudgeScores w/ NULL VALUES
-                if (contestant.Count() == 0) HelperMethods.InsertJudgeScores(contestant_id);
+                if (contestant.Count() == 0) DBMethods.InitializeJudgeScores(contestant_id);
 
                 // Initialize Contestant Formviews
                 ContestantScoresFV.ChangeMode(FormViewMode.Edit);
@@ -45,7 +45,7 @@ namespace HONK
                 ContestantMasterScoreFV.DataBind();
 
                 //Check if Gender Name is Palua
-                if (HelperMethods.IsPalua(contestant_id))
+                if (DBMethods.IsPalua(contestant_id))
                 {
                     // Hide Sections which does not pertain to Palua
                     ContestantScoresFV.FindControl("isNotPalua").Visible = false;
@@ -153,9 +153,9 @@ namespace HONK
         {
             int contestant_id = Convert.ToInt32(ContestantDDL.SelectedValue);
 
-            if (HelperMethods.IsPalua(contestant_id))
+            if (DBMethods.IsPalua(contestant_id))
             {
-                for (int judge_id = 1; judge_id < HelperMethods.TotalJudges(); judge_id++)
+                for (int judge_id = 1; judge_id < DBMethods.TotalJudges(); judge_id++)
                 {
 
                     try
@@ -163,7 +163,7 @@ namespace HONK
                         string hula_palua = ((TextBox)ContestantScoresFV.FindControl("judgeHulaP" + judge_id)).Text;
                         string costume_palua = ((TextBox)ContestantScoresFV.FindControl("judgeCostumeP" + judge_id)).Text;
 
-                        HelperMethods.UpdateJudgeScore(contestant_id, judge_id, hula_palua, costume_palua);
+                        DBMethods.UpdateJudgeScore(contestant_id, judge_id, hula_palua, costume_palua);
                     }
                     catch (Exception ex)
                     {
@@ -173,7 +173,7 @@ namespace HONK
             }
             else
             {
-                for (int judge_id = 1; judge_id <= HelperMethods.TotalJudges(); judge_id++)
+                for (int judge_id = 1; judge_id <= DBMethods.TotalJudges(); judge_id++)
                 {
 
                     if (judge_id == 7)
@@ -181,7 +181,7 @@ namespace HONK
                         try
                         {
                             string interview = ((TextBox)ContestantScoresFV.FindControl("judgeInterview" + judge_id)).Text;
-                            HelperMethods.UpdateJudgeScore(contestant_id, judge_id, interview);
+                            DBMethods.UpdateJudgeScore(contestant_id, judge_id, interview);
                         }
                         catch (Exception ex)
                         {
@@ -199,7 +199,7 @@ namespace HONK
                             string hula_auana = ((TextBox)ContestantScoresFV.FindControl("judgeHulaA" + judge_id)).Text;
                             string hula_kahiko = ((TextBox)ContestantScoresFV.FindControl("judgeHulaK" + judge_id)).Text;
 
-                            HelperMethods.UpdateJudgeScore(contestant_id, judge_id, interview, costume_auana, costume_kahiko, hula_auana, hula_kahiko);
+                            DBMethods.UpdateJudgeScore(contestant_id, judge_id, interview, costume_auana, costume_kahiko, hula_auana, hula_kahiko);
                         }
                         catch (Exception ex)
                         {
@@ -221,7 +221,7 @@ namespace HONK
         /// <param name="e"></param>
         protected void CalculateHiLow_MasterScores(object sender, EventArgs e)
         {
-            if (HelperMethods.IsPalua(Convert.ToInt32(ContestantDDL.SelectedValue)))
+            if (DBMethods.IsPalua(Convert.ToInt32(ContestantDDL.SelectedValue)))
             {
                 ((TextBox)ContestantMasterScoreFV.FindControl("masterHulaP")).Text = GetHiLoSum("judgeHulaP", 6).HasValue ? GetHiLoSum("judgeHulaP", 6).ToString() : "";
                 ((TextBox)ContestantMasterScoreFV.FindControl("masterCostumeP")).Text = GetHiLoSum("judgeCostumeP", 6).HasValue ? GetHiLoSum("judgeCostumeP", 6).ToString() : "";

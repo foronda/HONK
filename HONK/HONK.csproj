@@ -270,7 +270,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="HelperMethods.cs" />
+    <Compile Include="DBMethods.cs" />
     <Compile Include="HONKDB.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
