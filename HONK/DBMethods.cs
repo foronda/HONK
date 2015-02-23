@@ -8,6 +8,107 @@ namespace HONK
 {
     public class DBMethods
     {
+        public class HonkAwards
+        {
+            public IQueryable<AwardRecipient> AwardRecipients
+            {
+                get { return awardRecipients.AsQueryable(); }
+            }
+
+            public void GenerateAwardWinners(DateTime date)
+            {
+                HONKDBDataContext db = new HONKDBDataContext();
+
+                var query = (from ca in db.vw_ContestantAwardScoresByCategories
+                             where ca.entry_date.Year == date.Year
+                             && ca.category == "Interview"
+                             && ca.age_name == "Keiki"
+                             orderby ca.score descending
+                             select new AwardRecipient
+                             {
+                                 Name = ca.full_name,
+                                 Score = (int?)ca.score,
+                                 ScoreTie = (int?)ca.score_tie,
+                             }).Take(3);
+
+                //var query = (from award in db.vw_ContestantAwardScores
+                //             where award.entry_date.Year == date.Year
+                //             orderby award.interview descending
+                //             select new AwardRecipient
+                //             {
+                //                 Name = award.full_name,
+                //                 Score = award.interview,
+                //                 ScoreTie = award.interview_tie,
+                //                 Category = "Interview"
+                //             }).Take(3);
+
+                foreach (var a in query)
+                {
+                    AddAwardRecipient(a.Name, a.Score, a.ScoreTie, a.Category);
+                }
+
+                //var awards = (from award in db.vw_ContestantAwardScores
+                //              where award.entry_date.Year == date.Year
+                //              orderby award.interview descending
+                //              select new AwardRecipient
+                //              {
+                //                  Name = award.full_name,
+                //                  Score = award.interview,
+                //                  ScoreTie = award.interview_tie,
+                //                  Category = "Interview"
+                //              }).Union
+                //            (from award in db.vw_ContestantAwardScores
+                //             where award.entry_date.Year == date.Year
+                //             orderby award.music descending
+                //             select new AwardRecipient
+                //             {
+                //                 Name = award.full_name,
+                //                 Score = award.music,
+                //                 ScoreTie = null,
+                //                 Category = "Music"
+                //             }).Union;
+            }
+            public void KeikiInterview(DateTime date)
+            {
+                HONKDBDataContext db = new HONKDBDataContext();
+
+                var query = (from award in db.vw_ContestantAwardScores
+                             where award.entry_date.Year == date.Year
+                             orderby award.interview descending
+                             select new AwardRecipient
+                             {
+                                 Name = award.full_name,
+                                 Score = award.interview,
+                                 ScoreTie = award.interview_tie,
+                                 Category = "Interview"
+                             }).Take(3);
+
+                foreach (var a in query)
+                {
+                    AddAwardRecipient(a.Name, a.Score, a.ScoreTie, a.Category);
+                }
+            }
+            public void AddAwardRecipient(string name, int? score, int? score_tie, string category)
+            {
+                awardRecipients.Add(new AwardRecipient
+                {
+                    Name = name,
+                    Score = score,
+                    ScoreTie = score_tie,
+                    Category = category
+                });
+            }
+            public class AwardRecipient
+            {
+                public string Name { get; set; }
+                public int? Score { get; set; }
+                public int? ScoreTie { get; set; }
+                public string Category { get; set; }
+            }
+            private List<AwardRecipient> awardRecipients = new List<AwardRecipient>();
+
+        }
+
 
         // LINQ METHODS
         public static bool IsPalua(int contestant_id)
@@ -52,6 +153,36 @@ namespace HONK
                 Console.WriteLine(e);
             }
         }
+        public static void IntializeAwardCategory()
+        {
+            HONKDBDataContext db = new HONKDBDataContext();
+            List<string> category = new List<string>();
+            category.Add("Interview");
+            category.Add("Costume");
+            category.Add("Hula");
+            category.Add("Oli");
+            category.Add("Music");
+            category.Add("Overall");
+            category.Sort();
+
+            foreach (string c in category)
+            {
+                AwardCategory award_category = new AwardCategory();
+                award_category.category = c;
+                db.AwardCategories.InsertOnSubmit(award_category);
+            }
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+        /// <summary>
+        /// Method for updating a Contestant Individual Judge Score. Gender is NOT Palua
+        /// </summary>
         public static void UpdateJudgeScore(int contestant_id, int judge_id, DateTime date, string interview, string costume_auana, string costume_kahiko, string hula_auana, string hula_kahiko)
         {
             HONKDBDataContext db = new HONKDBDataContext();
@@ -80,6 +211,13 @@ namespace HONK
                 }
             }
         }
+        /// <summary>
+        /// Method for updating a Palua Contestant's Individual Judge Score. Gender is Palua
+        /// </summary>
+        /// <param name="contestant_id"></param>
+        /// <param name="judge_id"></param>
+        /// <param name="hula_palua"></param>
+        /// <param name="costume_palua"></param>
         public static void UpdateJudgeScore(int contestant_id, int judge_id, DateTime date, string hula_palua, string costume_palua)
         {
             HONKDBDataContext db = new HONKDBDataContext();
@@ -131,6 +269,9 @@ namespace HONK
         }
 
 
+
+
+        /****************************************************/
         //SQL INSERT METHODS
         /// <summary>
         /// Function

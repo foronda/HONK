@@ -120,6 +120,7 @@
     <Content Include="App_Data\HONK_log.ldf">
       <DependentUpon>HONK.mdf</DependentUpon>
     </Content>
+    <Content Include="AwardRecipients.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-custom-styles.css" />
     <Content Include="Content\bootstrap-datetimepicker.css" />
@@ -232,6 +233,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="AwardRecipients.aspx.cs">
+      <DependentUpon>AwardRecipients.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AwardRecipients.aspx.designer.cs">
+      <DependentUpon>AwardRecipients.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
