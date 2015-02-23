@@ -25,7 +25,6 @@ namespace HONK
             return (from j in db.Judges
                     select j).Count();
         }
-
         /// <summary>
         /// Intializes JudgeScore collection with null values for a given contestant.
         /// </summary>
@@ -53,8 +52,84 @@ namespace HONK
                 Console.WriteLine(e);
             }
         }
-        public static void UpdateJudgeScores()
-        { }
+        public static void UpdateJudgeScore(int contestant_id, int judge_id, DateTime date, string interview, string costume_auana, string costume_kahiko, string hula_auana, string hula_kahiko)
+        {
+            HONKDBDataContext db = new HONKDBDataContext();
+
+            var js = (from j in db.JudgeScores
+                      where j.contestant_id == contestant_id
+                      && j.Contestant.entry_date.Year == date.Year
+                      && j.judge_id == judge_id
+                      select j).FirstOrDefault();
+
+            if (js != null)
+            {
+                js.interview = HonkExtension.StringToInt(interview);
+                js.costume_auana = HonkExtension.StringToInt(costume_auana);
+                js.costume_kahiko = HonkExtension.StringToInt(costume_kahiko);
+                js.hula_auana = HonkExtension.StringToInt(hula_auana);
+                js.hula_kahiko = HonkExtension.StringToInt(hula_kahiko);
+
+                try
+                {
+                    db.SubmitChanges();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+            }
+        }
+        public static void UpdateJudgeScore(int contestant_id, int judge_id, DateTime date, string hula_palua, string costume_palua)
+        {
+            HONKDBDataContext db = new HONKDBDataContext();
+
+            var js = (from j in db.JudgeScores
+                      where j.contestant_id == contestant_id
+                      && j.Contestant.entry_date.Year == date.Year
+                      && j.judge_id == judge_id
+                      select j).FirstOrDefault();
+
+            if (js != null)
+            {
+                js.costume_palua = HonkExtension.StringToInt(costume_palua);
+                js.hula_palua = HonkExtension.StringToInt(hula_palua);
+
+                try
+                {
+                    db.SubmitChanges();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+            }
+        }
+        public static void UpdateJudgeScore(int contestant_id, int judge_id, DateTime date, string interview)
+        {
+            HONKDBDataContext db = new HONKDBDataContext();
+
+            var js = (from j in db.JudgeScores
+                      where j.contestant_id == contestant_id
+                      && j.Contestant.entry_date.Year == date.Year
+                      && j.judge_id == judge_id
+                      select j).FirstOrDefault();
+
+            if (js != null)
+            {
+                js.interview = HonkExtension.StringToInt(interview);
+
+                try
+                {
+                    db.SubmitChanges();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+            }
+        }
+
 
         //SQL INSERT METHODS
         /// <summary>
@@ -97,42 +172,42 @@ namespace HONK
         /// <param name="costume_kahiko"></param>
         /// <param name="hula_auana"></param>
         /// <param name="hula_kahiko"></param>
-        public static void UpdateJudgeScore(int contestant_id, int judge_id, string interview, string costume_auana, string costume_kahiko, string hula_auana, string hula_kahiko)
-        {
-            HONKDBDataContext db = new HONKDBDataContext();
-            int judgeCount = TotalJudges();
+        //public static void UpdateJudgeScore(int contestant_id, int judge_id, string interview, string costume_auana, string costume_kahiko, string hula_auana, string hula_kahiko)
+        //{
+        //    HONKDBDataContext db = new HONKDBDataContext();
+        //    int judgeCount = TotalJudges();
 
-            try
-            {
-                string command = "UPDATE  JudgeScore SET interview = @interview, costume_auana = @costume_auana,costume_kahiko = @costume_kahiko,hula_auana = @hula_auana, hula_kahiko = @hula_kahiko Where contestant_id = @contestant_id and judge_id = @judge_id ";
+        //    try
+        //    {
+        //        string command = "UPDATE  JudgeScore SET interview = @interview, costume_auana = @costume_auana,costume_kahiko = @costume_kahiko,hula_auana = @hula_auana, hula_kahiko = @hula_kahiko Where contestant_id = @contestant_id and judge_id = @judge_id ";
 
-                string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["HONKDBContext"].ConnectionString;
+        //        string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["HONKDBContext"].ConnectionString;
 
-                for (int i = 1; i <= judgeCount; i++)
-                {
-                    using (SqlConnection connection = new SqlConnection(connectionString))
-                    {
-                        connection.Open();
+        //        for (int i = 1; i <= judgeCount; i++)
+        //        {
+        //            using (SqlConnection connection = new SqlConnection(connectionString))
+        //            {
+        //                connection.Open();
 
-                        SqlCommand sqlCmd = new SqlCommand(command, connection);
+        //                SqlCommand sqlCmd = new SqlCommand(command, connection);
 
-                        sqlCmd.Parameters.AddWithValue("@contestant_id", contestant_id);
-                        sqlCmd.Parameters.AddWithValue("@judge_id", judge_id);
-                        sqlCmd.Parameters.AddWithEmptyStringValue("@interview", interview);
-                        sqlCmd.Parameters.AddWithEmptyStringValue("@costume_auana", costume_auana);
-                        sqlCmd.Parameters.AddWithEmptyStringValue("@costume_kahiko", costume_kahiko);
-                        sqlCmd.Parameters.AddWithEmptyStringValue("@hula_auana", hula_auana);
-                        sqlCmd.Parameters.AddWithEmptyStringValue("@hula_kahiko", hula_kahiko);
+        //                sqlCmd.Parameters.AddWithValue("@contestant_id", contestant_id);
+        //                sqlCmd.Parameters.AddWithValue("@judge_id", judge_id);
+        //                sqlCmd.Parameters.AddWithEmptyStringValue("@interview", interview);
+        //                sqlCmd.Parameters.AddWithEmptyStringValue("@costume_auana", costume_auana);
+        //                sqlCmd.Parameters.AddWithEmptyStringValue("@costume_kahiko", costume_kahiko);
+        //                sqlCmd.Parameters.AddWithEmptyStringValue("@hula_auana", hula_auana);
+        //                sqlCmd.Parameters.AddWithEmptyStringValue("@hula_kahiko", hula_kahiko);
 
-                        sqlCmd.ExecuteNonQuery();
-                    }
-                }
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
+        //                sqlCmd.ExecuteNonQuery();
+        //            }
+        //        }
+        //    }
+        //    catch (SqlException ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //    }
+        //}
 
         /// <summary>
         /// Method for updating a Palua Contestant's Individual Judge Score. Age Gene is Palua
@@ -141,61 +216,61 @@ namespace HONK
         /// <param name="judge_id"></param>
         /// <param name="hula_palua"></param>
         /// <param name="costume_palua"></param>
-        public static void UpdateJudgeScore(int contestant_id, int judge_id, string hula_palua, string costume_palua)
-        {
-            HONKDBDataContext db = new HONKDBDataContext();
+        //public static void UpdateJudgeScore(int contestant_id, int judge_id, string hula_palua, string costume_palua)
+        //{
+        //    HONKDBDataContext db = new HONKDBDataContext();
 
-            try
-            {
-                string command = "UPDATE  JudgeScore SET hula_palua = @hula_palua,  costume_palua = @costume_palua Where contestant_id = @contestant_id and judge_id = @judge_id ";
+        //    try
+        //    {
+        //        string command = "UPDATE  JudgeScore SET hula_palua = @hula_palua,  costume_palua = @costume_palua Where contestant_id = @contestant_id and judge_id = @judge_id ";
 
-                string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["HONKDBContext"].ConnectionString;
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
+        //        string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["HONKDBContext"].ConnectionString;
+        //        using (SqlConnection connection = new SqlConnection(connectionString))
+        //        {
+        //            connection.Open();
 
-                    SqlCommand sqlCmd = new SqlCommand(command, connection);
-                    sqlCmd.Parameters.AddWithValue("@contestant_id", contestant_id);
-                    sqlCmd.Parameters.AddWithValue("@judge_id", judge_id);
-                    sqlCmd.Parameters.AddWithEmptyStringValue("@hula_palua", hula_palua);
-                    sqlCmd.Parameters.AddWithEmptyStringValue("@costume_palua", costume_palua);
+        //            SqlCommand sqlCmd = new SqlCommand(command, connection);
+        //            sqlCmd.Parameters.AddWithValue("@contestant_id", contestant_id);
+        //            sqlCmd.Parameters.AddWithValue("@judge_id", judge_id);
+        //            sqlCmd.Parameters.AddWithEmptyStringValue("@hula_palua", hula_palua);
+        //            sqlCmd.Parameters.AddWithEmptyStringValue("@costume_palua", costume_palua);
 
-                    sqlCmd.ExecuteNonQuery();
-                }
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+        //            sqlCmd.ExecuteNonQuery();
+        //        }
+        //    }
+        //    catch (SqlException ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //    }
 
-        }
+        //}
 
-        public static void UpdateJudgeScore(int contestant_id, int judge_id, string interview)
-        {
-            HONKDBDataContext db = new HONKDBDataContext();
+        //public static void UpdateJudgeScore(int contestant_id, int judge_id, string interview)
+        //{
+        //    HONKDBDataContext db = new HONKDBDataContext();
 
-            try
-            {
-                string command = "UPDATE  JudgeScore SET interview = @interview Where contestant_id = @contestant_id and judge_id = @judge_id ";
+        //    try
+        //    {
+        //        string command = "UPDATE  JudgeScore SET interview = @interview Where contestant_id = @contestant_id and judge_id = @judge_id ";
 
-                string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["HONKDBContext"].ConnectionString;
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
+        //        string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["HONKDBContext"].ConnectionString;
+        //        using (SqlConnection connection = new SqlConnection(connectionString))
+        //        {
+        //            connection.Open();
 
-                    SqlCommand sqlCmd = new SqlCommand(command, connection);
-                    sqlCmd.Parameters.AddWithValue("@contestant_id", contestant_id);
-                    sqlCmd.Parameters.AddWithValue("@judge_id", judge_id);
-                    sqlCmd.Parameters.AddWithEmptyStringValue("@interview", interview);
+        //            SqlCommand sqlCmd = new SqlCommand(command, connection);
+        //            sqlCmd.Parameters.AddWithValue("@contestant_id", contestant_id);
+        //            sqlCmd.Parameters.AddWithValue("@judge_id", judge_id);
+        //            sqlCmd.Parameters.AddWithEmptyStringValue("@interview", interview);
 
-                    sqlCmd.ExecuteNonQuery();
-                }
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
+        //            sqlCmd.ExecuteNonQuery();
+        //        }
+        //    }
+        //    catch (SqlException ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //    }
+        //}
 
 
 
@@ -216,6 +291,12 @@ namespace HONK
                 return collection.AddWithValue(parameterName, DBNull.Value);
             else
                 return collection.AddWithValue(parameterName, value);
+        }
+
+        public static int? StringToInt(string value)
+        {
+            if (!String.IsNullOrEmpty(value)) return Convert.ToInt32(value);
+            else return null;
         }
     }
 

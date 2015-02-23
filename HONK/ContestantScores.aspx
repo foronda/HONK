@@ -1,5 +1,4 @@
 ﻿<%@ Page Title="Contestant Scores" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ContestantScores.aspx.cs" Inherits="HONK.ContestantScores" %>
-
 <%@ Register Src="~/Reports/MasterTabulationScore.ascx" TagName="MasterTabulationScore" TagPrefix="uc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
@@ -54,7 +53,6 @@
     <%-- END CONTESTANT DROPDOWN SECTION--%>
 
     <%-- START REPORT EXPORT BREADCRUMB --%>
-
     <ul class="breadcrumb">
         <li>
             <asp:LinkButton ID="exportMasterTab" runat="server" OnClick="exportMasterTab_Click" Text="MASTER TABULATION REPORT" />

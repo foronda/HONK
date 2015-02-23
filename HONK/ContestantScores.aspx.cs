@@ -152,18 +152,19 @@ namespace HONK
         private void ContestantScoresFV_UpdateItems()
         {
             int contestant_id = Convert.ToInt32(ContestantDDL.SelectedValue);
+            DateTime date = EntryDate;
 
+            // Contestant is Palua, update all Palua JudgeScores from Palua textbox control
             if (DBMethods.IsPalua(contestant_id))
             {
                 for (int judge_id = 1; judge_id < DBMethods.TotalJudges(); judge_id++)
                 {
-
                     try
                     {
                         string hula_palua = ((TextBox)ContestantScoresFV.FindControl("judgeHulaP" + judge_id)).Text;
                         string costume_palua = ((TextBox)ContestantScoresFV.FindControl("judgeCostumeP" + judge_id)).Text;
 
-                        DBMethods.UpdateJudgeScore(contestant_id, judge_id, hula_palua, costume_palua);
+                        DBMethods.UpdateJudgeScore(contestant_id, judge_id, date, hula_palua, costume_palua);
                     }
                     catch (Exception ex)
                     {
@@ -171,23 +172,22 @@ namespace HONK
                     }
                 }
             }
+            // Not Palua, update JudgeScores from textbox control.
             else
             {
                 for (int judge_id = 1; judge_id <= DBMethods.TotalJudges(); judge_id++)
                 {
-
                     if (judge_id == 7)
                     {
                         try
                         {
                             string interview = ((TextBox)ContestantScoresFV.FindControl("judgeInterview" + judge_id)).Text;
-                            DBMethods.UpdateJudgeScore(contestant_id, judge_id, interview);
+                            DBMethods.UpdateJudgeScore(contestant_id, judge_id, date, interview);
                         }
                         catch (Exception ex)
                         {
                             Console.WriteLine("{0} Exception caught.", ex);
                         }
-
                     }
                     else
                     {
@@ -199,7 +199,7 @@ namespace HONK
                             string hula_auana = ((TextBox)ContestantScoresFV.FindControl("judgeHulaA" + judge_id)).Text;
                             string hula_kahiko = ((TextBox)ContestantScoresFV.FindControl("judgeHulaK" + judge_id)).Text;
 
-                            DBMethods.UpdateJudgeScore(contestant_id, judge_id, interview, costume_auana, costume_kahiko, hula_auana, hula_kahiko);
+                            DBMethods.UpdateJudgeScore(contestant_id, judge_id, date, interview, costume_auana, costume_kahiko, hula_auana, hula_kahiko);
                         }
                         catch (Exception ex)
                         {
@@ -247,6 +247,15 @@ namespace HONK
 
 
         // MASTER SCORE ACCESSORS
+        protected DateTime EntryDate
+        {
+            get
+            {
+                DateTime date;
+                DateTime.TryParse("01/01/" + EntryYearTb.Text, out date);
+                return date;
+            }
+        }
         protected string InterviewTie
         {
             get
