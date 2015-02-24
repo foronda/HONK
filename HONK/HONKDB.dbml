@@ -191,6 +191,22 @@
       <Column Name="music" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.vw_AwardKeikiInterview" Member="vw_AwardKeikiInterviews">
+    <Type Name="vw_AwardKeikiInterview">
+      <Column Name="contestant_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="age_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="gender_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="kumu_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="award_category_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="score" Type="System.Decimal" DbType="Decimal(26,3)" CanBeNull="true" />
+      <Column Name="score_tie" Type="System.Decimal" DbType="Decimal(23,3)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vw_AwardRecipients" Member="vw_AwardRecipients">
+    <Type Name="vw_AwardRecipient">
+      <Column Name="title" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Table Name="dbo.vw_AwardScoresByCategoryId" Member="vw_AwardScoresByCategoryIds">
     <Type Name="vw_AwardScoresByCategoryId">
       <Column Name="contestant_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -252,13 +268,14 @@
   <Table Name="dbo.vw_ContestantAwardScoresByCategory" Member="vw_ContestantAwardScoresByCategories">
     <Type Name="vw_ContestantAwardScoresByCategory">
       <Column Name="contestant_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="age_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="gender_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="award_category_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="full_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="age_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="gender_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="kumu_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="halau_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="score" Type="System.Decimal" DbType="Decimal(26,3)" CanBeNull="true" />
       <Column Name="score_tie" Type="System.Decimal" DbType="Decimal(23,3)" CanBeNull="true" />
-      <Column Name="category" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="entry_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
     </Type>
   </Table>

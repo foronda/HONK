@@ -15,37 +15,29 @@ namespace HONK
                 get { return awardRecipients.AsQueryable(); }
             }
 
-            public void GenerateAwardWinners(DateTime date)
+            public void AddAwardWinners(DateTime date)
             {
                 HONKDBDataContext db = new HONKDBDataContext();
 
-                var query = (from ca in db.vw_ContestantAwardScoresByCategories
-                             where ca.entry_date.Year == date.Year
-                             && ca.category == "Interview"
-                             && ca.age_name == "Keiki"
-                             orderby ca.score descending
-                             select new AwardRecipient
-                             {
-                                 Name = ca.full_name,
-                                 Score = (int?)ca.score,
-                                 ScoreTie = (int?)ca.score_tie,
-                             }).Take(3);
+                var query = (from a in db.vw_ContestantAwardScoresByCategories
+                             where a.entry_date.Year == date.Year
+                             select a).AsQueryable();
 
-                //var query = (from award in db.vw_ContestantAwardScores
-                //             where award.entry_date.Year == date.Year
-                //             orderby award.interview descending
-                //             select new AwardRecipient
-                //             {
-                //                 Name = award.full_name,
-                //                 Score = award.interview,
-                //                 ScoreTie = award.interview_tie,
-                //                 Category = "Interview"
-                //             }).Take(3);
+                // Obtain string list of award titles for AwardRecipient object.
+                award_titles = (from t in db.Awards
+                                select t.title).ToList();
 
-                foreach (var a in query)
-                {
-                    AddAwardRecipient(a.Name, a.Score, a.ScoreTie, a.Category);
-                }
+                AddInterviewWinners(ref query);
+                AddCostumeWinners(ref query);
+                AddHulaWinners(ref query);
+                AddOliWinners(ref query);
+                AddMusicWinner(ref query);
+                AddOverallWinners(ref query);
+
+                //foreach (var a in query)
+                //{
+                //    AddAwardRecipient(a.Name, a.Score, a.ScoreTie, a.Category);
+                //}
 
                 //var awards = (from award in db.vw_ContestantAwardScores
                 //              where award.entry_date.Year == date.Year
@@ -68,45 +60,375 @@ namespace HONK
                 //                 Category = "Music"
                 //             }).Union;
             }
-            public void KeikiInterview(DateTime date)
+
+            private void AddInterviewWinners(ref IQueryable<vw_ContestantAwardScoresByCategory> award_scores)
             {
-                HONKDBDataContext db = new HONKDBDataContext();
+                // Interview Awards
+                Func<vw_ContestantAwardScoresByCategory, bool> WhereKeikiInterview = a => a.age_id == Keiki && a.award_category_id == Interview;
+                Func<vw_ContestantAwardScoresByCategory, bool> WhereOpioInterview = a => a.age_id == Opio && a.award_category_id == Interview;
 
-                var query = (from award in db.vw_ContestantAwardScores
-                             where award.entry_date.Year == date.Year
-                             orderby award.interview descending
-                             select new AwardRecipient
-                             {
-                                 Name = award.full_name,
-                                 Score = award.interview,
-                                 ScoreTie = award.interview_tie,
-                                 Category = "Interview"
-                             }).Take(3);
-
-                foreach (var a in query)
-                {
-                    AddAwardRecipient(a.Name, a.Score, a.ScoreTie, a.Category);
-                }
+                // Keiki Interview
+                AddAwardRecipient(award_scores
+                                    .Where(WhereKeikiInterview)
+                                    .OrderByDescending(award => award.score)
+                                    .Select(award => new AwardRecipient
+                                    {
+                                        EntryDate = award.entry_date,
+                                        Name = award.full_name,
+                                        AwardName = award_titles[0],
+                                        Score = (int?)award.score,
+                                        ScoreTie = (int?)award.score_tie,
+                                    })
+                                    .FirstOrDefault());
+                // Opio Interview
+                AddAwardRecipient(award_scores
+                                    .Where(WhereOpioInterview)
+                                    .OrderByDescending(award => award.score)
+                                    .Select(award => new AwardRecipient
+                                    {
+                                        EntryDate = award.entry_date,
+                                        Name = award.full_name,
+                                        AwardName = award_titles[1],
+                                        Score = (int?)award.score,
+                                        ScoreTie = (int?)award.score_tie,
+                                    })
+                                    .FirstOrDefault());
             }
-            public void AddAwardRecipient(string name, int? score, int? score_tie, string category)
+            private void AddCostumeWinners(ref IQueryable<vw_ContestantAwardScoresByCategory> award_scores)
+            {
+                // Costume Awards
+                Func<vw_ContestantAwardScoresByCategory, bool> WhereKeikiKahiko = a => a.age_id == Keiki && a.award_category_id == CKahiko;
+                Func<vw_ContestantAwardScoresByCategory, bool> WhereOpioKahiko = a => a.age_id == Opio && a.award_category_id == CKahiko;
+                Func<vw_ContestantAwardScoresByCategory, bool> WhereKeikiAuana = a => a.age_id == Keiki && a.award_category_id == CAuana;
+                Func<vw_ContestantAwardScoresByCategory, bool> WhereOpioAuana = a => a.age_id == Opio && a.award_category_id == CAuana;
+                Func<vw_ContestantAwardScoresByCategory, bool> WhereKeikiPalua = a => a.age_id == Keiki && a.award_category_id == CPalua;
+                Func<vw_ContestantAwardScoresByCategory, bool> WhereOpioPalua = a => a.age_id == Opio && a.award_category_id == CPalua;
+
+                // Keiki Kahiko Costume
+                AddAwardRecipient(award_scores
+                                    .Where(WhereKeikiKahiko)
+                                    .OrderByDescending(award => award.score)
+                                    .Select(award => new AwardRecipient
+                                    {
+                                        EntryDate = award.entry_date,
+                                        Name = award.full_name,
+                                        AwardName = award_titles[2],
+                                        Score = (int?)award.score,
+                                        ScoreTie = (int?)award.score_tie,
+                                    })
+                                    .FirstOrDefault());
+                // Opio Kahiko Costume
+                AddAwardRecipient(award_scores
+                                    .Where(WhereOpioKahiko)
+                                    .OrderByDescending(award => award.score)
+                                    .Select(award => new AwardRecipient
+                                    {
+                                        EntryDate = award.entry_date,
+                                        Name = award.full_name,
+                                        AwardName = award_titles[3],
+                                        Score = (int?)award.score,
+                                        ScoreTie = (int?)award.score_tie,
+                                    })
+                                    .FirstOrDefault());
+                // Keiki Auana Costume
+                AddAwardRecipient(award_scores
+                                    .Where(WhereKeikiAuana)
+                                    .OrderByDescending(award => award.score)
+                                    .Select(award => new AwardRecipient
+                                    {
+                                        EntryDate = award.entry_date,
+                                        Name = award.full_name,
+                                        AwardName = award_titles[4],
+                                        Score = (int?)award.score,
+                                        ScoreTie = (int?)award.score_tie,
+                                    })
+                                    .FirstOrDefault());
+                // Opio Auana Costume
+                AddAwardRecipient(award_scores
+                                    .Where(WhereOpioAuana)
+                                    .OrderByDescending(award => award.score)
+                                    .Select(award => new AwardRecipient
+                                    {
+                                        EntryDate = award.entry_date,
+                                        Name = award.full_name,
+                                        AwardName = award_titles[5],
+                                        Score = (int?)award.score,
+                                        ScoreTie = (int?)award.score_tie,
+                                    })
+                                    .FirstOrDefault());
+                // Keiki Palua Costume
+                AddAwardRecipient(award_scores
+                                    .Where(WhereKeikiPalua)
+                                    .OrderByDescending(award => award.score)
+                                    .Select(award => new AwardRecipient
+                                    {
+                                        EntryDate = award.entry_date,
+                                        Name = award.full_name,
+                                        AwardName = award_titles[6],
+                                        Score = (int?)award.score,
+                                        ScoreTie = (int?)award.score_tie,
+                                    })
+                                    .FirstOrDefault());
+                // Opio Palua Costume
+                AddAwardRecipient(award_scores
+                                    .Where(WhereOpioPalua)
+                                    .OrderByDescending(award => award.score)
+                                    .Select(award => new AwardRecipient
+                                    {
+                                        EntryDate = award.entry_date,
+                                        Name = award.full_name,
+                                        AwardName = award_titles[7],
+                                        Score = (int?)award.score,
+                                        ScoreTie = (int?)award.score_tie,
+                                    })
+                                    .FirstOrDefault());
+            }
+            private void AddHulaWinners(ref IQueryable<vw_ContestantAwardScoresByCategory> award_scores)
+            {
+                //Hula Awards
+                Func<vw_ContestantAwardScoresByCategory, bool> WhereKeikiPaluaHula = a => a.age_id == Keiki && a.gender_id == Palua && a.award_category_id == Hula;
+                Func<vw_ContestantAwardScoresByCategory, bool> WhereOpioPaluaHula = a => a.age_id == Opio && a.gender_id == Palua && a.award_category_id == Hula;
+                Func<vw_ContestantAwardScoresByCategory, bool> WhereKeikiKaneHula = a => a.age_id == Keiki && a.gender_id == Kane && a.award_category_id == Hula;
+                Func<vw_ContestantAwardScoresByCategory, bool> WhereKeikiWahineHula = a => a.age_id == Keiki && a.gender_id == Wahine && a.award_category_id == Hula;
+                Func<vw_ContestantAwardScoresByCategory, bool> WhereOpioKaneHula = a => a.age_id == Opio && a.gender_id == Kane && a.award_category_id == Hula;
+                Func<vw_ContestantAwardScoresByCategory, bool> WhereOpioWahineHula = a => a.age_id == Opio && a.gender_id == Wahine && a.award_category_id == Hula;
+
+                // Keiki Palua Hula
+                AddAwardRecipient(award_scores
+                                    .Where(WhereKeikiPaluaHula)
+                                    .OrderByDescending(award => award.score)
+                                    .Select(award => new AwardRecipient
+                                    {
+                                        EntryDate = award.entry_date,
+                                        Name = award.full_name,
+                                        AwardName = award_titles[8],
+                                        Score = (int?)award.score,
+                                        ScoreTie = (int?)award.score_tie,
+                                    })
+                                    .Take(3).ToList());
+                // Opio Palua Hula
+                AddAwardRecipient(award_scores
+                                    .Where(WhereOpioPaluaHula)
+                                    .OrderByDescending(award => award.score)
+                                    .Select(award => new AwardRecipient
+                                    {
+                                        EntryDate = award.entry_date,
+                                        Name = award.full_name,
+                                        AwardName = award_titles[9],
+                                        Score = (int?)award.score,
+                                        ScoreTie = (int?)award.score_tie,
+                                    })
+                                    .Take(3).ToList());
+                // Keiki Kane Hula
+                AddAwardRecipient(award_scores
+                                    .Where(WhereKeikiKaneHula)
+                                    .OrderByDescending(award => award.score)
+                                    .Select(award => new AwardRecipient
+                                    {
+                                        EntryDate = award.entry_date,
+                                        Name = award.full_name,
+                                        AwardName = award_titles[15],
+                                        Score = (int?)award.score,
+                                        ScoreTie = (int?)award.score_tie,
+                                    })
+                                    .Take(3).ToList());
+                // Keiki Wahine Hula
+                AddAwardRecipient(award_scores
+                                    .Where(WhereKeikiWahineHula)
+                                    .OrderByDescending(award => award.score)
+                                    .Select(award => new AwardRecipient
+                                    {
+                                        EntryDate = award.entry_date,
+                                        Name = award.full_name,
+                                        AwardName = award_titles[16],
+                                        Score = (int?)award.score,
+                                        ScoreTie = (int?)award.score_tie,
+                                    })
+                                    .Take(3).ToList());
+                // Opio Kane Hula
+                AddAwardRecipient(award_scores
+                                    .Where(WhereOpioKaneHula)
+                                    .OrderByDescending(award => award.score)
+                                    .Select(award => new AwardRecipient
+                                    {
+                                        EntryDate = award.entry_date,
+                                        Name = award.full_name,
+                                        AwardName = award_titles[17],
+                                        Score = (int?)award.score,
+                                        ScoreTie = (int?)award.score_tie,
+                                    })
+                                    .Take(3).ToList());
+                // Opio Wahine Hula
+                AddAwardRecipient(award_scores
+                                    .Where(WhereOpioWahineHula)
+                                    .OrderByDescending(award => award.score)
+                                    .Select(award => new AwardRecipient
+                                    {
+                                        EntryDate = award.entry_date,
+                                        Name = award.full_name,
+                                        AwardName = award_titles[18],
+                                        Score = (int?)award.score,
+                                        ScoreTie = (int?)award.score_tie,
+                                    })
+                                    .Take(3).ToList());
+            }
+            private void AddOliWinners(ref IQueryable<vw_ContestantAwardScoresByCategory> award_scores)
+            {
+                //Oli Awards
+                Func<vw_ContestantAwardScoresByCategory, bool> WhereKeikiKaneOli = a => a.age_id == 1 && a.gender_id == Kane && a.award_category_id == Oli;
+                Func<vw_ContestantAwardScoresByCategory, bool> WhereKeikiWahineOli = a => a.age_id == 1 && a.gender_id == Wahine && a.award_category_id == Oli;
+                Func<vw_ContestantAwardScoresByCategory, bool> WhereOpioKaneOli = a => a.age_id == 2 && a.gender_id == Kane && a.award_category_id == Oli;
+                Func<vw_ContestantAwardScoresByCategory, bool> WhereOpioWahineOli = a => a.age_id == 2 && a.gender_id == Wahine && a.award_category_id == Oli;
+
+                // Keiki Kane Oli
+                AddAwardRecipient(award_scores
+                                    .Where(WhereKeikiKaneOli)
+                                    .OrderByDescending(award => award.score)
+                                    .Select(award => new AwardRecipient
+                                    {
+                                        EntryDate = award.entry_date,
+                                        Name = award.full_name,
+                                        AwardName = award_titles[10],
+                                        Score = (int?)award.score,
+                                        ScoreTie = (int?)award.score_tie,
+                                    })
+                                    .Take(3).ToList());
+                // Keiki Wahine Oli
+                AddAwardRecipient(award_scores
+                                    .Where(WhereKeikiWahineOli)
+                                    .OrderByDescending(award => award.score)
+                                    .Select(award => new AwardRecipient
+                                    {
+                                        EntryDate = award.entry_date,
+                                        Name = award.full_name,
+                                        AwardName = award_titles[11],
+                                        Score = (int?)award.score,
+                                        ScoreTie = (int?)award.score_tie,
+                                    })
+                                    .Take(3).ToList());
+                // Opio Kane Oli
+                AddAwardRecipient(award_scores
+                                    .Where(WhereOpioKaneOli)
+                                    .OrderByDescending(award => award.score)
+                                    .Select(award => new AwardRecipient
+                                    {
+                                        EntryDate = award.entry_date,
+                                        Name = award.full_name,
+                                        AwardName = award_titles[12],
+                                        Score = (int?)award.score,
+                                        ScoreTie = (int?)award.score_tie,
+                                    })
+                                    .Take(3).ToList());
+                // Opio Wahine Oli
+                AddAwardRecipient(award_scores
+                                    .Where(WhereOpioWahineOli)
+                                    .OrderByDescending(award => award.score)
+                                    .Select(award => new AwardRecipient
+                                    {
+                                        EntryDate = award.entry_date,
+                                        Name = award.full_name,
+                                        AwardName = award_titles[13],
+                                        Score = (int?)award.score,
+                                        ScoreTie = (int?)award.score_tie,
+                                    })
+                                    .Take(3).ToList());
+            }
+            private void AddMusicWinner(ref IQueryable<vw_ContestantAwardScoresByCategory> award_scores)
+            {
+                //Music Award
+                Func<vw_ContestantAwardScoresByCategory, bool> WhereMusic = a => a.award_category_id == Music;
+                // Music
+                AddAwardRecipient(award_scores
+                                    .Where(WhereMusic)
+                                    .OrderByDescending(award => award.score)
+                                    .Select(award => new AwardRecipient
+                                    {
+                                        EntryDate = award.entry_date,
+                                        Name = award.kumu_name,
+                                        AwardName = award_titles[14],
+                                        Score = (int?)award.score,
+                                        ScoreTie = (int?)award.score_tie,
+                                    }).FirstOrDefault());
+            }
+            private void AddOverallWinners(ref IQueryable<vw_ContestantAwardScoresByCategory> award_scores)
+            {
+                // Overall Awards
+                Func<vw_ContestantAwardScoresByCategory, bool> WhereKaneOverall = a => a.gender_id == Kane && a.award_category_id == Overall;
+                Func<vw_ContestantAwardScoresByCategory, bool> WhereWahineOverall = a => a.gender_id == Kane && a.award_category_id == Overall;
+
+                // Overall Kane
+                AddAwardRecipient(award_scores
+                                    .Where(WhereKaneOverall)
+                                    .OrderByDescending(award => award.score)
+                                    .Select(award => new AwardRecipient
+                                    {
+                                        EntryDate = award.entry_date,
+                                        Name = award.full_name,
+                                        AwardName = award_titles[17],
+                                        Score = (int?)award.score,
+                                        ScoreTie = (int?)award.score_tie,
+                                    })
+                                    .FirstOrDefault());
+                //  Overall Wahine
+                AddAwardRecipient(award_scores
+                                    .Where(WhereWahineOverall)
+                                    .OrderByDescending(award => award.score)
+                                    .Select(award => new AwardRecipient
+                                    {
+                                        EntryDate = award.entry_date,
+                                        Name = award.full_name,
+                                        AwardName = award_titles[18],
+                                        Score = (int?)award.score,
+                                        ScoreTie = (int?)award.score_tie,
+                                    })
+                                    .FirstOrDefault());
+
+            }
+            
+            
+            // AwardRecipient Class Methods
+            private void AddAwardRecipient(DateTime date, string name, string award_name, int? score, int? score_tie)
             {
                 awardRecipients.Add(new AwardRecipient
                 {
+                    EntryDate = date,
                     Name = name,
                     Score = score,
                     ScoreTie = score_tie,
-                    Category = category
+                    AwardName = award_name
                 });
             }
+            private void AddAwardRecipient(AwardRecipient award_recipient)
+            {
+                awardRecipients.Add(award_recipient);
+            }
+            private void AddAwardRecipient(List<AwardRecipient> award_recipients)
+            {
+                foreach (var a in award_recipients)
+                {
+                    if (a != null)
+                    {
+                        AddAwardRecipient(a);
+                    }
+                }
+            }
+
+            // Class/Object declarations
             public class AwardRecipient
             {
                 public string Name { get; set; }
+                public string AwardName { get; set; }
                 public int? Score { get; set; }
                 public int? ScoreTie { get; set; }
-                public string Category { get; set; }
+                public DateTime EntryDate { get; set; }
             }
             private List<AwardRecipient> awardRecipients = new List<AwardRecipient>();
+            private List<string> award_titles = new List<string>();
 
+            // Variable Declarations
+            private int Keiki = 1, Opio = 2;
+            private int Kane = 1, Wahine = 2, Palua = 3;
+            private int CAuana = 1, CKahiko = 2, CPalua = 3, Hula = 4, Interview = 5, Music = 6, Oli = 7, Overall = 8;
         }
 
 
@@ -158,7 +480,9 @@ namespace HONK
             HONKDBDataContext db = new HONKDBDataContext();
             List<string> category = new List<string>();
             category.Add("Interview");
-            category.Add("Costume");
+            category.Add("Costume Auana");
+            category.Add("Costume Kahiko");
+            category.Add("Costume Palua");
             category.Add("Hula");
             category.Add("Oli");
             category.Add("Music");
@@ -180,6 +504,46 @@ namespace HONK
                 Console.WriteLine(e);
             }
         }
+        public static void IntializeAwards()
+        {
+            HONKDBDataContext db = new HONKDBDataContext();
+            List<Award> awards = new List<Award>();
+
+            awards.Add(new Award { awardcategory_id = 5, title = "The Keiki Interview Award" });
+            awards.Add(new Award { awardcategory_id = 5, title = "The ‘Ōpio Interview Award" });
+            awards.Add(new Award { awardcategory_id = 2, title = "The Keiki Kahiko Costume & Adornment Award" });
+            awards.Add(new Award { awardcategory_id = 2, title = "The ‘Ōpio Kahiko Costume & Adornment Award" });
+            awards.Add(new Award { awardcategory_id = 1, title = "The Keiki ‘Auana Costume & Adornment Award" });
+            awards.Add(new Award { awardcategory_id = 1, title = "The ‘Ōpio ‘Auana Costume & Adornment Award" });
+            awards.Add(new Award { awardcategory_id = 3, title = "The Keiki Pālua Costume & Adornment Award" });
+            awards.Add(new Award { awardcategory_id = 3, title = "The ‘Opio Pālua Costume & Adornment Award" });
+            awards.Add(new Award { awardcategory_id = 8, title = "The Keiki Pālua" });
+            awards.Add(new Award { awardcategory_id = 8, title = "The ‘Ōpio  Pālua" });
+            awards.Add(new Award { awardcategory_id = 7, title = "The Keiki Kāne Oli Award" });
+            awards.Add(new Award { awardcategory_id = 7, title = "The Keiki Wahine Oli Award" });
+            awards.Add(new Award { awardcategory_id = 7, title = "The ‘Ōpio Kāne Oli Award" });
+            awards.Add(new Award { awardcategory_id = 7, title = "The ‘Ōpio Wahine Oli Award" });
+            awards.Add(new Award { awardcategory_id = 6, title = "The Music Award" });
+            awards.Add(new Award { awardcategory_id = 4, title = "The Keiki Kāne Hula Award" });
+            awards.Add(new Award { awardcategory_id = 4, title = "The Keiki Wahine Hula Award" });
+            awards.Add(new Award { awardcategory_id = 4, title = "The ‘Ōpio Kāne Hula Award" });
+            awards.Add(new Award { awardcategory_id = 4, title = "The ‘Ōpio Wahine Hula Award" });
+            awards.Add(new Award { awardcategory_id = 8, title = "The Overall Kāne Award" });
+            awards.Add(new Award { awardcategory_id = 8, title = "The Overall Wāhine Award" });
+
+            db.Awards.InsertAllOnSubmit(awards);
+
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+        }
+
         /// <summary>
         /// Method for updating a Contestant Individual Judge Score. Gender is NOT Palua
         /// </summary>

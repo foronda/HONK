@@ -243,6 +243,22 @@ namespace HONK
 			}
 		}
 		
+		public System.Data.Linq.Table<vw_AwardKeikiInterview> vw_AwardKeikiInterviews
+		{
+			get
+			{
+				return this.GetTable<vw_AwardKeikiInterview>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vw_AwardRecipient> vw_AwardRecipients
+		{
+			get
+			{
+				return this.GetTable<vw_AwardRecipient>();
+			}
+		}
+		
 		public System.Data.Linq.Table<vw_AwardScoresByCategoryId> vw_AwardScoresByCategoryIds
 		{
 			get
@@ -4037,6 +4053,168 @@ namespace HONK
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_AwardKeikiInterview")]
+	public partial class vw_AwardKeikiInterview
+	{
+		
+		private int _contestant_id;
+		
+		private int _age_id;
+		
+		private int _gender_id;
+		
+		private int _kumu_id;
+		
+		private int _award_category_id;
+		
+		private System.Nullable<decimal> _score;
+		
+		private System.Nullable<decimal> _score_tie;
+		
+		public vw_AwardKeikiInterview()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contestant_id", DbType="Int NOT NULL")]
+		public int contestant_id
+		{
+			get
+			{
+				return this._contestant_id;
+			}
+			set
+			{
+				if ((this._contestant_id != value))
+				{
+					this._contestant_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_age_id", DbType="Int NOT NULL")]
+		public int age_id
+		{
+			get
+			{
+				return this._age_id;
+			}
+			set
+			{
+				if ((this._age_id != value))
+				{
+					this._age_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gender_id", DbType="Int NOT NULL")]
+		public int gender_id
+		{
+			get
+			{
+				return this._gender_id;
+			}
+			set
+			{
+				if ((this._gender_id != value))
+				{
+					this._gender_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_kumu_id", DbType="Int NOT NULL")]
+		public int kumu_id
+		{
+			get
+			{
+				return this._kumu_id;
+			}
+			set
+			{
+				if ((this._kumu_id != value))
+				{
+					this._kumu_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_award_category_id", DbType="Int NOT NULL")]
+		public int award_category_id
+		{
+			get
+			{
+				return this._award_category_id;
+			}
+			set
+			{
+				if ((this._award_category_id != value))
+				{
+					this._award_category_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_score", DbType="Decimal(26,3)")]
+		public System.Nullable<decimal> score
+		{
+			get
+			{
+				return this._score;
+			}
+			set
+			{
+				if ((this._score != value))
+				{
+					this._score = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_score_tie", DbType="Decimal(23,3)")]
+		public System.Nullable<decimal> score_tie
+		{
+			get
+			{
+				return this._score_tie;
+			}
+			set
+			{
+				if ((this._score_tie != value))
+				{
+					this._score_tie = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_AwardRecipients")]
+	public partial class vw_AwardRecipient
+	{
+		
+		private string _title;
+		
+		public vw_AwardRecipient()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_title", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string title
+		{
+			get
+			{
+				return this._title;
+			}
+			set
+			{
+				if ((this._title != value))
+				{
+					this._title = value;
+				}
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_AwardScoresByCategoryId")]
 	public partial class vw_AwardScoresByCategoryId
 	{
@@ -4835,19 +5013,21 @@ namespace HONK
 		
 		private int _contestant_id;
 		
+		private int _age_id;
+		
+		private int _gender_id;
+		
+		private int _award_category_id;
+		
 		private string _full_name;
 		
-		private string _age_name;
-		
-		private string _gender_name;
-		
 		private string _kumu_name;
+		
+		private string _halau_name;
 		
 		private System.Nullable<decimal> _score;
 		
 		private System.Nullable<decimal> _score_tie;
-		
-		private string _category;
 		
 		private System.DateTime _entry_date;
 		
@@ -4871,6 +5051,54 @@ namespace HONK
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_age_id", DbType="Int NOT NULL")]
+		public int age_id
+		{
+			get
+			{
+				return this._age_id;
+			}
+			set
+			{
+				if ((this._age_id != value))
+				{
+					this._age_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gender_id", DbType="Int NOT NULL")]
+		public int gender_id
+		{
+			get
+			{
+				return this._gender_id;
+			}
+			set
+			{
+				if ((this._gender_id != value))
+				{
+					this._gender_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_award_category_id", DbType="Int NOT NULL")]
+		public int award_category_id
+		{
+			get
+			{
+				return this._award_category_id;
+			}
+			set
+			{
+				if ((this._award_category_id != value))
+				{
+					this._award_category_id = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_full_name", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
 		public string full_name
 		{
@@ -4887,38 +5115,6 @@ namespace HONK
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_age_name", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string age_name
-		{
-			get
-			{
-				return this._age_name;
-			}
-			set
-			{
-				if ((this._age_name != value))
-				{
-					this._age_name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gender_name", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string gender_name
-		{
-			get
-			{
-				return this._gender_name;
-			}
-			set
-			{
-				if ((this._gender_name != value))
-				{
-					this._gender_name = value;
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_kumu_name", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
 		public string kumu_name
 		{
@@ -4931,6 +5127,22 @@ namespace HONK
 				if ((this._kumu_name != value))
 				{
 					this._kumu_name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_halau_name", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string halau_name
+		{
+			get
+			{
+				return this._halau_name;
+			}
+			set
+			{
+				if ((this._halau_name != value))
+				{
+					this._halau_name = value;
 				}
 			}
 		}
@@ -4963,22 +5175,6 @@ namespace HONK
 				if ((this._score_tie != value))
 				{
 					this._score_tie = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_category", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string category
-		{
-			get
-			{
-				return this._category;
-			}
-			set
-			{
-				if ((this._category != value))
-				{
-					this._category = value;
 				}
 			}
 		}
