@@ -71,26 +71,28 @@ namespace HONK
                 AddAwardRecipient(award_scores
                                     .Where(WhereKeikiInterview)
                                     .OrderByDescending(award => award.score)
+                                    .ThenByDescending(award => award.score_tie)
                                     .Select(award => new AwardRecipient
                                     {
                                         EntryDate = award.entry_date,
                                         Name = award.full_name,
                                         AwardName = award_titles[0],
-                                        Score = (int?)award.score,
-                                        ScoreTie = (int?)award.score_tie,
+                                        Score = award.score,
+                                        ScoreTie = award.score_tie,
                                     })
                                     .FirstOrDefault());
                 // Opio Interview
                 AddAwardRecipient(award_scores
                                     .Where(WhereOpioInterview)
                                     .OrderByDescending(award => award.score)
+                                    .ThenByDescending(award => award.score_tie)
                                     .Select(award => new AwardRecipient
                                     {
                                         EntryDate = award.entry_date,
                                         Name = award.full_name,
                                         AwardName = award_titles[1],
-                                        Score = (int?)award.score,
-                                        ScoreTie = (int?)award.score_tie,
+                                        Score = award.score,
+                                        ScoreTie = award.score_tie,
                                     })
                                     .FirstOrDefault());
             }
@@ -108,78 +110,84 @@ namespace HONK
                 AddAwardRecipient(award_scores
                                     .Where(WhereKeikiKahiko)
                                     .OrderByDescending(award => award.score)
+                                    .ThenByDescending(award => award.score_tie)
                                     .Select(award => new AwardRecipient
                                     {
                                         EntryDate = award.entry_date,
                                         Name = award.full_name,
                                         AwardName = award_titles[2],
-                                        Score = (int?)award.score,
-                                        ScoreTie = (int?)award.score_tie,
+                                        Score = award.score,
+                                        ScoreTie = award.score_tie,
                                     })
                                     .FirstOrDefault());
                 // Opio Kahiko Costume
                 AddAwardRecipient(award_scores
                                     .Where(WhereOpioKahiko)
                                     .OrderByDescending(award => award.score)
+                                    .ThenByDescending(award => award.score_tie)
                                     .Select(award => new AwardRecipient
                                     {
                                         EntryDate = award.entry_date,
                                         Name = award.full_name,
                                         AwardName = award_titles[3],
-                                        Score = (int?)award.score,
-                                        ScoreTie = (int?)award.score_tie,
+                                        Score = award.score,
+                                        ScoreTie = award.score_tie,
                                     })
                                     .FirstOrDefault());
                 // Keiki Auana Costume
                 AddAwardRecipient(award_scores
                                     .Where(WhereKeikiAuana)
                                     .OrderByDescending(award => award.score)
+                                    .ThenByDescending(award => award.score_tie)
                                     .Select(award => new AwardRecipient
                                     {
                                         EntryDate = award.entry_date,
                                         Name = award.full_name,
                                         AwardName = award_titles[4],
-                                        Score = (int?)award.score,
-                                        ScoreTie = (int?)award.score_tie,
+                                        Score = award.score,
+                                        ScoreTie = award.score_tie,
                                     })
                                     .FirstOrDefault());
                 // Opio Auana Costume
                 AddAwardRecipient(award_scores
                                     .Where(WhereOpioAuana)
                                     .OrderByDescending(award => award.score)
+                                    .ThenByDescending(award => award.score_tie)
                                     .Select(award => new AwardRecipient
                                     {
                                         EntryDate = award.entry_date,
                                         Name = award.full_name,
                                         AwardName = award_titles[5],
-                                        Score = (int?)award.score,
-                                        ScoreTie = (int?)award.score_tie,
+                                        Score = award.score,
+                                        ScoreTie = award.score_tie,
                                     })
                                     .FirstOrDefault());
                 // Keiki Palua Costume
                 AddAwardRecipient(award_scores
                                     .Where(WhereKeikiPalua)
                                     .OrderByDescending(award => award.score)
+                                    .ThenByDescending(award => award.score_tie)
                                     .Select(award => new AwardRecipient
                                     {
                                         EntryDate = award.entry_date,
                                         Name = award.full_name,
                                         AwardName = award_titles[6],
-                                        Score = (int?)award.score,
-                                        ScoreTie = (int?)award.score_tie,
+                                        Score = award.score,
+                                        ScoreTie = award.score_tie,
                                     })
                                     .FirstOrDefault());
                 // Opio Palua Costume
                 AddAwardRecipient(award_scores
                                     .Where(WhereOpioPalua)
                                     .OrderByDescending(award => award.score)
+                                    .ThenByDescending(award => award.score_tie)
                                     .Select(award => new AwardRecipient
                                     {
                                         EntryDate = award.entry_date,
                                         Name = award.full_name,
                                         AwardName = award_titles[7],
-                                        Score = (int?)award.score,
-                                        ScoreTie = (int?)award.score_tie,
+                                        Score = award.score,
+                                        ScoreTie = award.score_tie,
                                     })
                                     .FirstOrDefault());
             }
@@ -197,88 +205,94 @@ namespace HONK
                 AddAwardRecipient(award_scores
                                     .Where(WhereKeikiPaluaHula)
                                     .OrderByDescending(award => award.score)
+                                    .ThenByDescending(award => award.score_tie)
                                     .Select(award => new AwardRecipient
                                     {
                                         EntryDate = award.entry_date,
                                         Name = award.full_name,
                                         AwardName = award_titles[8],
-                                        Score = (int?)award.score,
-                                        ScoreTie = (int?)award.score_tie,
+                                        Score = award.score,
+                                        ScoreTie = award.score_tie,
                                     })
                                     .Take(3).ToList());
                 // Opio Palua Hula
                 AddAwardRecipient(award_scores
                                     .Where(WhereOpioPaluaHula)
                                     .OrderByDescending(award => award.score)
+                                    .ThenByDescending(award => award.score_tie)
                                     .Select(award => new AwardRecipient
                                     {
                                         EntryDate = award.entry_date,
                                         Name = award.full_name,
                                         AwardName = award_titles[9],
-                                        Score = (int?)award.score,
-                                        ScoreTie = (int?)award.score_tie,
+                                        Score = award.score,
+                                        ScoreTie = award.score_tie,
                                     })
                                     .Take(3).ToList());
                 // Keiki Kane Hula
                 AddAwardRecipient(award_scores
                                     .Where(WhereKeikiKaneHula)
                                     .OrderByDescending(award => award.score)
+                                    .ThenByDescending(award => award.score_tie)
                                     .Select(award => new AwardRecipient
                                     {
                                         EntryDate = award.entry_date,
                                         Name = award.full_name,
                                         AwardName = award_titles[15],
-                                        Score = (int?)award.score,
-                                        ScoreTie = (int?)award.score_tie,
+                                        Score = award.score,
+                                        ScoreTie = award.score_tie,
                                     })
                                     .Take(3).ToList());
                 // Keiki Wahine Hula
                 AddAwardRecipient(award_scores
                                     .Where(WhereKeikiWahineHula)
                                     .OrderByDescending(award => award.score)
+                                    .ThenByDescending(award => award.score_tie)
                                     .Select(award => new AwardRecipient
                                     {
                                         EntryDate = award.entry_date,
                                         Name = award.full_name,
                                         AwardName = award_titles[16],
-                                        Score = (int?)award.score,
-                                        ScoreTie = (int?)award.score_tie,
+                                        Score = award.score,
+                                        ScoreTie = award.score_tie,
                                     })
                                     .Take(3).ToList());
                 // Opio Kane Hula
                 AddAwardRecipient(award_scores
                                     .Where(WhereOpioKaneHula)
                                     .OrderByDescending(award => award.score)
+                                    .ThenByDescending(award => award.score_tie)
                                     .Select(award => new AwardRecipient
                                     {
                                         EntryDate = award.entry_date,
                                         Name = award.full_name,
                                         AwardName = award_titles[17],
-                                        Score = (int?)award.score,
-                                        ScoreTie = (int?)award.score_tie,
+                                        Score = award.score,
+                                        ScoreTie = award.score_tie,
                                     })
                                     .Take(3).ToList());
                 // Opio Wahine Hula
                 AddAwardRecipient(award_scores
                                     .Where(WhereOpioWahineHula)
                                     .OrderByDescending(award => award.score)
+                                    .ThenByDescending(award => award.score_tie)
                                     .Select(award => new AwardRecipient
                                     {
                                         EntryDate = award.entry_date,
                                         Name = award.full_name,
                                         AwardName = award_titles[18],
-                                        Score = (int?)award.score,
-                                        ScoreTie = (int?)award.score_tie,
+                                        Score = award.score,
+                                        ScoreTie = award.score_tie,
                                     })
                                     .Take(3).ToList());
             }
             private void AddOliWinners(ref IQueryable<vw_ContestantAwardScoresByCategory> award_scores)
             {
                 //Oli Awards
-                Func<vw_ContestantAwardScoresByCategory, bool> WhereKeikiKaneOli = a => a.age_id == 1 && a.gender_id == Kane && a.award_category_id == Oli;
-                Func<vw_ContestantAwardScoresByCategory, bool> WhereKeikiWahineOli = a => a.age_id == 1 && a.gender_id == Wahine && a.award_category_id == Oli;
-                Func<vw_ContestantAwardScoresByCategory, bool> WhereOpioKaneOli = a => a.age_id == 2 && a.gender_id == Kane && a.award_category_id == Oli;
-                Func<vw_ContestantAwardScoresByCategory, bool> WhereOpioWahineOli = a => a.age_id == 2 && a.gender_id == Wahine && a.award_category_id == Oli;
+                Func<vw_ContestantAwardScoresByCategory, bool> WhereKeikiKaneOli = a => a.age_id == Keiki && a.gender_id == Kane && a.award_category_id == Oli;
+                Func<vw_ContestantAwardScoresByCategory, bool> WhereKeikiWahineOli = a => a.age_id == Keiki && a.gender_id == Wahine && a.award_category_id == Oli;
+                Func<vw_ContestantAwardScoresByCategory, bool> WhereOpioKaneOli = a => a.age_id == Opio && a.gender_id == Kane && a.award_category_id == Oli;
+                Func<vw_ContestantAwardScoresByCategory, bool> WhereOpioWahineOli = a => a.age_id == Opio && a.gender_id == Wahine && a.award_category_id == Oli;
 
                 // Keiki Kane Oli
                 AddAwardRecipient(award_scores
@@ -289,8 +303,8 @@ namespace HONK
                                         EntryDate = award.entry_date,
                                         Name = award.full_name,
                                         AwardName = award_titles[10],
-                                        Score = (int?)award.score,
-                                        ScoreTie = (int?)award.score_tie,
+                                        Score = award.score,
+                                        ScoreTie = award.score_tie,
                                     })
                                     .Take(3).ToList());
                 // Keiki Wahine Oli
@@ -302,8 +316,8 @@ namespace HONK
                                         EntryDate = award.entry_date,
                                         Name = award.full_name,
                                         AwardName = award_titles[11],
-                                        Score = (int?)award.score,
-                                        ScoreTie = (int?)award.score_tie,
+                                        Score = award.score,
+                                        ScoreTie = award.score_tie,
                                     })
                                     .Take(3).ToList());
                 // Opio Kane Oli
@@ -315,8 +329,8 @@ namespace HONK
                                         EntryDate = award.entry_date,
                                         Name = award.full_name,
                                         AwardName = award_titles[12],
-                                        Score = (int?)award.score,
-                                        ScoreTie = (int?)award.score_tie,
+                                        Score = award.score,
+                                        ScoreTie = award.score_tie,
                                     })
                                     .Take(3).ToList());
                 // Opio Wahine Oli
@@ -328,8 +342,8 @@ namespace HONK
                                         EntryDate = award.entry_date,
                                         Name = award.full_name,
                                         AwardName = award_titles[13],
-                                        Score = (int?)award.score,
-                                        ScoreTie = (int?)award.score_tie,
+                                        Score = award.score,
+                                        ScoreTie = award.score_tie,
                                     })
                                     .Take(3).ToList());
             }
@@ -344,42 +358,44 @@ namespace HONK
                                     .Select(award => new AwardRecipient
                                     {
                                         EntryDate = award.entry_date,
-                                        Name = award.kumu_name,
+                                        Name = award.halau_name,
                                         AwardName = award_titles[14],
-                                        Score = (int?)award.score,
-                                        ScoreTie = (int?)award.score_tie,
+                                        Score = award.score,
+                                        ScoreTie = award.score_tie,
                                     }).FirstOrDefault());
             }
             private void AddOverallWinners(ref IQueryable<vw_ContestantAwardScoresByCategory> award_scores)
             {
                 // Overall Awards
                 Func<vw_ContestantAwardScoresByCategory, bool> WhereKaneOverall = a => a.gender_id == Kane && a.award_category_id == Overall;
-                Func<vw_ContestantAwardScoresByCategory, bool> WhereWahineOverall = a => a.gender_id == Kane && a.award_category_id == Overall;
+                Func<vw_ContestantAwardScoresByCategory, bool> WhereWahineOverall = a => a.gender_id == Wahine && a.award_category_id == Overall;
 
                 // Overall Kane
                 AddAwardRecipient(award_scores
                                     .Where(WhereKaneOverall)
                                     .OrderByDescending(award => award.score)
+                                    .ThenByDescending(award => award.score_tie)
                                     .Select(award => new AwardRecipient
                                     {
                                         EntryDate = award.entry_date,
                                         Name = award.full_name,
                                         AwardName = award_titles[17],
-                                        Score = (int?)award.score,
-                                        ScoreTie = (int?)award.score_tie,
+                                        Score = award.score,
+                                        ScoreTie = award.score_tie,
                                     })
                                     .FirstOrDefault());
                 //  Overall Wahine
                 AddAwardRecipient(award_scores
                                     .Where(WhereWahineOverall)
                                     .OrderByDescending(award => award.score)
+                                    .ThenByDescending(award => award.score_tie)
                                     .Select(award => new AwardRecipient
                                     {
                                         EntryDate = award.entry_date,
                                         Name = award.full_name,
                                         AwardName = award_titles[18],
-                                        Score = (int?)award.score,
-                                        ScoreTie = (int?)award.score_tie,
+                                        Score = award.score,
+                                        ScoreTie = award.score_tie,
                                     })
                                     .FirstOrDefault());
 
@@ -404,11 +420,16 @@ namespace HONK
             }
             private void AddAwardRecipient(List<AwardRecipient> award_recipients)
             {
+                int i = 0;
                 foreach (var a in award_recipients)
                 {
                     if (a != null)
                     {
+                        if(i == 0) a.Place = "1st Place";
+                        if (i == 1) a.Place = "2nd Place";
+                        if (i == 2) a.Place = "3rd Place";
                         AddAwardRecipient(a);
+                        i++;
                     }
                 }
             }
@@ -418,8 +439,9 @@ namespace HONK
             {
                 public string Name { get; set; }
                 public string AwardName { get; set; }
-                public int? Score { get; set; }
-                public int? ScoreTie { get; set; }
+                public string Place { get; set; }
+                public decimal? Score { get; set; }
+                public decimal? ScoreTie { get; set; }
                 public DateTime EntryDate { get; set; }
             }
             private List<AwardRecipient> awardRecipients = new List<AwardRecipient>();
