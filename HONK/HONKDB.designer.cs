@@ -227,11 +227,11 @@ namespace HONK
 			}
 		}
 		
-		public System.Data.Linq.Table<vw_AwardDetail> vw_AwardDetails
+		public System.Data.Linq.Table<vw_AwardCandidate> vw_AwardCandidates
 		{
 			get
 			{
-				return this.GetTable<vw_AwardDetail>();
+				return this.GetTable<vw_AwardCandidate>();
 			}
 		}
 		
@@ -240,6 +240,14 @@ namespace HONK
 			get
 			{
 				return this.GetTable<vw_OverallScore>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vw_AwardDetail> vw_AwardDetails
+		{
+			get
+			{
+				return this.GetTable<vw_AwardDetail>();
 			}
 		}
 		
@@ -3549,24 +3557,58 @@ namespace HONK
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_AwardDetails")]
-	public partial class vw_AwardDetail
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_AwardCandidates")]
+	public partial class vw_AwardCandidate
 	{
+		
+		private int _contestant_id;
 		
 		private System.Nullable<int> _contestantaward_id;
 		
+		private System.Nullable<int> _award_id;
+		
+		private System.Nullable<int> _cashprize_id;
+		
+		private System.Nullable<int> _giftprize_id;
+		
+		private int _award_category_id;
+		
+		private int _age_id;
+		
+		private int _gender_id;
+		
+		private string _full_name;
+		
 		private string _title;
 		
-		private string _description;
+		private string _kumu_name;
 		
-		private string _name;
+		private string _halau_name;
 		
-		private string _amount;
+		private System.DateTime _entry_date;
 		
-		private string _category;
+		private System.Nullable<decimal> _score;
 		
-		public vw_AwardDetail()
+		private System.Nullable<decimal> _score_tie;
+		
+		public vw_AwardCandidate()
 		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contestant_id", DbType="Int NOT NULL")]
+		public int contestant_id
+		{
+			get
+			{
+				return this._contestant_id;
+			}
+			set
+			{
+				if ((this._contestant_id != value))
+				{
+					this._contestant_id = value;
+				}
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contestantaward_id", DbType="Int")]
@@ -3581,6 +3623,118 @@ namespace HONK
 				if ((this._contestantaward_id != value))
 				{
 					this._contestantaward_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_award_id", DbType="Int")]
+		public System.Nullable<int> award_id
+		{
+			get
+			{
+				return this._award_id;
+			}
+			set
+			{
+				if ((this._award_id != value))
+				{
+					this._award_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cashprize_id", DbType="Int")]
+		public System.Nullable<int> cashprize_id
+		{
+			get
+			{
+				return this._cashprize_id;
+			}
+			set
+			{
+				if ((this._cashprize_id != value))
+				{
+					this._cashprize_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_giftprize_id", DbType="Int")]
+		public System.Nullable<int> giftprize_id
+		{
+			get
+			{
+				return this._giftprize_id;
+			}
+			set
+			{
+				if ((this._giftprize_id != value))
+				{
+					this._giftprize_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_award_category_id", DbType="Int NOT NULL")]
+		public int award_category_id
+		{
+			get
+			{
+				return this._award_category_id;
+			}
+			set
+			{
+				if ((this._award_category_id != value))
+				{
+					this._award_category_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_age_id", DbType="Int NOT NULL")]
+		public int age_id
+		{
+			get
+			{
+				return this._age_id;
+			}
+			set
+			{
+				if ((this._age_id != value))
+				{
+					this._age_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gender_id", DbType="Int NOT NULL")]
+		public int gender_id
+		{
+			get
+			{
+				return this._gender_id;
+			}
+			set
+			{
+				if ((this._gender_id != value))
+				{
+					this._gender_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_full_name", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string full_name
+		{
+			get
+			{
+				return this._full_name;
+			}
+			set
+			{
+				if ((this._full_name != value))
+				{
+					this._full_name = value;
 				}
 			}
 		}
@@ -3601,66 +3755,82 @@ namespace HONK
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_description", DbType="Text", UpdateCheck=UpdateCheck.Never)]
-		public string description
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_kumu_name", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string kumu_name
 		{
 			get
 			{
-				return this._description;
+				return this._kumu_name;
 			}
 			set
 			{
-				if ((this._description != value))
+				if ((this._kumu_name != value))
 				{
-					this._description = value;
+					this._kumu_name = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="VarChar(MAX)")]
-		public string name
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_halau_name", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string halau_name
 		{
 			get
 			{
-				return this._name;
+				return this._halau_name;
 			}
 			set
 			{
-				if ((this._name != value))
+				if ((this._halau_name != value))
 				{
-					this._name = value;
+					this._halau_name = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_amount", DbType="NVarChar(50)")]
-		public string amount
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_entry_date", DbType="Date NOT NULL")]
+		public System.DateTime entry_date
 		{
 			get
 			{
-				return this._amount;
+				return this._entry_date;
 			}
 			set
 			{
-				if ((this._amount != value))
+				if ((this._entry_date != value))
 				{
-					this._amount = value;
+					this._entry_date = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_category", DbType="NVarChar(50)")]
-		public string category
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_score", DbType="Decimal(26,3)")]
+		public System.Nullable<decimal> score
 		{
 			get
 			{
-				return this._category;
+				return this._score;
 			}
 			set
 			{
-				if ((this._category != value))
+				if ((this._score != value))
 				{
-					this._category = value;
+					this._score = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_score_tie", DbType="Decimal(23,3)")]
+		public System.Nullable<decimal> score_tie
+		{
+			get
+			{
+				return this._score_tie;
+			}
+			set
+			{
+				if ((this._score_tie != value))
+				{
+					this._score_tie = value;
 				}
 			}
 		}
@@ -4053,6 +4223,123 @@ namespace HONK
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_AwardDetails")]
+	public partial class vw_AwardDetail
+	{
+		
+		private System.Nullable<int> _contestantaward_id;
+		
+		private string _title;
+		
+		private string _description;
+		
+		private string _name;
+		
+		private string _amount;
+		
+		private string _category;
+		
+		public vw_AwardDetail()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contestantaward_id", DbType="Int")]
+		public System.Nullable<int> contestantaward_id
+		{
+			get
+			{
+				return this._contestantaward_id;
+			}
+			set
+			{
+				if ((this._contestantaward_id != value))
+				{
+					this._contestantaward_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_title", DbType="NVarChar(MAX)")]
+		public string title
+		{
+			get
+			{
+				return this._title;
+			}
+			set
+			{
+				if ((this._title != value))
+				{
+					this._title = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_description", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string description
+		{
+			get
+			{
+				return this._description;
+			}
+			set
+			{
+				if ((this._description != value))
+				{
+					this._description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="VarChar(MAX)")]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this._name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_amount", DbType="NVarChar(50)")]
+		public string amount
+		{
+			get
+			{
+				return this._amount;
+			}
+			set
+			{
+				if ((this._amount != value))
+				{
+					this._amount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_category", DbType="NVarChar(50)")]
+		public string category
+		{
+			get
+			{
+				return this._category;
+			}
+			set
+			{
+				if ((this._category != value))
+				{
+					this._category = value;
+				}
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_AwardKeikiInterview")]
 	public partial class vw_AwardKeikiInterview
 	{
@@ -4192,10 +4479,42 @@ namespace HONK
 	public partial class vw_AwardRecipient
 	{
 		
+		private System.Nullable<int> _contestant_id;
+		
 		private string _title;
+		
+		private string _description;
+		
+		private string _amount;
+		
+		private string _name;
+		
+		private string _full_name;
+		
+		private string _halau_name;
+		
+		private string _kumu_name;
+		
+		private System.DateTime _entry_date;
 		
 		public vw_AwardRecipient()
 		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contestant_id", DbType="Int")]
+		public System.Nullable<int> contestant_id
+		{
+			get
+			{
+				return this._contestant_id;
+			}
+			set
+			{
+				if ((this._contestant_id != value))
+				{
+					this._contestant_id = value;
+				}
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_title", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
@@ -4210,6 +4529,118 @@ namespace HONK
 				if ((this._title != value))
 				{
 					this._title = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_description", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string description
+		{
+			get
+			{
+				return this._description;
+			}
+			set
+			{
+				if ((this._description != value))
+				{
+					this._description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_amount", DbType="NVarChar(50)")]
+		public string amount
+		{
+			get
+			{
+				return this._amount;
+			}
+			set
+			{
+				if ((this._amount != value))
+				{
+					this._amount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="VarChar(MAX)")]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this._name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_full_name", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string full_name
+		{
+			get
+			{
+				return this._full_name;
+			}
+			set
+			{
+				if ((this._full_name != value))
+				{
+					this._full_name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_halau_name", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string halau_name
+		{
+			get
+			{
+				return this._halau_name;
+			}
+			set
+			{
+				if ((this._halau_name != value))
+				{
+					this._halau_name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_kumu_name", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string kumu_name
+		{
+			get
+			{
+				return this._kumu_name;
+			}
+			set
+			{
+				if ((this._kumu_name != value))
+				{
+					this._kumu_name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_entry_date", DbType="Date NOT NULL")]
+		public System.DateTime entry_date
+		{
+			get
+			{
+				return this._entry_date;
+			}
+			set
+			{
+				if ((this._entry_date != value))
+				{
+					this._entry_date = value;
 				}
 			}
 		}

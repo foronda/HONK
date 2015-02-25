@@ -9,7 +9,8 @@ namespace HONK
 {
     public partial class AwardRecipients : System.Web.UI.Page
     {
-        DBMethods.HonkAwards honkAwards = new DBMethods.HonkAwards();
+        DBMethods.HonkAwards HonkAwards = new DBMethods.HonkAwards();
+        DBMethods.Awards Awards = new DBMethods.Awards();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -18,8 +19,12 @@ namespace HONK
 
         protected void LinqDataSource1_Selecting(object sender, LinqDataSourceSelectEventArgs e)
         {
-            honkAwards.AddAwardWinners(DateTime.Now.AddYears(-2));
-            e.Result = honkAwards.AwardRecipients;
+            //HonkAwards.CalculateWinners(DateTime.Now.AddYears(-2));
+            //HonkAwards.CalculateWinners(DateTime.Now.AddYears(-2));
+            Awards.SetRecipients(DateTime.Now.AddYears(-2));
+            e.Result = Awards.Recipients;
+
+            //e.Result = HonkAwards.AwardRecipients;
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
+using System.Data.Linq;     // For Compiled LINQ Queries
 
 namespace HONK
 {
@@ -15,7 +16,7 @@ namespace HONK
                 get { return awardRecipients.AsQueryable(); }
             }
 
-            public void AddAwardWinners(DateTime date)
+            public void CalculateWinners(DateTime date)
             {
                 HONKDBDataContext db = new HONKDBDataContext();
 
@@ -60,7 +61,6 @@ namespace HONK
                 //                 Category = "Music"
                 //             }).Union;
             }
-
             private void AddInterviewWinners(ref IQueryable<vw_ContestantAwardScoresByCategory> award_scores)
             {
                 // Interview Awards
@@ -400,8 +400,7 @@ namespace HONK
                                     .FirstOrDefault());
 
             }
-            
-            
+
             // AwardRecipient Class Methods
             private void AddAwardRecipient(DateTime date, string name, string award_name, int? score, int? score_tie)
             {
@@ -425,7 +424,7 @@ namespace HONK
                 {
                     if (a != null)
                     {
-                        if(i == 0) a.Place = "1st Place";
+                        if (i == 0) a.Place = "1st Place";
                         if (i == 1) a.Place = "2nd Place";
                         if (i == 2) a.Place = "3rd Place";
                         AddAwardRecipient(a);
@@ -444,6 +443,7 @@ namespace HONK
                 public decimal? ScoreTie { get; set; }
                 public DateTime EntryDate { get; set; }
             }
+
             private List<AwardRecipient> awardRecipients = new List<AwardRecipient>();
             private List<string> award_titles = new List<string>();
 
@@ -452,6 +452,134 @@ namespace HONK
             private int Kane = 1, Wahine = 2, Palua = 3;
             private int CAuana = 1, CKahiko = 2, CPalua = 3, Hula = 4, Interview = 5, Music = 6, Oli = 7, Overall = 8;
         }
+
+        public class Awards
+        {
+            public IQueryable<Recipient> Recipients
+            {
+                get { return recipients.AsQueryable(); }
+            }
+
+            public void SetRecipients(DateTime date)
+            {
+                HONKDBDataContext db = new HONKDBDataContext();
+
+                List<vw_AwardCandidate> award_candidates = new List<vw_AwardCandidate>();
+
+                award_candidates.Add(CompiledQueries.AwardCandidates(db, AwardCandidates.Where.KeikiInterview, date).Select(c => c).FirstOrDefault());
+                award_candidates.Add(CompiledQueries.AwardCandidates(db, AwardCandidates.Where.OpioInterview, date).Select(c => c).FirstOrDefault());
+
+                foreach (var a in award_candidates)
+                {
+                    AddRecipient(a.entry_date, a.full_name, a.title, a.score, a.score_tie);
+                }
+            }
+
+            private IEnumerable<vw_AwardCandidate> GetAwardCandidate(DateTime date, Func<vw_AwardCandidate, bool> WhereClause)
+            {
+                using (HONKDBDataContext db = new HONKDBDataContext())
+                {
+                    return CompiledQueries.AwardCandidates(db, WhereClause, date);
+                }
+            }
+
+            // Recipient Class Declaration
+            public class Recipient
+            {
+                public string Name { get; set; }
+                public string AwardName { get; set; }
+                public string Place { get; set; }
+                public decimal? Score { get; set; }
+                public decimal? ScoreTie { get; set; }
+                public DateTime EntryDate { get; set; }
+            }
+
+            // Recipient Class Methods
+            private void AddRecipient(DateTime date, string name, string award_name, decimal? score, decimal? score_tie)
+            {
+                recipients.Add(new Recipient
+                {
+                    EntryDate = date,
+                    Name = name,
+                    Score = score,
+                    ScoreTie = score_tie,
+                    AwardName = award_name
+                });
+            }
+            private void AddRecipient(Recipient award_recipient)
+            {
+                recipients.Add(award_recipient);
+            }
+            private void AddRecipient(List<Recipient> award_recipients)
+            {
+                int i = 0;
+                foreach (var a in award_recipients)
+                {
+                    if (a != null)
+                    {
+                        if (i == 0) a.Place = "1st Place";
+                        if (i == 1) a.Place = "2nd Place";
+                        if (i == 2) a.Place = "3rd Place";
+                        AddRecipient(a);
+                        i++;
+                    }
+                }
+            }
+
+            // Recipient Private Variables
+            private List<Recipient> recipients = new List<Recipient>();
+            private List<string> award_titles = new List<string>();
+        }
+        public class AwardCandidates
+        {
+            private static int keiki = 1, opio = 2;
+            private static int kane = 1, wahine = 2, palua = 3;
+            private static int CAuana = 1, CKahiko = 2, CPalua = 3, hula = 4, interview = 5, music = 6, oli = 7, overall = 8;
+
+            public class Where
+            {
+               
+                public static Func<vw_AwardCandidate, bool> //Interview
+                                                            KeikiInterview = a => a.age_id == opio && a.award_category_id == interview,
+                                                            OpioInterview = a => a.age_id == opio && a.award_category_id == interview,
+                    // Costume
+                                                            KeikiKahiko = a => a.age_id == keiki && a.award_category_id == CKahiko,
+                                                            OpioKahiko = a => a.age_id == opio && a.award_category_id == CKahiko,
+                                                            KeikiAuana = a => a.age_id == keiki && a.award_category_id == CAuana,
+                                                            OpioAuana = a => a.age_id == opio && a.award_category_id == CAuana,
+                                                            KeikiPalua = a => a.age_id == keiki && a.award_category_id == CPalua,
+                                                            OpioPalua = a => a.age_id == opio && a.award_category_id == CPalua,
+                    // Hula
+                                                            KeikiPaluaHula = a => a.age_id == keiki && a.gender_id == palua && a.award_category_id == hula,
+                                                            OpioPaluaHula = a => a.age_id == opio && a.gender_id == palua && a.award_category_id == hula,
+                                                            KeikiKaneHula = a => a.age_id == keiki && a.gender_id == kane && a.award_category_id == hula,
+                                                            KeikiWahineHula = a => a.age_id == keiki && a.gender_id == wahine && a.award_category_id == hula,
+                                                            OpioKaneHula = a => a.age_id == opio && a.gender_id == kane && a.award_category_id == hula,
+                                                            OpioWahineHula = a => a.age_id == opio && a.gender_id == wahine && a.award_category_id == hula,
+                    // Oli
+                                                            KeikiKaneOli = a => a.age_id == keiki && a.gender_id == kane && a.award_category_id == oli,
+                                                            KeikiWahineOli = a => a.age_id == keiki && a.gender_id == wahine && a.award_category_id == oli,
+                                                            OpioKaneOli = a => a.age_id == opio && a.gender_id == kane && a.award_category_id == oli,
+                                                            OpioWahineOli = a => a.age_id == opio && a.gender_id == wahine && a.award_category_id == oli,
+                                                            Music = a => a.award_category_id == music,
+                    //Overall
+                                                            KaneOverall = a => a.gender_id == kane && a.award_category_id == overall,
+                                                            WahineOverall = a => a.gender_id == wahine && a.award_category_id == overall;
+
+            }
+        }
+        public class CompiledQueries
+        {
+            public static readonly Func<HONKDBDataContext, Func<vw_AwardCandidate, bool>, DateTime, IEnumerable<vw_AwardCandidate>> AwardCandidates
+                = CompiledQuery.Compile((HONKDBDataContext db, Func<vw_AwardCandidate, bool> WhereClause, DateTime date) =>
+                    (db.vw_AwardCandidates
+                     .Where(WhereClause)
+                     //.Where(ac => ac.entry_date.Year == date.Year)
+                     .OrderByDescending(ac => ac.score)
+                     .ThenByDescending(ac => ac.score_tie)
+                     .Select(ac => ac)));
+        }
+
 
 
         // LINQ METHODS
@@ -798,8 +926,6 @@ namespace HONK
         //        Console.WriteLine(ex.Message);
         //    }
         //}
-
-
 
     }
 
