@@ -463,24 +463,80 @@ namespace HONK
             public void SetRecipients(DateTime date)
             {
                 HONKDBDataContext db = new HONKDBDataContext();
+                award_titles = (from t in db.Awards
+                                select t.title).ToList();
 
                 List<vw_AwardCandidate> award_candidates = new List<vw_AwardCandidate>();
 
-                award_candidates.Add(CompiledQueries.AwardCandidates(db, AwardCandidates.Where.KeikiInterview, date).Select(c => c).FirstOrDefault());
-                award_candidates.Add(CompiledQueries.AwardCandidates(db, AwardCandidates.Where.OpioInterview, date).Select(c => c).FirstOrDefault());
+                award_candidates.Add(GetAwardCandidates(db, AwardCandidates.Where.KeikiInterview, date).Select(c => c).FirstOrDefault());
+                award_candidates.Add(GetAwardCandidates(db, AwardCandidates.Where.OpioInterview, date).Select(c => c).FirstOrDefault());
 
-                foreach (var a in award_candidates)
+                award_candidates.Add(GetAwardCandidates(db, AwardCandidates.Where.KeikiKahiko, date).Select(c => c).FirstOrDefault());
+                award_candidates.Add(GetAwardCandidates(db, AwardCandidates.Where.OpioKahiko, date).Select(c => c).FirstOrDefault());
+                award_candidates.Add(GetAwardCandidates(db, AwardCandidates.Where.KeikiAuana, date).Select(c => c).FirstOrDefault());
+                award_candidates.Add(GetAwardCandidates(db, AwardCandidates.Where.OpioAuana, date).Select(c => c).FirstOrDefault());
+
+                award_candidates.AddRange(GetAwardCandidates(db, AwardCandidates.Where.KeikiPaluaHula, date).Select(c => c).Take(3).ToList());
+                award_candidates.AddRange(GetAwardCandidates(db, AwardCandidates.Where.OpioPaluaHula, date).Select(c => c).Take(3).ToList());
+                award_candidates.AddRange(GetAwardCandidates(db, AwardCandidates.Where.KeikiKaneHula, date).Select(c => c).Take(3).ToList());
+                award_candidates.AddRange(GetAwardCandidates(db, AwardCandidates.Where.KeikiWahineHula, date).Select(c => c).Take(3).ToList());
+
+                int i = 0;
+                string test = string.Empty;
+
+                foreach (vw_AwardCandidate a in award_candidates)
                 {
-                    AddRecipient(a.entry_date, a.full_name, a.title, a.score, a.score_tie);
+                    if(i < 10)
+                    {
+                        if (a != null)
+                        {
+                            AddRecipient(a.entry_date, a.full_name, award_titles[i], a.score, a.score_tie, a.rank);
+                        }
+                    }
+
+                    //try
+                    //{
+                    //    if (a.award_category_id == 4 && test == award_titles[i])
+                    //    {
+                    //        test = award_titles[i];
+                    //    }
+                    //    else
+                    //    {
+                    //        test = string.Empty;
+                    //        i++;
+                    //    }
+
+                    //}
+                    //catch (Exception e)
+                    //{
+                    //    Console.WriteLine(e);
+                    //}
                 }
             }
 
-            private IEnumerable<vw_AwardCandidate> GetAwardCandidate(DateTime date, Func<vw_AwardCandidate, bool> WhereClause)
+            private IEnumerable<vw_AwardCandidate> GetAwardCandidates(DateTime date, Func<vw_AwardCandidate, bool> WhereClause)
             {
                 using (HONKDBDataContext db = new HONKDBDataContext())
                 {
                     return CompiledQueries.AwardCandidates(db, WhereClause, date);
                 }
+            }
+            /// <summary>
+            /// Slow when using query predicates
+            /// </summary>
+            /// <param name="db"></param>
+            /// <param name="predicate"></param>
+            /// <param name="date"></param>
+            /// <returns></returns>
+            private IEnumerable<vw_AwardCandidate> GetAwardCandidates(HONKDBDataContext db, Func<vw_AwardCandidate, bool> predicate, DateTime date)
+            {
+                return (db.vw_AwardCandidates
+                         .Where(predicate)
+                         .Where(ac => ac.entry_date.Year == date.Year)
+                         .OrderByDescending(ac => ac.score)
+                         .ThenByDescending(ac => ac.score_tie)
+                         .Select(ac => ac));
+
             }
 
             // Recipient Class Declaration
@@ -495,15 +551,21 @@ namespace HONK
             }
 
             // Recipient Class Methods
-            private void AddRecipient(DateTime date, string name, string award_name, decimal? score, decimal? score_tie)
+            private void AddRecipient(DateTime date, string name, string award_name, decimal? score, decimal? score_tie, long? rank)
             {
+                string place = string.Empty;
+                if(rank == 1) place = "1st Place";
+                if(rank == 2) place = "2nd Place";
+                if(rank == 3) place = "3rd Place";
+
                 recipients.Add(new Recipient
                 {
                     EntryDate = date,
                     Name = name,
                     Score = score,
                     ScoreTie = score_tie,
-                    AwardName = award_name
+                    AwardName = award_name,
+                    Place = place
                 });
             }
             private void AddRecipient(Recipient award_recipient)
@@ -538,24 +600,23 @@ namespace HONK
 
             public class Where
             {
-               
                 public static Func<vw_AwardCandidate, bool> //Interview
-                                                            KeikiInterview = a => a.age_id == opio && a.award_category_id == interview,
-                                                            OpioInterview = a => a.age_id == opio && a.award_category_id == interview,
+                                                            KeikiInterview = a => a.age_id == 1 && a.award_category_id == 5,
+                                                            OpioInterview = a => a.age_id == 2 && a.award_category_id == 5,
                     // Costume
-                                                            KeikiKahiko = a => a.age_id == keiki && a.award_category_id == CKahiko,
-                                                            OpioKahiko = a => a.age_id == opio && a.award_category_id == CKahiko,
-                                                            KeikiAuana = a => a.age_id == keiki && a.award_category_id == CAuana,
-                                                            OpioAuana = a => a.age_id == opio && a.award_category_id == CAuana,
-                                                            KeikiPalua = a => a.age_id == keiki && a.award_category_id == CPalua,
-                                                            OpioPalua = a => a.age_id == opio && a.award_category_id == CPalua,
+                                                            KeikiKahiko = a => a.age_id == 1 && a.award_category_id == 2,
+                                                            OpioKahiko = a => a.age_id == 2 && a.award_category_id == 2,
+                                                            KeikiAuana = a => a.age_id == 1 && a.award_category_id == 1,
+                                                            OpioAuana = a => a.age_id == 2 && a.award_category_id == 1,
+                                                            KeikiPalua = a => a.age_id == 1 && a.award_category_id == 3,
+                                                            OpioPalua = a => a.age_id == 2 && a.award_category_id == 3,
                     // Hula
-                                                            KeikiPaluaHula = a => a.age_id == keiki && a.gender_id == palua && a.award_category_id == hula,
-                                                            OpioPaluaHula = a => a.age_id == opio && a.gender_id == palua && a.award_category_id == hula,
-                                                            KeikiKaneHula = a => a.age_id == keiki && a.gender_id == kane && a.award_category_id == hula,
-                                                            KeikiWahineHula = a => a.age_id == keiki && a.gender_id == wahine && a.award_category_id == hula,
-                                                            OpioKaneHula = a => a.age_id == opio && a.gender_id == kane && a.award_category_id == hula,
-                                                            OpioWahineHula = a => a.age_id == opio && a.gender_id == wahine && a.award_category_id == hula,
+                                                            KeikiPaluaHula = a => a.age_id == 1 && a.gender_id == 3 && a.award_category_id == 4,
+                                                            OpioPaluaHula = a => a.age_id == 2 && a.gender_id == 3 && a.award_category_id == 4,
+                                                            KeikiKaneHula = a => a.age_id == 1 && a.gender_id == 1 && a.award_category_id == 4,
+                                                            KeikiWahineHula = a => a.age_id == 1 && a.gender_id == 2 && a.award_category_id == 4,
+                                                            OpioKaneHula = a => a.age_id == 2 && a.gender_id == 1 && a.award_category_id == 4,
+                                                            OpioWahineHula = a => a.age_id == 2 && a.gender_id == 2 && a.award_category_id == 4,
                     // Oli
                                                             KeikiKaneOli = a => a.age_id == keiki && a.gender_id == kane && a.award_category_id == oli,
                                                             KeikiWahineOli = a => a.age_id == keiki && a.gender_id == wahine && a.award_category_id == oli,
@@ -574,7 +635,7 @@ namespace HONK
                 = CompiledQuery.Compile((HONKDBDataContext db, Func<vw_AwardCandidate, bool> WhereClause, DateTime date) =>
                     (db.vw_AwardCandidates
                      .Where(WhereClause)
-                     //.Where(ac => ac.entry_date.Year == date.Year)
+                        //.Where(ac => ac.entry_date.Year == date.Year)
                      .OrderByDescending(ac => ac.score)
                      .ThenByDescending(ac => ac.score_tie)
                      .Select(ac => ac)));
