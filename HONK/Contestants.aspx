@@ -25,7 +25,7 @@
                                     <InsertItemTemplate>
                                         <div class="row form-group">
                                             <label class="col-lg-2 control-label">Name</label>
-                                            <div class="col-lg-10">
+                                            <div class="col-lg-4">
                                                 <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" Text='<%# Bind("full_name") %>'></asp:TextBox>
                                             </div>
                                         </div>
@@ -79,11 +79,11 @@
                                         </div>
                                         <div class="row form-group">
                                             <label class="col-lg-2 control-label">Friday Entry No.</label>
-                                            <div class="col-lg-3">
+                                            <div class="col-lg-4">
                                                 <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" Text='<%# Bind("entry_num_fri") %>'></asp:TextBox>
                                             </div>
                                             <label class="col-lg-2 control-label">Saturday Entry No.</label>
-                                            <div class="col-lg-3">
+                                            <div class="col-lg-4">
                                                 <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" Text='<%# Bind("entry_num_sat") %>'></asp:TextBox>
                                             </div>
                                         </div>
