@@ -137,6 +137,7 @@
     <Content Include="Images\honk_banner.png" />
     <Content Include="Images\honk_footer.png" />
     <Content Include="Images\honk_logo_bw.png" />
+    <Content Include="Images\honk_text.png" />
     <Content Include="packages.config" />
     <Content Include="HONKDB.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
