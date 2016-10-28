@@ -14,9 +14,9 @@ body {
 /* Set widths on the form inputs since otherwise they're 100% wide */
 input,
 select,
-/*textarea {
-    max-width: 280px;
-}*/
+textarea {
+    /*max-width: 280px;*/
+}
 
 
 /* Responsive: Portrait tablets and up */
@@ -28,4 +28,13 @@ select,
     .body-content {
         padding: 0;
     }
+}
+
+
+.form-group.required .control-label:before {
+    content: "* ";
+    color: red;
+    font-family: 'Glyphicons Halflings';
+    font-weight: normal;
+    font-size: 9px;
 }

@@ -57,11 +57,6 @@
         <li>
             <asp:LinkButton ID="exportMasterTab" runat="server" OnClick="exportMasterTab_Click" Text="MASTER TABULATION REPORT" />
         </li>
-        <li>
-            <asp:LinkButton ID="LinkButton1" runat="server" OnClick="exportMasterTab_Click" Text="MASTER TABULATION REPORT" />
-        </li>
-        <li><a href="#">Library</a></li>
-        <li class="active">Data</li>
     </ul>
     <%-- END REPOT EXPORT BREADCRUMB --%>
 

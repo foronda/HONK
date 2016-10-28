@@ -23,13 +23,13 @@
                             <ContentTemplate>
                                 <asp:FormView ID="ContestantFV" runat="server" DataSourceID="ContestantsLDS" DefaultMode="Insert" CssClass="col-lg-12" OnItemInserting="ContestantFV_ItemInserting">
                                     <InsertItemTemplate>
-                                        <div class="row form-group">
+                                        <div class="row form-group required">
                                             <label class="col-lg-2 control-label">Name</label>
                                             <div class="col-lg-4">
-                                                <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" Text='<%# Bind("full_name") %>'></asp:TextBox>
+                                                <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" Text='<%# Bind("full_name") %>' placeholder="Full Name"></asp:TextBox>
                                             </div>
                                         </div>
-                                        <div class="row form-group">
+                                        <div class="row form-group required">
                                             <label class="col-lg-2 control-label">Age</label>
                                             <div class="col-lg-4">
                                                 <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="AgeLDS" DataTextField="name" DataValueField="id" SelectedValue='<%# Bind("age_id") %>' AppendDataBoundItems="true" CssClass="form-control" OnSelectedIndexChanged="CalculateDivision" AutoPostBack="true">
@@ -43,7 +43,7 @@
                                                 </asp:DropDownList>
                                             </div>
                                         </div>
-                                        <div class="row form-group">
+                                        <div class="row form-group required">
                                             <label class="col-lg-2 control-label">Division</label>
                                             <div class="col-lg-4">
                                                 <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="DivisionLDS" DataTextField="name" DataValueField="id" SelectedValue='<%# Bind("division_id") %>' AppendDataBoundItems="true" CssClass="form-control" Enabled="false">
@@ -51,7 +51,7 @@
                                                 </asp:DropDownList>
                                             </div>
                                         </div>
-                                        <div class="row form-group">
+                                        <div class="row form-group required">
                                             <label class="col-lg-2 control-label">Halau</label>
                                             <div class="col-lg-4">
                                                 <asp:DropDownList ID="DropDownList4" runat="server" DataSourceID="HalauLDS" DataTextField="name" DataValueField="id" SelectedValue='<%# Bind("halau_id") %>' AppendDataBoundItems="True" CssClass="form-control">
@@ -64,7 +64,7 @@
                                                 </button>
                                             </div>
                                         </div>
-                                        <div class="row form-group">
+                                        <div class="row form-group required">
                                             <label class="col-lg-2 control-label">Kumu</label>
                                             <div class="col-lg-4">
                                                 <asp:DropDownList ID="DropDownList5" runat="server" DataSourceID="KumuLDS" DataTextField="full_name" DataValueField="id" SelectedValue='<%# Bind("kumu_id") %>' AppendDataBoundItems="True" CssClass="form-control">
@@ -77,21 +77,21 @@
                                                 </button>
                                             </div>
                                         </div>
-                                        <div class="row form-group">
+                                        <div class="row form-group required">
                                             <label class="col-lg-2 control-label">Friday Entry No.</label>
                                             <div class="col-lg-4">
-                                                <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" Text='<%# Bind("entry_num_fri") %>'></asp:TextBox>
+                                                <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" Text='<%# Bind("entry_num_fri") %>' placeholder="Entry No. (e.g. 1)"></asp:TextBox>
                                             </div>
                                             <label class="col-lg-2 control-label">Saturday Entry No.</label>
                                             <div class="col-lg-4">
-                                                <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" Text='<%# Bind("entry_num_sat") %>'></asp:TextBox>
+                                                <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" Text='<%# Bind("entry_num_sat") %>' placeholder="Entry No. (e.g. 1)"></asp:TextBox>
                                             </div>
                                         </div>
-                                        <div class="row form-group">
+                                        <div class="row form-group required">
                                             <label class="col-lg-2 control-label">Entry Year</label>
                                             <div class="col-md-3">
                                                 <div class="input-group" id="entrydatepicker">
-                                                    <asp:TextBox ID="entryDateTb" runat="server" CssClass="form-control" Text='<%# Bind("entry_date") %>'></asp:TextBox>
+                                                    <asp:TextBox ID="entryDateTb" runat="server" CssClass="form-control" Text='<%# Bind("entry_date") %>' placeholder="HONK Entry Year"></asp:TextBox>
                                                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar" /></span>
                                                 </div>
                                                 <script type="text/javascript">
@@ -117,6 +117,9 @@
                                                 &nbsp;<asp:Button ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" CssClass="btn btn-primary" />
                                             </div>
                                         </div>
+                                        <div class="row form-group required ">
+                                            <label class="col-lg-3 col-sm-offset-1 control-label">Indicates required field</label>
+                                        </div>
                                     </InsertItemTemplate>
                                 </asp:FormView>
                             </ContentTemplate>
@@ -137,13 +140,14 @@
                             <ContentTemplate>
                                 <asp:GridView ID="ContestantGV" runat="server" AllowPaging="True" DataSourceID="ContestantsLDS" AutoGenerateColumns="False" CssClass="table table-striped table-hover" AllowSorting="True" DataKeyNames="id">
                                     <Columns>
-                                        <asp:TemplateField HeaderText="Actions" ShowHeader="False">
+                                        <asp:TemplateField HeaderText="Actions" ShowHeader="False" HeaderStyle-Width="100px">
                                             <EditItemTemplate>
                                                 <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Update"></asp:LinkButton>
                                                 &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel"></asp:LinkButton>
                                             </EditItemTemplate>
                                             <ItemTemplate>
                                                 <asp:LinkButton ID="LinkButton3" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit"></asp:LinkButton>
+                                                <%--<asp:LinkButton ID="LinkButton4" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete"></asp:LinkButton>--%>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <asp:BoundField DataField="full_name" HeaderText="Name" SortExpression="full_name" />

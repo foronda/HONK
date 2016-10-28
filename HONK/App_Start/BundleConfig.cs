@@ -57,6 +57,14 @@ namespace HONK
                    Path = "~/Scripts/moment.min.js",
                    DebugPath = "~/Scripts/moment.js",
                });
+
+            ScriptManager.ScriptResourceMapping.AddDefinition(
+                "jquery",
+                new ScriptResourceDefinition
+                {
+                    Path = "~/Scripts/jquery-3.1.1.min.js",
+                    DebugPath = "~/Scripts/jquery-3.1.1.js",
+                });
         }
     }
 }
