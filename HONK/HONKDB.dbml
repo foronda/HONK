@@ -376,27 +376,6 @@
       <Column Name="hula_palua" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.vw_MasterScoreDetails" Member="vw_MasterScoreDetails">
-    <Type Name="vw_MasterScoreDetail">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="entry_num_fri" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="entry_num_sat" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="full_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="age_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="gender_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="division_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="interview" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="interview_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="combined_hula_score" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="combined_hula_break_score" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="overall_score" Type="System.Decimal" DbType="Decimal(24,3)" CanBeNull="true" />
-      <Column Name="overall_break_score" Type="System.Decimal" DbType="Decimal(23,3)" CanBeNull="true" />
-      <Column Name="music" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="halau_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="kumu_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="entry_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.vw_MasterScoreReport" Member="vw_MasterScoreReports">
     <Type Name="vw_MasterScoreReport">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -466,6 +445,28 @@
       <Column Name="score" Type="System.Decimal" DbType="Decimal(26,3)" CanBeNull="true" />
       <Column Name="score_tie" Type="System.Decimal" DbType="Decimal(23,3)" CanBeNull="true" />
       <Column Name="rank" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vw_MasterScoreDetails" Member="vw_MasterScoreDetails">
+    <Type Name="vw_MasterScoreDetail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="entry_num_fri" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="entry_num_sat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="full_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="age_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="gender_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="division_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="oli" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="interview" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="interview_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="combined_hula_score" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="combined_hula_break_score" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="overall_score" Type="System.Decimal" DbType="Decimal(26,3)" CanBeNull="true" />
+      <Column Name="overall_break_score" Type="System.Decimal" DbType="Decimal(23,3)" CanBeNull="true" />
+      <Column Name="music" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="halau_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="kumu_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="entry_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

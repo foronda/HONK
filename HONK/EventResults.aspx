@@ -85,6 +85,7 @@
                     </div>
                 </div>
             </div>
+            <%-- START KEIKI KANE --%>
             <div role="tabpanel" class="tab-pane" id="keikikane">
                 <div class="panel panel-primary">
                     <div class="panel-body">
@@ -102,6 +103,7 @@
                                         <asp:BoundField DataField="full_name" HeaderText="Name" SortExpression="full_name" />
                                         <asp:BoundField DataField="age_name" HeaderText="Age" SortExpression="age_name" />
                                         <asp:BoundField DataField="gender_name" HeaderText="Gender" SortExpression="gender_name" />
+                                        <asp:BoundField DataField="oli" HeaderText="Oli Score" SortExpression="oli" />
                                         <asp:BoundField DataField="combined_hula_score" HeaderText="Combined Hula Score" SortExpression="combined_hula_score" />
                                         <asp:BoundField DataField="combined_hula_break_score" HeaderText="Combined Hula Tie" SortExpression="combined_hula_break_score" />
                                         <asp:BoundField DataField="halau_name" HeaderText="Halau" SortExpression="halau_name" />
@@ -119,6 +121,7 @@
                     </div>
                 </div>
             </div>
+            <%-- END KEIKI KANE --%>
             <div role="tabpanel" class="tab-pane" id="keikiwahine">
                 <div class="panel panel-primary">
                     <div class="panel-body">
@@ -136,6 +139,7 @@
                                         <asp:BoundField DataField="full_name" HeaderText="Name" SortExpression="full_name" />
                                         <asp:BoundField DataField="age_name" HeaderText="Age" SortExpression="age_name" />
                                         <asp:BoundField DataField="gender_name" HeaderText="Gender" SortExpression="gender_name" />
+                                        <asp:BoundField DataField="oli" HeaderText="Oli Score" SortExpression="oli" />
                                         <asp:BoundField DataField="combined_hula_score" HeaderText="Combined Hula Score" SortExpression="combined_hula_score" />
                                         <asp:BoundField DataField="combined_hula_break_score" HeaderText="Combined Hula Tie" SortExpression="combined_hula_break_score" />
                                         <asp:BoundField DataField="halau_name" HeaderText="Halau" SortExpression="halau_name" />
@@ -170,6 +174,7 @@
                                         <asp:BoundField DataField="full_name" HeaderText="Name" SortExpression="full_name" />
                                         <asp:BoundField DataField="age_name" HeaderText="Age" SortExpression="age_name" />
                                         <asp:BoundField DataField="gender_name" HeaderText="Gender" SortExpression="gender_name" />
+                                        <asp:BoundField DataField="oli" HeaderText="Oli Score" SortExpression="oli" />
                                         <asp:BoundField DataField="combined_hula_score" HeaderText="Combined Hula Score" SortExpression="combined_hula_score" />
                                         <asp:BoundField DataField="combined_hula_break_score" HeaderText="Combined Hula Tie" SortExpression="combined_hula_break_score" />
                                         <asp:BoundField DataField="halau_name" HeaderText="Halau" SortExpression="halau_name" />
@@ -204,6 +209,7 @@
                                         <asp:BoundField DataField="full_name" HeaderText="Name" SortExpression="full_name" />
                                         <asp:BoundField DataField="age_name" HeaderText="Age" SortExpression="age_name" />
                                         <asp:BoundField DataField="gender_name" HeaderText="Gender" SortExpression="gender_name" />
+                                        <asp:BoundField DataField="oli" HeaderText="Oli Score" SortExpression="oli" />
                                         <asp:BoundField DataField="combined_hula_score" HeaderText="Combined Hula Score" SortExpression="combined_hula_score" />
                                         <asp:BoundField DataField="combined_hula_break_score" HeaderText="Combined Hula Tie" SortExpression="combined_hula_break_score" />
                                         <asp:BoundField DataField="halau_name" HeaderText="Halau" SortExpression="halau_name" />
