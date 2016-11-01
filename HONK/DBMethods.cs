@@ -843,8 +843,30 @@ namespace HONK
             }
         }
 
+        // LINQ DB DELETE METHODS
+        public static void DeleteContestant(int contestant_id)
+        {
+            using (HONKDBDataContext db = new HONKDBDataContext())
+            {
+                var contestant = (from c in db.Contestants
+                                  where c.id == contestant_id
+                                  select c).FirstOrDefault();
 
+                foreach (JudgeScore js in contestant.JudgeScores)
+                {
+                    db.JudgeScores.DeleteOnSubmit(js);
+                }
 
+                foreach (MasterScore ms in contestant.MasterScores)
+                {
+                    db.MasterScores.DeleteOnSubmit(ms);
+                }
+
+                db.Contestants.DeleteOnSubmit(contestant);
+                db.SubmitChanges();
+            }
+        }
+        
 
         /****************************************************/
         //SQL INSERT METHODS

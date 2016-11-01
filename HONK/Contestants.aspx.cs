@@ -50,6 +50,11 @@ namespace HONK
                 // Shows Notification Formview on Edit.
                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "ShowContestants", "ShowContestants();", true);
             }
+            else if (e.CommandName == "CascadeDelete")
+            {
+                DBMethods.DeleteContestant(Convert.ToInt32(e.CommandArgument));
+                ContestantGV.DataBind();
+            }
         }
         #endregion
 

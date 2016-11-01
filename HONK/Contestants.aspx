@@ -241,6 +241,7 @@
                                                 <asp:UpdatePanel ID="EditContestantUP" runat="server" UpdateMode="Always">
                                                     <ContentTemplate>
                                                         <asp:LinkButton ID="EditLB" runat="server" CausesValidation="False" CommandName="AsyncEdit" Text="Edit" CommandArgument='<%# Eval("id")%>'></asp:LinkButton>
+                                                        <asp:LinkButton ID="DeleteLB" runat="server" CausesValidation="False" CommandName="CascadeDelete" Text="Delete" CommandArgument='<%# Eval("id")%>'></asp:LinkButton>
                                                     </ContentTemplate>
                                                     <Triggers>
                                                         <asp:AsyncPostBackTrigger ControlID="EditLB" />
