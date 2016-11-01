@@ -112,6 +112,60 @@ namespace HONK {
         protected global::System.Web.UI.WebControls.GridView OpioWahineGV;
         
         /// <summary>
+        /// CostumeOpioGVUP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel CostumeOpioGVUP;
+        
+        /// <summary>
+        /// CostumeOpioGV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView CostumeOpioGV;
+        
+        /// <summary>
+        /// CostumeKeikiGVUP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel CostumeKeikiGVUP;
+        
+        /// <summary>
+        /// CostumeKeikiGV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView CostumeKeikiGV;
+        
+        /// <summary>
+        /// CostumePaluaGVUP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel CostumePaluaGVUP;
+        
+        /// <summary>
+        /// CostumePaluaGV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView CostumePaluaGV;
+        
+        /// <summary>
         /// PaluaGVUP control.
         /// </summary>
         /// <remarks>
@@ -175,13 +229,31 @@ namespace HONK {
         protected global::System.Web.UI.WebControls.LinqDataSource OpioWahineDS;
         
         /// <summary>
-        /// CostumeDS control.
+        /// CostumeOpioDS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinqDataSource CostumeDS;
+        protected global::System.Web.UI.WebControls.LinqDataSource CostumeOpioDS;
+        
+        /// <summary>
+        /// CostumeKeikiDS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinqDataSource CostumeKeikiDS;
+        
+        /// <summary>
+        /// CostumePaluaDS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinqDataSource CostumePaluaDS;
         
         /// <summary>
         /// PaluaDS control.

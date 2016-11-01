@@ -450,6 +450,7 @@
   <Table Name="dbo.vw_MasterScoreDetails" Member="vw_MasterScoreDetails">
     <Type Name="vw_MasterScoreDetail">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="entry_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="entry_num_fri" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="entry_num_sat" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="full_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
@@ -466,7 +467,12 @@
       <Column Name="music" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="halau_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="kumu_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="entry_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="costume_auana" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="costume_auana_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="costume_kahiko" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="costume_kahiko_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="costume_palua" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="costume_palua_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

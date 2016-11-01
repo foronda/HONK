@@ -122,6 +122,7 @@
                 </div>
             </div>
             <%-- END KEIKI KANE --%>
+            <%-- START KEIKI WAHINE --%>
             <div role="tabpanel" class="tab-pane" id="keikiwahine">
                 <div class="panel panel-primary">
                     <div class="panel-body">
@@ -157,6 +158,8 @@
                     </div>
                 </div>
             </div>
+            <%-- END KEIKI WAHINE --%>
+            <%-- START OPIO KANE --%>
             <div role="tabpanel" class="tab-pane" id="opiokane">
                 <div class="panel panel-primary">
                     <div class="panel-body">
@@ -192,6 +195,8 @@
                     </div>
                 </div>
             </div>
+            <%-- END OPIO KANE --%>
+            <%-- START OPIO WAHINE --%>
             <div role="tabpanel" class="tab-pane" id="opiowahine">
                 <div class="panel panel-primary">
                     <div class="panel-body">
@@ -227,13 +232,135 @@
                     </div>
                 </div>
             </div>
+            <%-- END OPIO WAHINE --%>
+            <%-- START COSTUME --%>
             <div role="tabpanel" class="tab-pane" id="costume">
                 <div class="panel panel-primary">
                     <div class="panel-body">
-                        Panel content
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Costume ('Opio)
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                    <div class="panel-body">
+                                        <asp:UpdatePanel runat="server" ID="CostumeOpioGVUP" ChildrenAsTriggers="true" UpdateMode="Always">
+                                            <ContentTemplate>
+                                                <asp:GridView ID="CostumeOpioGV" runat="server" AllowPaging="True" DataSourceID="CostumeOpioDS" AutoGenerateColumns="False" CssClass="table table-striped table-hover" AllowSorting="True" DataKeyNames="id" EmptyDateText="">
+                                                    <Columns>
+                                                        <asp:TemplateField HeaderText="Actions" ShowHeader="False">
+                                                            <ItemTemplate>
+                                                                <asp:LinkButton ID="LinkButton3" runat="server" CausesValidation="False" CommandName="Export" Text="PDF"></asp:LinkButton>
+                                                            </ItemTemplate>
+                                                        </asp:TemplateField>
+                                                        <asp:BoundField DataField="full_name" HeaderText="Name" SortExpression="full_name" />
+                                                        <asp:BoundField DataField="age_name" HeaderText="Age" SortExpression="age_name" />
+                                                        <asp:BoundField DataField="gender_name" HeaderText="Gender" SortExpression="gender_name" />
+                                                        <asp:BoundField DataField="costume_auana" HeaderText="Auana Total" SortExpression="costume_auana" />
+                                                        <asp:BoundField DataField="costume_auana_tie" HeaderText="Auana Total Tie" SortExpression="costume_auana_tie" />
+                                                        <asp:BoundField DataField="costume_kahiko" HeaderText="Kahiko Total" SortExpression="costume_kahiko" />
+                                                        <asp:BoundField DataField="costume_kahiko_tie" HeaderText="Kahiko Total Tie" SortExpression="costume_kahiko_tie" />
+                                                        <asp:BoundField DataField="halau_name" HeaderText="Halau" SortExpression="halau_name" />
+                                                        <asp:BoundField DataField="kumu_name" HeaderText="Kumu" SortExpression="kumu_name" />
+                                                    </Columns>
+                                                    <EmptyDataTemplate>
+                                                        <div class="alert alert-dismissible alert-danger">
+                                                            <button type="button" class="close" data-dismiss="alert">×</button>
+                                                            <strong>Oh snap!</strong> Query yielded no results. Please check entered year and try submitting again.
+                                                        </div>
+                                                    </EmptyDataTemplate>
+                                                </asp:GridView>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Costume (Keiki)
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                    <div class="panel-body">
+                                        <asp:UpdatePanel runat="server" ID="CostumeKeikiGVUP" ChildrenAsTriggers="true" UpdateMode="Always">
+                                            <ContentTemplate>
+                                                <asp:GridView ID="CostumeKeikiGV" runat="server" AllowPaging="True" DataSourceID="CostumeKeikiDS" AutoGenerateColumns="False" CssClass="table table-striped table-hover" AllowSorting="True" DataKeyNames="id" EmptyDateText="">
+                                                    <Columns>
+                                                        <asp:TemplateField HeaderText="Actions" ShowHeader="False">
+                                                            <ItemTemplate>
+                                                                <asp:LinkButton ID="LinkButton3" runat="server" CausesValidation="False" CommandName="Export" Text="PDF"></asp:LinkButton>
+                                                            </ItemTemplate>
+                                                        </asp:TemplateField>
+                                                        <asp:BoundField DataField="full_name" HeaderText="Name" SortExpression="full_name" />
+                                                        <asp:BoundField DataField="age_name" HeaderText="Age" SortExpression="age_name" />
+                                                        <asp:BoundField DataField="gender_name" HeaderText="Gender" SortExpression="gender_name" />
+                                                        <asp:BoundField DataField="costume_auana" HeaderText="Auana Total" SortExpression="costume_auana" />
+                                                        <asp:BoundField DataField="costume_auana_tie" HeaderText="Auana Total Tie" SortExpression="costume_auana_tie" />
+                                                        <asp:BoundField DataField="costume_kahiko" HeaderText="Kahiko Total" SortExpression="costume_kahiko" />
+                                                        <asp:BoundField DataField="costume_kahiko_tie" HeaderText="Kahiko Total Tie" SortExpression="costume_kahiko_tie" />
+                                                        <asp:BoundField DataField="halau_name" HeaderText="Halau" SortExpression="halau_name" />
+                                                        <asp:BoundField DataField="kumu_name" HeaderText="Kumu" SortExpression="kumu_name" />
+                                                    </Columns>
+                                                    <EmptyDataTemplate>
+                                                        <div class="alert alert-dismissible alert-danger">
+                                                            <button type="button" class="close" data-dismiss="alert">×</button>
+                                                            <strong>Oh snap!</strong> Query yielded no results. Please check entered year and try submitting again.
+                                                        </div>
+                                                    </EmptyDataTemplate>
+                                                </asp:GridView>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingThree">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Costume (Palua)
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                    <div class="panel-body">
+                                        <asp:UpdatePanel runat="server" ID="CostumePaluaGVUP" ChildrenAsTriggers="true" UpdateMode="Always">
+                                            <ContentTemplate>
+                                                <asp:GridView ID="CostumePaluaGV" runat="server" AllowPaging="True" DataSourceID="CostumePaluaDS" AutoGenerateColumns="False" CssClass="table table-striped table-hover" AllowSorting="True" DataKeyNames="id" EmptyDateText="">
+                                                    <Columns>
+                                                        <asp:TemplateField HeaderText="Actions" ShowHeader="False">
+                                                            <ItemTemplate>
+                                                                <asp:LinkButton ID="LinkButton3" runat="server" CausesValidation="False" CommandName="Export" Text="PDF"></asp:LinkButton>
+                                                            </ItemTemplate>
+                                                        </asp:TemplateField>
+                                                        <asp:BoundField DataField="full_name" HeaderText="Name" SortExpression="full_name" />
+                                                        <asp:BoundField DataField="age_name" HeaderText="Age" SortExpression="age_name" />
+                                                        <asp:BoundField DataField="gender_name" HeaderText="Gender" SortExpression="gender_name" />
+                                                        <asp:BoundField DataField="costume_palua" HeaderText="Auana Total" SortExpression="costume_palua" />
+                                                        <asp:BoundField DataField="costume_palua_tie" HeaderText="Auana Total Tie" SortExpression="costume_palua_tie" />
+                                                        <asp:BoundField DataField="halau_name" HeaderText="Halau" SortExpression="halau_name" />
+                                                        <asp:BoundField DataField="kumu_name" HeaderText="Kumu" SortExpression="kumu_name" />
+                                                    </Columns>
+                                                    <EmptyDataTemplate>
+                                                        <div class="alert alert-dismissible alert-danger">
+                                                            <button type="button" class="close" data-dismiss="alert">×</button>
+                                                            <strong>Oh snap!</strong> Query yielded no results. Please check entered year and try submitting again.
+                                                        </div>
+                                                    </EmptyDataTemplate>
+                                                </asp:GridView>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <%-- END COSTUME --%>
             <div role="tabpanel" class="tab-pane" id="palua">
                 <div class="panel panel-primary">
                     <div class="panel-body">
@@ -277,7 +404,9 @@
     <asp:LinqDataSource ID="KeikiWahineDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" OnSelecting="KeikiWahineDS_Selecting"></asp:LinqDataSource>
     <asp:LinqDataSource ID="OpioKaneDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" OnSelecting="OpioKaneDS_Selecting"></asp:LinqDataSource>
     <asp:LinqDataSource ID="OpioWahineDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" OnSelecting="OpioWahineDS_Selecting"></asp:LinqDataSource>
-    <asp:LinqDataSource ID="CostumeDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" OnSelecting="CostumeDS_Selecting"></asp:LinqDataSource>
+    <asp:LinqDataSource ID="CostumeOpioDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" OnSelecting="CostumeOpioDS_Selecting"></asp:LinqDataSource>
+    <asp:LinqDataSource ID="CostumeKeikiDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" OnSelecting="CostumeKeikiDS_Selecting"></asp:LinqDataSource>
+    <asp:LinqDataSource ID="CostumePaluaDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" OnSelecting="CostumePaluaDS_Selecting"></asp:LinqDataSource>
     <asp:LinqDataSource ID="PaluaDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" OnSelecting="PaluaDS_Selecting"></asp:LinqDataSource>
     <%-- END OF LINQ DATASOURCES --%>
     </span>

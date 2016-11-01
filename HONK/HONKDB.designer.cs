@@ -7793,6 +7793,8 @@ namespace HONK
 		
 		private int _id;
 		
+		private System.DateTime _entry_date;
+		
 		private System.Nullable<int> _entry_num_fri;
 		
 		private System.Nullable<int> _entry_num_sat;
@@ -7825,7 +7827,17 @@ namespace HONK
 		
 		private string _kumu_name;
 		
-		private System.DateTime _entry_date;
+		private System.Nullable<int> _costume_auana;
+		
+		private System.Nullable<int> _costume_auana_tie;
+		
+		private System.Nullable<int> _costume_kahiko;
+		
+		private System.Nullable<int> _costume_kahiko_tie;
+		
+		private System.Nullable<int> _costume_palua;
+		
+		private System.Nullable<int> _costume_palua_tie;
 		
 		public vw_MasterScoreDetail()
 		{
@@ -7843,6 +7855,22 @@ namespace HONK
 				if ((this._id != value))
 				{
 					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_entry_date", DbType="Date NOT NULL")]
+		public System.DateTime entry_date
+		{
+			get
+			{
+				return this._entry_date;
+			}
+			set
+			{
+				if ((this._entry_date != value))
+				{
+					this._entry_date = value;
 				}
 			}
 		}
@@ -8103,18 +8131,98 @@ namespace HONK
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_entry_date", DbType="Date NOT NULL")]
-		public System.DateTime entry_date
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_auana", DbType="Int")]
+		public System.Nullable<int> costume_auana
 		{
 			get
 			{
-				return this._entry_date;
+				return this._costume_auana;
 			}
 			set
 			{
-				if ((this._entry_date != value))
+				if ((this._costume_auana != value))
 				{
-					this._entry_date = value;
+					this._costume_auana = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_auana_tie", DbType="Int")]
+		public System.Nullable<int> costume_auana_tie
+		{
+			get
+			{
+				return this._costume_auana_tie;
+			}
+			set
+			{
+				if ((this._costume_auana_tie != value))
+				{
+					this._costume_auana_tie = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_kahiko", DbType="Int")]
+		public System.Nullable<int> costume_kahiko
+		{
+			get
+			{
+				return this._costume_kahiko;
+			}
+			set
+			{
+				if ((this._costume_kahiko != value))
+				{
+					this._costume_kahiko = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_kahiko_tie", DbType="Int")]
+		public System.Nullable<int> costume_kahiko_tie
+		{
+			get
+			{
+				return this._costume_kahiko_tie;
+			}
+			set
+			{
+				if ((this._costume_kahiko_tie != value))
+				{
+					this._costume_kahiko_tie = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_palua", DbType="Int")]
+		public System.Nullable<int> costume_palua
+		{
+			get
+			{
+				return this._costume_palua;
+			}
+			set
+			{
+				if ((this._costume_palua != value))
+				{
+					this._costume_palua = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_palua_tie", DbType="Int")]
+		public System.Nullable<int> costume_palua_tie
+		{
+			get
+			{
+				return this._costume_palua_tie;
+			}
+			set
+			{
+				if ((this._costume_palua_tie != value))
+				{
+					this._costume_palua_tie = value;
 				}
 			}
 		}

@@ -31,6 +31,9 @@ namespace HONK
             KeikiWahineGV.DataBind();
             OpioKaneGV.DataBind();
             OpioWahineGV.DataBind();
+            CostumeOpioGV.DataBind();
+            CostumeKeikiGV.DataBind();
+            CostumePaluaGV.DataBind();
             PaluaGV.DataBind();
         }
 
@@ -91,7 +94,7 @@ namespace HONK
 
         protected void CostumeDS_Selecting(object sender, LinqDataSourceSelectEventArgs e)
         {
-
+            
         }
 
         protected void PaluaDS_Selecting(object sender, LinqDataSourceSelectEventArgs e)
@@ -116,6 +119,41 @@ namespace HONK
 
                 return date;
             }
+        }
+
+        protected void CostumeOpioDS_Selecting(object sender, LinqDataSourceSelectEventArgs e)
+        {
+            var event_results = from ms in db.vw_MasterScoreDetails
+                                where ms.entry_date.Year == EventDate.Year
+                                && ms.age_name == "'Opio"
+                                && ms.gender_name != "Palua"
+                                orderby ms.costume_auana descending
+                                select ms;
+
+            e.Result = event_results;
+        }
+
+        protected void CostumeKeikiDS_Selecting(object sender, LinqDataSourceSelectEventArgs e)
+        {
+            var event_results = from ms in db.vw_MasterScoreDetails
+                                where ms.entry_date.Year == EventDate.Year
+                                && ms.age_name == "Keiki"
+                                && ms.gender_name != "Palua"
+                                orderby ms.costume_auana descending
+                                select ms;
+
+            e.Result = event_results;
+        }
+
+        protected void CostumePaluaDS_Selecting(object sender, LinqDataSourceSelectEventArgs e)
+        {
+            var event_results = from ms in db.vw_MasterScoreDetails
+                                where ms.entry_date.Year == EventDate.Year
+                                && ms.gender_name == "Palua"
+                                orderby ms.costume_palua descending
+                                select ms;
+
+            e.Result = event_results;
         }
 
 
