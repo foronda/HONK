@@ -193,7 +193,7 @@
                                             <label class="col-lg-2 control-label">Entry Year</label>
                                             <div class="col-md-3">
                                                 <div class="input-group" id="entrydatepicker">
-                                                    <asp:TextBox ID="entryDateTb" runat="server" CssClass="form-control" Text='<%# Bind("entry_date") %>' placeholder="HONK Entry Year"></asp:TextBox>
+                                                    <asp:TextBox ID="entryDateTb" runat="server" CssClass="form-control" Text='<%# String.Format(Eval("entry_date", "{0:yyyy}")) %>' placeholder="HONK Entry Year"></asp:TextBox>
                                                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar" /></span>
                                                 </div>
                                                 <script type="text/javascript">
