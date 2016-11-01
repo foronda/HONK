@@ -1,6 +1,15 @@
 ﻿<%@ Page Title="Contestants" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contestants.aspx.cs" Inherits="HONK.Contestants" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <script type="text/javascript">
+        function ShowContestants() {
+            $('#collapseOne').collapse('show');
+            if ($('#collapseTwo').is(":visible")) {
+                $('#collapseTwo').collapse('hide');
+            }
+        }
+    </script>
+
     <div class="container">
         <div class="page-header">
             <div class="row">
@@ -21,7 +30,8 @@
                     <div class="panel-body">
                         <asp:UpdatePanel ID="ContestantFVUP" runat="server" UpdateMode="Conditional">
                             <ContentTemplate>
-                                <asp:FormView ID="ContestantFV" runat="server" DataSourceID="ContestantsLDS" DefaultMode="Insert" CssClass="col-lg-12" OnItemInserting="ContestantFV_ItemInserting">
+                                <asp:FormView ID="ContestantFV" runat="server" DataSourceID="AEContestantsLDS" DefaultMode="Insert" CssClass="col-lg-12"
+                                    OnItemInserting="ContestantFV_ItemInserting" OnItemUpdating="ContestantFV_ItemUpdating" OnItemUpdated="ContestantFV_ItemUpdated">
                                     <InsertItemTemplate>
                                         <div class="row form-group required">
                                             <label class="col-lg-2 control-label">Name</label>
@@ -77,7 +87,7 @@
                                                 </button>
                                             </div>
                                         </div>
-                                        <div class="row form-group required">
+                                        <div class="row form-group">
                                             <label class="col-lg-2 control-label">Friday Entry No.</label>
                                             <div class="col-lg-4">
                                                 <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" Text='<%# Bind("entry_num_fri") %>' placeholder="Entry No. (e.g. 1)"></asp:TextBox>
@@ -102,18 +112,11 @@
                                                         });
                                                     });
                                                 </script>
-                                                <%--                        <script type="text/javascript">
-                            $(document).ready(function () {
-                                $(function () {
-                                    $('#<%=ContestantsFV.FindControl("TextBox3").ClientID%>').datetimepicker();
-                                });
-                            });
-                        </script>--%>
                                             </div>
                                         </div>
                                         <div class="row form-group">
                                             <div class="col-lg-10 col-lg-offset-2">
-                                                <asp:Button ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" CssClass="btn btn-primary" />
+                                                <asp:Button ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Add Contestant" CssClass="btn btn-primary" />
                                                 &nbsp;<asp:Button ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" CssClass="btn btn-primary" />
                                             </div>
                                         </div>
@@ -121,6 +124,98 @@
                                             <label class="col-lg-3 col-sm-offset-1 control-label">Indicates required field</label>
                                         </div>
                                     </InsertItemTemplate>
+                                    <EditItemTemplate>
+                                        <div class="row form-group required">
+                                            <label class="col-lg-2 control-label">Name</label>
+                                            <div class="col-lg-4">
+                                                <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" Text='<%# Bind("full_name") %>' placeholder="Full Name"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group required">
+                                            <label class="col-lg-2 control-label">Age</label>
+                                            <div class="col-lg-4">
+                                                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="AgeLDS" DataTextField="name" DataValueField="id" SelectedValue='<%# Bind("age_id") %>' AppendDataBoundItems="true" CssClass="form-control" OnSelectedIndexChanged="CalculateDivision" AutoPostBack="true">
+                                                    <asp:ListItem Text="Select Age" Value=""></asp:ListItem>
+                                                </asp:DropDownList>
+                                            </div>
+                                            <label class="col-lg-2 control-label">Gender</label>
+                                            <div class="col-lg-4">
+                                                <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="GenderLDS" DataTextField="name" DataValueField="id" SelectedValue='<%# Bind("gender_id") %>' AppendDataBoundItems="true" CssClass="form-control" OnSelectedIndexChanged="CalculateDivision" AutoPostBack="true">
+                                                    <asp:ListItem Text="Select Gender" Value=""></asp:ListItem>
+                                                </asp:DropDownList>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group required">
+                                            <label class="col-lg-2 control-label">Division</label>
+                                            <div class="col-lg-4">
+                                                <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="DivisionLDS" DataTextField="name" DataValueField="id" SelectedValue='<%# Bind("division_id") %>' AppendDataBoundItems="true" CssClass="form-control" Enabled="false">
+                                                    <asp:ListItem Text="Select Division" Value=""></asp:ListItem>
+                                                </asp:DropDownList>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group required">
+                                            <label class="col-lg-2 control-label">Halau</label>
+                                            <div class="col-lg-4">
+                                                <asp:DropDownList ID="DropDownList4" runat="server" DataSourceID="HalauLDS" DataTextField="name" DataValueField="id" SelectedValue='<%# Bind("halau_id") %>' AppendDataBoundItems="True" CssClass="form-control">
+                                                    <asp:ListItem Text="Select Halau" Value=""></asp:ListItem>
+                                                </asp:DropDownList>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <button type="button" class="btn btn-primary btn-sm " data-toggle="modal" data-target="#halauModal">
+                                                    Add Halau
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group required">
+                                            <label class="col-lg-2 control-label">Kumu</label>
+                                            <div class="col-lg-4">
+                                                <asp:DropDownList ID="DropDownList5" runat="server" DataSourceID="KumuLDS" DataTextField="full_name" DataValueField="id" SelectedValue='<%# Bind("kumu_id") %>' AppendDataBoundItems="True" CssClass="form-control">
+                                                    <asp:ListItem Text="Select Kumu" Value=""></asp:ListItem>
+                                                </asp:DropDownList>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <button type="button" class="btn btn-primary btn-sm " data-toggle="modal" data-target="#kumuModal">
+                                                    Add Kumu
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <label class="col-lg-2 control-label">Friday Entry No.</label>
+                                            <div class="col-lg-4">
+                                                <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" Text='<%# Bind("entry_num_fri") %>' placeholder="Entry No. (e.g. 1)"></asp:TextBox>
+                                            </div>
+                                            <label class="col-lg-2 control-label">Saturday Entry No.</label>
+                                            <div class="col-lg-4">
+                                                <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" Text='<%# Bind("entry_num_sat") %>' placeholder="Entry No. (e.g. 1)"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group required">
+                                            <label class="col-lg-2 control-label">Entry Year</label>
+                                            <div class="col-md-3">
+                                                <div class="input-group" id="entrydatepicker">
+                                                    <asp:TextBox ID="entryDateTb" runat="server" CssClass="form-control" Text='<%# Bind("entry_date") %>' placeholder="HONK Entry Year"></asp:TextBox>
+                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar" /></span>
+                                                </div>
+                                                <script type="text/javascript">
+                                                    $(function () {
+                                                        $('#entrydatepicker').datetimepicker({
+                                                            viewMode: 'years',
+                                                            format: 'YYYY'
+                                                        });
+                                                    });
+                                                </script>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col-lg-10 col-lg-offset-2">
+                                                <asp:Button ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update Contestant" CssClass="btn btn-primary" />
+                                                &nbsp;<asp:Button ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" CssClass="btn btn-primary" />
+                                            </div>
+                                        </div>
+                                        <div class="row form-group required ">
+                                            <label class="col-lg-3 col-sm-offset-1 control-label">Indicates required field</label>
+                                        </div>
+                                    </EditItemTemplate>
                                 </asp:FormView>
                             </ContentTemplate>
                         </asp:UpdatePanel>
@@ -138,15 +233,19 @@
                     <div class="panel-body">
                         <asp:UpdatePanel runat="server" ID="ContestantGVUP" ChildrenAsTriggers="true" UpdateMode="Always">
                             <ContentTemplate>
-                                <asp:GridView ID="ContestantGV" runat="server" AllowPaging="True" DataSourceID="ContestantsLDS" AutoGenerateColumns="False" CssClass="table table-striped table-hover" AllowSorting="True" DataKeyNames="id">
+                                <asp:GridView ID="ContestantGV" runat="server" AllowPaging="True" DataSourceID="ContestantsLDS" AutoGenerateColumns="False" CssClass="table table-striped table-hover table-condensed"
+                                    AllowSorting="True" DataKeyNames="id" OnRowCommand="ContestantGV_RowCommand">
                                     <Columns>
                                         <asp:TemplateField HeaderText="Actions" ShowHeader="False" HeaderStyle-Width="100px">
-                                            <EditItemTemplate>
-                                                <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Update"></asp:LinkButton>
-                                                &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel"></asp:LinkButton>
-                                            </EditItemTemplate>
                                             <ItemTemplate>
-                                                <asp:LinkButton ID="LinkButton3" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit"></asp:LinkButton>
+                                                <asp:UpdatePanel ID="EditContestantUP" runat="server" UpdateMode="Always">
+                                                    <ContentTemplate>
+                                                        <asp:LinkButton ID="EditLB" runat="server" CausesValidation="False" CommandName="AsyncEdit" Text="Edit" CommandArgument='<%# Eval("id")%>'></asp:LinkButton>
+                                                    </ContentTemplate>
+                                                    <Triggers>
+                                                        <asp:AsyncPostBackTrigger ControlID="EditLB" />
+                                                    </Triggers>
+                                                </asp:UpdatePanel>
                                                 <%--<asp:LinkButton ID="LinkButton4" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete"></asp:LinkButton>--%>
                                             </ItemTemplate>
                                         </asp:TemplateField>
@@ -231,6 +330,20 @@
 
     <%-- LINQ DATA SOURCES --%>
     <asp:LinqDataSource ID="ContestantsLDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" TableName="Contestants" EnableInsert="True" EnableUpdate="True">
+        <InsertParameters>
+            <asp:Parameter Name="entry_num_fri" ConvertEmptyStringToNull="true" />
+            <asp:Parameter Name="entry_num_sat" ConvertEmptyStringToNull="true" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="entry_num_fri" ConvertEmptyStringToNull="true" />
+            <asp:Parameter Name="entry_num_sat" ConvertEmptyStringToNull="true" />
+        </UpdateParameters>
+    </asp:LinqDataSource>
+
+    <asp:LinqDataSource ID="AEContestantsLDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" TableName="Contestants" EnableInsert="True" EnableUpdate="True" Where="id == @id">
+        <WhereParameters>
+            <asp:Parameter DefaultValue="0" Name="id" Type="Int32" />
+        </WhereParameters>
         <InsertParameters>
             <asp:Parameter Name="entry_num_fri" ConvertEmptyStringToNull="true" />
             <asp:Parameter Name="entry_num_sat" ConvertEmptyStringToNull="true" />

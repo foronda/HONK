@@ -14,12 +14,46 @@ namespace HONK
 
         }
 
+        #region CONTESTANT FORMVIEW METHOD(S)
         protected void UpdateContestantFV(object sender, FormViewInsertedEventArgs e)
         {
             ContestantFV.DataBind();
             ContestantFVUP.Update();
         }
+        protected void ContestantFV_ItemInserting(object sender, FormViewInsertEventArgs e)
+        {
+            TextBox entry_date = (TextBox)ContestantFV.FindControl("entryDateTb");
+            e.Values["entry_date"] = DateTime.Parse("01/01/" + entry_date.Text);
+        }
+        protected void ContestantFV_ItemUpdating(object sender, FormViewUpdateEventArgs e)
+        {
+            TextBox entry_date = (TextBox)ContestantFV.FindControl("entryDateTb");
+            e.NewValues["entry_date"] = DateTime.Parse("01/01/" + entry_date.Text);
+        }
+        protected void ContestantFV_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
+        {
+            ContestantFV.ChangeMode(FormViewMode.Insert);
+        }
+        #endregion
 
+        #region CONTESTANT GRIDVIEW METHOD(S)
+        protected void ContestantGV_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "AsyncEdit")
+            {
+                AEContestantsLDS.WhereParameters["id"].DefaultValue = e.CommandArgument.ToString();
+                AEContestantsLDS.DataBind();
+                ContestantFV.ChangeMode(FormViewMode.Edit);
+
+                UpdateContestantFV(null, null);
+
+                // Shows Notification Formview on Edit.
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "ShowContestants", "ShowContestants();", true);
+            }
+        }
+        #endregion
+
+        #region HELPER METHOD(S)
         protected void CalculateDivision(object sender, EventArgs e)
         {
             DropDownList ageDD = (DropDownList)ContestantFV.FindControl("DropDownList1");
@@ -70,13 +104,6 @@ namespace HONK
 
             ContestantFVUP.Update();
         }
-
-        protected void ContestantFV_ItemInserting(object sender, FormViewInsertEventArgs e)
-        {
-            TextBox entry_date = (TextBox)ContestantFV.FindControl("entryDateTb");
-
-            e.Values["entry_date"] = DateTime.Parse("01/01/" + entry_date.Text);
-        }
-
+        #endregion
     }
 }
