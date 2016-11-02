@@ -19,6 +19,10 @@ namespace HONK
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                EntryYearTb.Text = DateTime.Now.Year.ToString();
+            }
         }
 
         protected void ContestantDDL_SelectedIndexChanged(object sender, EventArgs e)
