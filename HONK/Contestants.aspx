@@ -8,14 +8,36 @@
                 $('#collapseTwo').collapse('hide');
             }
         }
+
+        function ShowContestantGV() {
+            $('#collapseTwo').collapse('show');
+            if ($('#collapseOne').is(":visible")) {
+                $('#collapseOne').collapse('hide');
+            }
+        }
     </script>
 
     <div class="container">
         <div class="page-header">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-8">
                     <h1>Contestants</h1>
                 </div>
+                <div class="col-lg-3" style="padding-top:25px;">
+                <asp:UpdatePanel ID="SearchUP" runat="server" UpdateMode="Conditional">
+                    <ContentTemplate>
+                        <div class="input-group search">
+                            <asp:TextBox ID="searchTB" runat="server" CssClass="form-control" Width="300px" data-provide="typeahead" placeholder="Search contestants by name or year..." AutoPostBack="true" OnTextChanged="searchTB_TextChanged"></asp:TextBox>
+                            <span class="input-group-btn">
+                                <asp:Button ID="clrSearchBtn" runat="server" class="btn btn-default" Text="Clear" OnClick="clrSearchBtn_Click"></asp:Button>
+                            </span>
+                        </div>
+                    </ContentTemplate>
+                    <Triggers>
+                        <asp:AsyncPostBackTrigger ControlID="clrSearchBtn" />
+                    </Triggers>
+                </asp:UpdatePanel>
+            </div>
             </div>
         </div>
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -233,6 +255,7 @@
                     <div class="panel-body">
                         <asp:UpdatePanel runat="server" ID="ContestantGVUP" ChildrenAsTriggers="true" UpdateMode="Always">
                             <ContentTemplate>
+                                
                                 <asp:GridView ID="ContestantGV" runat="server" AllowPaging="True" DataSourceID="ContestantsLDS" AutoGenerateColumns="False" CssClass="table table-striped table-hover table-condensed"
                                     AllowSorting="True" DataKeyNames="id" OnRowCommand="ContestantGV_RowCommand">
                                     <Columns>
@@ -330,7 +353,7 @@
     <%-- END OF MODAL FORMVIEWS --%>
 
     <%-- LINQ DATA SOURCES --%>
-    <asp:LinqDataSource ID="ContestantsLDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" TableName="Contestants" EnableInsert="True" EnableUpdate="True">
+    <asp:LinqDataSource ID="ContestantsLDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" TableName="Contestants" EnableInsert="True" EnableUpdate="True" OnSelecting="ContestantsLDS_Selecting">
         <InsertParameters>
             <asp:Parameter Name="entry_num_fri" ConvertEmptyStringToNull="true" />
             <asp:Parameter Name="entry_num_sat" ConvertEmptyStringToNull="true" />

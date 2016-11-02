@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,6 +14,23 @@ namespace HONK
         {
 
         }
+
+        #region CONTESTANT SEARCH METHOD(S)
+        protected void searchTB_TextChanged(object sender, EventArgs e)
+        {
+            ContestantGV.PageIndex = 0;
+            ContestantGV.DataBind();
+
+            // Shows Contestant Gridview on Search.
+            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "ShowContestantGV", "ShowContestantGV();", true);
+        }
+
+        protected void clrSearchBtn_Click(object sender, EventArgs e)
+        {
+            searchTB.Text = string.Empty;
+            searchTB_TextChanged(null, null);
+        }
+        #endregion
 
         #region CONTESTANT FORMVIEW METHOD(S)
         protected void UpdateContestantFV(object sender, FormViewInsertedEventArgs e)
@@ -47,9 +65,10 @@ namespace HONK
 
                 UpdateContestantFV(null, null);
 
-                // Shows Notification Formview on Edit.
+                // Shows Contestants Form on Edit.
                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "ShowContestants", "ShowContestants();", true);
             }
+            // Delete contestant and corresponding FK relationship records.
             else if (e.CommandName == "CascadeDelete")
             {
                 DBMethods.DeleteContestant(Convert.ToInt32(e.CommandArgument));
@@ -57,6 +76,37 @@ namespace HONK
             }
         }
         #endregion
+
+        #region LINQ SELECTING METHOD(S)
+        protected void ContestantsLDS_Selecting(object sender, LinqDataSourceSelectEventArgs e)
+        {
+            e.Result = SearchContestantsCompiled(searchTB.Text);
+        }
+
+        #endregion
+        #region STATIC METHOD(S) FOR CACHING COMPILED QUERIES
+        public static List<Contestant> SearchContestantsCompiled(string query)
+        {
+            HONKDBDataContext db = new HONKDBDataContext();
+            return SearchContestants(db, query).ToList();
+        }
+
+        #endregion
+
+        #region COMPILED LINQ QUERIES
+        /// <summary>
+        /// Return all users based on textbox search query
+        /// Filter parameters: Subagency, agency, first name, last name
+        /// </summary>
+        private static Func<HONKDBDataContext, string, IQueryable<Contestant>> SearchContestants =
+            CompiledQuery.Compile((HONKDBDataContext db, string query) =>
+                (from u in db.Contestants
+                 where u.full_name.Contains(query)
+                  || u.entry_date == Convert.ToDateTime(query)
+                 orderby u.full_name
+                 select u));
+        #endregion
+
 
         #region HELPER METHOD(S)
         protected void CalculateDivision(object sender, EventArgs e)
@@ -110,5 +160,7 @@ namespace HONK
             ContestantFVUP.Update();
         }
         #endregion
+
+
     }
 }
