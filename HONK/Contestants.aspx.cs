@@ -102,7 +102,7 @@ namespace HONK
             CompiledQuery.Compile((HONKDBDataContext db, string query) =>
                 (from u in db.Contestants
                  where u.full_name.Contains(query)
-                  || u.entry_date == Convert.ToDateTime(query)
+                  || u.entry_date.Year.ToString() == query
                  orderby u.full_name
                  select u));
         #endregion

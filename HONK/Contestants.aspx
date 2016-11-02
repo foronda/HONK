@@ -256,7 +256,7 @@
                         <asp:UpdatePanel runat="server" ID="ContestantGVUP" ChildrenAsTriggers="true" UpdateMode="Always">
                             <ContentTemplate>
                                 
-                                <asp:GridView ID="ContestantGV" runat="server" AllowPaging="True" DataSourceID="ContestantsLDS" AutoGenerateColumns="False" CssClass="table table-striped table-hover table-condensed"
+                                <asp:GridView ID="ContestantGV" runat="server" AllowPaging="True" DataSourceID="ContestantsLDS" AutoGenerateColumns="False" CssClass="table table-striped table-condensed"
                                     AllowSorting="True" DataKeyNames="id" OnRowCommand="ContestantGV_RowCommand">
                                     <Columns>
                                         <asp:TemplateField HeaderText="Actions" ShowHeader="False" HeaderStyle-Width="100px">
@@ -283,6 +283,12 @@
                                         <asp:BoundField DataField="entry_num_fri" HeaderText="Fri Entry No." SortExpression="entry_num_fri" />
                                         <asp:BoundField DataField="entry_num_sat" HeaderText="Sat Entry No." SortExpression="entry_num_sat" />
                                     </Columns>
+                                     <EmptyDataTemplate>
+                                        <div class="alert alert-dismissible alert-default">
+                                            <button type="button" class="close" data-dismiss="alert">×</button>
+                                            <strong>Oh snap!</strong> Search yielded no results. Please check entered text and try submitting again.
+                                        </div>
+                                    </EmptyDataTemplate>
                                 </asp:GridView>
                             </ContentTemplate>
                         </asp:UpdatePanel>
