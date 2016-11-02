@@ -362,6 +362,14 @@ namespace HONK
 				return this.GetTable<vw_MasterScoreDetail>();
 			}
 		}
+		
+		public System.Data.Linq.Table<vw_ContestantFKRelCount> vw_ContestantFKRelCounts
+		{
+			get
+			{
+				return this.GetTable<vw_ContestantFKRelCount>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Age")]
@@ -8223,6 +8231,105 @@ namespace HONK
 				if ((this._costume_palua_tie != value))
 				{
 					this._costume_palua_tie = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_ContestantFKRelCount")]
+	public partial class vw_ContestantFKRelCount
+	{
+		
+		private int _id;
+		
+		private string _full_name;
+		
+		private System.Nullable<int> _ContestantXAward;
+		
+		private System.Nullable<int> _ContestantXJudgeScore;
+		
+		private System.Nullable<int> _ContestantXMasterScore;
+		
+		public vw_ContestantFKRelCount()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_full_name", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string full_name
+		{
+			get
+			{
+				return this._full_name;
+			}
+			set
+			{
+				if ((this._full_name != value))
+				{
+					this._full_name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContestantXAward", DbType="Int")]
+		public System.Nullable<int> ContestantXAward
+		{
+			get
+			{
+				return this._ContestantXAward;
+			}
+			set
+			{
+				if ((this._ContestantXAward != value))
+				{
+					this._ContestantXAward = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContestantXJudgeScore", DbType="Int")]
+		public System.Nullable<int> ContestantXJudgeScore
+		{
+			get
+			{
+				return this._ContestantXJudgeScore;
+			}
+			set
+			{
+				if ((this._ContestantXJudgeScore != value))
+				{
+					this._ContestantXJudgeScore = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContestantXMasterScore", DbType="Int")]
+		public System.Nullable<int> ContestantXMasterScore
+		{
+			get
+			{
+				return this._ContestantXMasterScore;
+			}
+			set
+			{
+				if ((this._ContestantXMasterScore != value))
+				{
+					this._ContestantXMasterScore = value;
 				}
 			}
 		}

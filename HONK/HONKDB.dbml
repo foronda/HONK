@@ -475,4 +475,13 @@
       <Column Name="costume_palua_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.vw_ContestantFKRelCount" Member="vw_ContestantFKRelCounts">
+    <Type Name="vw_ContestantFKRelCount">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="full_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ContestantXAward" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ContestantXJudgeScore" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ContestantXMasterScore" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

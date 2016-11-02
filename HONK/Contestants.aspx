@@ -15,31 +15,67 @@
                 $('#collapseOne').collapse('hide');
             }
         }
+
+        function LoadPopovers() {
+            $('#narrativeInfo').popover(
+                        {
+                            title: 'Narrative Content',
+                            trigger: 'hover',
+                            html: true,
+                            placement: 'right',
+                            content: 'Narrative Content section'
+                        });
+            $('#MainContent_ContestantGV_DeleteLB_0').popover(
+            {
+                title: 'Add Imp. Schedule Records',
+                trigger: 'hover',
+                html: true,
+                placement: 'top',
+                content: 'Selecting "Add Records" will redirect you to the Add / Edit Imp. Schedule Records tab.  There you can add or edit Imp. Schedule records for the selected Group.'
+            });
+        }
+        $(document).ready(function () {
+            //$("input:not([type]), input[type='text']").addClass("form-control");
+            // LoadPopovers();
+
+            $('body').popover({
+                title: 'WARNING!',
+                trigger: 'hover',
+                html: true,
+                content: 'Deleting this contestant will also delete related Judge Scores, Master Scores, and Awards! This action is irreversible. Proceed with caution.',
+                //template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title alert alert-warning"></h3><div class="popover-content "></div></div>',
+                selector: '.has-popover-warning'
+            });
+        });
     </script>
 
     <div class="container">
+        <%-- START SEARCH BOX --%>
         <div class="page-header">
             <div class="row">
                 <div class="col-lg-8">
                     <h1>Contestants</h1>
                 </div>
-                <div class="col-lg-3" style="padding-top:25px;">
-                <asp:UpdatePanel ID="SearchUP" runat="server" UpdateMode="Conditional">
-                    <ContentTemplate>
-                        <div class="input-group search">
-                            <asp:TextBox ID="searchTB" runat="server" CssClass="form-control" Width="300px" data-provide="typeahead" placeholder="Search contestants by name or year..." AutoPostBack="true" OnTextChanged="searchTB_TextChanged"></asp:TextBox>
-                            <span class="input-group-btn">
-                                <asp:Button ID="clrSearchBtn" runat="server" class="btn btn-default" Text="Clear" OnClick="clrSearchBtn_Click"></asp:Button>
-                            </span>
-                        </div>
-                    </ContentTemplate>
-                    <Triggers>
-                        <asp:AsyncPostBackTrigger ControlID="clrSearchBtn" />
-                    </Triggers>
-                </asp:UpdatePanel>
-            </div>
+                <div class="col-lg-3" style="padding-top: 25px;">
+                    <asp:UpdatePanel ID="SearchUP" runat="server" UpdateMode="Conditional">
+                        <ContentTemplate>
+                            <div class="input-group search">
+                                <asp:TextBox ID="searchTB" runat="server" CssClass="form-control" Width="300px" data-provide="typeahead" placeholder="Search contestants by name or year..." AutoPostBack="true" OnTextChanged="searchTB_TextChanged"></asp:TextBox>
+                                <span class="input-group-btn">
+                                    <asp:Button ID="clrSearchBtn" runat="server" class="btn btn-default" Text="Clear" OnClick="clrSearchBtn_Click"></asp:Button>
+                                </span>
+                            </div>
+                        </ContentTemplate>
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger ControlID="clrSearchBtn" />
+                        </Triggers>
+                    </asp:UpdatePanel>
+                </div>
             </div>
         </div>
+        <%-- END SEARCH BOX --%>
+
+        <%-- START CONTESTANT ACCORDION --%>
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             <div class="panel panel-primary">
                 <div class="panel-heading" role="tab" id="headingOne">
@@ -255,16 +291,23 @@
                     <div class="panel-body">
                         <asp:UpdatePanel runat="server" ID="ContestantGVUP" ChildrenAsTriggers="true" UpdateMode="Always">
                             <ContentTemplate>
-                                
-                                <asp:GridView ID="ContestantGV" runat="server" AllowPaging="True" DataSourceID="ContestantsLDS" AutoGenerateColumns="False" CssClass="table table-striped table-condensed"
-                                    AllowSorting="True" DataKeyNames="id" OnRowCommand="ContestantGV_RowCommand">
+                                <%-- <div class="row">
+                                    <div class="col-lg-3">
+                                        <asp:LinkButton ID="EnableDelLB" runat="server" Text="Enable Contestant Deletion" CssClass="btn btn-sm btn-danger" OnClick="EnableDelLB_Click"></asp:LinkButton>
+                                        <asp:LinkButton ID="DisableDelLB" runat="server" Text="Disable Contestant Deletion" CssClass="btn btn-sm btn-danger" OnClick="DisableDelLB_Click" Visible="false"></asp:LinkButton>
+                                    </div>
+                                    <div class="col-lg-3">
+                                    </div>
+                                </div>--%>
+                                <asp:GridView ID="ContestantGV" runat="server" AllowPaging="True" DataSourceID="ContestantsLDS" AutoGenerateColumns="False" CssClass="table table-hover table-condensed"
+                                    AllowSorting="True" DataKeyNames="id" OnRowCommand="ContestantGV_RowCommand" OnRowDataBound="ContestantGV_RowDataBound" PageSize="20">
                                     <Columns>
                                         <asp:TemplateField HeaderText="Actions" ShowHeader="False" HeaderStyle-Width="100px">
                                             <ItemTemplate>
                                                 <asp:UpdatePanel ID="EditContestantUP" runat="server" UpdateMode="Always">
                                                     <ContentTemplate>
                                                         <asp:LinkButton ID="EditLB" runat="server" CausesValidation="False" CommandName="AsyncEdit" Text="Edit" CommandArgument='<%# Eval("id")%>'></asp:LinkButton>
-                                                        <asp:LinkButton ID="DeleteLB" runat="server" CausesValidation="False" CommandName="CascadeDelete" Text="Delete" CommandArgument='<%# Eval("id")%>'></asp:LinkButton>
+                                                        <asp:LinkButton ID="DeleteLB" runat="server" CausesValidation="False" CommandName="CascadeDelete" Text="Delete" CommandArgument='<%# Eval("id")%>' CssClass="has-popover-warning"></asp:LinkButton>
                                                     </ContentTemplate>
                                                     <Triggers>
                                                         <asp:AsyncPostBackTrigger ControlID="EditLB" />
@@ -283,7 +326,11 @@
                                         <asp:BoundField DataField="entry_num_fri" HeaderText="Fri Entry No." SortExpression="entry_num_fri" />
                                         <asp:BoundField DataField="entry_num_sat" HeaderText="Sat Entry No." SortExpression="entry_num_sat" />
                                     </Columns>
-                                     <EmptyDataTemplate>
+                                    <FooterStyle BackColor="#f9f9f9" Font-Bold="True" />
+                                    <HeaderStyle BackColor="#f9f9f9" Font-Bold="True" />
+                                    <PagerStyle BackColor="#f9f9f9" HorizontalAlign="Center" />
+                                    <%--<RowStyle BackColor="#FFFBD6" ForeColor="#333333" />--%>
+                                    <EmptyDataTemplate>
                                         <div class="alert alert-dismissible alert-default">
                                             <button type="button" class="close" data-dismiss="alert">×</button>
                                             <strong>Oh snap!</strong> Search yielded no results. Please check entered text and try submitting again.
@@ -296,6 +343,7 @@
                 </div>
             </div>
         </div>
+        <%-- END CONTESTANT ACCORDION --%>
     </div>
 
     <!-- MODAL FORMVIEWS -->

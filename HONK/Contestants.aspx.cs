@@ -75,6 +75,31 @@ namespace HONK
                 ContestantGV.DataBind();
             }
         }
+
+        protected void ContestantGV_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            //check if e.Row is a DataRow; if so grab the Datakey for the row
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                //count the number of times Species x Threat Realtionship (via Factor-Threats) is used in SpAccount
+
+                Contestant con = (Contestant)e.Row.DataItem;      //grab the GridViewRowEventArg and cast to row's type core_SpeciesThreat
+                int conId = Convert.ToInt32(con.id);              //grab the Species x Threat id for the particular row
+
+                HONKDBDataContext db = new HONKDBDataContext();
+
+                var FKCount = (from c in db.vw_ContestantFKRelCounts
+                               where c.id == conId
+                               select c).FirstOrDefault();   //returns the number of times the Species x Threat is used in Species Accounts
+
+                if (FKCount.ContestantXAward > 0 || FKCount.ContestantXJudgeScore > 0 || FKCount.ContestantXMasterScore > 0)
+                {
+                    LinkButton lnkBtn_Delete = (LinkButton)e.Row.FindControl("DeleteLB");
+                    //lnkBtn_Delete.Enabled = false;              //TODO:  It would be nice to create a popup dialog on hover at somepoint instead of tool tip.
+                    //lnkBtn_Delete.ToolTip = "Deleting this contestant will delete related Judge Scores, Master Scores, and Awards!";
+                }
+            }
+        }
         #endregion
 
         #region LINQ SELECTING METHOD(S)
@@ -159,8 +184,22 @@ namespace HONK
 
             ContestantFVUP.Update();
         }
+
+
         #endregion
 
+        protected void EnableDelLB_Click(object sender, EventArgs e)
+        {
+            ((LinkButton)ContestantGV.FindControl("DeleteLB")).Visible = true;
+            //DisableDelLB.Visible = true;
+            //EnableDelLB.Visible = false;
+        }
 
+        protected void DisableDelLB_Click(object sender, EventArgs e)
+        {
+            ((LinkButton)ContestantGV.FindControl("DeleteLB")).Visible = false;
+            //DisableDelLB.Visible = false;
+            //EnableDelLB.Visible = true;
+        }
     }
 }
