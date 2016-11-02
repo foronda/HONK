@@ -1,7 +1,7 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MasterTabulationScore.ascx.cs" Inherits="HONK.Reports.MasterTabulationScore" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ContestantTabulationScore.ascx.cs" Inherits="HONK.Reports.ContestantTabulationScore" %>
 <%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
 
-<rsweb:ReportViewer ID="MasterTabScoreRV" runat="server" Font-Names="Candara" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt"
+<rsweb:ReportViewer ID="ContestantTabScoreRV" runat="server" Font-Names="Candara" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt"
     ShowFindControls="False" ShowBackButton="False" ShowZoomControl="False" SplitterBackColor="Aqua" ShowPrintButton="False"
     AsyncRendering="False" SizeToReportContent="True">
     <LocalReport ReportPath="Reports\ContestantTabulationScore.rdlc">

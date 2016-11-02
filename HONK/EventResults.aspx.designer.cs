@@ -19,7 +19,7 @@ namespace HONK {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UserControl ConstestantTabulationScore;
+        protected global::HONK.Reports.ContestantTabulationScore ConstestantTabulationScore;
         
         /// <summary>
         /// exportContestantTab control.

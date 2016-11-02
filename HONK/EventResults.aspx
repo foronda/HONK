@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Event Results" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EventResults.aspx.cs" Inherits="HONK.EventResults" %>
 
-<%@ Register Src="~/Reports/ConstestantTabulationScore.ascx" TagName="ConstestantTabulationScore" TagPrefix="uc1" %>
+<%@ Register Src="~/Reports/ContestantTabulationScore.ascx" TagName="ConstestantTabulationScore" TagPrefix="uc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
