@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+using System.Data.SqlClient;
+
 namespace HONK
 {
     public partial class EventResults : System.Web.UI.Page
@@ -155,6 +157,15 @@ namespace HONK
 
             e.Result = event_results;
         }
+
+        #region REPORTING METHOD(S)
+                protected void exportContestantTab_Click(object sender, EventArgs e)
+        {
+            ConstestantTabulationScore.DownloadReport()
+        }
+
+        #endregion
+
 
 
     }

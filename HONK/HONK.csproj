@@ -144,6 +144,7 @@
       <LastGenOutput>HONKDB.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Reports\ContestantTabulationScore.ascx" />
     <Content Include="Reports\MasterTabulationScore.ascx" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -159,6 +160,17 @@
     </None>
     <Content Include="Reports\MasterReportDataset.xsc">
       <DependentUpon>MasterReportDataset.xsd</DependentUpon>
+    </Content>
+    <Content Include="Reports\ContestantReportDataset.xsc">
+      <DependentUpon>ContestantReportDataset.xsd</DependentUpon>
+    </Content>
+    <None Include="Reports\ContestantReportDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ContestantReportDataset.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Reports\ContestantReportDataset.xss">
+      <DependentUpon>ContestantReportDataset.xsd</DependentUpon>
     </Content>
     <None Include="Reports\MasterReportDataset.xsd">
       <SubType>Designer</SubType>
@@ -295,6 +307,18 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Reports\ContestantReportDataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContestantReportDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ContestantTabulationScore.ascx.cs">
+      <DependentUpon>ContestantTabulationScore.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ContestantTabulationScore.ascx.designer.cs">
+      <DependentUpon>ContestantTabulationScore.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Reports\MasterReportDataset.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -335,6 +359,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reports\ContestantTabulationScore.rdlc" />
     <EmbeddedResource Include="Reports\MasterTabulationScore.rdlc" />
   </ItemGroup>
   <PropertyGroup>

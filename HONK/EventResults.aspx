@@ -1,6 +1,26 @@
 ﻿<%@ Page Title="Event Results" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EventResults.aspx.cs" Inherits="HONK.EventResults" %>
 
+<%@ Register Src="~/Reports/ConstestantTabulationScore.ascx" TagName="ConstestantTabulationScore" TagPrefix="uc1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+
+    <%-- CONTESTANT TABULATION REPORT POPUP --%>
+    <div id="masterTabScoreReport" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="assRepLbl" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="H1">Master Tabulation Score Report</h3>
+        </div>
+        <div class="modal-body">
+            <uc1:ConstestantTabulationScore ID="ConstestantTabulationScore" runat="server"></uc1:ConstestantTabulationScore>
+        </div>
+    </div>
+
+    <ul class="breadcrumb">
+        <li>
+            <asp:LinkButton ID="exportContestantTab" runat="server" OnClick="exportContestantTab_Click" Text="CONTESTANT TABULATION REPORT" />
+        </li>
+    </ul>
 
     <%-- LINQ DATA SOURCES --%>
     <div class="page-header">
@@ -13,20 +33,21 @@
     <%-- END PAGE HEADER SECTION--%>
 
     <%-- START CONTESTANT DROPDOWN  SECTION--%>
-    <div class="well well-sm">
-        <div class="row form-group has-error">
-            <label class="col-sm-2 control-label">Select Year:</label>
-            <div class="col-sm-3">
+    <div class="well well-sm" style="padding-top: 20px;">
+        <div class="row form-group">
+            <h5 class="col-lg-2">SELECT EVENT YEAR:</h5>
+            <%--<label class="col-sm-1 control-label">Select Year:</label>--%>
+            <div class="col-lg-4">
                 <div class="input-group" id="entrydatepicker">
                     <asp:TextBox ID="EntryYearTb" runat="server" CssClass="form-control" OnTextChanged="EntryYearTb_TextChanged" AutoPostBack="true"></asp:TextBox>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar" /></span>
                 </div>
                 <script type="text/javascript">
-                    $(function () {
-                        $('#entrydatepicker').datetimepicker({
-                            viewMode: 'years',
-                            format: 'YYYY'
-                        });
+                    $('#entrydatepicker').datetimepicker({
+                        viewMode: 'years',
+                        format: 'YYYY',
+                    }).on('dp.change', function (selected) {
+                        __doPostBack('<%= EntryYearTb.ClientID %>', 'EntryYearTb_TextChanged');
                     });
                 </script>
             </div>
@@ -238,7 +259,7 @@
                 <div class="panel panel-primary">
                     <div class="panel-body">
                         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                            <div class="panel panel-default">
+                            <div class="panel panel-primary">
                                 <div class="panel-heading" role="tab" id="headingOne">
                                     <h4 class="panel-title">
                                         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Costume ('Opio)
@@ -278,7 +299,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="panel panel-default">
+                            <div class="panel panel-primary">
                                 <div class="panel-heading" role="tab" id="headingTwo">
                                     <h4 class="panel-title">
                                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Costume (Keiki)
@@ -318,7 +339,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="panel panel-default">
+                            <div class="panel panel-primary">
                                 <div class="panel-heading" role="tab" id="headingThree">
                                     <h4 class="panel-title">
                                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Costume (Palua)

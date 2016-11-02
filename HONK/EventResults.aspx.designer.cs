@@ -13,6 +13,24 @@ namespace HONK {
     public partial class EventResults {
         
         /// <summary>
+        /// ConstestantTabulationScore control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UserControl ConstestantTabulationScore;
+        
+        /// <summary>
+        /// exportContestantTab control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton exportContestantTab;
+        
+        /// <summary>
         /// EntryYearTb control.
         /// </summary>
         /// <remarks>
