@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="Contestant Scores" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ContestantScores.aspx.cs" Inherits="HONK.ContestantScores" %>
+
 <%@ Register Src="~/Reports/MasterTabulationScore.ascx" TagName="MasterTabulationScore" TagPrefix="uc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
@@ -40,11 +41,11 @@
                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar" /></span>
                 </div>
                 <script type="text/javascript">
-                    $(function () {
-                        $('#entrydatepicker').datetimepicker({
-                            viewMode: 'years',
-                            format: 'YYYY'
-                        });
+                    $('#entrydatepicker').datetimepicker({
+                        viewMode: 'years',
+                        format: 'YYYY',
+                    }).on('dp.change', function (selected) {
+                        __doPostBack('<%= EntryYearTb.ClientID %>', 'EntryYearTb_TextChanged');
                     });
                 </script>
             </div>
@@ -68,7 +69,7 @@
         </div>
         <div id="judgeCollapse" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingJudge">
             <div class="panel-body">
-                <asp:UpdatePanel ID="ContestantScoresFVUP" runat="server" ChildrenAsTriggers="true" UpdateMode="Conditional">
+                <asp:UpdatePanel ID="ContestantScoresFVUP" runat="server" ChildrenAsTriggers="true" UpdateMode="Always">
                     <ContentTemplate>
                         <asp:FormView ID="ContestantScoresFV" runat="server" DataSourceID="ContestantScoreDetailsLDS" CssClass="col-lg-12">
                             <EditItemTemplate>
@@ -253,6 +254,7 @@
     <%-- END JUDGES SCORES SECTION --%>
 
     <%-- MASTER SCORES SECTION --%>
+
     <div runat="server" id="divMasterScores" class="panel panel-primary" visible="false">
         <div class="panel-heading" role="tab" id="headingMaster">
             <h3 class="panel-title"><a data-toggle="collapse" href="#masterCollapse" aria-expanded="true" aria-controls="masterCollapse">Master Scores
@@ -260,7 +262,7 @@
         </div>
         <div id="masterCollapse" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingMaster">
             <div class="panel-body">
-                <asp:UpdatePanel ID="ContesantMasterScoreFVUP" runat="server" UpdateMode="Conditional">
+                <asp:UpdatePanel ID="ContesantMasterScoreFVUP" runat="server" UpdateMode="Always">
                     <ContentTemplate>
                         <asp:FormView ID="ContestantMasterScoreFV" runat="server" DataSourceID="MasterScoresLDS" DefaultMode="ReadOnly" DataKeyNames="id"
                             OnItemInserting="ContestantMasterScoreFV_ItemInserting">
@@ -539,6 +541,8 @@
             </div>
         </div>
     </div>
+
+
 
     <%-- END MASTER SCORES SECTION --%>
 
