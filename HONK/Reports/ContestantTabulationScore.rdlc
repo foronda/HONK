@@ -17,7 +17,7 @@
                           <TextRun>
                             <Value>Haumana:</Value>
                             <Style>
-                              <FontFamily>ADAM.CG PRO</FontFamily>
+                              <FontFamily>Open Sans Light</FontFamily>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -63,7 +63,7 @@
                             <TextRun>
                               <Value>=Fields!halau_name.Value</Value>
                               <Style>
-                                <FontFamily>ADAM.CG PRO</FontFamily>
+                                <FontFamily>Open Sans Light</FontFamily>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -99,7 +99,7 @@
                             <TextRun>
                               <Value>=Fields!kumu_name.Value</Value>
                               <Style>
-                                <FontFamily>ADAM.CG PRO</FontFamily>
+                                <FontFamily>Open Sans Light</FontFamily>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -148,7 +148,7 @@
                           <TextRun>
                             <Value>=Fields!full_name.Value</Value>
                             <Style>
-                              <FontFamily>ADAM.CG PRO</FontFamily>
+                              <FontFamily>Open Sans Light</FontFamily>
                             </Style>
                           </TextRun>
                         </TextRuns>
@@ -189,7 +189,7 @@
                           <TextRun>
                             <Value>Halau</Value>
                             <Style>
-                              <FontFamily>ADAM.CG PRO</FontFamily>
+                              <FontFamily>Open Sans Light</FontFamily>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -225,7 +225,7 @@
                           <TextRun>
                             <Value>Kumu:</Value>
                             <Style>
-                              <FontFamily>ADAM.CG PRO</FontFamily>
+                              <FontFamily>Open Sans Light</FontFamily>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -276,7 +276,7 @@
                           <TextRun>
                             <Value>Entry No. Friday</Value>
                             <Style>
-                              <FontFamily>ADAM.CG PRO</FontFamily>
+                              <FontFamily>Open Sans Light</FontFamily>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -311,7 +311,7 @@
                           <TextRun>
                             <Value>Entry No. Saturday</Value>
                             <Style>
-                              <FontFamily>ADAM.CG PRO</FontFamily>
+                              <FontFamily>Open Sans Light</FontFamily>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -357,7 +357,7 @@
                             <TextRun>
                               <Value>=Fields!division_name.Value</Value>
                               <Style>
-                                <FontFamily>ADAM.CG PRO</FontFamily>
+                                <FontFamily>Open Sans Light</FontFamily>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -406,11 +406,13 @@
                           <TextRun>
                             <Value>=Fields!entry_num_fri.Value</Value>
                             <Style>
-                              <FontFamily>ADAM.CG PRO</FontFamily>
+                              <FontFamily>Open Sans Light</FontFamily>
                             </Style>
                           </TextRun>
                         </TextRuns>
-                        <Style />
+                        <Style>
+                          <TextAlign>Left</TextAlign>
+                        </Style>
                       </Paragraph>
                     </Paragraphs>
                     <rd:DefaultName>entry_num_fri1</rd:DefaultName>
@@ -440,11 +442,13 @@
                               <TextRun>
                                 <Value>=Fields!entry_num_sat.Value</Value>
                                 <Style>
-                                  <FontFamily>ADAM.CG PRO</FontFamily>
+                                  <FontFamily>Open Sans Light</FontFamily>
                                 </Style>
                               </TextRun>
                             </TextRuns>
-                            <Style />
+                            <Style>
+                              <TextAlign>Left</TextAlign>
+                            </Style>
                           </Paragraph>
                         </Paragraphs>
                         <rd:DefaultName>entry_num_fri</rd:DefaultName>
@@ -488,7 +492,7 @@
                           <TextRun>
                             <Value>Category:</Value>
                             <Style>
-                              <FontFamily>ADAM.CG PRO</FontFamily>
+                              <FontFamily>Open Sans Light</FontFamily>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -540,7 +544,7 @@
                           <TextRun>
                             <Value />
                             <Style>
-                              <FontFamily>ADAM.CG PRO</FontFamily>
+                              <FontFamily>Open Sans Light</FontFamily>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -574,7 +578,7 @@
                           <TextRun>
                             <Value>Oli</Value>
                             <Style>
-                              <FontFamily>ADAM.CG PRO</FontFamily>
+                              <FontFamily>Open Sans Light</FontFamily>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -608,7 +612,7 @@
                           <TextRun>
                             <Value>Music</Value>
                             <Style>
-                              <FontFamily>ADAM.CG PRO</FontFamily>
+                              <FontFamily>Open Sans Light</FontFamily>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -642,7 +646,7 @@
                           <TextRun>
                             <Value>Palapala</Value>
                             <Style>
-                              <FontFamily>ADAM.CG PRO</FontFamily>
+                              <FontFamily>Open Sans Light</FontFamily>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -676,7 +680,7 @@
                           <TextRun>
                             <Value>Interview</Value>
                             <Style>
-                              <FontFamily>ADAM.CG PRO</FontFamily>
+                              <FontFamily>Open Sans Light</FontFamily>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -710,7 +714,7 @@
                           <TextRun>
                             <Value>Costume</Value>
                             <Style>
-                              <FontFamily>ADAM.CG PRO</FontFamily>
+                              <FontFamily>Open Sans Light</FontFamily>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -744,7 +748,7 @@
                           <TextRun>
                             <Value>'Aunana</Value>
                             <Style>
-                              <FontFamily>ADAM.CG PRO</FontFamily>
+                              <FontFamily>Open Sans Light</FontFamily>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -780,7 +784,7 @@
                           <TextRun>
                             <Value>Kahiko</Value>
                             <Style>
-                              <FontFamily>ADAM.CG PRO</FontFamily>
+                              <FontFamily>Open Sans Light</FontFamily>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -836,7 +840,7 @@
                             <TextRun>
                               <Value>=Fields!judge_score_hula_auana.Value</Value>
                               <Style>
-                                <FontFamily>ADAM.CG PRO</FontFamily>
+                                <FontFamily>Open Sans Light</FontFamily>
                                 <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
@@ -870,7 +874,7 @@
                             <TextRun>
                               <Value />
                               <Style>
-                                <FontFamily>ADAM.CG PRO</FontFamily>
+                                <FontFamily>Open Sans Light</FontFamily>
                                 <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
@@ -902,7 +906,7 @@
                             <TextRun>
                               <Value>=Fields!hula_auana.Value</Value>
                               <Style>
-                                <FontFamily>ADAM.CG PRO</FontFamily>
+                                <FontFamily>Open Sans Light</FontFamily>
                                 <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
@@ -936,7 +940,7 @@
                             <TextRun>
                               <Value>=Fields!hula_auana_tie.Value</Value>
                               <Style>
-                                <FontFamily>ADAM.CG PRO</FontFamily>
+                                <FontFamily>Open Sans Light</FontFamily>
                                 <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
@@ -975,7 +979,7 @@
                             <TextRun>
                               <Value />
                               <Style>
-                                <FontFamily>ADAM.CG PRO</FontFamily>
+                                <FontFamily>Open Sans Light</FontFamily>
                                 <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1008,7 +1012,7 @@
                             <TextRun>
                               <Value />
                               <Style>
-                                <FontFamily>ADAM.CG PRO</FontFamily>
+                                <FontFamily>Open Sans Light</FontFamily>
                                 <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1040,7 +1044,7 @@
                             <TextRun>
                               <Value>=Fields!hula_auana_deduction.Value</Value>
                               <Style>
-                                <FontFamily>ADAM.CG PRO</FontFamily>
+                                <FontFamily>Open Sans Light</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <Color>Red</Color>
                               </Style>
@@ -1075,7 +1079,7 @@
                             <TextRun>
                               <Value>=Fields!hula_auana_deduction.Value</Value>
                               <Style>
-                                <FontFamily>ADAM.CG PRO</FontFamily>
+                                <FontFamily>Open Sans Light</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <Color>Red</Color>
                               </Style>
@@ -1115,7 +1119,7 @@
                             <TextRun>
                               <Value />
                               <Style>
-                                <FontFamily>ADAM.CG PRO</FontFamily>
+                                <FontFamily>Open Sans Light</FontFamily>
                                 <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1148,7 +1152,7 @@
                             <TextRun>
                               <Value />
                               <Style>
-                                <FontFamily>ADAM.CG PRO</FontFamily>
+                                <FontFamily>Open Sans Light</FontFamily>
                                 <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1180,7 +1184,7 @@
                             <TextRun>
                               <Value>=Fields!hula_auana.Value-Fields!hula_auana_deduction.Value</Value>
                               <Style>
-                                <FontFamily>ADAM.CG PRO</FontFamily>
+                                <FontFamily>Open Sans Light</FontFamily>
                                 <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1214,7 +1218,7 @@
                             <TextRun>
                               <Value>=Fields!hula_auana_tie.Value</Value>
                               <Style>
-                                <FontFamily>ADAM.CG PRO</FontFamily>
+                                <FontFamily>Open Sans Light</FontFamily>
                                 <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1253,7 +1257,7 @@
                             <TextRun>
                               <Value>=Fields!judge_score_hula_kahiko.Value</Value>
                               <Style>
-                                <FontFamily>ADAM.CG PRO</FontFamily>
+                                <FontFamily>Open Sans Light</FontFamily>
                                 <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1285,7 +1289,7 @@
                             <TextRun>
                               <Value />
                               <Style>
-                                <FontFamily>ADAM.CG PRO</FontFamily>
+                                <FontFamily>Open Sans Light</FontFamily>
                                 <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1317,7 +1321,7 @@
                             <TextRun>
                               <Value />
                               <Style>
-                                <FontFamily>ADAM.CG PRO</FontFamily>
+                                <FontFamily>Open Sans Light</FontFamily>
                                 <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1351,7 +1355,7 @@
                             <TextRun>
                               <Value />
                               <Style>
-                                <FontFamily>ADAM.CG PRO</FontFamily>
+                                <FontFamily>Open Sans Light</FontFamily>
                                 <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1390,7 +1394,7 @@
                             <TextRun>
                               <Value />
                               <Style>
-                                <FontFamily>ADAM.CG PRO</FontFamily>
+                                <FontFamily>Open Sans Light</FontFamily>
                                 <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1423,7 +1427,7 @@
                             <TextRun>
                               <Value />
                               <Style>
-                                <FontFamily>ADAM.CG PRO</FontFamily>
+                                <FontFamily>Open Sans Light</FontFamily>
                                 <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1455,7 +1459,7 @@
                             <TextRun>
                               <Value>=Fields!hula_kahiko_deduction.Value</Value>
                               <Style>
-                                <FontFamily>ADAM.CG PRO</FontFamily>
+                                <FontFamily>Open Sans Light</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <Color>Red</Color>
                               </Style>
@@ -1490,7 +1494,7 @@
                             <TextRun>
                               <Value>=Fields!hula_kahiko_deduction.Value</Value>
                               <Style>
-                                <FontFamily>ADAM.CG PRO</FontFamily>
+                                <FontFamily>Open Sans Light</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <Color>Red</Color>
                               </Style>
@@ -1530,7 +1534,7 @@
                             <TextRun>
                               <Value />
                               <Style>
-                                <FontFamily>ADAM.CG PRO</FontFamily>
+                                <FontFamily>Open Sans Light</FontFamily>
                                 <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1563,7 +1567,7 @@
                             <TextRun>
                               <Value />
                               <Style>
-                                <FontFamily>ADAM.CG PRO</FontFamily>
+                                <FontFamily>Open Sans Light</FontFamily>
                                 <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1595,7 +1599,7 @@
                             <TextRun>
                               <Value>=Fields!hula_kahiko.Value-Fields!hula_kahiko_deduction.Value</Value>
                               <Style>
-                                <FontFamily>ADAM.CG PRO</FontFamily>
+                                <FontFamily>Open Sans Light</FontFamily>
                                 <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1629,7 +1633,7 @@
                             <TextRun>
                               <Value />
                               <Style>
-                                <FontFamily>ADAM.CG PRO</FontFamily>
+                                <FontFamily>Open Sans Light</FontFamily>
                                 <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1671,7 +1675,7 @@
                           <TextRun>
                             <Value>Score(s) </Value>
                             <Style>
-                              <FontFamily>ADAM.CG PRO</FontFamily>
+                              <FontFamily>Open Sans Light</FontFamily>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -1708,7 +1712,7 @@
                               <TextRun>
                                 <Value>=Fields!oli.Value</Value>
                                 <Style>
-                                  <FontFamily>ADAM.CG PRO</FontFamily>
+                                  <FontFamily>Open Sans Light</FontFamily>
                                   <FontSize>9pt</FontSize>
                                   <Format>0.0;(0.0)</Format>
                                 </Style>
@@ -1746,7 +1750,7 @@
                                   <TextRun>
                                     <Value>=Fields!music.Value</Value>
                                     <Style>
-                                      <FontFamily>ADAM.CG PRO</FontFamily>
+                                      <FontFamily>Open Sans Light</FontFamily>
                                       <FontSize>9pt</FontSize>
                                       <Format>0.0;(0.0)</Format>
                                     </Style>
@@ -1796,7 +1800,7 @@
                                           <TextRun>
                                             <Value>=Fields!palapala.Value</Value>
                                             <Style>
-                                              <FontFamily>ADAM.CG PRO</FontFamily>
+                                              <FontFamily>Open Sans Light</FontFamily>
                                               <FontSize>9pt</FontSize>
                                               <Format>0.0;(0.0)</Format>
                                             </Style>
@@ -1856,7 +1860,7 @@
                                                   <TextRun>
                                                     <Value>=Fields!judge_score_interview.Value</Value>
                                                     <Style>
-                                                      <FontFamily>ADAM.CG PRO</FontFamily>
+                                                      <FontFamily>Open Sans Light</FontFamily>
                                                       <FontSize>9pt</FontSize>
                                                       <Format>0.0;(0.0)</Format>
                                                     </Style>
@@ -1895,7 +1899,7 @@
                                                       <TextRun>
                                                         <Value />
                                                         <Style>
-                                                          <FontFamily>ADAM.CG PRO</FontFamily>
+                                                          <FontFamily>Open Sans Light</FontFamily>
                                                           <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
@@ -1934,7 +1938,7 @@
                                                           <TextRun>
                                                             <Value>=Sum(Fields!judge_score_costume_auana.Value)</Value>
                                                             <Style>
-                                                              <FontFamily>ADAM.CG PRO</FontFamily>
+                                                              <FontFamily>Open Sans Light</FontFamily>
                                                               <FontSize>9pt</FontSize>
                                                             </Style>
                                                           </TextRun>
@@ -1972,7 +1976,7 @@
                                                               <TextRun>
                                                                 <Value>=Sum(Fields!judge_score_costume_kahiko.Value)</Value>
                                                                 <Style>
-                                                                  <FontFamily>ADAM.CG PRO</FontFamily>
+                                                                  <FontFamily>Open Sans Light</FontFamily>
                                                                   <FontSize>9pt</FontSize>
                                                                 </Style>
                                                               </TextRun>
@@ -2031,7 +2035,7 @@
                           <TextRun>
                             <Value>Total Possible Score</Value>
                             <Style>
-                              <FontFamily>ADAM.CG PRO</FontFamily>
+                              <FontFamily>Open Sans Light</FontFamily>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -2068,7 +2072,7 @@
                               <TextRun>
                                 <Value />
                                 <Style>
-                                  <FontFamily>ADAM.CG PRO</FontFamily>
+                                  <FontFamily>Open Sans Light</FontFamily>
                                   <FontSize>9pt</FontSize>
                                 </Style>
                               </TextRun>
@@ -2105,7 +2109,7 @@
                                   <TextRun>
                                     <Value />
                                     <Style>
-                                      <FontFamily>ADAM.CG PRO</FontFamily>
+                                      <FontFamily>Open Sans Light</FontFamily>
                                       <FontSize>9pt</FontSize>
                                     </Style>
                                   </TextRun>
@@ -2142,7 +2146,7 @@
                                       <TextRun>
                                         <Value />
                                         <Style>
-                                          <FontFamily>ADAM.CG PRO</FontFamily>
+                                          <FontFamily>Open Sans Light</FontFamily>
                                           <FontSize>9pt</FontSize>
                                         </Style>
                                       </TextRun>
@@ -2179,7 +2183,7 @@
                                           <TextRun>
                                             <Value />
                                             <Style>
-                                              <FontFamily>ADAM.CG PRO</FontFamily>
+                                              <FontFamily>Open Sans Light</FontFamily>
                                               <FontSize>9pt</FontSize>
                                             </Style>
                                           </TextRun>
@@ -2217,7 +2221,7 @@
                                               <TextRun>
                                                 <Value />
                                                 <Style>
-                                                  <FontFamily>ADAM.CG PRO</FontFamily>
+                                                  <FontFamily>Open Sans Light</FontFamily>
                                                   <FontSize>9pt</FontSize>
                                                 </Style>
                                               </TextRun>
@@ -2256,7 +2260,7 @@
                                                   <TextRun>
                                                     <Value />
                                                     <Style>
-                                                      <FontFamily>ADAM.CG PRO</FontFamily>
+                                                      <FontFamily>Open Sans Light</FontFamily>
                                                       <FontSize>9pt</FontSize>
                                                     </Style>
                                                   </TextRun>
@@ -2294,7 +2298,7 @@
                                                       <TextRun>
                                                         <Value />
                                                         <Style>
-                                                          <FontFamily>ADAM.CG PRO</FontFamily>
+                                                          <FontFamily>Open Sans Light</FontFamily>
                                                           <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
@@ -2349,7 +2353,7 @@
                           <TextRun>
                             <Value>Total Actual Score</Value>
                             <Style>
-                              <FontFamily>ADAM.CG PRO</FontFamily>
+                              <FontFamily>Open Sans Light</FontFamily>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -2386,7 +2390,7 @@
                               <TextRun>
                                 <Value>=Fields!oli.Value</Value>
                                 <Style>
-                                  <FontFamily>ADAM.CG PRO</FontFamily>
+                                  <FontFamily>Open Sans Light</FontFamily>
                                   <FontSize>9pt</FontSize>
                                   <Format>0.0;(0.0)</Format>
                                 </Style>
@@ -2424,7 +2428,7 @@
                                   <TextRun>
                                     <Value>=Fields!music.Value</Value>
                                     <Style>
-                                      <FontFamily>ADAM.CG PRO</FontFamily>
+                                      <FontFamily>Open Sans Light</FontFamily>
                                       <FontSize>9pt</FontSize>
                                       <Format>0.0;(0.0)</Format>
                                     </Style>
@@ -2462,7 +2466,7 @@
                                       <TextRun>
                                         <Value>=Fields!palapala.Value</Value>
                                         <Style>
-                                          <FontFamily>ADAM.CG PRO</FontFamily>
+                                          <FontFamily>Open Sans Light</FontFamily>
                                           <FontSize>9pt</FontSize>
                                           <Format>0.0;(0.0)</Format>
                                         </Style>
@@ -2500,7 +2504,7 @@
                                           <TextRun>
                                             <Value>=Fields!interview.Value</Value>
                                             <Style>
-                                              <FontFamily>ADAM.CG PRO</FontFamily>
+                                              <FontFamily>Open Sans Light</FontFamily>
                                               <FontSize>9pt</FontSize>
                                             </Style>
                                           </TextRun>
@@ -2538,7 +2542,7 @@
                                               <TextRun>
                                                 <Value />
                                                 <Style>
-                                                  <FontFamily>ADAM.CG PRO</FontFamily>
+                                                  <FontFamily>Open Sans Light</FontFamily>
                                                   <FontSize>9pt</FontSize>
                                                 </Style>
                                               </TextRun>
@@ -2577,7 +2581,7 @@
                                                   <TextRun>
                                                     <Value>=Fields!costume_auana.Value</Value>
                                                     <Style>
-                                                      <FontFamily>ADAM.CG PRO</FontFamily>
+                                                      <FontFamily>Open Sans Light</FontFamily>
                                                       <FontSize>9pt</FontSize>
                                                     </Style>
                                                   </TextRun>
@@ -2615,7 +2619,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!costume_kahiko.Value</Value>
                                                         <Style>
-                                                          <FontFamily>ADAM.CG PRO</FontFamily>
+                                                          <FontFamily>Open Sans Light</FontFamily>
                                                           <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
@@ -2670,7 +2674,7 @@
                           <TextRun>
                             <Value>Total Breaking Score</Value>
                             <Style>
-                              <FontFamily>ADAM.CG PRO</FontFamily>
+                              <FontFamily>Open Sans Light</FontFamily>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -2707,7 +2711,7 @@
                               <TextRun>
                                 <Value />
                                 <Style>
-                                  <FontFamily>ADAM.CG PRO</FontFamily>
+                                  <FontFamily>Open Sans Light</FontFamily>
                                   <FontSize>9pt</FontSize>
                                 </Style>
                               </TextRun>
@@ -2745,7 +2749,7 @@
                                   <TextRun>
                                     <Value />
                                     <Style>
-                                      <FontFamily>ADAM.CG PRO</FontFamily>
+                                      <FontFamily>Open Sans Light</FontFamily>
                                       <FontSize>9pt</FontSize>
                                     </Style>
                                   </TextRun>
@@ -2783,7 +2787,7 @@
                                       <TextRun>
                                         <Value />
                                         <Style>
-                                          <FontFamily>ADAM.CG PRO</FontFamily>
+                                          <FontFamily>Open Sans Light</FontFamily>
                                           <FontSize>9pt</FontSize>
                                         </Style>
                                       </TextRun>
@@ -2821,7 +2825,7 @@
                                           <TextRun>
                                             <Value>=Fields!interview_tie.Value</Value>
                                             <Style>
-                                              <FontFamily>ADAM.CG PRO</FontFamily>
+                                              <FontFamily>Open Sans Light</FontFamily>
                                               <FontSize>9pt</FontSize>
                                             </Style>
                                           </TextRun>
@@ -2859,7 +2863,7 @@
                                               <TextRun>
                                                 <Value />
                                                 <Style>
-                                                  <FontFamily>ADAM.CG PRO</FontFamily>
+                                                  <FontFamily>Open Sans Light</FontFamily>
                                                   <FontSize>9pt</FontSize>
                                                 </Style>
                                               </TextRun>
@@ -2898,7 +2902,7 @@
                                                   <TextRun>
                                                     <Value>=Fields!costume_auana_tie.Value</Value>
                                                     <Style>
-                                                      <FontFamily>ADAM.CG PRO</FontFamily>
+                                                      <FontFamily>Open Sans Light</FontFamily>
                                                       <FontSize>9pt</FontSize>
                                                     </Style>
                                                   </TextRun>
@@ -2936,7 +2940,7 @@
                                                       <TextRun>
                                                         <Value>=Fields!costume_kahiko_tie.Value</Value>
                                                         <Style>
-                                                          <FontFamily>ADAM.CG PRO</FontFamily>
+                                                          <FontFamily>Open Sans Light</FontFamily>
                                                           <FontSize>9pt</FontSize>
                                                         </Style>
                                                       </TextRun>
@@ -2995,7 +2999,7 @@
                           <TextRun>
                             <Value>Hula 'Auana Gross</Value>
                             <Style>
-                              <FontFamily>ADAM.CG PRO</FontFamily>
+                              <FontFamily>Open Sans Light</FontFamily>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -3033,7 +3037,7 @@
                             <Value>Deduction for Overtime</Value>
                             <Style>
                               <FontStyle>Italic</FontStyle>
-                              <FontFamily>ADAM.CG PRO</FontFamily>
+                              <FontFamily>Open Sans Light</FontFamily>
                               <FontSize>6pt</FontSize>
                               <FontWeight>Normal</FontWeight>
                             </Style>
@@ -3071,7 +3075,7 @@
                           <TextRun>
                             <Value>Hula 'Auana Net</Value>
                             <Style>
-                              <FontFamily>ADAM.CG PRO</FontFamily>
+                              <FontFamily>Open Sans Light</FontFamily>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -3107,7 +3111,7 @@
                             <Value>Hula Kahiko Gross</Value>
                             <Style>
                               <FontStyle>Normal</FontStyle>
-                              <FontFamily>ADAM.CG PRO</FontFamily>
+                              <FontFamily>Open Sans Light</FontFamily>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -3145,7 +3149,7 @@
                             <Value>Deduction for Overtime</Value>
                             <Style>
                               <FontStyle>Italic</FontStyle>
-                              <FontFamily>ADAM.CG PRO</FontFamily>
+                              <FontFamily>Open Sans Light</FontFamily>
                               <FontSize>6pt</FontSize>
                               <FontWeight>Normal</FontWeight>
                             </Style>
@@ -3183,7 +3187,7 @@
                           <TextRun>
                             <Value>Hula Kahiko Net</Value>
                             <Style>
-                              <FontFamily>ADAM.CG PRO</FontFamily>
+                              <FontFamily>Open Sans Light</FontFamily>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
@@ -3235,7 +3239,7 @@
           <Value>honk</Value>
           <Sizing>FitProportional</Sizing>
           <Top>0.08303in</Top>
-          <Left>0.24255in</Left>
+          <Left>0.51338in</Left>
           <Height>0.76295in</Height>
           <Width>1.73756in</Width>
           <Style>
@@ -3251,10 +3255,10 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=" HONK " &amp; Format(Fields!entry_date.Value, "yyyy") &amp; " Contestant Score"</Value>
+                  <Value>=" HONK " &amp; Format(Fields!entry_date.Value, "yyyy") &amp; " Contestant Scores"</Value>
                   <Style>
-                    <FontFamily>ADAM.CG PRO</FontFamily>
-                    <FontSize>24pt</FontSize>
+                    <FontFamily>Open Sans Semibold</FontFamily>
+                    <FontSize>28pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -3264,10 +3268,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox12</rd:DefaultName>
-          <Top>0.14837in</Top>
-          <Left>2.15185in</Left>
-          <Height>0.61458in</Height>
-          <Width>6.45549in</Width>
+          <Top>0.2in</Top>
+          <Left>2.4in</Left>
+          <Height>0.5in</Height>
+          <Width>6.28188in</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
