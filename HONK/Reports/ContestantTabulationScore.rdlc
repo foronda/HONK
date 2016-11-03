@@ -4202,6 +4202,30 @@
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="id">
+      <DataType>Integer</DataType>
+      <Prompt>ReportParameter1</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>ContestantReportDataset_Tabulation</DataSetName>
+          <ValueField>id</ValueField>
+          <LabelField>id</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="entry_date">
+      <DataType>DateTime</DataType>
+      <Prompt>ReportParameter1</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>ContestantReportDataset_Tabulation</DataSetName>
+          <ValueField>entry_date</ValueField>
+          <LabelField>entry_date</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
   <EmbeddedImages>
     <EmbeddedImage Name="honk_text">
       <MIMEType>image/png</MIMEType>

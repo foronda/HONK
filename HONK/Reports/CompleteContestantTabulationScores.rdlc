@@ -2,94 +2,27 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Tablix Name="Tablix1">
-        <TablixBody>
-          <TablixColumns>
-            <TablixColumn>
-              <Width>2.53125in</Width>
-            </TablixColumn>
-          </TablixColumns>
-          <TablixRows>
-            <TablixRow>
-              <Height>1.48958in</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Subreport Name="Subreport2">
-                      <ReportName>ContestantTabulationScore</ReportName>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                      </Style>
-                    </Subreport>
-                  </CellContents>
-                </TablixCell>
-              </TablixCells>
-            </TablixRow>
-          </TablixRows>
-        </TablixBody>
-        <TablixColumnHierarchy>
-          <TablixMembers>
-            <TablixMember />
-          </TablixMembers>
-        </TablixColumnHierarchy>
-        <TablixRowHierarchy>
-          <TablixMembers>
-            <TablixMember>
-              <Group Name="RowGroup">
-                <GroupExpressions>
-                  <GroupExpression>=Fields!id.Value</GroupExpression>
-                </GroupExpressions>
-                <PageBreak>
-                  <BreakLocation>Start</BreakLocation>
-                </PageBreak>
-              </Group>
-              <TablixHeader>
-                <Size>2.53125in</Size>
-                <CellContents>
-                  <Textbox Name="Textbox1">
-                    <CanGrow>true</CanGrow>
-                    <KeepTogether>true</KeepTogether>
-                    <Paragraphs>
-                      <Paragraph>
-                        <TextRuns>
-                          <TextRun>
-                            <Value>=Fields!id.Value</Value>
-                            <Style />
-                          </TextRun>
-                        </TextRuns>
-                        <Style />
-                      </Paragraph>
-                    </Paragraphs>
-                    <rd:DefaultName>Textbox1</rd:DefaultName>
-                    <Style>
-                      <Border>
-                        <Color>LightGrey</Color>
-                        <Style>Solid</Style>
-                      </Border>
-                      <PaddingLeft>2pt</PaddingLeft>
-                      <PaddingRight>2pt</PaddingRight>
-                      <PaddingTop>2pt</PaddingTop>
-                      <PaddingBottom>2pt</PaddingBottom>
-                    </Style>
-                  </Textbox>
-                </CellContents>
-              </TablixHeader>
-            </TablixMember>
-          </TablixMembers>
-        </TablixRowHierarchy>
-        <DataSetName>Test</DataSetName>
-        <Top>0.47792in</Top>
-        <Left>0.4675in</Left>
-        <Height>1.48958in</Height>
-        <Width>5.0625in</Width>
+      <Subreport Name="Subreport">
+        <ReportName>ContestantTabulationScore</ReportName>
+        <Parameters>
+          <Parameter Name="id">
+            <Value>=Fields!id.Value</Value>
+          </Parameter>
+          <Parameter Name="entry_date">
+            <Value>=Fields!entry_date.Value</Value>
+          </Parameter>
+        </Parameters>
+        <OmitBorderOnPageBreak>true</OmitBorderOnPageBreak>
+        <Top>0.56188in</Top>
+        <Left>0.59896in</Left>
+        <Height>2.5625in</Height>
+        <Width>4.16667in</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
-      </Tablix>
+      </Subreport>
     </ReportItems>
     <Height>4.3425in</Height>
     <Style />
@@ -104,18 +37,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="ContestantReportDataset">
+    <DataSource Name="CompleteContestantReportDataset">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>f2d7a140-8440-4b7c-b015-d0f85fb1fc01</rd:DataSourceID>
+      <rd:DataSourceID>8197182f-dae0-46bc-944a-425fafb3b1ec</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="Test">
+    <DataSet Name="CompleteContestantReportDataset_Tabulation">
       <Query>
-        <DataSourceName>ContestantReportDataset</DataSourceName>
+        <DataSourceName>CompleteContestantReportDataset</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -123,206 +56,18 @@
           <DataField>id</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="judge_id">
-          <DataField>judge_id</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="judge_score_id">
-          <DataField>judge_score_id</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="master_score_id">
-          <DataField>master_score_id</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="full_name">
-          <DataField>full_name</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="age_name">
-          <DataField>age_name</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="gender_name">
-          <DataField>gender_name</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="division_name">
-          <DataField>division_name</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="halau_name">
-          <DataField>halau_name</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="kumu_name">
-          <DataField>kumu_name</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="entry_date">
           <DataField>entry_date</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="entry_num_fri">
-          <DataField>entry_num_fri</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="entry_num_sat">
-          <DataField>entry_num_sat</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="judge_name">
-          <DataField>judge_name</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="palapala">
-          <DataField>palapala</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="interview">
-          <DataField>interview</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="oli">
-          <DataField>oli</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="music">
-          <DataField>music</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="hula_auana">
-          <DataField>hula_auana</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="hula_auana_deduction">
-          <DataField>hula_auana_deduction</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="hula_kahiko">
-          <DataField>hula_kahiko</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="hula_kahiko_deduction">
-          <DataField>hula_kahiko_deduction</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="hula_palua">
-          <DataField>hula_palua</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="hula_palua_deduction">
-          <DataField>hula_palua_deduction</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="costume_auana">
-          <DataField>costume_auana</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="costume_kahiko">
-          <DataField>costume_kahiko</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="costume_palua">
-          <DataField>costume_palua</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="out_of_order_deduction">
-          <DataField>out_of_order_deduction</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="judge_score_interview">
-          <DataField>judge_score_interview</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="judge_score_costume_auana">
-          <DataField>judge_score_costume_auana</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="judge_score_costume_kahiko">
-          <DataField>judge_score_costume_kahiko</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="judge_score_costume_palua">
-          <DataField>judge_score_costume_palua</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="judge_score_hula_auana">
-          <DataField>judge_score_hula_auana</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="judge_score_hula_kahiko">
-          <DataField>judge_score_hula_kahiko</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="judge_score_hula_palua">
-          <DataField>judge_score_hula_palua</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="interview_tie">
-          <DataField>interview_tie</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="costume_auana_tie">
-          <DataField>costume_auana_tie</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="costume_kahiko_tie">
-          <DataField>costume_kahiko_tie</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="costume_palua_tie">
-          <DataField>costume_palua_tie</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="hula_auana_tie">
-          <DataField>hula_auana_tie</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="hula_palua_tie">
-          <DataField>hula_palua_tie</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="hula_auana_net">
-          <DataField>hula_auana_net</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="hula_kahiko_tie">
-          <DataField>hula_kahiko_tie</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="hula_kahiko_net">
-          <DataField>hula_kahiko_net</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="hula_palua_net">
-          <DataField>hula_palua_net</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="combined_hula_score">
-          <DataField>combined_hula_score</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="overall_score">
-          <DataField>overall_score</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="combined_hula_break_score">
-          <DataField>combined_hula_break_score</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="overall_break_score">
-          <DataField>overall_break_score</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>ContestantReportDataset</rd:DataSetName>
-        <rd:SchemaPath>D:\Github Repos\HONK\HONK\Reports\ContestantReportDataset.xsd</rd:SchemaPath>
-        <rd:TableName>vw_ContestantDetailsAllScores</rd:TableName>
+        <rd:DataSetName>CompleteContestantReportDataset</rd:DataSetName>
+        <rd:SchemaPath>D:\Github Repos\HONK\HONK\Reports\CompleteContestantReportDataset.xsd</rd:SchemaPath>
+        <rd:TableName>Contestant</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>vw_ContestantDetailsAllScoresTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>ContestantTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

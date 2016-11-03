@@ -13,13 +13,13 @@ namespace HONK.Reports {
     public partial class ContestantTabulationScore {
         
         /// <summary>
-        /// ContestantTabScoreRV control.
+        /// CompleteContestantTabScoreRV control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.Reporting.WebForms.ReportViewer ContestantTabScoreRV;
+        protected global::Microsoft.Reporting.WebForms.ReportViewer CompleteContestantTabScoreRV;
         
         /// <summary>
         /// ContestantScoreDetails control.
