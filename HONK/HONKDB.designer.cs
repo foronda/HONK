@@ -7780,7 +7780,23 @@ namespace HONK
 		
 		private System.Nullable<int> _hula_auana_tie;
 		
+		private System.Nullable<int> _hula_auana_net;
+		
+		private System.Nullable<int> _hula_kahiko_tie;
+		
+		private System.Nullable<int> _hula_kahiko_net;
+		
 		private System.Nullable<int> _hula_palua_tie;
+		
+		private System.Nullable<int> _hula_palua_net;
+		
+		private System.Nullable<int> _combined_hula_score;
+		
+		private System.Nullable<int> _combined_hula_break_score;
+		
+		private System.Nullable<decimal> _overall_score;
+		
+		private System.Nullable<decimal> _overall_break_score;
 		
 		public vw_ContestantDetailsAllScore()
 		{
@@ -8426,6 +8442,54 @@ namespace HONK
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_auana_net", DbType="Int")]
+		public System.Nullable<int> hula_auana_net
+		{
+			get
+			{
+				return this._hula_auana_net;
+			}
+			set
+			{
+				if ((this._hula_auana_net != value))
+				{
+					this._hula_auana_net = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_kahiko_tie", DbType="Int")]
+		public System.Nullable<int> hula_kahiko_tie
+		{
+			get
+			{
+				return this._hula_kahiko_tie;
+			}
+			set
+			{
+				if ((this._hula_kahiko_tie != value))
+				{
+					this._hula_kahiko_tie = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_kahiko_net", DbType="Int")]
+		public System.Nullable<int> hula_kahiko_net
+		{
+			get
+			{
+				return this._hula_kahiko_net;
+			}
+			set
+			{
+				if ((this._hula_kahiko_net != value))
+				{
+					this._hula_kahiko_net = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_palua_tie", DbType="Int")]
 		public System.Nullable<int> hula_palua_tie
 		{
@@ -8438,6 +8502,86 @@ namespace HONK
 				if ((this._hula_palua_tie != value))
 				{
 					this._hula_palua_tie = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_palua_net", DbType="Int")]
+		public System.Nullable<int> hula_palua_net
+		{
+			get
+			{
+				return this._hula_palua_net;
+			}
+			set
+			{
+				if ((this._hula_palua_net != value))
+				{
+					this._hula_palua_net = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_combined_hula_score", DbType="Int")]
+		public System.Nullable<int> combined_hula_score
+		{
+			get
+			{
+				return this._combined_hula_score;
+			}
+			set
+			{
+				if ((this._combined_hula_score != value))
+				{
+					this._combined_hula_score = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_combined_hula_break_score", DbType="Int")]
+		public System.Nullable<int> combined_hula_break_score
+		{
+			get
+			{
+				return this._combined_hula_break_score;
+			}
+			set
+			{
+				if ((this._combined_hula_break_score != value))
+				{
+					this._combined_hula_break_score = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_overall_score", DbType="Decimal(26,3)")]
+		public System.Nullable<decimal> overall_score
+		{
+			get
+			{
+				return this._overall_score;
+			}
+			set
+			{
+				if ((this._overall_score != value))
+				{
+					this._overall_score = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_overall_break_score", DbType="Decimal(23,3)")]
+		public System.Nullable<decimal> overall_break_score
+		{
+			get
+			{
+				return this._overall_break_score;
+			}
+			set
+			{
+				if ((this._overall_break_score != value))
+				{
+					this._overall_break_score = value;
 				}
 			}
 		}

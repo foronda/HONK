@@ -3211,7 +3211,7 @@
         <Top>1.31125in</Top>
         <Left>0.5238in</Left>
         <Height>3.5in</Height>
-        <Width>5.35227in</Width>
+        <Width>5.35228in</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -3220,10 +3220,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>8.5in</Height>
+    <Height>7in</Height>
     <Style />
   </Body>
-  <Width>11.16108in</Width>
+  <Width>9in</Width>
   <Page>
     <PageHeader>
       <Height>0.91542in</Height>
@@ -3290,8 +3290,6 @@
     <PageWidth>11in</PageWidth>
     <InteractiveHeight>8.5in</InteractiveHeight>
     <InteractiveWidth>11in</InteractiveWidth>
-    <TopMargin>0.25in</TopMargin>
-    <BottomMargin>0.25in</BottomMargin>
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
@@ -4293,6 +4291,7 @@ wNc53cBYAfAcAQAAAKAdgRwAAICxNCi5dwAAAPZLuN8AAAAAAMUJ5AAAAAAAAPSk6R7jBIjCKTkAAAAA
 JwAAAAB8QyAHAAAAAACgDk3G7jNAN4KkAAAAAGwhkAMAAEAmms4AAGAuTc32RWB8AgAAAACc8D9NntUVQP+apgAAAABJRU5ErkJggg==</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>57947618-2f73-46f3-9f65-6d578ffd907a</rd:ReportID>
 </Report>

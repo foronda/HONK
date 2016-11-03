@@ -487,7 +487,15 @@
       <Column Name="costume_kahiko_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="costume_palua_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="hula_auana_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_auana_net" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_kahiko_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_kahiko_net" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="hula_palua_tie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hula_palua_net" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="combined_hula_score" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="combined_hula_break_score" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="overall_score" Type="System.Decimal" DbType="Decimal(26,3)" CanBeNull="true" />
+      <Column Name="overall_break_score" Type="System.Decimal" DbType="Decimal(23,3)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

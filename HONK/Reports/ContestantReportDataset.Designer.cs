@@ -26,8 +26,6 @@ namespace HONK.Reports {
         
         private vw_ContestantDetailsAllScoresDataTable tablevw_ContestantDetailsAllScores;
         
-        private vw_ContestantDetailsDataTable tablevw_ContestantDetails;
-        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -59,9 +57,6 @@ namespace HONK.Reports {
                 if ((ds.Tables["vw_ContestantDetailsAllScores"] != null)) {
                     base.Tables.Add(new vw_ContestantDetailsAllScoresDataTable(ds.Tables["vw_ContestantDetailsAllScores"]));
                 }
-                if ((ds.Tables["vw_ContestantDetails"] != null)) {
-                    base.Tables.Add(new vw_ContestantDetailsDataTable(ds.Tables["vw_ContestantDetails"]));
-                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -87,16 +82,6 @@ namespace HONK.Reports {
         public vw_ContestantDetailsAllScoresDataTable vw_ContestantDetailsAllScores {
             get {
                 return this.tablevw_ContestantDetailsAllScores;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public vw_ContestantDetailsDataTable vw_ContestantDetails {
-            get {
-                return this.tablevw_ContestantDetails;
             }
         }
         
@@ -170,9 +155,6 @@ namespace HONK.Reports {
                 if ((ds.Tables["vw_ContestantDetailsAllScores"] != null)) {
                     base.Tables.Add(new vw_ContestantDetailsAllScoresDataTable(ds.Tables["vw_ContestantDetailsAllScores"]));
                 }
-                if ((ds.Tables["vw_ContestantDetails"] != null)) {
-                    base.Tables.Add(new vw_ContestantDetailsDataTable(ds.Tables["vw_ContestantDetails"]));
-                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -212,12 +194,6 @@ namespace HONK.Reports {
                     this.tablevw_ContestantDetailsAllScores.InitVars();
                 }
             }
-            this.tablevw_ContestantDetails = ((vw_ContestantDetailsDataTable)(base.Tables["vw_ContestantDetails"]));
-            if ((initTable == true)) {
-                if ((this.tablevw_ContestantDetails != null)) {
-                    this.tablevw_ContestantDetails.InitVars();
-                }
-            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -230,19 +206,11 @@ namespace HONK.Reports {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tablevw_ContestantDetailsAllScores = new vw_ContestantDetailsAllScoresDataTable();
             base.Tables.Add(this.tablevw_ContestantDetailsAllScores);
-            this.tablevw_ContestantDetails = new vw_ContestantDetailsDataTable();
-            base.Tables.Add(this.tablevw_ContestantDetails);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializevw_ContestantDetailsAllScores() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializevw_ContestantDetails() {
             return false;
         }
         
@@ -303,9 +271,6 @@ namespace HONK.Reports {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void vw_ContestantDetailsAllScoresRowChangeEventHandler(object sender, vw_ContestantDetailsAllScoresRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void vw_ContestantDetailsRowChangeEventHandler(object sender, vw_ContestantDetailsRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -395,6 +360,22 @@ namespace HONK.Reports {
             private global::System.Data.DataColumn columnhula_auana_tie;
             
             private global::System.Data.DataColumn columnhula_palua_tie;
+            
+            private global::System.Data.DataColumn columnhula_auana_net;
+            
+            private global::System.Data.DataColumn columnhula_kahiko_tie;
+            
+            private global::System.Data.DataColumn columnhula_kahiko_net;
+            
+            private global::System.Data.DataColumn columnhula_palua_net;
+            
+            private global::System.Data.DataColumn columncombined_hula_score;
+            
+            private global::System.Data.DataColumn columnoverall_score;
+            
+            private global::System.Data.DataColumn columncombined_hula_break_score;
+            
+            private global::System.Data.DataColumn columnoverall_break_score;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -759,6 +740,70 @@ namespace HONK.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn hula_auana_netColumn {
+                get {
+                    return this.columnhula_auana_net;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn hula_kahiko_tieColumn {
+                get {
+                    return this.columnhula_kahiko_tie;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn hula_kahiko_netColumn {
+                get {
+                    return this.columnhula_kahiko_net;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn hula_palua_netColumn {
+                get {
+                    return this.columnhula_palua_net;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn combined_hula_scoreColumn {
+                get {
+                    return this.columncombined_hula_score;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn overall_scoreColumn {
+                get {
+                    return this.columnoverall_score;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn combined_hula_break_scoreColumn {
+                get {
+                    return this.columncombined_hula_break_score;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn overall_break_scoreColumn {
+                get {
+                    return this.columnoverall_break_score;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -835,7 +880,15 @@ namespace HONK.Reports {
                         int costume_kahiko_tie, 
                         int costume_palua_tie, 
                         int hula_auana_tie, 
-                        int hula_palua_tie) {
+                        int hula_palua_tie, 
+                        int hula_auana_net, 
+                        int hula_kahiko_tie, 
+                        int hula_kahiko_net, 
+                        int hula_palua_net, 
+                        int combined_hula_score, 
+                        decimal overall_score, 
+                        int combined_hula_break_score, 
+                        decimal overall_break_score) {
                 vw_ContestantDetailsAllScoresRow rowvw_ContestantDetailsAllScoresRow = ((vw_ContestantDetailsAllScoresRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -878,7 +931,15 @@ namespace HONK.Reports {
                         costume_kahiko_tie,
                         costume_palua_tie,
                         hula_auana_tie,
-                        hula_palua_tie};
+                        hula_palua_tie,
+                        hula_auana_net,
+                        hula_kahiko_tie,
+                        hula_kahiko_net,
+                        hula_palua_net,
+                        combined_hula_score,
+                        overall_score,
+                        combined_hula_break_score,
+                        overall_break_score};
                 rowvw_ContestantDetailsAllScoresRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvw_ContestantDetailsAllScoresRow);
                 return rowvw_ContestantDetailsAllScoresRow;
@@ -942,6 +1003,14 @@ namespace HONK.Reports {
                 this.columncostume_palua_tie = base.Columns["costume_palua_tie"];
                 this.columnhula_auana_tie = base.Columns["hula_auana_tie"];
                 this.columnhula_palua_tie = base.Columns["hula_palua_tie"];
+                this.columnhula_auana_net = base.Columns["hula_auana_net"];
+                this.columnhula_kahiko_tie = base.Columns["hula_kahiko_tie"];
+                this.columnhula_kahiko_net = base.Columns["hula_kahiko_net"];
+                this.columnhula_palua_net = base.Columns["hula_palua_net"];
+                this.columncombined_hula_score = base.Columns["combined_hula_score"];
+                this.columnoverall_score = base.Columns["overall_score"];
+                this.columncombined_hula_break_score = base.Columns["combined_hula_break_score"];
+                this.columnoverall_break_score = base.Columns["overall_break_score"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1029,6 +1098,22 @@ namespace HONK.Reports {
                 base.Columns.Add(this.columnhula_auana_tie);
                 this.columnhula_palua_tie = new global::System.Data.DataColumn("hula_palua_tie", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnhula_palua_tie);
+                this.columnhula_auana_net = new global::System.Data.DataColumn("hula_auana_net", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhula_auana_net);
+                this.columnhula_kahiko_tie = new global::System.Data.DataColumn("hula_kahiko_tie", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhula_kahiko_tie);
+                this.columnhula_kahiko_net = new global::System.Data.DataColumn("hula_kahiko_net", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhula_kahiko_net);
+                this.columnhula_palua_net = new global::System.Data.DataColumn("hula_palua_net", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhula_palua_net);
+                this.columncombined_hula_score = new global::System.Data.DataColumn("combined_hula_score", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncombined_hula_score);
+                this.columnoverall_score = new global::System.Data.DataColumn("overall_score", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnoverall_score);
+                this.columncombined_hula_break_score = new global::System.Data.DataColumn("combined_hula_break_score", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncombined_hula_break_score);
+                this.columnoverall_break_score = new global::System.Data.DataColumn("overall_break_score", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnoverall_break_score);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid,
                                 this.columnjudge_id,
@@ -1052,6 +1137,13 @@ namespace HONK.Reports {
                 this.columnentry_date.AllowDBNull = false;
                 this.columnjudge_name.AllowDBNull = false;
                 this.columnjudge_name.MaxLength = 2147483647;
+                this.columnhula_auana_net.ReadOnly = true;
+                this.columnhula_kahiko_net.ReadOnly = true;
+                this.columnhula_palua_net.ReadOnly = true;
+                this.columncombined_hula_score.ReadOnly = true;
+                this.columnoverall_score.ReadOnly = true;
+                this.columncombined_hula_break_score.ReadOnly = true;
+                this.columnoverall_break_score.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1138,403 +1230,6 @@ namespace HONK.Reports {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "vw_ContestantDetailsAllScoresDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class vw_ContestantDetailsDataTable : global::System.Data.TypedTableBase<vw_ContestantDetailsRow> {
-            
-            private global::System.Data.DataColumn columnid;
-            
-            private global::System.Data.DataColumn columnfull_name;
-            
-            private global::System.Data.DataColumn columnage_name;
-            
-            private global::System.Data.DataColumn columngender_name;
-            
-            private global::System.Data.DataColumn columndivision_name;
-            
-            private global::System.Data.DataColumn columnhalau_name;
-            
-            private global::System.Data.DataColumn columnkumu_name;
-            
-            private global::System.Data.DataColumn columnentry_date;
-            
-            private global::System.Data.DataColumn columnentry_num_fri;
-            
-            private global::System.Data.DataColumn columnentry_num_sat;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public vw_ContestantDetailsDataTable() {
-                this.TableName = "vw_ContestantDetails";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal vw_ContestantDetailsDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected vw_ContestantDetailsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn idColumn {
-                get {
-                    return this.columnid;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn full_nameColumn {
-                get {
-                    return this.columnfull_name;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn age_nameColumn {
-                get {
-                    return this.columnage_name;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn gender_nameColumn {
-                get {
-                    return this.columngender_name;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn division_nameColumn {
-                get {
-                    return this.columndivision_name;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn halau_nameColumn {
-                get {
-                    return this.columnhalau_name;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn kumu_nameColumn {
-                get {
-                    return this.columnkumu_name;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn entry_dateColumn {
-                get {
-                    return this.columnentry_date;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn entry_num_friColumn {
-                get {
-                    return this.columnentry_num_fri;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn entry_num_satColumn {
-                get {
-                    return this.columnentry_num_sat;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public vw_ContestantDetailsRow this[int index] {
-                get {
-                    return ((vw_ContestantDetailsRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event vw_ContestantDetailsRowChangeEventHandler vw_ContestantDetailsRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event vw_ContestantDetailsRowChangeEventHandler vw_ContestantDetailsRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event vw_ContestantDetailsRowChangeEventHandler vw_ContestantDetailsRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event vw_ContestantDetailsRowChangeEventHandler vw_ContestantDetailsRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Addvw_ContestantDetailsRow(vw_ContestantDetailsRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public vw_ContestantDetailsRow Addvw_ContestantDetailsRow(int id, string full_name, string age_name, string gender_name, string division_name, string halau_name, string kumu_name, System.DateTime entry_date, int entry_num_fri, int entry_num_sat) {
-                vw_ContestantDetailsRow rowvw_ContestantDetailsRow = ((vw_ContestantDetailsRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        id,
-                        full_name,
-                        age_name,
-                        gender_name,
-                        division_name,
-                        halau_name,
-                        kumu_name,
-                        entry_date,
-                        entry_num_fri,
-                        entry_num_sat};
-                rowvw_ContestantDetailsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowvw_ContestantDetailsRow);
-                return rowvw_ContestantDetailsRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public vw_ContestantDetailsRow FindByid(int id) {
-                return ((vw_ContestantDetailsRow)(this.Rows.Find(new object[] {
-                            id})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                vw_ContestantDetailsDataTable cln = ((vw_ContestantDetailsDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new vw_ContestantDetailsDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnid = base.Columns["id"];
-                this.columnfull_name = base.Columns["full_name"];
-                this.columnage_name = base.Columns["age_name"];
-                this.columngender_name = base.Columns["gender_name"];
-                this.columndivision_name = base.Columns["division_name"];
-                this.columnhalau_name = base.Columns["halau_name"];
-                this.columnkumu_name = base.Columns["kumu_name"];
-                this.columnentry_date = base.Columns["entry_date"];
-                this.columnentry_num_fri = base.Columns["entry_num_fri"];
-                this.columnentry_num_sat = base.Columns["entry_num_sat"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid);
-                this.columnfull_name = new global::System.Data.DataColumn("full_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfull_name);
-                this.columnage_name = new global::System.Data.DataColumn("age_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnage_name);
-                this.columngender_name = new global::System.Data.DataColumn("gender_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columngender_name);
-                this.columndivision_name = new global::System.Data.DataColumn("division_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndivision_name);
-                this.columnhalau_name = new global::System.Data.DataColumn("halau_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnhalau_name);
-                this.columnkumu_name = new global::System.Data.DataColumn("kumu_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnkumu_name);
-                this.columnentry_date = new global::System.Data.DataColumn("entry_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnentry_date);
-                this.columnentry_num_fri = new global::System.Data.DataColumn("entry_num_fri", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnentry_num_fri);
-                this.columnentry_num_sat = new global::System.Data.DataColumn("entry_num_sat", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnentry_num_sat);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnid}, true));
-                this.columnid.AllowDBNull = false;
-                this.columnid.Unique = true;
-                this.columnfull_name.AllowDBNull = false;
-                this.columnfull_name.MaxLength = 2147483647;
-                this.columnage_name.AllowDBNull = false;
-                this.columnage_name.MaxLength = 2147483647;
-                this.columngender_name.AllowDBNull = false;
-                this.columngender_name.MaxLength = 2147483647;
-                this.columndivision_name.AllowDBNull = false;
-                this.columndivision_name.MaxLength = 2147483647;
-                this.columnhalau_name.AllowDBNull = false;
-                this.columnhalau_name.MaxLength = 2147483647;
-                this.columnkumu_name.AllowDBNull = false;
-                this.columnkumu_name.MaxLength = 2147483647;
-                this.columnentry_date.AllowDBNull = false;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public vw_ContestantDetailsRow Newvw_ContestantDetailsRow() {
-                return ((vw_ContestantDetailsRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new vw_ContestantDetailsRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(vw_ContestantDetailsRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.vw_ContestantDetailsRowChanged != null)) {
-                    this.vw_ContestantDetailsRowChanged(this, new vw_ContestantDetailsRowChangeEvent(((vw_ContestantDetailsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.vw_ContestantDetailsRowChanging != null)) {
-                    this.vw_ContestantDetailsRowChanging(this, new vw_ContestantDetailsRowChangeEvent(((vw_ContestantDetailsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.vw_ContestantDetailsRowDeleted != null)) {
-                    this.vw_ContestantDetailsRowDeleted(this, new vw_ContestantDetailsRowChangeEvent(((vw_ContestantDetailsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.vw_ContestantDetailsRowDeleting != null)) {
-                    this.vw_ContestantDetailsRowDeleting(this, new vw_ContestantDetailsRowChangeEvent(((vw_ContestantDetailsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Removevw_ContestantDetailsRow(vw_ContestantDetailsRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ContestantReportDataset ds = new ContestantReportDataset();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "vw_ContestantDetailsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2220,6 +1915,142 @@ namespace HONK.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int hula_auana_net {
+                get {
+                    try {
+                        return ((int)(this[this.tablevw_ContestantDetailsAllScores.hula_auana_netColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'hula_auana_net\' in table \'vw_ContestantDetailsAllScores\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ContestantDetailsAllScores.hula_auana_netColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int hula_kahiko_tie {
+                get {
+                    try {
+                        return ((int)(this[this.tablevw_ContestantDetailsAllScores.hula_kahiko_tieColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'hula_kahiko_tie\' in table \'vw_ContestantDetailsAllScores\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ContestantDetailsAllScores.hula_kahiko_tieColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int hula_kahiko_net {
+                get {
+                    try {
+                        return ((int)(this[this.tablevw_ContestantDetailsAllScores.hula_kahiko_netColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'hula_kahiko_net\' in table \'vw_ContestantDetailsAllScores\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ContestantDetailsAllScores.hula_kahiko_netColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int hula_palua_net {
+                get {
+                    try {
+                        return ((int)(this[this.tablevw_ContestantDetailsAllScores.hula_palua_netColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'hula_palua_net\' in table \'vw_ContestantDetailsAllScores\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ContestantDetailsAllScores.hula_palua_netColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int combined_hula_score {
+                get {
+                    try {
+                        return ((int)(this[this.tablevw_ContestantDetailsAllScores.combined_hula_scoreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'combined_hula_score\' in table \'vw_ContestantDetailsAllScore" +
+                                "s\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ContestantDetailsAllScores.combined_hula_scoreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal overall_score {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablevw_ContestantDetailsAllScores.overall_scoreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'overall_score\' in table \'vw_ContestantDetailsAllScores\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ContestantDetailsAllScores.overall_scoreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int combined_hula_break_score {
+                get {
+                    try {
+                        return ((int)(this[this.tablevw_ContestantDetailsAllScores.combined_hula_break_scoreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'combined_hula_break_score\' in table \'vw_ContestantDetailsAl" +
+                                "lScores\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ContestantDetailsAllScores.combined_hula_break_scoreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal overall_break_score {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablevw_ContestantDetailsAllScores.overall_break_scoreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'overall_break_score\' in table \'vw_ContestantDetailsAllScore" +
+                                "s\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ContestantDetailsAllScores.overall_break_scoreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Ismaster_score_idNull() {
                 return this.IsNull(this.tablevw_ContestantDetailsAllScores.master_score_idColumn);
             }
@@ -2577,164 +2408,101 @@ namespace HONK.Reports {
             public void Sethula_palua_tieNull() {
                 this[this.tablevw_ContestantDetailsAllScores.hula_palua_tieColumn] = global::System.Convert.DBNull;
             }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class vw_ContestantDetailsRow : global::System.Data.DataRow {
-            
-            private vw_ContestantDetailsDataTable tablevw_ContestantDetails;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal vw_ContestantDetailsRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tablevw_ContestantDetails = ((vw_ContestantDetailsDataTable)(this.Table));
+            public bool Ishula_auana_netNull() {
+                return this.IsNull(this.tablevw_ContestantDetailsAllScores.hula_auana_netColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int id {
-                get {
-                    return ((int)(this[this.tablevw_ContestantDetails.idColumn]));
-                }
-                set {
-                    this[this.tablevw_ContestantDetails.idColumn] = value;
-                }
+            public void Sethula_auana_netNull() {
+                this[this.tablevw_ContestantDetailsAllScores.hula_auana_netColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string full_name {
-                get {
-                    return ((string)(this[this.tablevw_ContestantDetails.full_nameColumn]));
-                }
-                set {
-                    this[this.tablevw_ContestantDetails.full_nameColumn] = value;
-                }
+            public bool Ishula_kahiko_tieNull() {
+                return this.IsNull(this.tablevw_ContestantDetailsAllScores.hula_kahiko_tieColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string age_name {
-                get {
-                    return ((string)(this[this.tablevw_ContestantDetails.age_nameColumn]));
-                }
-                set {
-                    this[this.tablevw_ContestantDetails.age_nameColumn] = value;
-                }
+            public void Sethula_kahiko_tieNull() {
+                this[this.tablevw_ContestantDetailsAllScores.hula_kahiko_tieColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string gender_name {
-                get {
-                    return ((string)(this[this.tablevw_ContestantDetails.gender_nameColumn]));
-                }
-                set {
-                    this[this.tablevw_ContestantDetails.gender_nameColumn] = value;
-                }
+            public bool Ishula_kahiko_netNull() {
+                return this.IsNull(this.tablevw_ContestantDetailsAllScores.hula_kahiko_netColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string division_name {
-                get {
-                    return ((string)(this[this.tablevw_ContestantDetails.division_nameColumn]));
-                }
-                set {
-                    this[this.tablevw_ContestantDetails.division_nameColumn] = value;
-                }
+            public void Sethula_kahiko_netNull() {
+                this[this.tablevw_ContestantDetailsAllScores.hula_kahiko_netColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string halau_name {
-                get {
-                    return ((string)(this[this.tablevw_ContestantDetails.halau_nameColumn]));
-                }
-                set {
-                    this[this.tablevw_ContestantDetails.halau_nameColumn] = value;
-                }
+            public bool Ishula_palua_netNull() {
+                return this.IsNull(this.tablevw_ContestantDetailsAllScores.hula_palua_netColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string kumu_name {
-                get {
-                    return ((string)(this[this.tablevw_ContestantDetails.kumu_nameColumn]));
-                }
-                set {
-                    this[this.tablevw_ContestantDetails.kumu_nameColumn] = value;
-                }
+            public void Sethula_palua_netNull() {
+                this[this.tablevw_ContestantDetailsAllScores.hula_palua_netColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime entry_date {
-                get {
-                    return ((global::System.DateTime)(this[this.tablevw_ContestantDetails.entry_dateColumn]));
-                }
-                set {
-                    this[this.tablevw_ContestantDetails.entry_dateColumn] = value;
-                }
+            public bool Iscombined_hula_scoreNull() {
+                return this.IsNull(this.tablevw_ContestantDetailsAllScores.combined_hula_scoreColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int entry_num_fri {
-                get {
-                    try {
-                        return ((int)(this[this.tablevw_ContestantDetails.entry_num_friColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'entry_num_fri\' in table \'vw_ContestantDetails\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablevw_ContestantDetails.entry_num_friColumn] = value;
-                }
+            public void Setcombined_hula_scoreNull() {
+                this[this.tablevw_ContestantDetailsAllScores.combined_hula_scoreColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int entry_num_sat {
-                get {
-                    try {
-                        return ((int)(this[this.tablevw_ContestantDetails.entry_num_satColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'entry_num_sat\' in table \'vw_ContestantDetails\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablevw_ContestantDetails.entry_num_satColumn] = value;
-                }
+            public bool Isoverall_scoreNull() {
+                return this.IsNull(this.tablevw_ContestantDetailsAllScores.overall_scoreColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isentry_num_friNull() {
-                return this.IsNull(this.tablevw_ContestantDetails.entry_num_friColumn);
+            public void Setoverall_scoreNull() {
+                this[this.tablevw_ContestantDetailsAllScores.overall_scoreColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setentry_num_friNull() {
-                this[this.tablevw_ContestantDetails.entry_num_friColumn] = global::System.Convert.DBNull;
+            public bool Iscombined_hula_break_scoreNull() {
+                return this.IsNull(this.tablevw_ContestantDetailsAllScores.combined_hula_break_scoreColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isentry_num_satNull() {
-                return this.IsNull(this.tablevw_ContestantDetails.entry_num_satColumn);
+            public void Setcombined_hula_break_scoreNull() {
+                this[this.tablevw_ContestantDetailsAllScores.combined_hula_break_scoreColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setentry_num_satNull() {
-                this[this.tablevw_ContestantDetails.entry_num_satColumn] = global::System.Convert.DBNull;
+            public bool Isoverall_break_scoreNull() {
+                return this.IsNull(this.tablevw_ContestantDetailsAllScores.overall_break_scoreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setoverall_break_scoreNull() {
+                this[this.tablevw_ContestantDetailsAllScores.overall_break_scoreColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2758,40 +2526,6 @@ namespace HONK.Reports {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public vw_ContestantDetailsAllScoresRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class vw_ContestantDetailsRowChangeEvent : global::System.EventArgs {
-            
-            private vw_ContestantDetailsRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public vw_ContestantDetailsRowChangeEvent(vw_ContestantDetailsRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public vw_ContestantDetailsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2972,6 +2706,14 @@ namespace HONK.Reports.ContestantReportDatasetTableAdapters {
             tableMapping.ColumnMappings.Add("costume_palua_tie", "costume_palua_tie");
             tableMapping.ColumnMappings.Add("hula_auana_tie", "hula_auana_tie");
             tableMapping.ColumnMappings.Add("hula_palua_tie", "hula_palua_tie");
+            tableMapping.ColumnMappings.Add("hula_auana_net", "hula_auana_net");
+            tableMapping.ColumnMappings.Add("hula_kahiko_tie", "hula_kahiko_tie");
+            tableMapping.ColumnMappings.Add("hula_kahiko_net", "hula_kahiko_net");
+            tableMapping.ColumnMappings.Add("hula_palua_net", "hula_palua_net");
+            tableMapping.ColumnMappings.Add("combined_hula_score", "combined_hula_score");
+            tableMapping.ColumnMappings.Add("overall_score", "overall_score");
+            tableMapping.ColumnMappings.Add("combined_hula_break_score", "combined_hula_break_score");
+            tableMapping.ColumnMappings.Add("overall_break_score", "overall_break_score");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -2991,7 +2733,8 @@ namespace HONK.Reports.ContestantReportDatasetTableAdapters {
             this._commandCollection[0].CommandText = @"SELECT        id, judge_id, judge_score_id, master_score_id, full_name, age_name, gender_name, division_name, halau_name, kumu_name, entry_date, entry_num_fri, entry_num_sat, judge_name, palapala, interview, oli, 
                          music, hula_auana, hula_auana_deduction, hula_kahiko, hula_kahiko_deduction, hula_palua, hula_palua_deduction, costume_auana, costume_kahiko, costume_palua, out_of_order_deduction, 
                          judge_score_interview, judge_score_costume_auana, judge_score_costume_kahiko, judge_score_costume_palua, judge_score_hula_auana, judge_score_hula_kahiko, judge_score_hula_palua, interview_tie, 
-                         costume_auana_tie, costume_kahiko_tie, costume_palua_tie, hula_auana_tie, hula_palua_tie
+                         costume_auana_tie, costume_kahiko_tie, costume_palua_tie, hula_auana_tie, hula_palua_tie, hula_auana_net, hula_kahiko_tie, hula_kahiko_net, hula_palua_net, combined_hula_score, overall_score, 
+                         combined_hula_break_score, overall_break_score
 FROM            vw_ContestantDetailsAllScores
 WHERE        (entry_date = @entry_date) AND (id = @id)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
@@ -3033,200 +2776,6 @@ WHERE        (entry_date = @entry_date) AND (id = @id)";
             }
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id));
             ContestantReportDataset.vw_ContestantDetailsAllScoresDataTable dataTable = new ContestantReportDataset.vw_ContestantDetailsAllScoresDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class vw_ContestantDetailsTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public vw_ContestantDetailsTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "vw_ContestantDetails";
-            tableMapping.ColumnMappings.Add("id", "id");
-            tableMapping.ColumnMappings.Add("full_name", "full_name");
-            tableMapping.ColumnMappings.Add("age_name", "age_name");
-            tableMapping.ColumnMappings.Add("gender_name", "gender_name");
-            tableMapping.ColumnMappings.Add("division_name", "division_name");
-            tableMapping.ColumnMappings.Add("halau_name", "halau_name");
-            tableMapping.ColumnMappings.Add("kumu_name", "kumu_name");
-            tableMapping.ColumnMappings.Add("entry_date", "entry_date");
-            tableMapping.ColumnMappings.Add("entry_num_fri", "entry_num_fri");
-            tableMapping.ColumnMappings.Add("entry_num_sat", "entry_num_sat");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::HONK.Properties.Settings.Default.HONKDBContext;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, full_name, age_name, gender_name, division_name, halau_name, kumu_name" +
-                ", entry_date, entry_num_fri, entry_num_sat FROM dbo.vw_ContestantDetails\r\nWHERE " +
-                "       (entry_date = @entry_date) AND (id = @id)";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@entry_date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "entry_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ContestantReportDataset.vw_ContestantDetailsDataTable dataTable, string entry_date, int id) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((entry_date == null)) {
-                throw new global::System.ArgumentNullException("entry_date");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(entry_date));
-            }
-            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id));
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ContestantReportDataset.vw_ContestantDetailsDataTable GetData(string entry_date, int id) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((entry_date == null)) {
-                throw new global::System.ArgumentNullException("entry_date");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(entry_date));
-            }
-            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id));
-            ContestantReportDataset.vw_ContestantDetailsDataTable dataTable = new ContestantReportDataset.vw_ContestantDetailsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
