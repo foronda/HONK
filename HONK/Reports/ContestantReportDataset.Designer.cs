@@ -384,6 +384,18 @@ namespace HONK.Reports {
             
             private global::System.Data.DataColumn columnjudge_score_hula_palua;
             
+            private global::System.Data.DataColumn columninterview_tie;
+            
+            private global::System.Data.DataColumn columncostume_auana_tie;
+            
+            private global::System.Data.DataColumn columncostume_kahiko_tie;
+            
+            private global::System.Data.DataColumn columncostume_palua_tie;
+            
+            private global::System.Data.DataColumn columnhula_auana_tie;
+            
+            private global::System.Data.DataColumn columnhula_palua_tie;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public vw_ContestantDetailsAllScoresDataTable() {
@@ -699,6 +711,54 @@ namespace HONK.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn interview_tieColumn {
+                get {
+                    return this.columninterview_tie;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn costume_auana_tieColumn {
+                get {
+                    return this.columncostume_auana_tie;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn costume_kahiko_tieColumn {
+                get {
+                    return this.columncostume_kahiko_tie;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn costume_palua_tieColumn {
+                get {
+                    return this.columncostume_palua_tie;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn hula_auana_tieColumn {
+                get {
+                    return this.columnhula_auana_tie;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn hula_palua_tieColumn {
+                get {
+                    return this.columnhula_palua_tie;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -769,7 +829,13 @@ namespace HONK.Reports {
                         int judge_score_costume_palua, 
                         int judge_score_hula_auana, 
                         int judge_score_hula_kahiko, 
-                        int judge_score_hula_palua) {
+                        int judge_score_hula_palua, 
+                        int interview_tie, 
+                        int costume_auana_tie, 
+                        int costume_kahiko_tie, 
+                        int costume_palua_tie, 
+                        int hula_auana_tie, 
+                        int hula_palua_tie) {
                 vw_ContestantDetailsAllScoresRow rowvw_ContestantDetailsAllScoresRow = ((vw_ContestantDetailsAllScoresRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -806,7 +872,13 @@ namespace HONK.Reports {
                         judge_score_costume_palua,
                         judge_score_hula_auana,
                         judge_score_hula_kahiko,
-                        judge_score_hula_palua};
+                        judge_score_hula_palua,
+                        interview_tie,
+                        costume_auana_tie,
+                        costume_kahiko_tie,
+                        costume_palua_tie,
+                        hula_auana_tie,
+                        hula_palua_tie};
                 rowvw_ContestantDetailsAllScoresRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvw_ContestantDetailsAllScoresRow);
                 return rowvw_ContestantDetailsAllScoresRow;
@@ -864,6 +936,12 @@ namespace HONK.Reports {
                 this.columnjudge_score_hula_auana = base.Columns["judge_score_hula_auana"];
                 this.columnjudge_score_hula_kahiko = base.Columns["judge_score_hula_kahiko"];
                 this.columnjudge_score_hula_palua = base.Columns["judge_score_hula_palua"];
+                this.columninterview_tie = base.Columns["interview_tie"];
+                this.columncostume_auana_tie = base.Columns["costume_auana_tie"];
+                this.columncostume_kahiko_tie = base.Columns["costume_kahiko_tie"];
+                this.columncostume_palua_tie = base.Columns["costume_palua_tie"];
+                this.columnhula_auana_tie = base.Columns["hula_auana_tie"];
+                this.columnhula_palua_tie = base.Columns["hula_palua_tie"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -939,6 +1017,18 @@ namespace HONK.Reports {
                 base.Columns.Add(this.columnjudge_score_hula_kahiko);
                 this.columnjudge_score_hula_palua = new global::System.Data.DataColumn("judge_score_hula_palua", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnjudge_score_hula_palua);
+                this.columninterview_tie = new global::System.Data.DataColumn("interview_tie", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columninterview_tie);
+                this.columncostume_auana_tie = new global::System.Data.DataColumn("costume_auana_tie", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncostume_auana_tie);
+                this.columncostume_kahiko_tie = new global::System.Data.DataColumn("costume_kahiko_tie", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncostume_kahiko_tie);
+                this.columncostume_palua_tie = new global::System.Data.DataColumn("costume_palua_tie", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncostume_palua_tie);
+                this.columnhula_auana_tie = new global::System.Data.DataColumn("hula_auana_tie", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhula_auana_tie);
+                this.columnhula_palua_tie = new global::System.Data.DataColumn("hula_palua_tie", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhula_palua_tie);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid,
                                 this.columnjudge_id,
@@ -2028,6 +2118,108 @@ namespace HONK.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int interview_tie {
+                get {
+                    try {
+                        return ((int)(this[this.tablevw_ContestantDetailsAllScores.interview_tieColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'interview_tie\' in table \'vw_ContestantDetailsAllScores\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ContestantDetailsAllScores.interview_tieColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int costume_auana_tie {
+                get {
+                    try {
+                        return ((int)(this[this.tablevw_ContestantDetailsAllScores.costume_auana_tieColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'costume_auana_tie\' in table \'vw_ContestantDetailsAllScores\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ContestantDetailsAllScores.costume_auana_tieColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int costume_kahiko_tie {
+                get {
+                    try {
+                        return ((int)(this[this.tablevw_ContestantDetailsAllScores.costume_kahiko_tieColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'costume_kahiko_tie\' in table \'vw_ContestantDetailsAllScores" +
+                                "\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ContestantDetailsAllScores.costume_kahiko_tieColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int costume_palua_tie {
+                get {
+                    try {
+                        return ((int)(this[this.tablevw_ContestantDetailsAllScores.costume_palua_tieColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'costume_palua_tie\' in table \'vw_ContestantDetailsAllScores\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ContestantDetailsAllScores.costume_palua_tieColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int hula_auana_tie {
+                get {
+                    try {
+                        return ((int)(this[this.tablevw_ContestantDetailsAllScores.hula_auana_tieColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'hula_auana_tie\' in table \'vw_ContestantDetailsAllScores\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ContestantDetailsAllScores.hula_auana_tieColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int hula_palua_tie {
+                get {
+                    try {
+                        return ((int)(this[this.tablevw_ContestantDetailsAllScores.hula_palua_tieColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'hula_palua_tie\' in table \'vw_ContestantDetailsAllScores\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ContestantDetailsAllScores.hula_palua_tieColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Ismaster_score_idNull() {
                 return this.IsNull(this.tablevw_ContestantDetailsAllScores.master_score_idColumn);
             }
@@ -2312,6 +2504,78 @@ namespace HONK.Reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setjudge_score_hula_paluaNull() {
                 this[this.tablevw_ContestantDetailsAllScores.judge_score_hula_paluaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isinterview_tieNull() {
+                return this.IsNull(this.tablevw_ContestantDetailsAllScores.interview_tieColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setinterview_tieNull() {
+                this[this.tablevw_ContestantDetailsAllScores.interview_tieColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscostume_auana_tieNull() {
+                return this.IsNull(this.tablevw_ContestantDetailsAllScores.costume_auana_tieColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcostume_auana_tieNull() {
+                this[this.tablevw_ContestantDetailsAllScores.costume_auana_tieColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscostume_kahiko_tieNull() {
+                return this.IsNull(this.tablevw_ContestantDetailsAllScores.costume_kahiko_tieColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcostume_kahiko_tieNull() {
+                this[this.tablevw_ContestantDetailsAllScores.costume_kahiko_tieColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscostume_palua_tieNull() {
+                return this.IsNull(this.tablevw_ContestantDetailsAllScores.costume_palua_tieColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcostume_palua_tieNull() {
+                this[this.tablevw_ContestantDetailsAllScores.costume_palua_tieColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ishula_auana_tieNull() {
+                return this.IsNull(this.tablevw_ContestantDetailsAllScores.hula_auana_tieColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Sethula_auana_tieNull() {
+                this[this.tablevw_ContestantDetailsAllScores.hula_auana_tieColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ishula_palua_tieNull() {
+                return this.IsNull(this.tablevw_ContestantDetailsAllScores.hula_palua_tieColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Sethula_palua_tieNull() {
+                this[this.tablevw_ContestantDetailsAllScores.hula_palua_tieColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2702,6 +2966,12 @@ namespace HONK.Reports.ContestantReportDatasetTableAdapters {
             tableMapping.ColumnMappings.Add("judge_score_hula_auana", "judge_score_hula_auana");
             tableMapping.ColumnMappings.Add("judge_score_hula_kahiko", "judge_score_hula_kahiko");
             tableMapping.ColumnMappings.Add("judge_score_hula_palua", "judge_score_hula_palua");
+            tableMapping.ColumnMappings.Add("interview_tie", "interview_tie");
+            tableMapping.ColumnMappings.Add("costume_auana_tie", "costume_auana_tie");
+            tableMapping.ColumnMappings.Add("costume_kahiko_tie", "costume_kahiko_tie");
+            tableMapping.ColumnMappings.Add("costume_palua_tie", "costume_palua_tie");
+            tableMapping.ColumnMappings.Add("hula_auana_tie", "hula_auana_tie");
+            tableMapping.ColumnMappings.Add("hula_palua_tie", "hula_palua_tie");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -2720,7 +2990,8 @@ namespace HONK.Reports.ContestantReportDatasetTableAdapters {
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        id, judge_id, judge_score_id, master_score_id, full_name, age_name, gender_name, division_name, halau_name, kumu_name, entry_date, entry_num_fri, entry_num_sat, judge_name, palapala, interview, oli, 
                          music, hula_auana, hula_auana_deduction, hula_kahiko, hula_kahiko_deduction, hula_palua, hula_palua_deduction, costume_auana, costume_kahiko, costume_palua, out_of_order_deduction, 
-                         judge_score_interview, judge_score_costume_auana, judge_score_costume_kahiko, judge_score_costume_palua, judge_score_hula_auana, judge_score_hula_kahiko, judge_score_hula_palua
+                         judge_score_interview, judge_score_costume_auana, judge_score_costume_kahiko, judge_score_costume_palua, judge_score_hula_auana, judge_score_hula_kahiko, judge_score_hula_palua, interview_tie, 
+                         costume_auana_tie, costume_kahiko_tie, costume_palua_tie, hula_auana_tie, hula_palua_tie
 FROM            vw_ContestantDetailsAllScores
 WHERE        (entry_date = @entry_date) AND (id = @id)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;

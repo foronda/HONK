@@ -26,7 +26,7 @@
     <%-- END PAGE HEADER SECTION--%>
 
     <%-- START CONTESTANT DROPDOWN  SECTION--%>
-    <div class="well well-sm">
+    <div class="well well-sm" style="padding-top: 20px;">
         <div class="row form-group">
             <label class="col-sm-2 control-label">Select Contestant: </label>
             <div class="col-sm-3">

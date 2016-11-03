@@ -15,7 +15,8 @@
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        id, judge_id, judge_score_id, master_score_id, full_name, age_name, gender_name, division_name, halau_name, kumu_name, entry_date, entry_num_fri, entry_num_sat, judge_name, palapala, interview, oli, 
                          music, hula_auana, hula_auana_deduction, hula_kahiko, hula_kahiko_deduction, hula_palua, hula_palua_deduction, costume_auana, costume_kahiko, costume_palua, out_of_order_deduction, 
-                         judge_score_interview, judge_score_costume_auana, judge_score_costume_kahiko, judge_score_costume_palua, judge_score_hula_auana, judge_score_hula_kahiko, judge_score_hula_palua
+                         judge_score_interview, judge_score_costume_auana, judge_score_costume_kahiko, judge_score_costume_palua, judge_score_hula_auana, judge_score_hula_kahiko, judge_score_hula_palua, interview_tie, 
+                         costume_auana_tie, costume_kahiko_tie, costume_palua_tie, hula_auana_tie, hula_palua_tie
 FROM            vw_ContestantDetailsAllScores
 WHERE        (entry_date = @entry_date) AND (id = @id)</CommandText>
                     <Parameters>
@@ -62,6 +63,12 @@ WHERE        (entry_date = @entry_date) AND (id = @id)</CommandText>
               <Mapping SourceColumn="judge_score_hula_auana" DataSetColumn="judge_score_hula_auana" />
               <Mapping SourceColumn="judge_score_hula_kahiko" DataSetColumn="judge_score_hula_kahiko" />
               <Mapping SourceColumn="judge_score_hula_palua" DataSetColumn="judge_score_hula_palua" />
+              <Mapping SourceColumn="interview_tie" DataSetColumn="interview_tie" />
+              <Mapping SourceColumn="costume_auana_tie" DataSetColumn="costume_auana_tie" />
+              <Mapping SourceColumn="costume_kahiko_tie" DataSetColumn="costume_kahiko_tie" />
+              <Mapping SourceColumn="costume_palua_tie" DataSetColumn="costume_palua_tie" />
+              <Mapping SourceColumn="hula_auana_tie" DataSetColumn="hula_auana_tie" />
+              <Mapping SourceColumn="hula_palua_tie" DataSetColumn="hula_palua_tie" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -102,7 +109,7 @@ WHERE        (entry_date = @entry_date) AND (id = @id)</CommandText>
   <xs:element name="ContestantReportDataset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ContestantReportDataset" msprop:Generator_UserDSName="ContestantReportDataset">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="vw_ContestantDetailsAllScores" msprop:Generator_TableClassName="vw_ContestantDetailsAllScoresDataTable" msprop:Generator_TableVarName="tablevw_ContestantDetailsAllScores" msprop:Generator_RowChangedName="vw_ContestantDetailsAllScoresRowChanged" msprop:Generator_TablePropName="vw_ContestantDetailsAllScores" msprop:Generator_RowDeletingName="vw_ContestantDetailsAllScoresRowDeleting" msprop:Generator_RowChangingName="vw_ContestantDetailsAllScoresRowChanging" msprop:Generator_RowEvHandlerName="vw_ContestantDetailsAllScoresRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_ContestantDetailsAllScoresRowDeleted" msprop:Generator_RowClassName="vw_ContestantDetailsAllScoresRow" msprop:Generator_UserTableName="vw_ContestantDetailsAllScores" msprop:Generator_RowEvArgName="vw_ContestantDetailsAllScoresRowChangeEvent">
+        <xs:element name="vw_ContestantDetailsAllScores" msprop:Generator_TableClassName="vw_ContestantDetailsAllScoresDataTable" msprop:Generator_TableVarName="tablevw_ContestantDetailsAllScores" msprop:Generator_TablePropName="vw_ContestantDetailsAllScores" msprop:Generator_RowDeletingName="vw_ContestantDetailsAllScoresRowDeleting" msprop:Generator_RowChangingName="vw_ContestantDetailsAllScoresRowChanging" msprop:Generator_RowEvHandlerName="vw_ContestantDetailsAllScoresRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_ContestantDetailsAllScoresRowDeleted" msprop:Generator_UserTableName="vw_ContestantDetailsAllScores" msprop:Generator_RowChangedName="vw_ContestantDetailsAllScoresRowChanged" msprop:Generator_RowEvArgName="vw_ContestantDetailsAllScoresRowChangeEvent" msprop:Generator_RowClassName="vw_ContestantDetailsAllScoresRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -182,10 +189,16 @@ WHERE        (entry_date = @entry_date) AND (id = @id)</CommandText>
               <xs:element name="judge_score_hula_auana" msprop:Generator_ColumnVarNameInTable="columnjudge_score_hula_auana" msprop:Generator_ColumnPropNameInRow="judge_score_hula_auana" msprop:Generator_ColumnPropNameInTable="judge_score_hula_auanaColumn" msprop:Generator_UserColumnName="judge_score_hula_auana" type="xs:int" minOccurs="0" />
               <xs:element name="judge_score_hula_kahiko" msprop:Generator_ColumnVarNameInTable="columnjudge_score_hula_kahiko" msprop:Generator_ColumnPropNameInRow="judge_score_hula_kahiko" msprop:Generator_ColumnPropNameInTable="judge_score_hula_kahikoColumn" msprop:Generator_UserColumnName="judge_score_hula_kahiko" type="xs:int" minOccurs="0" />
               <xs:element name="judge_score_hula_palua" msprop:Generator_ColumnVarNameInTable="columnjudge_score_hula_palua" msprop:Generator_ColumnPropNameInRow="judge_score_hula_palua" msprop:Generator_ColumnPropNameInTable="judge_score_hula_paluaColumn" msprop:Generator_UserColumnName="judge_score_hula_palua" type="xs:int" minOccurs="0" />
+              <xs:element name="interview_tie" msprop:Generator_ColumnVarNameInTable="columninterview_tie" msprop:Generator_ColumnPropNameInRow="interview_tie" msprop:Generator_ColumnPropNameInTable="interview_tieColumn" msprop:Generator_UserColumnName="interview_tie" type="xs:int" minOccurs="0" />
+              <xs:element name="costume_auana_tie" msprop:Generator_ColumnVarNameInTable="columncostume_auana_tie" msprop:Generator_ColumnPropNameInRow="costume_auana_tie" msprop:Generator_ColumnPropNameInTable="costume_auana_tieColumn" msprop:Generator_UserColumnName="costume_auana_tie" type="xs:int" minOccurs="0" />
+              <xs:element name="costume_kahiko_tie" msprop:Generator_ColumnVarNameInTable="columncostume_kahiko_tie" msprop:Generator_ColumnPropNameInRow="costume_kahiko_tie" msprop:Generator_ColumnPropNameInTable="costume_kahiko_tieColumn" msprop:Generator_UserColumnName="costume_kahiko_tie" type="xs:int" minOccurs="0" />
+              <xs:element name="costume_palua_tie" msprop:Generator_ColumnVarNameInTable="columncostume_palua_tie" msprop:Generator_ColumnPropNameInRow="costume_palua_tie" msprop:Generator_ColumnPropNameInTable="costume_palua_tieColumn" msprop:Generator_UserColumnName="costume_palua_tie" type="xs:int" minOccurs="0" />
+              <xs:element name="hula_auana_tie" msprop:Generator_ColumnVarNameInTable="columnhula_auana_tie" msprop:Generator_ColumnPropNameInRow="hula_auana_tie" msprop:Generator_ColumnPropNameInTable="hula_auana_tieColumn" msprop:Generator_UserColumnName="hula_auana_tie" type="xs:int" minOccurs="0" />
+              <xs:element name="hula_palua_tie" msprop:Generator_ColumnVarNameInTable="columnhula_palua_tie" msprop:Generator_ColumnPropNameInRow="hula_palua_tie" msprop:Generator_ColumnPropNameInTable="hula_palua_tieColumn" msprop:Generator_UserColumnName="hula_palua_tie" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vw_ContestantDetails" msprop:Generator_TableClassName="vw_ContestantDetailsDataTable" msprop:Generator_TableVarName="tablevw_ContestantDetails" msprop:Generator_TablePropName="vw_ContestantDetails" msprop:Generator_RowDeletingName="vw_ContestantDetailsRowDeleting" msprop:Generator_RowChangingName="vw_ContestantDetailsRowChanging" msprop:Generator_RowEvHandlerName="vw_ContestantDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_ContestantDetailsRowDeleted" msprop:Generator_UserTableName="vw_ContestantDetails" msprop:Generator_RowChangedName="vw_ContestantDetailsRowChanged" msprop:Generator_RowEvArgName="vw_ContestantDetailsRowChangeEvent" msprop:Generator_RowClassName="vw_ContestantDetailsRow">
+        <xs:element name="vw_ContestantDetails" msprop:Generator_TableClassName="vw_ContestantDetailsDataTable" msprop:Generator_TableVarName="tablevw_ContestantDetails" msprop:Generator_RowChangedName="vw_ContestantDetailsRowChanged" msprop:Generator_TablePropName="vw_ContestantDetails" msprop:Generator_RowDeletingName="vw_ContestantDetailsRowDeleting" msprop:Generator_RowChangingName="vw_ContestantDetailsRowChanging" msprop:Generator_RowEvHandlerName="vw_ContestantDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_ContestantDetailsRowDeleted" msprop:Generator_RowClassName="vw_ContestantDetailsRow" msprop:Generator_UserTableName="vw_ContestantDetails" msprop:Generator_RowEvArgName="vw_ContestantDetailsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />

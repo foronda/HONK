@@ -161,7 +161,7 @@ namespace HONK
         #region REPORTING METHOD(S)
                 protected void exportContestantTab_Click(object sender, EventArgs e)
         {
-            ConstestantTabulationScore.DownloadReport("01/01/2013", 24);
+            ConstestantTabulationScore.DownloadReport("01/01/2013", 21);
         }
 
         #endregion
