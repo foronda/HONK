@@ -1,5 +1,4 @@
 ﻿<%@ Page Title="Event Results" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EventResults.aspx.cs" Inherits="HONK.EventResults" %>
-
 <%@ Register Src="~/Reports/ContestantTabulationScore.ascx" TagName="ConstestantTabulationScore" TagPrefix="uc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
@@ -12,7 +11,7 @@
             <h3 id="H1">Master Tabulation Score Report</h3>
         </div>
         <div class="modal-body">
-            <uc1:ConstestantTabulationScore ID="ConstestantTabulationScore" runat="server"></uc1:ConstestantTabulationScore>
+            <uc1:constestanttabulationscore id="ConstestantTabulationScore" runat="server"></uc1:constestanttabulationscore>
         </div>
     </div>
 
@@ -22,7 +21,7 @@
         </li>
     </ul>
 
-    <%-- LINQ DATA SOURCES --%>
+    <%-- START PAGE HEADERS --%>
     <div class="page-header">
         <div class="row">
             <div class="col-lg-12">
