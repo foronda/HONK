@@ -872,14 +872,16 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>480</Value>
                               <Style>
                                 <FontFamily>Open Sans Light</FontFamily>
                                 <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox128</rd:DefaultName>
@@ -1003,7 +1005,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox153">
+                    <Textbox Name="Textbox20">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -1017,10 +1019,12 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox153</rd:DefaultName>
+                      <rd:DefaultName>Textbox20</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -1143,7 +1147,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox158">
+                    <Textbox Name="Textbox1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -1157,10 +1161,12 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox158</rd:DefaultName>
+                      <rd:DefaultName>Textbox1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -1287,14 +1293,16 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>480</Value>
                               <Style>
                                 <FontFamily>Open Sans Light</FontFamily>
                                 <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox163</rd:DefaultName>
@@ -1312,14 +1320,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox164">
+                    <Textbox Name="hula_kahiko">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!hula_kahiko.Value</Value>
                               <Style>
                                 <FontFamily>Open Sans Light</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -1331,7 +1339,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox164</rd:DefaultName>
+                      <rd:DefaultName>hula_kahiko</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -1346,7 +1354,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox165">
+                    <Textbox Name="hula_kahiko_deduction">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -1365,7 +1373,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox165</rd:DefaultName>
+                      <rd:DefaultName>hula_kahiko_deduction</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -2070,7 +2078,7 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value />
+                                <Value>32</Value>
                                 <Style>
                                   <FontFamily>Open Sans Light</FontFamily>
                                   <FontSize>9pt</FontSize>
@@ -2078,7 +2086,7 @@
                               </TextRun>
                             </TextRuns>
                             <Style>
-                              <TextAlign>Left</TextAlign>
+                              <TextAlign>Center</TextAlign>
                             </Style>
                           </Paragraph>
                         </Paragraphs>
@@ -2107,7 +2115,7 @@
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value />
+                                    <Value>130</Value>
                                     <Style>
                                       <FontFamily>Open Sans Light</FontFamily>
                                       <FontSize>9pt</FontSize>
@@ -2115,7 +2123,7 @@
                                   </TextRun>
                                 </TextRuns>
                                 <Style>
-                                  <TextAlign>Left</TextAlign>
+                                  <TextAlign>Center</TextAlign>
                                 </Style>
                               </Paragraph>
                             </Paragraphs>
@@ -2144,7 +2152,7 @@
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value />
+                                        <Value>65</Value>
                                         <Style>
                                           <FontFamily>Open Sans Light</FontFamily>
                                           <FontSize>9pt</FontSize>
@@ -2152,7 +2160,7 @@
                                       </TextRun>
                                     </TextRuns>
                                     <Style>
-                                      <TextAlign>Left</TextAlign>
+                                      <TextAlign>Center</TextAlign>
                                     </Style>
                                   </Paragraph>
                                 </Paragraphs>
@@ -2181,7 +2189,7 @@
                                       <Paragraph>
                                         <TextRuns>
                                           <TextRun>
-                                            <Value />
+                                            <Value>=(Count(Fields!judge_id.Value, "ContestantReportDataset_Tabulation")-2)*70</Value>
                                             <Style>
                                               <FontFamily>Open Sans Light</FontFamily>
                                               <FontSize>9pt</FontSize>
@@ -2258,7 +2266,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value />
+                                                    <Value>=4*12</Value>
                                                     <Style>
                                                       <FontFamily>Open Sans Light</FontFamily>
                                                       <FontSize>9pt</FontSize>
@@ -2296,7 +2304,7 @@
                                                   <Paragraph>
                                                     <TextRuns>
                                                       <TextRun>
-                                                        <Value />
+                                                        <Value>=4*12</Value>
                                                         <Style>
                                                           <FontFamily>Open Sans Light</FontFamily>
                                                           <FontSize>9pt</FontSize>
@@ -3268,15 +3276,16 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox12</rd:DefaultName>
-          <Top>0.2in</Top>
+          <Top>0.08303in</Top>
           <Left>2.4in</Left>
-          <Height>0.5in</Height>
+          <Height>0.76295in</Height>
           <Width>6.28188in</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
+            <VerticalAlign>Middle</VerticalAlign>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
