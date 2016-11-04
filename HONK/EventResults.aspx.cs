@@ -172,14 +172,30 @@ namespace HONK
 
         protected void MasterGV_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            /*
             //check if e.Row is a DataRow; if so grab the Datakey for the row
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
+
+                vw_MasterScoreDetail con = (vw_MasterScoreDetail)e.Row.DataItem;      //grab the GridViewRowEventArg and cast to row's type vw_MasterScoreDetail
+                int conId = Convert.ToInt32(con.id);              //grab the contestant id for the particular row
+
+                HONKDBDataContext db = new HONKDBDataContext();
+
+                var contestant = (from c in db.Contestants
+                                where c.id == conId
+                                select c).FirstOrDefault();   //returns the contestant record
+                
+                // Hides export button if gender is Palua. Will need a different report.
+                if(contestant.Gender.name == "Palua")
+                {
+                    LinkButton downloadLB = (LinkButton)e.Row.FindControl("DownloadLB");
+                    downloadLB.Visible = false;
+                }
+
                 // Script Manager needed to asyncronously handle report viewer export
-                ScriptManager scriptManager = ScriptManager.GetCurrent(this.Page);
-                scriptManager.RegisterPostBackControl((LinkButton)e.Row.FindControl("DownloadLB"));
-            }*/
+                //ScriptManager scriptManager = ScriptManager.GetCurrent(this.Page);
+                //scriptManager.RegisterPostBackControl((LinkButton)e.Row.FindControl("DownloadLB"));
+            }
         }
 
         protected void Export_Click(object sender, EventArgs e)
