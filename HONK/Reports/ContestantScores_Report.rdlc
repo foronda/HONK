@@ -2052,7 +2052,7 @@
                                             </Group>
                                             <SortExpressions>
                                               <SortExpression>
-                                                <Value>=Fields!judge_score_interview.Value</Value>
+                                                <Value>=Fields!judge_score_id.Value</Value>
                                               </SortExpression>
                                             </SortExpressions>
                                             <TablixHeader>
@@ -2089,6 +2089,7 @@
                                                     <PaddingBottom>2pt</PaddingBottom>
                                                   </Style>
                                                 </Textbox>
+                                                <rd:Selected>true</rd:Selected>
                                               </CellContents>
                                             </TablixHeader>
                                             <TablixMembers>

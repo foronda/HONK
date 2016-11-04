@@ -59,7 +59,7 @@
             <asp:LinkButton ID="exportMasterTab" runat="server" OnClick="exportMasterTab_Click" Text="MASTER TABULATION REPORT" />
         </li>
     </ul>
-    <%-- END REPOT EXPORT BREADCRUMB --%>
+    <%-- END REPORT EXPORT BREADCRUMB --%>
 
     <%-- JUDGES SCORES SECTION --%>
     <div runat="server" id="divJudgeScores" class="panel panel-primary" visible="false">

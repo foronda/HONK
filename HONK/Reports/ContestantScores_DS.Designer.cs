@@ -2736,7 +2736,7 @@ namespace HONK.Reports.ContestantReportDatasetTableAdapters {
                          costume_auana_tie, costume_kahiko_tie, costume_palua_tie, hula_auana_tie, hula_palua_tie, hula_auana_net, hula_kahiko_tie, hula_kahiko_net, hula_palua_net, combined_hula_score, overall_score, 
                          combined_hula_break_score, overall_break_score
 FROM            vw_ContestantDetailsAllScores
-WHERE (entry_date = @entry_date) AND (id = @id)";
+WHERE        (entry_date = @entry_date) AND (id = @id)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@entry_date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "entry_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
