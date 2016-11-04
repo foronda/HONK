@@ -148,6 +148,7 @@
       <LastGenOutput>HONKDB.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Reports\ContestantScoresPalua_WUC.ascx" />
     <Content Include="Reports\ContestantScores_WUC.ascx" />
     <Content Include="Reports\MasterTabulationScore.ascx" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -318,6 +319,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Reports\ContestantScoresPalua_WUC.ascx.cs">
+      <DependentUpon>ContestantScoresPalua_WUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ContestantScoresPalua_WUC.ascx.designer.cs">
+      <DependentUpon>ContestantScoresPalua_WUC.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Reports\ContestantScores_DS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -370,6 +378,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reports\ContestantScoresPalua_Report.rdlc" />
     <EmbeddedResource Include="Reports\ContestantScores_Report.rdlc" />
     <EmbeddedResource Include="Reports\MasterTabulationScore.rdlc" />
   </ItemGroup>

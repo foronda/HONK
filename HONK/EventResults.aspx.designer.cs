@@ -13,13 +13,22 @@ namespace HONK {
     public partial class EventResults {
         
         /// <summary>
-        /// ConstestantTabulationScore control.
+        /// ConstestantScoresReport control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HONK.Reports.ContestantTabulationScore ConstestantTabulationScore;
+        protected global::HONK.Reports.ContestantTabulationScore ConstestantScoresReport;
+        
+        /// <summary>
+        /// ConstestantScoresPaluaReport control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::HONK.Reports.ContestantScoresPalua_WUC ConstestantScoresPaluaReport;
         
         /// <summary>
         /// EntryYearTb control.

@@ -33,7 +33,7 @@
                             <TextRun>
                               <Value>Haumana:</Value>
                               <Style>
-                                <FontFamily>Open Sans Light</FontFamily>
+                                <FontFamily>Century GOthic</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -47,6 +47,7 @@
                           <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -66,7 +67,7 @@
                             <TextRun>
                               <Value>=Fields!full_name.Value</Value>
                               <Style>
-                                <FontFamily>Open Sans Light</FontFamily>
+                                <FontFamily>Century GOthic</FontFamily>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -78,6 +79,7 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -97,7 +99,7 @@
                             <TextRun>
                               <Value>Entry No. Friday</Value>
                               <Style>
-                                <FontFamily>Open Sans Light</FontFamily>
+                                <FontFamily>Century GOthic</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -111,6 +113,7 @@
                           <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -130,7 +133,7 @@
                             <TextRun>
                               <Value>=Fields!entry_num_fri.Value</Value>
                               <Style>
-                                <FontFamily>Open Sans Light</FontFamily>
+                                <FontFamily>Century GOthic</FontFamily>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -144,6 +147,7 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -168,7 +172,7 @@
                             <TextRun>
                               <Value>Halau:</Value>
                               <Style>
-                                <FontFamily>Open Sans Light</FontFamily>
+                                <FontFamily>Century GOthic</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -182,6 +186,7 @@
                           <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -201,7 +206,7 @@
                             <TextRun>
                               <Value>=Fields!halau_name.Value</Value>
                               <Style>
-                                <FontFamily>Open Sans Light</FontFamily>
+                                <FontFamily>Century GOthic</FontFamily>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -213,6 +218,7 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -232,7 +238,7 @@
                             <TextRun>
                               <Value>Entry No. Saturday</Value>
                               <Style>
-                                <FontFamily>Open Sans Light</FontFamily>
+                                <FontFamily>Century GOthic</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -246,6 +252,7 @@
                           <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -265,7 +272,7 @@
                             <TextRun>
                               <Value>=Fields!entry_num_sat.Value</Value>
                               <Style>
-                                <FontFamily>Open Sans Light</FontFamily>
+                                <FontFamily>Century GOthic</FontFamily>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -279,6 +286,7 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -295,7 +303,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox23">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -303,7 +310,7 @@
                             <TextRun>
                               <Value>Kumu:</Value>
                               <Style>
-                                <FontFamily>Open Sans Light</FontFamily>
+                                <FontFamily>Century GOthic</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -317,6 +324,7 @@
                           <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -328,7 +336,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="kumu_name">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -336,7 +343,7 @@
                             <TextRun>
                               <Value>=Fields!kumu_name.Value</Value>
                               <Style>
-                                <FontFamily>Open Sans Light</FontFamily>
+                                <FontFamily>Century GOthic</FontFamily>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -348,6 +355,7 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -359,7 +367,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox43">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -367,7 +374,7 @@
                             <TextRun>
                               <Value>Category:</Value>
                               <Style>
-                                <FontFamily>Open Sans Light</FontFamily>
+                                <FontFamily>Century GOthic</FontFamily>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -381,6 +388,7 @@
                           <Style>Solid</Style>
                         </Border>
                         <BackgroundColor>LightGrey</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -392,7 +400,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="division_name1">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -400,7 +407,7 @@
                             <TextRun>
                               <Value>=Fields!division_name.Value</Value>
                               <Style>
-                                <FontFamily>Open Sans Light</FontFamily>
+                                <FontFamily>Century GOthic</FontFamily>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -412,6 +419,7 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -423,7 +431,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.07708in</Height>
+              <Height>0.1in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -464,7 +472,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>4.49375in</Height>
+              <Height>4.39738in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -483,7 +491,7 @@
                                         <TextRun>
                                           <Value />
                                           <Style>
-                                            <FontFamily>Open Sans Light</FontFamily>
+                                            <FontFamily>Century GOthic</FontFamily>
                                             <FontWeight>Bold</FontWeight>
                                           </Style>
                                         </TextRun>
@@ -517,7 +525,7 @@
                                         <TextRun>
                                           <Value>Palapala</Value>
                                           <Style>
-                                            <FontFamily>Open Sans Light</FontFamily>
+                                            <FontFamily>Century GOthic</FontFamily>
                                             <FontWeight>Bold</FontWeight>
                                           </Style>
                                         </TextRun>
@@ -530,6 +538,7 @@
                                     <Border>
                                       <Style>Solid</Style>
                                     </Border>
+                                    <VerticalAlign>Middle</VerticalAlign>
                                     <PaddingLeft>2pt</PaddingLeft>
                                     <PaddingRight>2pt</PaddingRight>
                                     <PaddingTop>2pt</PaddingTop>
@@ -551,7 +560,7 @@
                                         <TextRun>
                                           <Value>Oli</Value>
                                           <Style>
-                                            <FontFamily>Open Sans Light</FontFamily>
+                                            <FontFamily>Century GOthic</FontFamily>
                                             <FontWeight>Bold</FontWeight>
                                           </Style>
                                         </TextRun>
@@ -564,6 +573,7 @@
                                     <Border>
                                       <Style>Solid</Style>
                                     </Border>
+                                    <VerticalAlign>Middle</VerticalAlign>
                                     <PaddingLeft>2pt</PaddingLeft>
                                     <PaddingRight>2pt</PaddingRight>
                                     <PaddingTop>2pt</PaddingTop>
@@ -585,7 +595,7 @@
                                         <TextRun>
                                           <Value>Music</Value>
                                           <Style>
-                                            <FontFamily>Open Sans Light</FontFamily>
+                                            <FontFamily>Century GOthic</FontFamily>
                                             <FontWeight>Bold</FontWeight>
                                           </Style>
                                         </TextRun>
@@ -598,6 +608,7 @@
                                     <Border>
                                       <Style>Solid</Style>
                                     </Border>
+                                    <VerticalAlign>Middle</VerticalAlign>
                                     <PaddingLeft>2pt</PaddingLeft>
                                     <PaddingRight>2pt</PaddingRight>
                                     <PaddingTop>2pt</PaddingTop>
@@ -619,7 +630,7 @@
                                         <TextRun>
                                           <Value>Interview</Value>
                                           <Style>
-                                            <FontFamily>Open Sans Light</FontFamily>
+                                            <FontFamily>Century GOthic</FontFamily>
                                             <FontWeight>Bold</FontWeight>
                                           </Style>
                                         </TextRun>
@@ -632,6 +643,7 @@
                                     <Border>
                                       <Style>Solid</Style>
                                     </Border>
+                                    <VerticalAlign>Middle</VerticalAlign>
                                     <PaddingLeft>2pt</PaddingLeft>
                                     <PaddingRight>2pt</PaddingRight>
                                     <PaddingTop>2pt</PaddingTop>
@@ -653,7 +665,7 @@
                                         <TextRun>
                                           <Value>Costume</Value>
                                           <Style>
-                                            <FontFamily>Open Sans Light</FontFamily>
+                                            <FontFamily>Century GOthic</FontFamily>
                                             <FontWeight>Bold</FontWeight>
                                           </Style>
                                         </TextRun>
@@ -666,6 +678,7 @@
                                     <Border>
                                       <Style>Solid</Style>
                                     </Border>
+                                    <VerticalAlign>Middle</VerticalAlign>
                                     <PaddingLeft>2pt</PaddingLeft>
                                     <PaddingRight>2pt</PaddingRight>
                                     <PaddingTop>2pt</PaddingTop>
@@ -687,7 +700,7 @@
                                         <TextRun>
                                           <Value>'Aunana</Value>
                                           <Style>
-                                            <FontFamily>Open Sans Light</FontFamily>
+                                            <FontFamily>Century GOthic</FontFamily>
                                             <FontWeight>Bold</FontWeight>
                                           </Style>
                                         </TextRun>
@@ -702,6 +715,7 @@
                                     <Border>
                                       <Style>Solid</Style>
                                     </Border>
+                                    <VerticalAlign>Middle</VerticalAlign>
                                     <PaddingLeft>2pt</PaddingLeft>
                                     <PaddingRight>2pt</PaddingRight>
                                     <PaddingTop>2pt</PaddingTop>
@@ -723,7 +737,7 @@
                                         <TextRun>
                                           <Value>Kahiko</Value>
                                           <Style>
-                                            <FontFamily>Open Sans Light</FontFamily>
+                                            <FontFamily>Century GOthic</FontFamily>
                                             <FontWeight>Bold</FontWeight>
                                           </Style>
                                         </TextRun>
@@ -738,6 +752,7 @@
                                     <Border>
                                       <Style>Solid</Style>
                                     </Border>
+                                    <VerticalAlign>Middle</VerticalAlign>
                                     <PaddingLeft>2pt</PaddingLeft>
                                     <PaddingRight>2pt</PaddingRight>
                                     <PaddingTop>2pt</PaddingTop>
@@ -759,7 +774,7 @@
                                         <TextRun>
                                           <Value>Hula 'Auana Gross</Value>
                                           <Style>
-                                            <FontFamily>Open Sans Light</FontFamily>
+                                            <FontFamily>Century GOthic</FontFamily>
                                             <FontWeight>Bold</FontWeight>
                                           </Style>
                                         </TextRun>
@@ -774,6 +789,7 @@
                                     <Border>
                                       <Style>Solid</Style>
                                     </Border>
+                                    <VerticalAlign>Middle</VerticalAlign>
                                     <PaddingLeft>2pt</PaddingLeft>
                                     <PaddingRight>2pt</PaddingRight>
                                     <PaddingTop>2pt</PaddingTop>
@@ -796,9 +812,10 @@
                                           <Value>Deduction for Overtime</Value>
                                           <Style>
                                             <FontStyle>Italic</FontStyle>
-                                            <FontFamily>Open Sans Light</FontFamily>
+                                            <FontFamily>Century GOthic</FontFamily>
                                             <FontSize>6pt</FontSize>
                                             <FontWeight>Normal</FontWeight>
+                                            <Color>Red</Color>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -812,6 +829,7 @@
                                     <Border>
                                       <Style>Solid</Style>
                                     </Border>
+                                    <VerticalAlign>Middle</VerticalAlign>
                                     <PaddingLeft>2pt</PaddingLeft>
                                     <PaddingRight>2pt</PaddingRight>
                                     <PaddingTop>2pt</PaddingTop>
@@ -833,7 +851,7 @@
                                         <TextRun>
                                           <Value>Hula 'Auana Net</Value>
                                           <Style>
-                                            <FontFamily>Open Sans Light</FontFamily>
+                                            <FontFamily>Century GOthic</FontFamily>
                                             <FontWeight>Bold</FontWeight>
                                           </Style>
                                         </TextRun>
@@ -846,6 +864,7 @@
                                     <Border>
                                       <Style>Solid</Style>
                                     </Border>
+                                    <VerticalAlign>Middle</VerticalAlign>
                                     <PaddingLeft>2pt</PaddingLeft>
                                     <PaddingRight>2pt</PaddingRight>
                                     <PaddingTop>2pt</PaddingTop>
@@ -868,7 +887,7 @@
                                           <Value>Hula Kahiko Gross</Value>
                                           <Style>
                                             <FontStyle>Normal</FontStyle>
-                                            <FontFamily>Open Sans Light</FontFamily>
+                                            <FontFamily>Century GOthic</FontFamily>
                                             <FontWeight>Bold</FontWeight>
                                           </Style>
                                         </TextRun>
@@ -883,6 +902,7 @@
                                     <Border>
                                       <Style>Solid</Style>
                                     </Border>
+                                    <VerticalAlign>Middle</VerticalAlign>
                                     <PaddingLeft>2pt</PaddingLeft>
                                     <PaddingRight>2pt</PaddingRight>
                                     <PaddingTop>2pt</PaddingTop>
@@ -905,9 +925,10 @@
                                           <Value>Deduction for Overtime</Value>
                                           <Style>
                                             <FontStyle>Italic</FontStyle>
-                                            <FontFamily>Open Sans Light</FontFamily>
+                                            <FontFamily>Century GOthic</FontFamily>
                                             <FontSize>6pt</FontSize>
                                             <FontWeight>Normal</FontWeight>
+                                            <Color>Red</Color>
                                           </Style>
                                         </TextRun>
                                       </TextRuns>
@@ -921,6 +942,7 @@
                                     <Border>
                                       <Style>Solid</Style>
                                     </Border>
+                                    <VerticalAlign>Middle</VerticalAlign>
                                     <PaddingLeft>2pt</PaddingLeft>
                                     <PaddingRight>2pt</PaddingRight>
                                     <PaddingTop>2pt</PaddingTop>
@@ -949,7 +971,7 @@
                         </TablixColumns>
                         <TablixRows>
                           <TablixRow>
-                            <Height>0.24965in</Height>
+                            <Height>0.23651in</Height>
                             <TablixCells>
                               <TablixCell>
                                 <CellContents>
@@ -962,7 +984,7 @@
                                           <TextRun>
                                             <Value />
                                             <Style>
-                                              <FontFamily>Open Sans Light</FontFamily>
+                                              <FontFamily>Century GOthic</FontFamily>
                                               <FontSize>9pt</FontSize>
                                             </Style>
                                           </TextRun>
@@ -976,6 +998,7 @@
                                         <Style>None</Style>
                                       </Border>
                                       <BackgroundColor>LightGrey</BackgroundColor>
+                                      <VerticalAlign>Middle</VerticalAlign>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -995,7 +1018,7 @@
                                           <TextRun>
                                             <Value />
                                             <Style>
-                                              <FontFamily>Open Sans Light</FontFamily>
+                                              <FontFamily>Century GOthic</FontFamily>
                                               <FontSize>9pt</FontSize>
                                             </Style>
                                           </TextRun>
@@ -1011,6 +1034,7 @@
                                       <LeftBorder>
                                         <Style>Solid</Style>
                                       </LeftBorder>
+                                      <VerticalAlign>Middle</VerticalAlign>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -1030,7 +1054,7 @@
                                           <TextRun>
                                             <Value>=Fields!hula_kahiko.Value - Fields!hula_kahiko_deduction.Value</Value>
                                             <Style>
-                                              <FontFamily>Open Sans Light</FontFamily>
+                                              <FontFamily>Century GOthic</FontFamily>
                                               <FontSize>9pt</FontSize>
                                             </Style>
                                           </TextRun>
@@ -1045,6 +1069,7 @@
                                       <Border>
                                         <Style>Solid</Style>
                                       </Border>
+                                      <VerticalAlign>Middle</VerticalAlign>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -1064,7 +1089,7 @@
                                           <TextRun>
                                             <Value>=Fields!hula_kahiko_tie.Value</Value>
                                             <Style>
-                                              <FontFamily>Open Sans Light</FontFamily>
+                                              <FontFamily>Century GOthic</FontFamily>
                                               <FontSize>9pt</FontSize>
                                             </Style>
                                           </TextRun>
@@ -1079,6 +1104,7 @@
                                       <Border>
                                         <Style>Solid</Style>
                                       </Border>
+                                      <VerticalAlign>Middle</VerticalAlign>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -1090,7 +1116,7 @@
                             </TablixCells>
                           </TablixRow>
                           <TablixRow>
-                            <Height>0.10382in</Height>
+                            <Height>0.08686in</Height>
                             <TablixCells>
                               <TablixCell>
                                 <CellContents>
@@ -1103,7 +1129,7 @@
                                           <TextRun>
                                             <Value />
                                             <Style>
-                                              <FontFamily>Open Sans Light</FontFamily>
+                                              <FontFamily>Century GOthic</FontFamily>
                                               <FontSize>9pt</FontSize>
                                               <FontWeight>Bold</FontWeight>
                                             </Style>
@@ -1123,6 +1149,7 @@
                                         <Style>Solid</Style>
                                       </TopBorder>
                                       <BackgroundColor>LightGrey</BackgroundColor>
+                                      <VerticalAlign>Middle</VerticalAlign>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -1142,7 +1169,7 @@
                                           <TextRun>
                                             <Value />
                                             <Style>
-                                              <FontFamily>Open Sans Light</FontFamily>
+                                              <FontFamily>Century GOthic</FontFamily>
                                               <FontSize>9pt</FontSize>
                                               <FontWeight>Bold</FontWeight>
                                             </Style>
@@ -1159,6 +1186,7 @@
                                         <Style>Solid</Style>
                                       </Border>
                                       <BackgroundColor>LightGrey</BackgroundColor>
+                                      <VerticalAlign>Middle</VerticalAlign>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -1178,7 +1206,7 @@
                                           <TextRun>
                                             <Value />
                                             <Style>
-                                              <FontFamily>Open Sans Light</FontFamily>
+                                              <FontFamily>Century GOthic</FontFamily>
                                               <FontSize>9pt</FontSize>
                                               <FontWeight>Bold</FontWeight>
                                             </Style>
@@ -1195,6 +1223,7 @@
                                         <Style>Solid</Style>
                                       </Border>
                                       <BackgroundColor>LightGrey</BackgroundColor>
+                                      <VerticalAlign>Middle</VerticalAlign>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -1214,7 +1243,7 @@
                                           <TextRun>
                                             <Value />
                                             <Style>
-                                              <FontFamily>Open Sans Light</FontFamily>
+                                              <FontFamily>Century GOthic</FontFamily>
                                               <FontSize>9pt</FontSize>
                                               <FontWeight>Bold</FontWeight>
                                             </Style>
@@ -1231,6 +1260,7 @@
                                         <Style>Solid</Style>
                                       </Border>
                                       <BackgroundColor>LightGrey</BackgroundColor>
+                                      <VerticalAlign>Middle</VerticalAlign>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -1242,7 +1272,160 @@
                             </TablixCells>
                           </TablixRow>
                           <TablixRow>
-                            <Height>0.39549in</Height>
+                            <Height>0.2in</Height>
+                            <TablixCells>
+                              <TablixCell>
+                                <CellContents>
+                                  <Textbox Name="Textbox3">
+                                    <CanGrow>true</CanGrow>
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value />
+                                            <Style>
+                                              <FontFamily>Century GOthic</FontFamily>
+                                              <FontSize>9pt</FontSize>
+                                              <FontWeight>Bold</FontWeight>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style>
+                                          <TextAlign>Center</TextAlign>
+                                        </Style>
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <rd:DefaultName>Textbox3</rd:DefaultName>
+                                    <Style>
+                                      <Border>
+                                        <Style>None</Style>
+                                      </Border>
+                                      <TopBorder>
+                                        <Style>Solid</Style>
+                                      </TopBorder>
+                                      <VerticalAlign>Middle</VerticalAlign>
+                                      <PaddingLeft>2pt</PaddingLeft>
+                                      <PaddingRight>2pt</PaddingRight>
+                                      <PaddingTop>2pt</PaddingTop>
+                                      <PaddingBottom>2pt</PaddingBottom>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixCell>
+                              <TablixCell>
+                                <CellContents>
+                                  <Textbox Name="Textbox4">
+                                    <CanGrow>true</CanGrow>
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value />
+                                            <Style>
+                                              <FontFamily>Century GOthic</FontFamily>
+                                              <FontSize>9pt</FontSize>
+                                              <FontWeight>Bold</FontWeight>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style>
+                                          <TextAlign>Center</TextAlign>
+                                        </Style>
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <rd:DefaultName>Textbox4</rd:DefaultName>
+                                    <Style>
+                                      <Border>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <VerticalAlign>Middle</VerticalAlign>
+                                      <PaddingLeft>2pt</PaddingLeft>
+                                      <PaddingRight>2pt</PaddingRight>
+                                      <PaddingTop>2pt</PaddingTop>
+                                      <PaddingBottom>2pt</PaddingBottom>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixCell>
+                              <TablixCell>
+                                <CellContents>
+                                  <Textbox Name="Textbox5">
+                                    <CanGrow>true</CanGrow>
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value>=Fields!out_of_order_deduction.Value</Value>
+                                            <Style>
+                                              <FontFamily>Century GOthic</FontFamily>
+                                              <FontSize>9pt</FontSize>
+                                              <FontWeight>Bold</FontWeight>
+                                              <Color>Red</Color>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style>
+                                          <TextAlign>Center</TextAlign>
+                                        </Style>
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <rd:DefaultName>Textbox5</rd:DefaultName>
+                                    <Style>
+                                      <Border>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <VerticalAlign>Middle</VerticalAlign>
+                                      <PaddingLeft>2pt</PaddingLeft>
+                                      <PaddingRight>2pt</PaddingRight>
+                                      <PaddingTop>2pt</PaddingTop>
+                                      <PaddingBottom>2pt</PaddingBottom>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixCell>
+                              <TablixCell>
+                                <CellContents>
+                                  <Textbox Name="Textbox6">
+                                    <CanGrow>true</CanGrow>
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value />
+                                            <Style>
+                                              <FontFamily>Century GOthic</FontFamily>
+                                              <FontSize>9pt</FontSize>
+                                              <FontWeight>Bold</FontWeight>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style>
+                                          <TextAlign>Center</TextAlign>
+                                        </Style>
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <rd:DefaultName>Textbox6</rd:DefaultName>
+                                    <Style>
+                                      <Border>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <VerticalAlign>Middle</VerticalAlign>
+                                      <PaddingLeft>2pt</PaddingLeft>
+                                      <PaddingRight>2pt</PaddingRight>
+                                      <PaddingTop>2pt</PaddingTop>
+                                      <PaddingBottom>2pt</PaddingBottom>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixCell>
+                            </TablixCells>
+                          </TablixRow>
+                          <TablixRow>
+                            <Height>0.38235in</Height>
                             <TablixCells>
                               <TablixCell>
                                 <CellContents>
@@ -1255,7 +1438,7 @@
                                           <TextRun>
                                             <Value />
                                             <Style>
-                                              <FontFamily>Open Sans Light</FontFamily>
+                                              <FontFamily>Century GOthic</FontFamily>
                                               <FontSize>9pt</FontSize>
                                               <FontWeight>Bold</FontWeight>
                                             </Style>
@@ -1274,6 +1457,7 @@
                                       <TopBorder>
                                         <Style>Solid</Style>
                                       </TopBorder>
+                                      <VerticalAlign>Middle</VerticalAlign>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -1293,7 +1477,7 @@
                                           <TextRun>
                                             <Value>960</Value>
                                             <Style>
-                                              <FontFamily>Open Sans Light</FontFamily>
+                                              <FontFamily>Century GOthic</FontFamily>
                                               <FontSize>9pt</FontSize>
                                               <FontWeight>Bold</FontWeight>
                                             </Style>
@@ -1309,6 +1493,7 @@
                                       <Border>
                                         <Style>Solid</Style>
                                       </Border>
+                                      <VerticalAlign>Middle</VerticalAlign>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -1328,7 +1513,7 @@
                                           <TextRun>
                                             <Value>=Fields!combined_hula_score.Value</Value>
                                             <Style>
-                                              <FontFamily>Open Sans Light</FontFamily>
+                                              <FontFamily>Century GOthic</FontFamily>
                                               <FontSize>9pt</FontSize>
                                               <FontWeight>Bold</FontWeight>
                                             </Style>
@@ -1344,6 +1529,7 @@
                                       <Border>
                                         <Style>Solid</Style>
                                       </Border>
+                                      <VerticalAlign>Middle</VerticalAlign>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -1363,7 +1549,7 @@
                                           <TextRun>
                                             <Value>=Fields!combined_hula_break_score.Value</Value>
                                             <Style>
-                                              <FontFamily>Open Sans Light</FontFamily>
+                                              <FontFamily>Century GOthic</FontFamily>
                                               <FontSize>9pt</FontSize>
                                               <FontWeight>Bold</FontWeight>
                                             </Style>
@@ -1379,6 +1565,7 @@
                                       <Border>
                                         <Style>Solid</Style>
                                       </Border>
+                                      <VerticalAlign>Middle</VerticalAlign>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -1390,7 +1577,7 @@
                             </TablixCells>
                           </TablixRow>
                           <TablixRow>
-                            <Height>0.08299in</Height>
+                            <Height>0.08686in</Height>
                             <TablixCells>
                               <TablixCell>
                                 <CellContents>
@@ -1403,7 +1590,7 @@
                                           <TextRun>
                                             <Value />
                                             <Style>
-                                              <FontFamily>Open Sans Light</FontFamily>
+                                              <FontFamily>Century GOthic</FontFamily>
                                               <FontSize>9pt</FontSize>
                                               <FontWeight>Bold</FontWeight>
                                             </Style>
@@ -1423,6 +1610,7 @@
                                         <Style>Solid</Style>
                                       </TopBorder>
                                       <BackgroundColor>LightGrey</BackgroundColor>
+                                      <VerticalAlign>Middle</VerticalAlign>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -1442,7 +1630,7 @@
                                           <TextRun>
                                             <Value />
                                             <Style>
-                                              <FontFamily>Open Sans Light</FontFamily>
+                                              <FontFamily>Century GOthic</FontFamily>
                                               <FontSize>9pt</FontSize>
                                               <FontWeight>Bold</FontWeight>
                                             </Style>
@@ -1459,6 +1647,7 @@
                                         <Style>Solid</Style>
                                       </Border>
                                       <BackgroundColor>LightGrey</BackgroundColor>
+                                      <VerticalAlign>Middle</VerticalAlign>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -1478,7 +1667,7 @@
                                           <TextRun>
                                             <Value />
                                             <Style>
-                                              <FontFamily>Open Sans Light</FontFamily>
+                                              <FontFamily>Century GOthic</FontFamily>
                                               <FontSize>9pt</FontSize>
                                               <FontWeight>Bold</FontWeight>
                                             </Style>
@@ -1495,6 +1684,7 @@
                                         <Style>Solid</Style>
                                       </Border>
                                       <BackgroundColor>LightGrey</BackgroundColor>
+                                      <VerticalAlign>Middle</VerticalAlign>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -1514,7 +1704,7 @@
                                           <TextRun>
                                             <Value />
                                             <Style>
-                                              <FontFamily>Open Sans Light</FontFamily>
+                                              <FontFamily>Century GOthic</FontFamily>
                                               <FontSize>9pt</FontSize>
                                               <FontWeight>Bold</FontWeight>
                                             </Style>
@@ -1531,6 +1721,7 @@
                                         <Style>Solid</Style>
                                       </Border>
                                       <BackgroundColor>LightGrey</BackgroundColor>
+                                      <VerticalAlign>Middle</VerticalAlign>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -1542,7 +1733,7 @@
                             </TablixCells>
                           </TablixRow>
                           <TablixRow>
-                            <Height>0.41632in</Height>
+                            <Height>0.40318in</Height>
                             <TablixCells>
                               <TablixCell>
                                 <CellContents>
@@ -1555,7 +1746,7 @@
                                           <TextRun>
                                             <Value />
                                             <Style>
-                                              <FontFamily>Open Sans Light</FontFamily>
+                                              <FontFamily>Century GOthic</FontFamily>
                                               <FontSize>9pt</FontSize>
                                               <FontWeight>Bold</FontWeight>
                                             </Style>
@@ -1574,6 +1765,7 @@
                                       <TopBorder>
                                         <Style>Solid</Style>
                                       </TopBorder>
+                                      <VerticalAlign>Middle</VerticalAlign>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -1593,7 +1785,7 @@
                                           <TextRun>
                                             <Value>1407</Value>
                                             <Style>
-                                              <FontFamily>Open Sans Light</FontFamily>
+                                              <FontFamily>Century GOthic</FontFamily>
                                               <FontSize>9pt</FontSize>
                                               <FontWeight>Bold</FontWeight>
                                             </Style>
@@ -1609,6 +1801,7 @@
                                       <Border>
                                         <Style>Solid</Style>
                                       </Border>
+                                      <VerticalAlign>Middle</VerticalAlign>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -1628,7 +1821,7 @@
                                           <TextRun>
                                             <Value>=Fields!overall_score.Value</Value>
                                             <Style>
-                                              <FontFamily>Open Sans Light</FontFamily>
+                                              <FontFamily>Century GOthic</FontFamily>
                                               <FontSize>9pt</FontSize>
                                               <FontWeight>Bold</FontWeight>
                                               <Format>0.0;(0.0)</Format>
@@ -1645,6 +1838,7 @@
                                       <Border>
                                         <Style>Solid</Style>
                                       </Border>
+                                      <VerticalAlign>Middle</VerticalAlign>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -1664,7 +1858,7 @@
                                           <TextRun>
                                             <Value>=Fields!overall_break_score.Value</Value>
                                             <Style>
-                                              <FontFamily>Open Sans Light</FontFamily>
+                                              <FontFamily>Century GOthic</FontFamily>
                                               <FontSize>9pt</FontSize>
                                               <FontWeight>Bold</FontWeight>
                                               <Format>0.0;(0.0)</Format>
@@ -1681,6 +1875,7 @@
                                       <Border>
                                         <Style>Solid</Style>
                                       </Border>
+                                      <VerticalAlign>Middle</VerticalAlign>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -1697,7 +1892,7 @@
                         <TablixMembers>
                           <TablixMember>
                             <TablixHeader>
-                              <Size>0.24965in</Size>
+                              <Size>0.23651in</Size>
                               <CellContents>
                                 <Textbox Name="Textbox33">
                                   <CanGrow>true</CanGrow>
@@ -1708,7 +1903,7 @@
                                         <TextRun>
                                           <Value>Score(s)</Value>
                                           <Style>
-                                            <FontFamily>Open Sans Light</FontFamily>
+                                            <FontFamily>Century GOthic</FontFamily>
                                             <FontWeight>Bold</FontWeight>
                                           </Style>
                                         </TextRun>
@@ -1734,7 +1929,7 @@
                             <TablixMembers>
                               <TablixMember>
                                 <TablixHeader>
-                                  <Size>0.24965in</Size>
+                                  <Size>0.23651in</Size>
                                   <CellContents>
                                     <Textbox Name="palapala1">
                                       <CanGrow>true</CanGrow>
@@ -1745,7 +1940,7 @@
                                             <TextRun>
                                               <Value>=Fields!palapala.Value</Value>
                                               <Style>
-                                                <FontFamily>Open Sans Light</FontFamily>
+                                                <FontFamily>Century GOthic</FontFamily>
                                                 <FontSize>9pt</FontSize>
                                                 <Format>0.0;(0.0)</Format>
                                               </Style>
@@ -1761,6 +1956,7 @@
                                         <Border>
                                           <Style>Solid</Style>
                                         </Border>
+                                        <VerticalAlign>Middle</VerticalAlign>
                                         <PaddingLeft>2pt</PaddingLeft>
                                         <PaddingRight>2pt</PaddingRight>
                                         <PaddingTop>2pt</PaddingTop>
@@ -1772,7 +1968,7 @@
                                 <TablixMembers>
                                   <TablixMember>
                                     <TablixHeader>
-                                      <Size>0.24965in</Size>
+                                      <Size>0.23651in</Size>
                                       <CellContents>
                                         <Textbox Name="Textbox142">
                                           <CanGrow>true</CanGrow>
@@ -1783,7 +1979,7 @@
                                                 <TextRun>
                                                   <Value>=Fields!oli.Value</Value>
                                                   <Style>
-                                                    <FontFamily>Open Sans Light</FontFamily>
+                                                    <FontFamily>Century GOthic</FontFamily>
                                                     <FontSize>9pt</FontSize>
                                                     <Format>0.0;(0.0)</Format>
                                                   </Style>
@@ -1799,6 +1995,7 @@
                                             <Border>
                                               <Style>Solid</Style>
                                             </Border>
+                                            <VerticalAlign>Middle</VerticalAlign>
                                             <PaddingLeft>2pt</PaddingLeft>
                                             <PaddingRight>2pt</PaddingRight>
                                             <PaddingTop>2pt</PaddingTop>
@@ -1810,7 +2007,7 @@
                                     <TablixMembers>
                                       <TablixMember>
                                         <TablixHeader>
-                                          <Size>0.24965in</Size>
+                                          <Size>0.23651in</Size>
                                           <CellContents>
                                             <Textbox Name="Textbox147">
                                               <CanGrow>true</CanGrow>
@@ -1821,7 +2018,7 @@
                                                     <TextRun>
                                                       <Value>=Fields!music.Value</Value>
                                                       <Style>
-                                                        <FontFamily>Open Sans Light</FontFamily>
+                                                        <FontFamily>Century GOthic</FontFamily>
                                                         <FontSize>9pt</FontSize>
                                                         <Format>0.0;(0.0)</Format>
                                                       </Style>
@@ -1837,6 +2034,7 @@
                                                 <Border>
                                                   <Style>Solid</Style>
                                                 </Border>
+                                                <VerticalAlign>Middle</VerticalAlign>
                                                 <PaddingLeft>2pt</PaddingLeft>
                                                 <PaddingRight>2pt</PaddingRight>
                                                 <PaddingTop>2pt</PaddingTop>
@@ -1858,7 +2056,7 @@
                                               </SortExpression>
                                             </SortExpressions>
                                             <TablixHeader>
-                                              <Size>0.24965in</Size>
+                                              <Size>0.23651in</Size>
                                               <CellContents>
                                                 <Textbox Name="judge_score_interview">
                                                   <CanGrow>true</CanGrow>
@@ -1869,7 +2067,7 @@
                                                         <TextRun>
                                                           <Value>=Fields!judge_score_interview.Value</Value>
                                                           <Style>
-                                                            <FontFamily>Open Sans LIght</FontFamily>
+                                                            <FontFamily>Century GOthic</FontFamily>
                                                             <FontSize>9pt</FontSize>
                                                           </Style>
                                                         </TextRun>
@@ -1884,6 +2082,7 @@
                                                     <Border>
                                                       <Style>Solid</Style>
                                                     </Border>
+                                                    <VerticalAlign>Middle</VerticalAlign>
                                                     <PaddingLeft>2pt</PaddingLeft>
                                                     <PaddingRight>2pt</PaddingRight>
                                                     <PaddingTop>2pt</PaddingTop>
@@ -1895,7 +2094,7 @@
                                             <TablixMembers>
                                               <TablixMember>
                                                 <TablixHeader>
-                                                  <Size>0.24965in</Size>
+                                                  <Size>0.23651in</Size>
                                                   <CellContents>
                                                     <Textbox Name="Textbox70">
                                                       <CanGrow>true</CanGrow>
@@ -1906,7 +2105,7 @@
                                                             <TextRun>
                                                               <Value />
                                                               <Style>
-                                                                <FontFamily>Open Sans Light</FontFamily>
+                                                                <FontFamily>Century GOthic</FontFamily>
                                                                 <FontSize>9pt</FontSize>
                                                               </Style>
                                                             </TextRun>
@@ -1934,7 +2133,7 @@
                                                 <TablixMembers>
                                                   <TablixMember>
                                                     <TablixHeader>
-                                                      <Size>0.24965in</Size>
+                                                      <Size>0.23651in</Size>
                                                       <CellContents>
                                                         <Textbox Name="Textbox101">
                                                           <CanGrow>true</CanGrow>
@@ -1945,7 +2144,7 @@
                                                                 <TextRun>
                                                                   <Value>=Fields!judge_score_costume_auana.Value</Value>
                                                                   <Style>
-                                                                    <FontFamily>Open Sans Light</FontFamily>
+                                                                    <FontFamily>Century GOthic</FontFamily>
                                                                     <FontSize>9pt</FontSize>
                                                                   </Style>
                                                                 </TextRun>
@@ -1960,6 +2159,7 @@
                                                             <Border>
                                                               <Style>Solid</Style>
                                                             </Border>
+                                                            <VerticalAlign>Middle</VerticalAlign>
                                                             <PaddingLeft>2pt</PaddingLeft>
                                                             <PaddingRight>2pt</PaddingRight>
                                                             <PaddingTop>2pt</PaddingTop>
@@ -1971,7 +2171,7 @@
                                                     <TablixMembers>
                                                       <TablixMember>
                                                         <TablixHeader>
-                                                          <Size>0.24965in</Size>
+                                                          <Size>0.23651in</Size>
                                                           <CellContents>
                                                             <Textbox Name="judge_score_costume_kahiko">
                                                               <CanGrow>true</CanGrow>
@@ -1982,7 +2182,7 @@
                                                                     <TextRun>
                                                                       <Value>=Sum(Fields!judge_score_costume_kahiko.Value)</Value>
                                                                       <Style>
-                                                                        <FontFamily>Open Sans Light</FontFamily>
+                                                                        <FontFamily>Century GOthic</FontFamily>
                                                                         <FontSize>9pt</FontSize>
                                                                       </Style>
                                                                     </TextRun>
@@ -2009,7 +2209,7 @@
                                                         <TablixMembers>
                                                           <TablixMember>
                                                             <TablixHeader>
-                                                              <Size>0.24965in</Size>
+                                                              <Size>0.23651in</Size>
                                                               <CellContents>
                                                                 <Textbox Name="judge_score_hula_auana">
                                                                   <CanGrow>true</CanGrow>
@@ -2020,7 +2220,7 @@
                                                                         <TextRun>
                                                                           <Value>=Fields!judge_score_hula_auana.Value</Value>
                                                                           <Style>
-                                                                            <FontFamily>Open Sans Light</FontFamily>
+                                                                            <FontFamily>Century GOthic</FontFamily>
                                                                             <FontSize>9pt</FontSize>
                                                                           </Style>
                                                                         </TextRun>
@@ -2035,6 +2235,7 @@
                                                                     <Border>
                                                                       <Style>Solid</Style>
                                                                     </Border>
+                                                                    <VerticalAlign>Middle</VerticalAlign>
                                                                     <PaddingLeft>2pt</PaddingLeft>
                                                                     <PaddingRight>2pt</PaddingRight>
                                                                     <PaddingTop>2pt</PaddingTop>
@@ -2046,7 +2247,7 @@
                                                             <TablixMembers>
                                                               <TablixMember>
                                                                 <TablixHeader>
-                                                                  <Size>0.24965in</Size>
+                                                                  <Size>0.2in</Size>
                                                                   <CellContents>
                                                                     <Textbox Name="Textbox162">
                                                                       <CanGrow>true</CanGrow>
@@ -2057,7 +2258,7 @@
                                                                             <TextRun>
                                                                               <Value />
                                                                               <Style>
-                                                                                <FontFamily>Open Sans Light</FontFamily>
+                                                                                <FontFamily>Century GOthic</FontFamily>
                                                                                 <FontSize>9pt</FontSize>
                                                                               </Style>
                                                                             </TextRun>
@@ -2071,6 +2272,7 @@
                                                                           <Style>None</Style>
                                                                         </Border>
                                                                         <BackgroundColor>LightGrey</BackgroundColor>
+                                                                        <VerticalAlign>Middle</VerticalAlign>
                                                                         <PaddingLeft>2pt</PaddingLeft>
                                                                         <PaddingRight>2pt</PaddingRight>
                                                                         <PaddingTop>2pt</PaddingTop>
@@ -2082,7 +2284,7 @@
                                                                 <TablixMembers>
                                                                   <TablixMember>
                                                                     <TablixHeader>
-                                                                      <Size>0.24965in</Size>
+                                                                      <Size>0.23651in</Size>
                                                                       <CellContents>
                                                                         <Textbox Name="Textbox165">
                                                                           <CanGrow>true</CanGrow>
@@ -2093,7 +2295,7 @@
                                                                                 <TextRun>
                                                                                   <Value />
                                                                                   <Style>
-                                                                                    <FontFamily>Open Sans Light</FontFamily>
+                                                                                    <FontFamily>Century GOthic</FontFamily>
                                                                                     <FontSize>9pt</FontSize>
                                                                                   </Style>
                                                                                 </TextRun>
@@ -2107,6 +2309,7 @@
                                                                               <Style>None</Style>
                                                                             </Border>
                                                                             <BackgroundColor>LightGrey</BackgroundColor>
+                                                                            <VerticalAlign>Middle</VerticalAlign>
                                                                             <PaddingLeft>2pt</PaddingLeft>
                                                                             <PaddingRight>2pt</PaddingRight>
                                                                             <PaddingTop>2pt</PaddingTop>
@@ -2118,7 +2321,7 @@
                                                                     <TablixMembers>
                                                                       <TablixMember>
                                                                         <TablixHeader>
-                                                                          <Size>0.24965in</Size>
+                                                                          <Size>0.23651in</Size>
                                                                           <CellContents>
                                                                             <Textbox Name="judge_score_hula_kahiko">
                                                                               <CanGrow>true</CanGrow>
@@ -2129,7 +2332,7 @@
                                                                                     <TextRun>
                                                                                       <Value>=Fields!judge_score_hula_kahiko.Value</Value>
                                                                                       <Style>
-                                                                                        <FontFamily>Open Sans Light</FontFamily>
+                                                                                        <FontFamily>Century GOthic</FontFamily>
                                                                                         <FontSize>9pt</FontSize>
                                                                                       </Style>
                                                                                     </TextRun>
@@ -2144,6 +2347,7 @@
                                                                                 <Border>
                                                                                   <Style>Solid</Style>
                                                                                 </Border>
+                                                                                <VerticalAlign>Middle</VerticalAlign>
                                                                                 <PaddingLeft>2pt</PaddingLeft>
                                                                                 <PaddingRight>2pt</PaddingRight>
                                                                                 <PaddingTop>2pt</PaddingTop>
@@ -2155,7 +2359,7 @@
                                                                         <TablixMembers>
                                                                           <TablixMember>
                                                                             <TablixHeader>
-                                                                              <Size>0.24965in</Size>
+                                                                              <Size>0.2in</Size>
                                                                               <CellContents>
                                                                                 <Textbox Name="Textbox170">
                                                                                   <CanGrow>true</CanGrow>
@@ -2166,7 +2370,7 @@
                                                                                         <TextRun>
                                                                                           <Value />
                                                                                           <Style>
-                                                                                            <FontFamily>Open Sans Light</FontFamily>
+                                                                                            <FontFamily>Century GOthic</FontFamily>
                                                                                             <FontSize>9pt</FontSize>
                                                                                           </Style>
                                                                                         </TextRun>
@@ -2180,6 +2384,7 @@
                                                                                       <Style>None</Style>
                                                                                     </Border>
                                                                                     <BackgroundColor>LightGrey</BackgroundColor>
+                                                                                    <VerticalAlign>Middle</VerticalAlign>
                                                                                     <PaddingLeft>2pt</PaddingLeft>
                                                                                     <PaddingRight>2pt</PaddingRight>
                                                                                     <PaddingTop>2pt</PaddingTop>
@@ -2218,7 +2423,7 @@
                           </TablixMember>
                           <TablixMember>
                             <TablixHeader>
-                              <Size>0.24965in</Size>
+                              <Size>0.23651in</Size>
                               <CellContents>
                                 <Textbox Name="Textbox40">
                                   <CanGrow>true</CanGrow>
@@ -2229,7 +2434,7 @@
                                         <TextRun>
                                           <Value>Total Possible Score</Value>
                                           <Style>
-                                            <FontFamily>Open Sans Light</FontFamily>
+                                            <FontFamily>Century GOthic</FontFamily>
                                             <FontWeight>Bold</FontWeight>
                                           </Style>
                                         </TextRun>
@@ -2255,7 +2460,7 @@
                             <TablixMembers>
                               <TablixMember>
                                 <TablixHeader>
-                                  <Size>0.24965in</Size>
+                                  <Size>0.23651in</Size>
                                   <CellContents>
                                     <Textbox Name="Textbox41">
                                       <CanGrow>true</CanGrow>
@@ -2266,7 +2471,7 @@
                                             <TextRun>
                                               <Value>65</Value>
                                               <Style>
-                                                <FontFamily>Open Sans Light</FontFamily>
+                                                <FontFamily>Century GOthic</FontFamily>
                                                 <FontSize>9pt</FontSize>
                                               </Style>
                                             </TextRun>
@@ -2281,6 +2486,7 @@
                                         <Border>
                                           <Style>Solid</Style>
                                         </Border>
+                                        <VerticalAlign>Middle</VerticalAlign>
                                         <PaddingLeft>2pt</PaddingLeft>
                                         <PaddingRight>2pt</PaddingRight>
                                         <PaddingTop>2pt</PaddingTop>
@@ -2292,7 +2498,7 @@
                                 <TablixMembers>
                                   <TablixMember>
                                     <TablixHeader>
-                                      <Size>0.24965in</Size>
+                                      <Size>0.23651in</Size>
                                       <CellContents>
                                         <Textbox Name="Textbox143">
                                           <CanGrow>true</CanGrow>
@@ -2303,7 +2509,7 @@
                                                 <TextRun>
                                                   <Value>32</Value>
                                                   <Style>
-                                                    <FontFamily>Open Sans Light</FontFamily>
+                                                    <FontFamily>Century GOthic</FontFamily>
                                                     <FontSize>9pt</FontSize>
                                                   </Style>
                                                 </TextRun>
@@ -2318,6 +2524,7 @@
                                             <Border>
                                               <Style>Solid</Style>
                                             </Border>
+                                            <VerticalAlign>Middle</VerticalAlign>
                                             <PaddingLeft>2pt</PaddingLeft>
                                             <PaddingRight>2pt</PaddingRight>
                                             <PaddingTop>2pt</PaddingTop>
@@ -2329,7 +2536,7 @@
                                     <TablixMembers>
                                       <TablixMember>
                                         <TablixHeader>
-                                          <Size>0.24965in</Size>
+                                          <Size>0.23651in</Size>
                                           <CellContents>
                                             <Textbox Name="Textbox149">
                                               <CanGrow>true</CanGrow>
@@ -2340,7 +2547,7 @@
                                                     <TextRun>
                                                       <Value>130</Value>
                                                       <Style>
-                                                        <FontFamily>Open Sans Light</FontFamily>
+                                                        <FontFamily>Century GOthic</FontFamily>
                                                         <FontSize>9pt</FontSize>
                                                       </Style>
                                                     </TextRun>
@@ -2355,6 +2562,7 @@
                                                 <Border>
                                                   <Style>Solid</Style>
                                                 </Border>
+                                                <VerticalAlign>Middle</VerticalAlign>
                                                 <PaddingLeft>2pt</PaddingLeft>
                                                 <PaddingRight>2pt</PaddingRight>
                                                 <PaddingTop>2pt</PaddingTop>
@@ -2366,7 +2574,7 @@
                                         <TablixMembers>
                                           <TablixMember>
                                             <TablixHeader>
-                                              <Size>0.24965in</Size>
+                                              <Size>0.23651in</Size>
                                               <CellContents>
                                                 <Textbox Name="Textbox48">
                                                   <CanGrow>true</CanGrow>
@@ -2377,7 +2585,7 @@
                                                         <TextRun>
                                                           <Value>350</Value>
                                                           <Style>
-                                                            <FontFamily>Open Sans Light</FontFamily>
+                                                            <FontFamily>Century GOthic</FontFamily>
                                                             <FontSize>9pt</FontSize>
                                                           </Style>
                                                         </TextRun>
@@ -2404,7 +2612,7 @@
                                             <TablixMembers>
                                               <TablixMember>
                                                 <TablixHeader>
-                                                  <Size>0.24965in</Size>
+                                                  <Size>0.23651in</Size>
                                                   <CellContents>
                                                     <Textbox Name="Textbox92">
                                                       <CanGrow>true</CanGrow>
@@ -2415,7 +2623,7 @@
                                                             <TextRun>
                                                               <Value />
                                                               <Style>
-                                                                <FontFamily>Open Sans Light</FontFamily>
+                                                                <FontFamily>Century GOthic</FontFamily>
                                                                 <FontSize>9pt</FontSize>
                                                               </Style>
                                                             </TextRun>
@@ -2443,7 +2651,7 @@
                                                 <TablixMembers>
                                                   <TablixMember>
                                                     <TablixHeader>
-                                                      <Size>0.24965in</Size>
+                                                      <Size>0.23651in</Size>
                                                       <CellContents>
                                                         <Textbox Name="Textbox93">
                                                           <CanGrow>true</CanGrow>
@@ -2454,7 +2662,7 @@
                                                                 <TextRun>
                                                                   <Value>=4*12</Value>
                                                                   <Style>
-                                                                    <FontFamily>Open Sans Light</FontFamily>
+                                                                    <FontFamily>Century GOthic</FontFamily>
                                                                     <FontSize>9pt</FontSize>
                                                                   </Style>
                                                                 </TextRun>
@@ -2481,7 +2689,7 @@
                                                     <TablixMembers>
                                                       <TablixMember>
                                                         <TablixHeader>
-                                                          <Size>0.24965in</Size>
+                                                          <Size>0.23651in</Size>
                                                           <CellContents>
                                                             <Textbox Name="Textbox94">
                                                               <CanGrow>true</CanGrow>
@@ -2492,7 +2700,7 @@
                                                                     <TextRun>
                                                                       <Value>=4*12</Value>
                                                                       <Style>
-                                                                        <FontFamily>Open Sans Light</FontFamily>
+                                                                        <FontFamily>Century GOthic</FontFamily>
                                                                         <FontSize>9pt</FontSize>
                                                                       </Style>
                                                                     </TextRun>
@@ -2519,7 +2727,7 @@
                                                         <TablixMembers>
                                                           <TablixMember>
                                                             <TablixHeader>
-                                                              <Size>0.24965in</Size>
+                                                              <Size>0.23651in</Size>
                                                               <CellContents>
                                                                 <Textbox Name="Textbox128">
                                                                   <CanGrow>true</CanGrow>
@@ -2530,7 +2738,7 @@
                                                                         <TextRun>
                                                                           <Value>480</Value>
                                                                           <Style>
-                                                                            <FontFamily>Open Sans Light</FontFamily>
+                                                                            <FontFamily>Century GOthic</FontFamily>
                                                                             <FontSize>9pt</FontSize>
                                                                           </Style>
                                                                         </TextRun>
@@ -2548,6 +2756,7 @@
                                                                     <TopBorder>
                                                                       <Style>Solid</Style>
                                                                     </TopBorder>
+                                                                    <VerticalAlign>Middle</VerticalAlign>
                                                                     <PaddingLeft>2pt</PaddingLeft>
                                                                     <PaddingRight>2pt</PaddingRight>
                                                                     <PaddingTop>2pt</PaddingTop>
@@ -2559,7 +2768,7 @@
                                                             <TablixMembers>
                                                               <TablixMember>
                                                                 <TablixHeader>
-                                                                  <Size>0.24965in</Size>
+                                                                  <Size>0.2in</Size>
                                                                   <CellContents>
                                                                     <Textbox Name="Textbox20">
                                                                       <CanGrow>true</CanGrow>
@@ -2570,7 +2779,7 @@
                                                                             <TextRun>
                                                                               <Value />
                                                                               <Style>
-                                                                                <FontFamily>Open Sans Light</FontFamily>
+                                                                                <FontFamily>Century GOthic</FontFamily>
                                                                                 <FontSize>9pt</FontSize>
                                                                               </Style>
                                                                             </TextRun>
@@ -2588,6 +2797,7 @@
                                                                         <LeftBorder>
                                                                           <Style>Solid</Style>
                                                                         </LeftBorder>
+                                                                        <VerticalAlign>Middle</VerticalAlign>
                                                                         <PaddingLeft>2pt</PaddingLeft>
                                                                         <PaddingRight>2pt</PaddingRight>
                                                                         <PaddingTop>2pt</PaddingTop>
@@ -2599,7 +2809,7 @@
                                                                 <TablixMembers>
                                                                   <TablixMember>
                                                                     <TablixHeader>
-                                                                      <Size>0.24965in</Size>
+                                                                      <Size>0.23651in</Size>
                                                                       <CellContents>
                                                                         <Textbox Name="Textbox1">
                                                                           <CanGrow>true</CanGrow>
@@ -2610,7 +2820,7 @@
                                                                                 <TextRun>
                                                                                   <Value />
                                                                                   <Style>
-                                                                                    <FontFamily>Open Sans Light</FontFamily>
+                                                                                    <FontFamily>Century GOthic</FontFamily>
                                                                                     <FontSize>9pt</FontSize>
                                                                                   </Style>
                                                                                 </TextRun>
@@ -2628,6 +2838,7 @@
                                                                             <LeftBorder>
                                                                               <Style>Solid</Style>
                                                                             </LeftBorder>
+                                                                            <VerticalAlign>Middle</VerticalAlign>
                                                                             <PaddingLeft>2pt</PaddingLeft>
                                                                             <PaddingRight>2pt</PaddingRight>
                                                                             <PaddingTop>2pt</PaddingTop>
@@ -2639,7 +2850,7 @@
                                                                     <TablixMembers>
                                                                       <TablixMember>
                                                                         <TablixHeader>
-                                                                          <Size>0.24965in</Size>
+                                                                          <Size>0.23651in</Size>
                                                                           <CellContents>
                                                                             <Textbox Name="Textbox169">
                                                                               <CanGrow>true</CanGrow>
@@ -2650,7 +2861,7 @@
                                                                                     <TextRun>
                                                                                       <Value>480</Value>
                                                                                       <Style>
-                                                                                        <FontFamily>Open Sans Light</FontFamily>
+                                                                                        <FontFamily>Century GOthic</FontFamily>
                                                                                         <FontSize>9pt</FontSize>
                                                                                       </Style>
                                                                                     </TextRun>
@@ -2668,6 +2879,7 @@
                                                                                 <TopBorder>
                                                                                   <Style>Solid</Style>
                                                                                 </TopBorder>
+                                                                                <VerticalAlign>Middle</VerticalAlign>
                                                                                 <PaddingLeft>2pt</PaddingLeft>
                                                                                 <PaddingRight>2pt</PaddingRight>
                                                                                 <PaddingTop>2pt</PaddingTop>
@@ -2679,7 +2891,7 @@
                                                                         <TablixMembers>
                                                                           <TablixMember>
                                                                             <TablixHeader>
-                                                                              <Size>0.24965in</Size>
+                                                                              <Size>0.2in</Size>
                                                                               <CellContents>
                                                                                 <Textbox Name="Textbox172">
                                                                                   <CanGrow>true</CanGrow>
@@ -2690,7 +2902,7 @@
                                                                                         <TextRun>
                                                                                           <Value />
                                                                                           <Style>
-                                                                                            <FontFamily>Open Sans Light</FontFamily>
+                                                                                            <FontFamily>Century GOthic</FontFamily>
                                                                                             <FontSize>9pt</FontSize>
                                                                                           </Style>
                                                                                         </TextRun>
@@ -2706,6 +2918,7 @@
                                                                                     <LeftBorder>
                                                                                       <Style>Solid</Style>
                                                                                     </LeftBorder>
+                                                                                    <VerticalAlign>Middle</VerticalAlign>
                                                                                     <PaddingLeft>2pt</PaddingLeft>
                                                                                     <PaddingRight>2pt</PaddingRight>
                                                                                     <PaddingTop>2pt</PaddingTop>
@@ -2744,7 +2957,7 @@
                           </TablixMember>
                           <TablixMember>
                             <TablixHeader>
-                              <Size>0.24965in</Size>
+                              <Size>0.23651in</Size>
                               <CellContents>
                                 <Textbox Name="Textbox50">
                                   <CanGrow>true</CanGrow>
@@ -2755,7 +2968,7 @@
                                         <TextRun>
                                           <Value>Total Actual Score</Value>
                                           <Style>
-                                            <FontFamily>Open Sans Light</FontFamily>
+                                            <FontFamily>Century GOthic</FontFamily>
                                             <FontWeight>Bold</FontWeight>
                                           </Style>
                                         </TextRun>
@@ -2781,7 +2994,7 @@
                             <TablixMembers>
                               <TablixMember>
                                 <TablixHeader>
-                                  <Size>0.24965in</Size>
+                                  <Size>0.23651in</Size>
                                   <CellContents>
                                     <Textbox Name="Textbox51">
                                       <CanGrow>true</CanGrow>
@@ -2792,7 +3005,7 @@
                                             <TextRun>
                                               <Value>=Fields!palapala.Value</Value>
                                               <Style>
-                                                <FontFamily>Open Sans Light</FontFamily>
+                                                <FontFamily>Century GOthic</FontFamily>
                                                 <FontSize>9pt</FontSize>
                                                 <Format>0.0;(0.0)</Format>
                                               </Style>
@@ -2808,6 +3021,7 @@
                                         <Border>
                                           <Style>Solid</Style>
                                         </Border>
+                                        <VerticalAlign>Middle</VerticalAlign>
                                         <PaddingLeft>2pt</PaddingLeft>
                                         <PaddingRight>2pt</PaddingRight>
                                         <PaddingTop>2pt</PaddingTop>
@@ -2819,7 +3033,7 @@
                                 <TablixMembers>
                                   <TablixMember>
                                     <TablixHeader>
-                                      <Size>0.24965in</Size>
+                                      <Size>0.23651in</Size>
                                       <CellContents>
                                         <Textbox Name="Textbox144">
                                           <CanGrow>true</CanGrow>
@@ -2830,7 +3044,7 @@
                                                 <TextRun>
                                                   <Value>=Fields!oli.Value</Value>
                                                   <Style>
-                                                    <FontFamily>Open Sans Light</FontFamily>
+                                                    <FontFamily>Century GOthic</FontFamily>
                                                     <FontSize>9pt</FontSize>
                                                     <Format>0.0;(0.0)</Format>
                                                   </Style>
@@ -2846,6 +3060,7 @@
                                             <Border>
                                               <Style>Solid</Style>
                                             </Border>
+                                            <VerticalAlign>Middle</VerticalAlign>
                                             <PaddingLeft>2pt</PaddingLeft>
                                             <PaddingRight>2pt</PaddingRight>
                                             <PaddingTop>2pt</PaddingTop>
@@ -2857,7 +3072,7 @@
                                     <TablixMembers>
                                       <TablixMember>
                                         <TablixHeader>
-                                          <Size>0.24965in</Size>
+                                          <Size>0.23651in</Size>
                                           <CellContents>
                                             <Textbox Name="Textbox151">
                                               <CanGrow>true</CanGrow>
@@ -2868,7 +3083,7 @@
                                                     <TextRun>
                                                       <Value>=Fields!music.Value</Value>
                                                       <Style>
-                                                        <FontFamily>Open Sans Light</FontFamily>
+                                                        <FontFamily>Century GOthic</FontFamily>
                                                         <FontSize>9pt</FontSize>
                                                         <Format>0.0;(0.0)</Format>
                                                       </Style>
@@ -2884,6 +3099,7 @@
                                                 <Border>
                                                   <Style>Solid</Style>
                                                 </Border>
+                                                <VerticalAlign>Middle</VerticalAlign>
                                                 <PaddingLeft>2pt</PaddingLeft>
                                                 <PaddingRight>2pt</PaddingRight>
                                                 <PaddingTop>2pt</PaddingTop>
@@ -2895,7 +3111,7 @@
                                         <TablixMembers>
                                           <TablixMember>
                                             <TablixHeader>
-                                              <Size>0.24965in</Size>
+                                              <Size>0.23651in</Size>
                                               <CellContents>
                                                 <Textbox Name="Textbox57">
                                                   <CanGrow>true</CanGrow>
@@ -2906,7 +3122,7 @@
                                                         <TextRun>
                                                           <Value>=Fields!interview.Value</Value>
                                                           <Style>
-                                                            <FontFamily>Open Sans Light</FontFamily>
+                                                            <FontFamily>Century GOthic</FontFamily>
                                                             <FontSize>9pt</FontSize>
                                                           </Style>
                                                         </TextRun>
@@ -2933,7 +3149,7 @@
                                             <TablixMembers>
                                               <TablixMember>
                                                 <TablixHeader>
-                                                  <Size>0.24965in</Size>
+                                                  <Size>0.23651in</Size>
                                                   <CellContents>
                                                     <Textbox Name="Textbox105">
                                                       <CanGrow>true</CanGrow>
@@ -2944,7 +3160,7 @@
                                                             <TextRun>
                                                               <Value />
                                                               <Style>
-                                                                <FontFamily>Open Sans Light</FontFamily>
+                                                                <FontFamily>Century GOthic</FontFamily>
                                                                 <FontSize>9pt</FontSize>
                                                               </Style>
                                                             </TextRun>
@@ -2972,7 +3188,7 @@
                                                 <TablixMembers>
                                                   <TablixMember>
                                                     <TablixHeader>
-                                                      <Size>0.24965in</Size>
+                                                      <Size>0.23651in</Size>
                                                       <CellContents>
                                                         <Textbox Name="Textbox106">
                                                           <CanGrow>true</CanGrow>
@@ -2983,7 +3199,7 @@
                                                                 <TextRun>
                                                                   <Value>=Fields!costume_auana.Value</Value>
                                                                   <Style>
-                                                                    <FontFamily>Open Sans Light</FontFamily>
+                                                                    <FontFamily>Century GOthic</FontFamily>
                                                                     <FontSize>9pt</FontSize>
                                                                   </Style>
                                                                 </TextRun>
@@ -3010,7 +3226,7 @@
                                                     <TablixMembers>
                                                       <TablixMember>
                                                         <TablixHeader>
-                                                          <Size>0.24965in</Size>
+                                                          <Size>0.23651in</Size>
                                                           <CellContents>
                                                             <Textbox Name="Textbox107">
                                                               <CanGrow>true</CanGrow>
@@ -3021,7 +3237,7 @@
                                                                     <TextRun>
                                                                       <Value>=Fields!costume_kahiko.Value</Value>
                                                                       <Style>
-                                                                        <FontFamily>Open Sans Light</FontFamily>
+                                                                        <FontFamily>Century GOthic</FontFamily>
                                                                         <FontSize>9pt</FontSize>
                                                                       </Style>
                                                                     </TextRun>
@@ -3048,7 +3264,7 @@
                                                         <TablixMembers>
                                                           <TablixMember>
                                                             <TablixHeader>
-                                                              <Size>0.24965in</Size>
+                                                              <Size>0.23651in</Size>
                                                               <CellContents>
                                                                 <Textbox Name="Textbox129">
                                                                   <CanGrow>true</CanGrow>
@@ -3059,7 +3275,7 @@
                                                                         <TextRun>
                                                                           <Value>=Fields!hula_auana.Value</Value>
                                                                           <Style>
-                                                                            <FontFamily>Open Sans Light</FontFamily>
+                                                                            <FontFamily>Century GOthic</FontFamily>
                                                                             <FontSize>9pt</FontSize>
                                                                           </Style>
                                                                         </TextRun>
@@ -3074,6 +3290,7 @@
                                                                     <Border>
                                                                       <Style>Solid</Style>
                                                                     </Border>
+                                                                    <VerticalAlign>Middle</VerticalAlign>
                                                                     <PaddingLeft>2pt</PaddingLeft>
                                                                     <PaddingRight>2pt</PaddingRight>
                                                                     <PaddingTop>2pt</PaddingTop>
@@ -3085,7 +3302,7 @@
                                                             <TablixMembers>
                                                               <TablixMember>
                                                                 <TablixHeader>
-                                                                  <Size>0.24965in</Size>
+                                                                  <Size>0.2in</Size>
                                                                   <CellContents>
                                                                     <Textbox Name="Textbox163">
                                                                       <CanGrow>true</CanGrow>
@@ -3096,7 +3313,7 @@
                                                                             <TextRun>
                                                                               <Value>=Fields!hula_auana_deduction.Value</Value>
                                                                               <Style>
-                                                                                <FontFamily>Open Sans Light</FontFamily>
+                                                                                <FontFamily>Century GOthic</FontFamily>
                                                                                 <FontSize>9pt</FontSize>
                                                                                 <Color>Red</Color>
                                                                               </Style>
@@ -3112,6 +3329,7 @@
                                                                         <Border>
                                                                           <Style>Solid</Style>
                                                                         </Border>
+                                                                        <VerticalAlign>Middle</VerticalAlign>
                                                                         <PaddingLeft>2pt</PaddingLeft>
                                                                         <PaddingRight>2pt</PaddingRight>
                                                                         <PaddingTop>2pt</PaddingTop>
@@ -3123,7 +3341,7 @@
                                                                 <TablixMembers>
                                                                   <TablixMember>
                                                                     <TablixHeader>
-                                                                      <Size>0.24965in</Size>
+                                                                      <Size>0.23651in</Size>
                                                                       <CellContents>
                                                                         <Textbox Name="Textbox167">
                                                                           <CanGrow>true</CanGrow>
@@ -3134,7 +3352,7 @@
                                                                                 <TextRun>
                                                                                   <Value>=Fields!hula_auana.Value - Fields!hula_auana_deduction.Value</Value>
                                                                                   <Style>
-                                                                                    <FontFamily>Open Sans Light</FontFamily>
+                                                                                    <FontFamily>Century GOthic</FontFamily>
                                                                                     <FontSize>9pt</FontSize>
                                                                                   </Style>
                                                                                 </TextRun>
@@ -3149,6 +3367,7 @@
                                                                             <Border>
                                                                               <Style>Solid</Style>
                                                                             </Border>
+                                                                            <VerticalAlign>Middle</VerticalAlign>
                                                                             <PaddingLeft>2pt</PaddingLeft>
                                                                             <PaddingRight>2pt</PaddingRight>
                                                                             <PaddingTop>2pt</PaddingTop>
@@ -3160,7 +3379,7 @@
                                                                     <TablixMembers>
                                                                       <TablixMember>
                                                                         <TablixHeader>
-                                                                          <Size>0.24965in</Size>
+                                                                          <Size>0.23651in</Size>
                                                                           <CellContents>
                                                                             <Textbox Name="hula_kahiko">
                                                                               <CanGrow>true</CanGrow>
@@ -3171,7 +3390,7 @@
                                                                                     <TextRun>
                                                                                       <Value>=Fields!hula_kahiko.Value</Value>
                                                                                       <Style>
-                                                                                        <FontFamily>Open Sans Light</FontFamily>
+                                                                                        <FontFamily>Century GOthic</FontFamily>
                                                                                         <FontSize>9pt</FontSize>
                                                                                       </Style>
                                                                                     </TextRun>
@@ -3186,6 +3405,7 @@
                                                                                 <Border>
                                                                                   <Style>Solid</Style>
                                                                                 </Border>
+                                                                                <VerticalAlign>Middle</VerticalAlign>
                                                                                 <PaddingLeft>2pt</PaddingLeft>
                                                                                 <PaddingRight>2pt</PaddingRight>
                                                                                 <PaddingTop>2pt</PaddingTop>
@@ -3197,7 +3417,7 @@
                                                                         <TablixMembers>
                                                                           <TablixMember>
                                                                             <TablixHeader>
-                                                                              <Size>0.24965in</Size>
+                                                                              <Size>0.2in</Size>
                                                                               <CellContents>
                                                                                 <Textbox Name="Textbox173">
                                                                                   <CanGrow>true</CanGrow>
@@ -3208,7 +3428,7 @@
                                                                                         <TextRun>
                                                                                           <Value>=Fields!hula_kahiko_deduction.Value</Value>
                                                                                           <Style>
-                                                                                            <FontFamily>Open Sans Light</FontFamily>
+                                                                                            <FontFamily>Century GOthic</FontFamily>
                                                                                             <FontSize>9pt</FontSize>
                                                                                             <Color>Red</Color>
                                                                                           </Style>
@@ -3224,6 +3444,7 @@
                                                                                     <Border>
                                                                                       <Style>Solid</Style>
                                                                                     </Border>
+                                                                                    <VerticalAlign>Middle</VerticalAlign>
                                                                                     <PaddingLeft>2pt</PaddingLeft>
                                                                                     <PaddingRight>2pt</PaddingRight>
                                                                                     <PaddingTop>2pt</PaddingTop>
@@ -3262,7 +3483,7 @@
                           </TablixMember>
                           <TablixMember>
                             <TablixHeader>
-                              <Size>0.24965in</Size>
+                              <Size>0.23651in</Size>
                               <CellContents>
                                 <Textbox Name="Textbox61">
                                   <CanGrow>true</CanGrow>
@@ -3273,7 +3494,7 @@
                                         <TextRun>
                                           <Value>Total Breaking Score</Value>
                                           <Style>
-                                            <FontFamily>Open Sans Light</FontFamily>
+                                            <FontFamily>Century GOthic</FontFamily>
                                             <FontWeight>Bold</FontWeight>
                                           </Style>
                                         </TextRun>
@@ -3299,7 +3520,7 @@
                             <TablixMembers>
                               <TablixMember>
                                 <TablixHeader>
-                                  <Size>0.24965in</Size>
+                                  <Size>0.23651in</Size>
                                   <CellContents>
                                     <Textbox Name="Textbox62">
                                       <CanGrow>true</CanGrow>
@@ -3310,7 +3531,7 @@
                                             <TextRun>
                                               <Value />
                                               <Style>
-                                                <FontFamily>Open Sans Light</FontFamily>
+                                                <FontFamily>Century GOthic</FontFamily>
                                                 <FontSize>9pt</FontSize>
                                               </Style>
                                             </TextRun>
@@ -3326,6 +3547,7 @@
                                           <Style>Solid</Style>
                                         </Border>
                                         <BackgroundColor>LightGrey</BackgroundColor>
+                                        <VerticalAlign>Middle</VerticalAlign>
                                         <PaddingLeft>2pt</PaddingLeft>
                                         <PaddingRight>2pt</PaddingRight>
                                         <PaddingTop>2pt</PaddingTop>
@@ -3337,7 +3559,7 @@
                                 <TablixMembers>
                                   <TablixMember>
                                     <TablixHeader>
-                                      <Size>0.24965in</Size>
+                                      <Size>0.23651in</Size>
                                       <CellContents>
                                         <Textbox Name="Textbox145">
                                           <CanGrow>true</CanGrow>
@@ -3348,7 +3570,7 @@
                                                 <TextRun>
                                                   <Value />
                                                   <Style>
-                                                    <FontFamily>Open Sans Light</FontFamily>
+                                                    <FontFamily>Century GOthic</FontFamily>
                                                     <FontSize>9pt</FontSize>
                                                   </Style>
                                                 </TextRun>
@@ -3364,6 +3586,7 @@
                                               <Style>Solid</Style>
                                             </Border>
                                             <BackgroundColor>LightGrey</BackgroundColor>
+                                            <VerticalAlign>Middle</VerticalAlign>
                                             <PaddingLeft>2pt</PaddingLeft>
                                             <PaddingRight>2pt</PaddingRight>
                                             <PaddingTop>2pt</PaddingTop>
@@ -3375,7 +3598,7 @@
                                     <TablixMembers>
                                       <TablixMember>
                                         <TablixHeader>
-                                          <Size>0.24965in</Size>
+                                          <Size>0.23651in</Size>
                                           <CellContents>
                                             <Textbox Name="Textbox153">
                                               <CanGrow>true</CanGrow>
@@ -3386,7 +3609,7 @@
                                                     <TextRun>
                                                       <Value />
                                                       <Style>
-                                                        <FontFamily>Open Sans Light</FontFamily>
+                                                        <FontFamily>Century GOthic</FontFamily>
                                                         <FontSize>9pt</FontSize>
                                                       </Style>
                                                     </TextRun>
@@ -3402,6 +3625,7 @@
                                                   <Style>Solid</Style>
                                                 </Border>
                                                 <BackgroundColor>LightGrey</BackgroundColor>
+                                                <VerticalAlign>Middle</VerticalAlign>
                                                 <PaddingLeft>2pt</PaddingLeft>
                                                 <PaddingRight>2pt</PaddingRight>
                                                 <PaddingTop>2pt</PaddingTop>
@@ -3413,7 +3637,7 @@
                                         <TablixMembers>
                                           <TablixMember>
                                             <TablixHeader>
-                                              <Size>0.24965in</Size>
+                                              <Size>0.23651in</Size>
                                               <CellContents>
                                                 <Textbox Name="Textbox66">
                                                   <CanGrow>true</CanGrow>
@@ -3424,7 +3648,7 @@
                                                         <TextRun>
                                                           <Value>=Fields!interview_tie.Value</Value>
                                                           <Style>
-                                                            <FontFamily>Open Sans Light</FontFamily>
+                                                            <FontFamily>Century GOthic</FontFamily>
                                                             <FontSize>9pt</FontSize>
                                                           </Style>
                                                         </TextRun>
@@ -3451,7 +3675,7 @@
                                             <TablixMembers>
                                               <TablixMember>
                                                 <TablixHeader>
-                                                  <Size>0.24965in</Size>
+                                                  <Size>0.23651in</Size>
                                                   <CellContents>
                                                     <Textbox Name="Textbox118">
                                                       <CanGrow>true</CanGrow>
@@ -3462,7 +3686,7 @@
                                                             <TextRun>
                                                               <Value />
                                                               <Style>
-                                                                <FontFamily>Open Sans Light</FontFamily>
+                                                                <FontFamily>Century GOthic</FontFamily>
                                                                 <FontSize>9pt</FontSize>
                                                               </Style>
                                                             </TextRun>
@@ -3490,7 +3714,7 @@
                                                 <TablixMembers>
                                                   <TablixMember>
                                                     <TablixHeader>
-                                                      <Size>0.24965in</Size>
+                                                      <Size>0.23651in</Size>
                                                       <CellContents>
                                                         <Textbox Name="Textbox119">
                                                           <CanGrow>true</CanGrow>
@@ -3501,7 +3725,7 @@
                                                                 <TextRun>
                                                                   <Value>=Fields!costume_auana_tie.Value</Value>
                                                                   <Style>
-                                                                    <FontFamily>Open Sans Light</FontFamily>
+                                                                    <FontFamily>Century GOthic</FontFamily>
                                                                     <FontSize>9pt</FontSize>
                                                                   </Style>
                                                                 </TextRun>
@@ -3528,7 +3752,7 @@
                                                     <TablixMembers>
                                                       <TablixMember>
                                                         <TablixHeader>
-                                                          <Size>0.24965in</Size>
+                                                          <Size>0.23651in</Size>
                                                           <CellContents>
                                                             <Textbox Name="Textbox120">
                                                               <CanGrow>true</CanGrow>
@@ -3539,7 +3763,7 @@
                                                                     <TextRun>
                                                                       <Value>=Fields!costume_kahiko_tie.Value</Value>
                                                                       <Style>
-                                                                        <FontFamily>Open Sans Light</FontFamily>
+                                                                        <FontFamily>Century GOthic</FontFamily>
                                                                         <FontSize>9pt</FontSize>
                                                                       </Style>
                                                                     </TextRun>
@@ -3566,7 +3790,7 @@
                                                         <TablixMembers>
                                                           <TablixMember>
                                                             <TablixHeader>
-                                                              <Size>0.24965in</Size>
+                                                              <Size>0.23651in</Size>
                                                               <CellContents>
                                                                 <Textbox Name="Textbox130">
                                                                   <CanGrow>true</CanGrow>
@@ -3577,7 +3801,7 @@
                                                                         <TextRun>
                                                                           <Value>=Fields!hula_auana_tie.Value</Value>
                                                                           <Style>
-                                                                            <FontFamily>Open Sans Light</FontFamily>
+                                                                            <FontFamily>Century GOthic</FontFamily>
                                                                             <FontSize>9pt</FontSize>
                                                                           </Style>
                                                                         </TextRun>
@@ -3592,6 +3816,7 @@
                                                                     <Border>
                                                                       <Style>Solid</Style>
                                                                     </Border>
+                                                                    <VerticalAlign>Middle</VerticalAlign>
                                                                     <PaddingLeft>2pt</PaddingLeft>
                                                                     <PaddingRight>2pt</PaddingRight>
                                                                     <PaddingTop>2pt</PaddingTop>
@@ -3603,7 +3828,7 @@
                                                             <TablixMembers>
                                                               <TablixMember>
                                                                 <TablixHeader>
-                                                                  <Size>0.24965in</Size>
+                                                                  <Size>0.2in</Size>
                                                                   <CellContents>
                                                                     <Textbox Name="Textbox164">
                                                                       <CanGrow>true</CanGrow>
@@ -3614,7 +3839,7 @@
                                                                             <TextRun>
                                                                               <Value>=Fields!hula_auana_deduction.Value</Value>
                                                                               <Style>
-                                                                                <FontFamily>Open Sans Light</FontFamily>
+                                                                                <FontFamily>Century GOthic</FontFamily>
                                                                                 <FontSize>9pt</FontSize>
                                                                                 <Color>Red</Color>
                                                                               </Style>
@@ -3630,6 +3855,7 @@
                                                                         <Border>
                                                                           <Style>Solid</Style>
                                                                         </Border>
+                                                                        <VerticalAlign>Middle</VerticalAlign>
                                                                         <PaddingLeft>2pt</PaddingLeft>
                                                                         <PaddingRight>2pt</PaddingRight>
                                                                         <PaddingTop>2pt</PaddingTop>
@@ -3641,7 +3867,7 @@
                                                                 <TablixMembers>
                                                                   <TablixMember>
                                                                     <TablixHeader>
-                                                                      <Size>0.24965in</Size>
+                                                                      <Size>0.23651in</Size>
                                                                       <CellContents>
                                                                         <Textbox Name="Textbox168">
                                                                           <CanGrow>true</CanGrow>
@@ -3652,7 +3878,7 @@
                                                                                 <TextRun>
                                                                                   <Value>=Fields!hula_auana_tie.Value</Value>
                                                                                   <Style>
-                                                                                    <FontFamily>Open Sans Light</FontFamily>
+                                                                                    <FontFamily>Century GOthic</FontFamily>
                                                                                     <FontSize>9pt</FontSize>
                                                                                   </Style>
                                                                                 </TextRun>
@@ -3667,6 +3893,7 @@
                                                                             <Border>
                                                                               <Style>Solid</Style>
                                                                             </Border>
+                                                                            <VerticalAlign>Middle</VerticalAlign>
                                                                             <PaddingLeft>2pt</PaddingLeft>
                                                                             <PaddingRight>2pt</PaddingRight>
                                                                             <PaddingTop>2pt</PaddingTop>
@@ -3678,7 +3905,7 @@
                                                                     <TablixMembers>
                                                                       <TablixMember>
                                                                         <TablixHeader>
-                                                                          <Size>0.24965in</Size>
+                                                                          <Size>0.23651in</Size>
                                                                           <CellContents>
                                                                             <Textbox Name="hula_kahiko_deduction">
                                                                               <CanGrow>true</CanGrow>
@@ -3689,7 +3916,7 @@
                                                                                     <TextRun>
                                                                                       <Value>=Fields!hula_kahiko_tie.Value</Value>
                                                                                       <Style>
-                                                                                        <FontFamily>Open Sans Light</FontFamily>
+                                                                                        <FontFamily>Century GOthic</FontFamily>
                                                                                         <FontSize>9pt</FontSize>
                                                                                       </Style>
                                                                                     </TextRun>
@@ -3704,6 +3931,7 @@
                                                                                 <Border>
                                                                                   <Style>Solid</Style>
                                                                                 </Border>
+                                                                                <VerticalAlign>Middle</VerticalAlign>
                                                                                 <PaddingLeft>2pt</PaddingLeft>
                                                                                 <PaddingRight>2pt</PaddingRight>
                                                                                 <PaddingTop>2pt</PaddingTop>
@@ -3715,7 +3943,7 @@
                                                                         <TablixMembers>
                                                                           <TablixMember>
                                                                             <TablixHeader>
-                                                                              <Size>0.24965in</Size>
+                                                                              <Size>0.2in</Size>
                                                                               <CellContents>
                                                                                 <Textbox Name="Textbox174">
                                                                                   <CanGrow>true</CanGrow>
@@ -3726,7 +3954,7 @@
                                                                                         <TextRun>
                                                                                           <Value>=Fields!hula_kahiko_deduction.Value</Value>
                                                                                           <Style>
-                                                                                            <FontFamily>Open Sans Light</FontFamily>
+                                                                                            <FontFamily>Century GOthic</FontFamily>
                                                                                             <FontSize>9pt</FontSize>
                                                                                             <Color>Red</Color>
                                                                                           </Style>
@@ -3742,6 +3970,7 @@
                                                                                     <Border>
                                                                                       <Style>Solid</Style>
                                                                                     </Border>
+                                                                                    <VerticalAlign>Middle</VerticalAlign>
                                                                                     <PaddingLeft>2pt</PaddingLeft>
                                                                                     <PaddingRight>2pt</PaddingRight>
                                                                                     <PaddingTop>2pt</PaddingTop>
@@ -3795,7 +4024,7 @@
                                         <TextRun>
                                           <Value>Hula Kahiko Net</Value>
                                           <Style>
-                                            <FontFamily>Open Sans Light</FontFamily>
+                                            <FontFamily>Century GOthic</FontFamily>
                                             <FontWeight>Bold</FontWeight>
                                           </Style>
                                         </TextRun>
@@ -3808,6 +4037,7 @@
                                     <Border>
                                       <Style>Solid</Style>
                                     </Border>
+                                    <VerticalAlign>Middle</VerticalAlign>
                                     <PaddingLeft>2pt</PaddingLeft>
                                     <PaddingRight>2pt</PaddingRight>
                                     <PaddingTop>2pt</PaddingTop>
@@ -3830,7 +4060,7 @@
                                         <TextRun>
                                           <Value />
                                           <Style>
-                                            <FontFamily>Open Sans Light</FontFamily>
+                                            <FontFamily>Century GOthic</FontFamily>
                                             <FontWeight>Bold</FontWeight>
                                           </Style>
                                         </TextRun>
@@ -3844,6 +4074,48 @@
                                       <Style>Solid</Style>
                                     </Border>
                                     <BackgroundColor>LightGrey</BackgroundColor>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                              </CellContents>
+                            </TablixHeader>
+                          </TablixMember>
+                          <TablixMember>
+                            <TablixHeader>
+                              <Size>2.0032in</Size>
+                              <CellContents>
+                                <Textbox Name="Textbox171">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>Deduction for Out of Order Appearance</Value>
+                                          <Style>
+                                            <FontStyle>Italic</FontStyle>
+                                            <FontFamily>Century GOthic</FontFamily>
+                                            <FontSize>6pt</FontSize>
+                                            <FontWeight>Normal</FontWeight>
+                                            <Color>Red</Color>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Center</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox166</rd:DefaultName>
+                                  <Style>
+                                    <Border>
+                                      <Style>Solid</Style>
+                                    </Border>
+                                    <VerticalAlign>Middle</VerticalAlign>
                                     <PaddingLeft>2pt</PaddingLeft>
                                     <PaddingRight>2pt</PaddingRight>
                                     <PaddingTop>2pt</PaddingTop>
@@ -3866,7 +4138,7 @@
                                         <TextRun>
                                           <Value>Total Combined Hula Score</Value>
                                           <Style>
-                                            <FontFamily>Open Sans Light</FontFamily>
+                                            <FontFamily>Century GOthic</FontFamily>
                                             <FontWeight>Bold</FontWeight>
                                           </Style>
                                         </TextRun>
@@ -3880,6 +4152,7 @@
                                     <Border>
                                       <Style>Solid</Style>
                                     </Border>
+                                    <VerticalAlign>Middle</VerticalAlign>
                                     <PaddingLeft>2pt</PaddingLeft>
                                     <PaddingRight>2pt</PaddingRight>
                                     <PaddingTop>2pt</PaddingTop>
@@ -3902,7 +4175,7 @@
                                         <TextRun>
                                           <Value />
                                           <Style>
-                                            <FontFamily>Open Sans Light</FontFamily>
+                                            <FontFamily>Century GOthic</FontFamily>
                                             <FontWeight>Bold</FontWeight>
                                           </Style>
                                         </TextRun>
@@ -3916,6 +4189,7 @@
                                       <Style>Solid</Style>
                                     </Border>
                                     <BackgroundColor>LightGrey</BackgroundColor>
+                                    <VerticalAlign>Middle</VerticalAlign>
                                     <PaddingLeft>2pt</PaddingLeft>
                                     <PaddingRight>2pt</PaddingRight>
                                     <PaddingTop>2pt</PaddingTop>
@@ -3938,7 +4212,7 @@
                                         <TextRun>
                                           <Value>Total Overall Score</Value>
                                           <Style>
-                                            <FontFamily>Open Sans Light</FontFamily>
+                                            <FontFamily>Century GOthic</FontFamily>
                                             <FontWeight>Bold</FontWeight>
                                           </Style>
                                         </TextRun>
@@ -3952,6 +4226,7 @@
                                     <Border>
                                       <Style>Solid</Style>
                                     </Border>
+                                    <VerticalAlign>Middle</VerticalAlign>
                                     <PaddingLeft>2pt</PaddingLeft>
                                     <PaddingRight>2pt</PaddingRight>
                                     <PaddingTop>2pt</PaddingTop>
@@ -4018,22 +4293,23 @@
         <DataSetName>ContestantReportDataset_Tabulation</DataSetName>
         <Top>0.02778in</Top>
         <Left>0.51338in</Left>
-        <Height>5.45708in</Height>
-        <Width>5.72796in</Width>
+        <Height>5.38362in</Height>
+        <Width>5.72795in</Width>
         <Style>
           <Border>
             <Style>Solid</Style>
           </Border>
+          <FontFamily>Century Gothic</FontFamily>
           <VerticalAlign>Middle</VerticalAlign>
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>7.06125in</Height>
+    <Height>7in</Height>
     <Style>
       <BackgroundColor>White</BackgroundColor>
     </Style>
   </Body>
-  <Width>8.55268in</Width>
+  <Width>8.52413in</Width>
   <Page>
     <PageHeader>
       <Height>1.05041in</Height>
@@ -4047,10 +4323,11 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=Format(Fields!entry_date.Value, "yyyy") &amp; " Contestant Score Report"</Value>
+                  <Value>=Format(Fields!entry_date.Value, "yyyy") &amp; " CONTESTANT SCORE REPORT (NON-PĀLUA DIVISION)"</Value>
                   <Style>
-                    <FontFamily>Open Sans Semibold</FontFamily>
-                    <FontSize>24pt</FontSize>
+                    <FontFamily>Century GOthic</FontFamily>
+                    <FontSize>16pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
               </TextRuns>

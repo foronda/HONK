@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-
 // For Report Export
 using Microsoft.Reporting.WebForms;
 using System.IO;
@@ -14,7 +13,7 @@ using System.Windows.Forms;
 
 namespace HONK.Reports
 {
-    public partial class ContestantTabulationScore : System.Web.UI.UserControl
+    public partial class ContestantScoresPalua_WUC : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,17 +22,17 @@ namespace HONK.Reports
 
         public void DownloadReport(string entry_year, int contestant_id)
         {
+            // Get Contestant name for Report name
+            string cName = string.Empty;
+            using (HONKDBDataContext db = new HONKDBDataContext())
+            {
+                cName = (from c in db.Contestants
+                         where c.id == contestant_id
+                         select c.full_name).FirstOrDefault().ToString();
+            }
+
             using (LocalReport viewer = new LocalReport())
             {
-                // Get Contestant name for Report name
-                string cName = string.Empty;
-                using (HONKDBDataContext db = new HONKDBDataContext())
-                {
-                    cName = (from c in db.Contestants
-                             where c.id == contestant_id
-                             select c.full_name).FirstOrDefault().ToString();
-                }
-
                 // Create Implementation Schedule Dataset Table Adapters
                 ContestantReportDatasetTableAdapters.vw_ContestantDetailsAllScoresTableAdapter ds = new ContestantReportDatasetTableAdapters.vw_ContestantDetailsAllScoresTableAdapter();
 
@@ -42,7 +41,7 @@ namespace HONK.Reports
                 ReportDataSource rds = new ReportDataSource("ContestantReportDataset_Tabulation", (DataTable)ds.GetData(entry_year, contestant_id));
 
                 // Set Report Path and Add Report Datasource to LocalReport
-                viewer.ReportPath = @"Reports\ContestantScores_Report.rdlc";
+                viewer.ReportPath = @"Reports\ContestantScoresPalua_Report.rdlc";
                 viewer.DataSources.Add(rds);
 
                 viewer.EnableHyperlinks = true;

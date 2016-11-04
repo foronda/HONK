@@ -1,20 +1,21 @@
 ﻿<%@ Page Title="Event Results" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EventResults.aspx.cs" Inherits="HONK.EventResults" %>
 
-<%@ Register Src="~/Reports/ContestantSCores_WUC.ascx" TagName="ConstestantTabulationScore" TagPrefix="uc1" %>
+<%@ Register Src="~/Reports/ContestantScores_WUC.ascx" TagName="ConstestantScoresReport" TagPrefix="uc1" %>
+<%@ Register Src="~/Reports/ContestantScoresPalua_WUC.ascx" TagName="ConstestantScoresPaluaReport" TagPrefix="uc2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
-
     <%-- CONTESTANT TABULATION REPORT POPUP --%>
-    <div id="masterTabScoreReport" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="assRepLbl" aria-hidden="true">
+    <div id="contestantScoreReport" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="assRepLbl" aria-hidden="true">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             <h3 id="H1">Master Tabulation Score Report</h3>
         </div>
         <div class="modal-body">
-            <uc1:ConstestantTabulationScore ID="ConstestantTabulationScore" runat="server"></uc1:ConstestantTabulationScore>
+            <uc1:ConstestantScoresReport ID="ConstestantScoresReport" runat="server"></uc1:ConstestantScoresReport>
+            <uc2:ConstestantScoresPaluaReport ID="ConstestantScoresPaluaReport" runat="server"></uc2:ConstestantScoresPaluaReport>
         </div>
     </div>
+
 
     <%-- START PAGE HEADERS --%>
     <div class="page-header">
@@ -76,9 +77,11 @@
                                                 <asp:UpdatePanel ID="DownloadReportUP" runat="server" UpdateMode="Always">
                                                     <ContentTemplate>
                                                         <asp:LinkButton ID="DownloadLB" runat="server" CausesValidation="False" CommandName="PDF" Text="PDF" CommandArgument='<%# Eval("id") %>'></asp:LinkButton>
+                                                        <asp:LinkButton ID="DownloadPaluaLB" runat="server" CausesValidation="False" CommandName="PDF_Palua" Text="PDF" CommandArgument='<%# Eval("id") %>' Visible="false"></asp:LinkButton>
                                                     </ContentTemplate>
                                                     <Triggers>
                                                         <asp:PostBackTrigger ControlID="DownloadLB" />
+                                                        <asp:PostBackTrigger ControlID="DownloadPaluaLB" />
                                                     </Triggers>
                                                 </asp:UpdatePanel>
                                             </ItemTemplate>

@@ -166,7 +166,11 @@ namespace HONK
         {
             if (e.CommandName == "PDF")
             {
-                ConstestantTabulationScore.DownloadReport(EventDate.ToShortDateString(), Convert.ToInt32(e.CommandArgument));
+                ConstestantScoresReport.DownloadReport(EventDate.ToShortDateString(), Convert.ToInt32(e.CommandArgument));
+            }
+            else if (e.CommandName == "PDF_Palua")
+            {
+                ConstestantScoresPaluaReport.DownloadReport(EventDate.ToShortDateString(), Convert.ToInt32(e.CommandArgument));
             }
         }
 
@@ -190,6 +194,9 @@ namespace HONK
                 {
                     LinkButton downloadLB = (LinkButton)e.Row.FindControl("DownloadLB");
                     downloadLB.Visible = false;
+
+                    LinkButton downloadPaluaLB = (LinkButton)e.Row.FindControl("DownloadPaluaLB");
+                    downloadPaluaLB.Visible = true;
                 }
 
                 // Script Manager needed to asyncronously handle report viewer export
