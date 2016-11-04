@@ -12,7 +12,7 @@
 </rsweb:ReportViewer>
 <asp:LinqDataSource ID="ContestantScoreDetails" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" TableName="vw_ContestantDetailsAllScores" Where="entry_date == @entry_date && gender_name != @gender_name">
     <WhereParameters>
-        <asp:Parameter Name="entry_date" Type="DateTime" DefaultValue="01-01-2013" />
+        <asp:Parameter Name="entry_date" Type="DateTime" DefaultValue="" />
         <asp:Parameter Name="gender_name" Type="String" DefaultValue="Palua" />
     </WhereParameters>
 </asp:LinqDataSource>

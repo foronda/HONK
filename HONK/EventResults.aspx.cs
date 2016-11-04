@@ -17,7 +17,7 @@ namespace HONK
         {
             if (!Page.IsPostBack)
             {
-                EntryYearTb.Text = DateTime.Now.AddYears(-3).Year.ToString();
+                EntryYearTb.Text = DateTime.Now.Year.ToString();
             }
         }
 
