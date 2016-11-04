@@ -13,7 +13,7 @@
 </rsweb:ReportViewer>
 <asp:LinqDataSource ID="MasterScoreDetailsDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" TableName="vw_MasterScoreDetails" Where="entry_date == @entry_date">
     <WhereParameters>
-        <asp:Parameter Name="entry_date" Type="DateTime" DefaultValue="" />
+        <asp:Parameter Name="entry_date" Type="DateTime" ConvertEmptyStringToNull="true" />
     </WhereParameters>
 </asp:LinqDataSource>
 

@@ -17,7 +17,20 @@ namespace HONK.Reports
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                SetDateParameter(DateTime.Now);
+            }
+        }
 
+        public void Refresh()
+        {
+            MasterTabScoreRV.LocalReport.Refresh();
+        }
+
+        public void SetDateParameter(DateTime date)
+        {
+            MasterScoreDetailsDS.WhereParameters["entry_date"].DefaultValue = date.ToShortDateString();
         }
 
         public void DownloadReport(string entry_year)

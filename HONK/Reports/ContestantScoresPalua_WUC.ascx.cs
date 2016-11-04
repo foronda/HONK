@@ -17,12 +17,20 @@ namespace HONK.Reports
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                SetDateParameter(DateTime.Now);
+            }
         }
 
         public void Refresh()
         {
             ContestantScorePaluaRV.LocalReport.Refresh();
+        }
+
+        public void SetDateParameter(DateTime date)
+        {
+            ContestantScoreDetails.WhereParameters["entry_date"].DefaultValue = date.ToShortDateString();
         }
 
         public void DownloadReport(string entry_year, int contestant_id)
