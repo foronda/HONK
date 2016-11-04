@@ -76,6 +76,7 @@
                                 <li><a runat="server" href="#">Event Awards</a></li>
                             </ul>
                         </li>
+                        <li><a runat="server" href="~/HONKReports">Reports</a></li>
                     </ul>
                     <ul class="nav navbar-nav  navbar-right">
                         <li class="navbar-text" style="line-height: 50px;">Hello,

@@ -197,10 +197,5 @@ namespace HONK
                 //scriptManager.RegisterPostBackControl((LinkButton)e.Row.FindControl("DownloadLB"));
             }
         }
-
-        protected void Export_Click(object sender, EventArgs e)
-        {
-            ConstestantTabulationScore.DownloadReport(EventDate.ToShortDateString(), 21);
-        }
     }
 }

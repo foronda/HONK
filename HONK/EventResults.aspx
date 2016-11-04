@@ -68,7 +68,6 @@
                     <div class="panel-body">
                         <asp:UpdatePanel runat="server" ID="MasterGVUP" ChildrenAsTriggers="true" UpdateMode="Always">
                             <ContentTemplate>
-                                <asp:LinkButton ID="Export" runat="server" Text="ExportTest" OnClick="Export_Click"></asp:LinkButton>
                                 <asp:GridView ID="MasterGV" runat="server" AllowPaging="True" DataSourceID="MasterDS" AutoGenerateColumns="False" CssClass="table table-striped table-hover" AllowSorting="True"
                                     DataKeyNames="id" EmptyDateText="" OnRowCommand="MasterGV_RowCommand" OnRowDataBound="MasterGV_RowDataBound">
                                     <Columns>
@@ -117,11 +116,6 @@
                             <ContentTemplate>
                                 <asp:GridView ID="KeikiKaneGV" runat="server" AllowPaging="True" DataSourceID="KeikiKaneDS" AutoGenerateColumns="False" CssClass="table table-striped table-hover" AllowSorting="True" DataKeyNames="id" EmptyDateText="">
                                     <Columns>
-                                        <asp:TemplateField HeaderText="Actions" ShowHeader="False">
-                                            <ItemTemplate>
-                                                <asp:LinkButton ID="LinkButton3" runat="server" CausesValidation="False" CommandName="Export" Text="PDF"></asp:LinkButton>
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
                                         <asp:BoundField DataField="entry_num_fri" HeaderText="Fri Entry No." SortExpression="entry_num_fri" />
                                         <asp:BoundField DataField="entry_num_sat" HeaderText="Sat Entry No." SortExpression="entry_num_sat" />
                                         <asp:BoundField DataField="full_name" HeaderText="Name" SortExpression="full_name" />
@@ -154,11 +148,6 @@
                             <ContentTemplate>
                                 <asp:GridView ID="KeikiWahineGV" runat="server" AllowPaging="True" DataSourceID="KeikiWahineDS" AutoGenerateColumns="False" CssClass="table table-striped table-hover" AllowSorting="True" DataKeyNames="id" EmptyDateText="">
                                     <Columns>
-                                        <asp:TemplateField HeaderText="Actions" ShowHeader="False">
-                                            <ItemTemplate>
-                                                <asp:LinkButton ID="LinkButton3" runat="server" CausesValidation="False" CommandName="Export" Text="PDF"></asp:LinkButton>
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
                                         <asp:BoundField DataField="entry_num_fri" HeaderText="Fri Entry No." SortExpression="entry_num_fri" />
                                         <asp:BoundField DataField="entry_num_sat" HeaderText="Sat Entry No." SortExpression="entry_num_sat" />
                                         <asp:BoundField DataField="full_name" HeaderText="Name" SortExpression="full_name" />
@@ -191,11 +180,6 @@
                             <ContentTemplate>
                                 <asp:GridView ID="OpioKaneGV" runat="server" AllowPaging="True" DataSourceID="OpioKaneDS" AutoGenerateColumns="False" CssClass="table table-striped table-hover" AllowSorting="True" DataKeyNames="id" EmptyDateText="">
                                     <Columns>
-                                        <asp:TemplateField HeaderText="Actions" ShowHeader="False">
-                                            <ItemTemplate>
-                                                <asp:LinkButton ID="LinkButton3" runat="server" CausesValidation="False" CommandName="Export" Text="PDF"></asp:LinkButton>
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
                                         <asp:BoundField DataField="entry_num_fri" HeaderText="Fri Entry No." SortExpression="entry_num_fri" />
                                         <asp:BoundField DataField="entry_num_sat" HeaderText="Sat Entry No." SortExpression="entry_num_sat" />
                                         <asp:BoundField DataField="full_name" HeaderText="Name" SortExpression="full_name" />
@@ -228,11 +212,6 @@
                             <ContentTemplate>
                                 <asp:GridView ID="OpioWahineGV" runat="server" AllowPaging="True" DataSourceID="OpioWahineDS" AutoGenerateColumns="False" CssClass="table table-striped table-hover" AllowSorting="True" DataKeyNames="id" EmptyDateText="">
                                     <Columns>
-                                        <asp:TemplateField HeaderText="Actions" ShowHeader="False">
-                                            <ItemTemplate>
-                                                <asp:LinkButton ID="LinkButton3" runat="server" CausesValidation="False" CommandName="Export" Text="PDF"></asp:LinkButton>
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
                                         <asp:BoundField DataField="entry_num_fri" HeaderText="Fri Entry No." SortExpression="entry_num_fri" />
                                         <asp:BoundField DataField="entry_num_sat" HeaderText="Sat Entry No." SortExpression="entry_num_sat" />
                                         <asp:BoundField DataField="full_name" HeaderText="Name" SortExpression="full_name" />
@@ -275,11 +254,6 @@
                                             <ContentTemplate>
                                                 <asp:GridView ID="CostumeOpioGV" runat="server" AllowPaging="True" DataSourceID="CostumeOpioDS" AutoGenerateColumns="False" CssClass="table table-striped table-hover" AllowSorting="True" DataKeyNames="id" EmptyDateText="">
                                                     <Columns>
-                                                        <asp:TemplateField HeaderText="Actions" ShowHeader="False">
-                                                            <ItemTemplate>
-                                                                <asp:LinkButton ID="LinkButton3" runat="server" CausesValidation="False" CommandName="Export" Text="PDF"></asp:LinkButton>
-                                                            </ItemTemplate>
-                                                        </asp:TemplateField>
                                                         <asp:BoundField DataField="full_name" HeaderText="Name" SortExpression="full_name" />
                                                         <asp:BoundField DataField="age_name" HeaderText="Age" SortExpression="age_name" />
                                                         <asp:BoundField DataField="gender_name" HeaderText="Gender" SortExpression="gender_name" />
@@ -315,11 +289,6 @@
                                             <ContentTemplate>
                                                 <asp:GridView ID="CostumeKeikiGV" runat="server" AllowPaging="True" DataSourceID="CostumeKeikiDS" AutoGenerateColumns="False" CssClass="table table-striped table-hover" AllowSorting="True" DataKeyNames="id" EmptyDateText="">
                                                     <Columns>
-                                                        <asp:TemplateField HeaderText="Actions" ShowHeader="False">
-                                                            <ItemTemplate>
-                                                                <asp:LinkButton ID="LinkButton3" runat="server" CausesValidation="False" CommandName="Export" Text="PDF"></asp:LinkButton>
-                                                            </ItemTemplate>
-                                                        </asp:TemplateField>
                                                         <asp:BoundField DataField="full_name" HeaderText="Name" SortExpression="full_name" />
                                                         <asp:BoundField DataField="age_name" HeaderText="Age" SortExpression="age_name" />
                                                         <asp:BoundField DataField="gender_name" HeaderText="Gender" SortExpression="gender_name" />
@@ -355,11 +324,6 @@
                                             <ContentTemplate>
                                                 <asp:GridView ID="CostumePaluaGV" runat="server" AllowPaging="True" DataSourceID="CostumePaluaDS" AutoGenerateColumns="False" CssClass="table table-striped table-hover" AllowSorting="True" DataKeyNames="id" EmptyDateText="">
                                                     <Columns>
-                                                        <asp:TemplateField HeaderText="Actions" ShowHeader="False">
-                                                            <ItemTemplate>
-                                                                <asp:LinkButton ID="LinkButton3" runat="server" CausesValidation="False" CommandName="Export" Text="PDF"></asp:LinkButton>
-                                                            </ItemTemplate>
-                                                        </asp:TemplateField>
                                                         <asp:BoundField DataField="full_name" HeaderText="Name" SortExpression="full_name" />
                                                         <asp:BoundField DataField="age_name" HeaderText="Age" SortExpression="age_name" />
                                                         <asp:BoundField DataField="gender_name" HeaderText="Gender" SortExpression="gender_name" />
@@ -392,11 +356,6 @@
                             <ContentTemplate>
                                 <asp:GridView ID="PaluaGV" runat="server" AllowPaging="True" DataSourceID="PaluaDS" AutoGenerateColumns="False" CssClass="table table-striped table-hover" AllowSorting="True" DataKeyNames="id" EmptyDateText="">
                                     <Columns>
-                                        <asp:TemplateField HeaderText="Actions" ShowHeader="False">
-                                            <ItemTemplate>
-                                                <asp:LinkButton ID="LinkButton3" runat="server" CausesValidation="False" CommandName="Export" Text="PDF"></asp:LinkButton>
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
                                         <asp:BoundField DataField="entry_num_fri" HeaderText="Fri Entry No." SortExpression="entry_num_fri" />
                                         <asp:BoundField DataField="entry_num_sat" HeaderText="Sat Entry No." SortExpression="entry_num_sat" />
                                         <asp:BoundField DataField="full_name" HeaderText="Name" SortExpression="full_name" />
