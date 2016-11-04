@@ -22,12 +22,12 @@ namespace HONK.Reports {
         protected global::Microsoft.Reporting.WebForms.ReportViewer MasterTabScoreRV;
         
         /// <summary>
-        /// ContestantScoreDetails control.
+        /// MasterScoreDetailsDS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinqDataSource ContestantScoreDetails;
+        protected global::System.Web.UI.WebControls.LinqDataSource MasterScoreDetailsDS;
     }
 }
