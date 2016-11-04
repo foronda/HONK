@@ -30,10 +30,10 @@ namespace HONK.Reports
 
                 // Create ReportDataSource using Data Table with param @AssessID
                 //ReportDataSource rds = new ReportDataSource("ContestantReportDataset_Tabulation", (DataTable)ds.GetData(entry_year, contestant_id));
-                ReportDataSource rds = new ReportDataSource("ContestantReportDataset_Tabulation", (DataTable)ds.GetData());
+                ReportDataSource rds = new ReportDataSource("ContestantReportDataset_Tabulation", (DataTable)ds.GetData(entry_year, contestant_id));
 
                 // Set Report Path and Add Report Datasource to LocalReport
-                viewer.ReportPath = @"Reports\ContestantTabulationScore.rdlc";
+                viewer.ReportPath = @"Reports\ContestantScores_Report.rdlc";
                 viewer.DataSources.Add(rds);
 
                 viewer.EnableHyperlinks = true;

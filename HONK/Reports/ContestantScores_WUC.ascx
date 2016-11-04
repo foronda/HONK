@@ -3,7 +3,7 @@
 
 <rsweb:ReportViewer ID="ContestantTabScoreRV" runat="server" Font-Names="Candara" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt"
     ShowFindControls="False" ShowBackButton="False" ShowZoomControl="False" SplitterBackColor="Aqua" ShowPrintButton="False"
-    AsyncRendering="False" SizeToReportContent="True">
+    AsyncRendering="True" SizeToReportContent="True">
     <LocalReport ReportPath="Reports\ContestantScores_Report.rdlc">
         <DataSources>
             <rsweb:ReportDataSource DataSourceId="ContestantScoreDetails" Name="ContestantReportDataset_Tabulation" />

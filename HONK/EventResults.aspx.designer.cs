@@ -22,15 +22,6 @@ namespace HONK {
         protected global::HONK.Reports.ContestantTabulationScore ConstestantTabulationScore;
         
         /// <summary>
-        /// exportContestantTab control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton exportContestantTab;
-        
-        /// <summary>
         /// EntryYearTb control.
         /// </summary>
         /// <remarks>
@@ -47,6 +38,15 @@ namespace HONK {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel MasterGVUP;
+        
+        /// <summary>
+        /// Export control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton Export;
         
         /// <summary>
         /// MasterGV control.

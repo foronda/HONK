@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="Event Results" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EventResults.aspx.cs" Inherits="HONK.EventResults" %>
-<%@ Register Src="~/Reports/ContestantTabulationScore.ascx" TagName="ConstestantTabulationScore" TagPrefix="uc1" %>
+
+<%@ Register Src="~/Reports/ContestantSCores_WUC.ascx" TagName="ConstestantTabulationScore" TagPrefix="uc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -11,15 +12,9 @@
             <h3 id="H1">Master Tabulation Score Report</h3>
         </div>
         <div class="modal-body">
-            <uc1:constestanttabulationscore id="ConstestantTabulationScore" runat="server"></uc1:constestanttabulationscore>
+            <uc1:ConstestantTabulationScore ID="ConstestantTabulationScore" runat="server"></uc1:ConstestantTabulationScore>
         </div>
     </div>
-
-    <ul class="breadcrumb">
-        <li>
-            <asp:LinkButton ID="exportContestantTab" runat="server" OnClick="exportContestantTab_Click" Text="CONTESTANT TABULATION REPORT" />
-        </li>
-    </ul>
 
     <%-- START PAGE HEADERS --%>
     <div class="page-header">
@@ -73,11 +68,20 @@
                     <div class="panel-body">
                         <asp:UpdatePanel runat="server" ID="MasterGVUP" ChildrenAsTriggers="true" UpdateMode="Always">
                             <ContentTemplate>
-                                <asp:GridView ID="MasterGV" runat="server" AllowPaging="True" DataSourceID="MasterDS" AutoGenerateColumns="False" CssClass="table table-striped table-hover" AllowSorting="True" DataKeyNames="id" EmptyDateText="">
+                                <asp:LinkButton ID="Export" runat="server" Text="ExportTest" OnClick="Export_Click"></asp:LinkButton>
+                                <asp:GridView ID="MasterGV" runat="server" AllowPaging="True" DataSourceID="MasterDS" AutoGenerateColumns="False" CssClass="table table-striped table-hover" AllowSorting="True"
+                                    DataKeyNames="id" EmptyDateText="" OnRowCommand="MasterGV_RowCommand" OnRowDataBound="MasterGV_RowDataBound">
                                     <Columns>
                                         <asp:TemplateField HeaderText="Actions" ShowHeader="False">
                                             <ItemTemplate>
-                                                <asp:LinkButton ID="LinkButton3" runat="server" CausesValidation="False" CommandName="Export" Text="PDF"></asp:LinkButton>
+                                                <asp:UpdatePanel ID="DownloadReportUP" runat="server" UpdateMode="Always">
+                                                    <ContentTemplate>
+                                                        <asp:LinkButton ID="DownloadLB" runat="server" CausesValidation="False" CommandName="PDF" Text="PDF" CommandArgument='<%# Eval("id") %>'></asp:LinkButton>
+                                                    </ContentTemplate>
+                                                    <Triggers>
+                                                        <asp:PostBackTrigger ControlID="DownloadLB" />
+                                                    </Triggers>
+                                                </asp:UpdatePanel>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <asp:BoundField DataField="entry_num_fri" HeaderText="Fri Entry No." SortExpression="entry_num_fri" />

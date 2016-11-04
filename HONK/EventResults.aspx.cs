@@ -17,7 +17,7 @@ namespace HONK
         {
             if (!Page.IsPostBack)
             {
-                EntryYearTb.Text = DateTime.Now.Year.ToString();
+                EntryYearTb.Text = DateTime.Now.AddYears(-3).Year.ToString();
             }
         }
 
@@ -96,7 +96,7 @@ namespace HONK
 
         protected void CostumeDS_Selecting(object sender, LinqDataSourceSelectEventArgs e)
         {
-            
+
         }
 
         protected void PaluaDS_Selecting(object sender, LinqDataSourceSelectEventArgs e)
@@ -159,14 +159,32 @@ namespace HONK
         }
 
         #region REPORTING METHOD(S)
-                protected void exportContestantTab_Click(object sender, EventArgs e)
-        {
-            ConstestantTabulationScore.DownloadReport("01/01/2013", 21);
-        }
 
         #endregion
 
+        protected void MasterGV_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "PDF")
+            {
+                ConstestantTabulationScore.DownloadReport(EventDate.ToShortDateString(), Convert.ToInt32(e.CommandArgument));
+            }
+        }
 
+        protected void MasterGV_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            /*
+            //check if e.Row is a DataRow; if so grab the Datakey for the row
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                // Script Manager needed to asyncronously handle report viewer export
+                ScriptManager scriptManager = ScriptManager.GetCurrent(this.Page);
+                scriptManager.RegisterPostBackControl((LinkButton)e.Row.FindControl("DownloadLB"));
+            }*/
+        }
 
+        protected void Export_Click(object sender, EventArgs e)
+        {
+            ConstestantTabulationScore.DownloadReport(EventDate.ToShortDateString(), 21);
+        }
     }
 }

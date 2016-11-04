@@ -2735,16 +2735,26 @@ namespace HONK.Reports.ContestantReportDatasetTableAdapters {
                          judge_score_interview, judge_score_costume_auana, judge_score_costume_kahiko, judge_score_costume_palua, judge_score_hula_auana, judge_score_hula_kahiko, judge_score_hula_palua, interview_tie, 
                          costume_auana_tie, costume_kahiko_tie, costume_palua_tie, hula_auana_tie, hula_palua_tie, hula_auana_net, hula_kahiko_tie, hula_kahiko_net, hula_palua_net, combined_hula_score, overall_score, 
                          combined_hula_break_score, overall_break_score
-FROM            vw_ContestantDetailsAllScores";
+FROM            vw_ContestantDetailsAllScores
+WHERE (entry_date = @entry_date) AND (id = @id)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@entry_date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "entry_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ContestantReportDataset.vw_ContestantDetailsAllScoresDataTable dataTable) {
+        public virtual int Fill(ContestantReportDataset.vw_ContestantDetailsAllScoresDataTable dataTable, string entry_date, int id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((entry_date == null)) {
+                throw new global::System.ArgumentNullException("entry_date");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(entry_date));
+            }
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -2756,8 +2766,15 @@ FROM            vw_ContestantDetailsAllScores";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ContestantReportDataset.vw_ContestantDetailsAllScoresDataTable GetData() {
+        public virtual ContestantReportDataset.vw_ContestantDetailsAllScoresDataTable GetData(string entry_date, int id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((entry_date == null)) {
+                throw new global::System.ArgumentNullException("entry_date");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(entry_date));
+            }
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id));
             ContestantReportDataset.vw_ContestantDetailsAllScoresDataTable dataTable = new ContestantReportDataset.vw_ContestantDetailsAllScoresDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
