@@ -29,7 +29,8 @@ namespace HONK.Reports
                 ContestantReportDatasetTableAdapters.vw_ContestantDetailsAllScoresTableAdapter ds = new ContestantReportDatasetTableAdapters.vw_ContestantDetailsAllScoresTableAdapter();
 
                 // Create ReportDataSource using Data Table with param @AssessID
-                ReportDataSource rds = new ReportDataSource("ContestantReportDataset_Tabulation", (DataTable)ds.GetData(entry_year, contestant_id));
+                //ReportDataSource rds = new ReportDataSource("ContestantReportDataset_Tabulation", (DataTable)ds.GetData(entry_year, contestant_id));
+                ReportDataSource rds = new ReportDataSource("ContestantReportDataset_Tabulation", (DataTable)ds.GetData());
 
                 // Set Report Path and Add Report Datasource to LocalReport
                 viewer.ReportPath = @"Reports\ContestantTabulationScore.rdlc";

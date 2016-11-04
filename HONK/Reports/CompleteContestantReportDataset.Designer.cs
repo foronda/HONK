@@ -774,26 +774,16 @@ namespace HONK.Reports.CompleteContestantReportDatasetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        id, entry_date\r\nFROM            Contestant\r\nWHERE        (entry_dat" +
-                "e = @entry_date) AND (id = @id)";
+            this._commandCollection[0].CommandText = "SELECT        id, entry_date\r\nFROM            Contestant";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@entry_date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "entry_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CompleteContestantReportDataset.ContestantDataTable dataTable, string entry_date, int id) {
+        public virtual int Fill(CompleteContestantReportDataset.ContestantDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((entry_date == null)) {
-                throw new global::System.ArgumentNullException("entry_date");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(entry_date));
-            }
-            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -805,15 +795,8 @@ namespace HONK.Reports.CompleteContestantReportDatasetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CompleteContestantReportDataset.ContestantDataTable GetData(string entry_date, int id) {
+        public virtual CompleteContestantReportDataset.ContestantDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((entry_date == null)) {
-                throw new global::System.ArgumentNullException("entry_date");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(entry_date));
-            }
-            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id));
             CompleteContestantReportDataset.ContestantDataTable dataTable = new CompleteContestantReportDataset.ContestantDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

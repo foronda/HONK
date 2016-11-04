@@ -10,9 +10,8 @@
         </DataSources>
     </LocalReport>
 </rsweb:ReportViewer>
-<asp:LinqDataSource ID="ContestantScoreDetails" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" TableName="vw_ContestantDetailsAllScores" Where="entry_date == @entry_date && id == @id">
+<asp:LinqDataSource ID="ContestantScoreDetails" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" TableName="vw_ContestantDetailsAllScores" Where="entry_date == @entry_date">
     <WhereParameters>
         <asp:Parameter Name="entry_date" Type="DateTime" DefaultValue="01-01-2013" />
-        <asp:Parameter Name="id" Type="Int32" DefaultValue="21"/>
     </WhereParameters>
 </asp:LinqDataSource>
