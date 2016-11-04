@@ -20,6 +20,11 @@ namespace HONK.Reports
 
         }
 
+        public void Refresh()
+        {
+            ContestantScorePaluaRV.LocalReport.Refresh();
+        }
+
         public void DownloadReport(string entry_year, int contestant_id)
         {
             // Get Contestant name for Report name

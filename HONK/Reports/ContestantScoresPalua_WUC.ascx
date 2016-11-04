@@ -4,7 +4,7 @@
 <rsweb:ReportViewer ID="ContestantScorePaluaRV" runat="server" Font-Names="Candara" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt"
     ShowFindControls="False" ShowBackButton="False" ShowZoomControl="False" SplitterBackColor="Aqua" ShowPrintButton="False"
     AsyncRendering="True" SizeToReportContent="True">
-    <LocalReport ReportPath="Reports\ContestantScoresPalua_Report.rdlc">
+    <LocalReport ReportPath="Reports\ContestantScoresPalua_Report.rdlc" >
         <DataSources>
             <rsweb:ReportDataSource DataSourceId="ContestantScoreDetails" Name="ContestantReportDataset_Tabulation" />
         </DataSources>

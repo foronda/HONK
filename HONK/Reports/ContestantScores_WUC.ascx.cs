@@ -21,6 +21,11 @@ namespace HONK.Reports
 
         }
 
+        public void Refresh()
+        {
+            ContestantTabScoreRV.LocalReport.Refresh();
+        }
+
         public void DownloadReport(string entry_year, int contestant_id)
         {
             using (LocalReport viewer = new LocalReport())
