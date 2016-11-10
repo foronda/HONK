@@ -71,7 +71,7 @@
             <div class="panel-body">
                 <asp:UpdatePanel ID="ContestantScoresFVUP" runat="server" ChildrenAsTriggers="true" UpdateMode="Always">
                     <ContentTemplate>
-                        <asp:FormView ID="ContestantScoresFV" runat="server" DataSourceID="ContestantScoreDetailsLDS" CssClass="col-lg-12">
+                        <asp:FormView ID="ContestantScoresFV" runat="server" DataSourceID="ContestantScoreDetailsLDS" CssClass="col-lg-12" DataKeyNames="id">
                             <EditItemTemplate>
                                 <div class="container" id="isPalua" runat="server" visible="false">
                                     <div class="row form-group">

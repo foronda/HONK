@@ -359,21 +359,21 @@ namespace HONK.Reports {
             
             private global::System.Data.DataColumn columnhula_auana_tie;
             
-            private global::System.Data.DataColumn columnhula_palua_tie;
-            
             private global::System.Data.DataColumn columnhula_auana_net;
             
             private global::System.Data.DataColumn columnhula_kahiko_tie;
             
             private global::System.Data.DataColumn columnhula_kahiko_net;
             
+            private global::System.Data.DataColumn columnhula_palua_tie;
+            
             private global::System.Data.DataColumn columnhula_palua_net;
             
             private global::System.Data.DataColumn columncombined_hula_score;
             
-            private global::System.Data.DataColumn columnoverall_score;
-            
             private global::System.Data.DataColumn columncombined_hula_break_score;
+            
+            private global::System.Data.DataColumn columnoverall_score;
             
             private global::System.Data.DataColumn columnoverall_break_score;
             
@@ -732,14 +732,6 @@ namespace HONK.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn hula_palua_tieColumn {
-                get {
-                    return this.columnhula_palua_tie;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn hula_auana_netColumn {
                 get {
                     return this.columnhula_auana_net;
@@ -764,6 +756,14 @@ namespace HONK.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn hula_palua_tieColumn {
+                get {
+                    return this.columnhula_palua_tie;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn hula_palua_netColumn {
                 get {
                     return this.columnhula_palua_net;
@@ -780,17 +780,17 @@ namespace HONK.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn overall_scoreColumn {
+            public global::System.Data.DataColumn combined_hula_break_scoreColumn {
                 get {
-                    return this.columnoverall_score;
+                    return this.columncombined_hula_break_score;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn combined_hula_break_scoreColumn {
+            public global::System.Data.DataColumn overall_scoreColumn {
                 get {
-                    return this.columncombined_hula_break_score;
+                    return this.columnoverall_score;
                 }
             }
             
@@ -880,14 +880,14 @@ namespace HONK.Reports {
                         int costume_kahiko_tie, 
                         int costume_palua_tie, 
                         int hula_auana_tie, 
-                        int hula_palua_tie, 
                         int hula_auana_net, 
                         int hula_kahiko_tie, 
                         int hula_kahiko_net, 
+                        int hula_palua_tie, 
                         int hula_palua_net, 
                         int combined_hula_score, 
-                        decimal overall_score, 
                         int combined_hula_break_score, 
+                        decimal overall_score, 
                         decimal overall_break_score) {
                 vw_ContestantDetailsAllScoresRow rowvw_ContestantDetailsAllScoresRow = ((vw_ContestantDetailsAllScoresRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
@@ -931,14 +931,14 @@ namespace HONK.Reports {
                         costume_kahiko_tie,
                         costume_palua_tie,
                         hula_auana_tie,
-                        hula_palua_tie,
                         hula_auana_net,
                         hula_kahiko_tie,
                         hula_kahiko_net,
+                        hula_palua_tie,
                         hula_palua_net,
                         combined_hula_score,
-                        overall_score,
                         combined_hula_break_score,
+                        overall_score,
                         overall_break_score};
                 rowvw_ContestantDetailsAllScoresRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvw_ContestantDetailsAllScoresRow);
@@ -1002,14 +1002,14 @@ namespace HONK.Reports {
                 this.columncostume_kahiko_tie = base.Columns["costume_kahiko_tie"];
                 this.columncostume_palua_tie = base.Columns["costume_palua_tie"];
                 this.columnhula_auana_tie = base.Columns["hula_auana_tie"];
-                this.columnhula_palua_tie = base.Columns["hula_palua_tie"];
                 this.columnhula_auana_net = base.Columns["hula_auana_net"];
                 this.columnhula_kahiko_tie = base.Columns["hula_kahiko_tie"];
                 this.columnhula_kahiko_net = base.Columns["hula_kahiko_net"];
+                this.columnhula_palua_tie = base.Columns["hula_palua_tie"];
                 this.columnhula_palua_net = base.Columns["hula_palua_net"];
                 this.columncombined_hula_score = base.Columns["combined_hula_score"];
-                this.columnoverall_score = base.Columns["overall_score"];
                 this.columncombined_hula_break_score = base.Columns["combined_hula_break_score"];
+                this.columnoverall_score = base.Columns["overall_score"];
                 this.columnoverall_break_score = base.Columns["overall_break_score"];
             }
             
@@ -1096,22 +1096,22 @@ namespace HONK.Reports {
                 base.Columns.Add(this.columncostume_palua_tie);
                 this.columnhula_auana_tie = new global::System.Data.DataColumn("hula_auana_tie", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnhula_auana_tie);
-                this.columnhula_palua_tie = new global::System.Data.DataColumn("hula_palua_tie", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnhula_palua_tie);
                 this.columnhula_auana_net = new global::System.Data.DataColumn("hula_auana_net", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnhula_auana_net);
                 this.columnhula_kahiko_tie = new global::System.Data.DataColumn("hula_kahiko_tie", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnhula_kahiko_tie);
                 this.columnhula_kahiko_net = new global::System.Data.DataColumn("hula_kahiko_net", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnhula_kahiko_net);
+                this.columnhula_palua_tie = new global::System.Data.DataColumn("hula_palua_tie", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhula_palua_tie);
                 this.columnhula_palua_net = new global::System.Data.DataColumn("hula_palua_net", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnhula_palua_net);
                 this.columncombined_hula_score = new global::System.Data.DataColumn("combined_hula_score", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncombined_hula_score);
-                this.columnoverall_score = new global::System.Data.DataColumn("overall_score", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnoverall_score);
                 this.columncombined_hula_break_score = new global::System.Data.DataColumn("combined_hula_break_score", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncombined_hula_break_score);
+                this.columnoverall_score = new global::System.Data.DataColumn("overall_score", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnoverall_score);
                 this.columnoverall_break_score = new global::System.Data.DataColumn("overall_break_score", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnoverall_break_score);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -1120,8 +1120,6 @@ namespace HONK.Reports {
                                 this.columnjudge_score_id,
                                 this.columnmaster_score_id}, false));
                 this.columnid.AllowDBNull = false;
-                this.columnjudge_id.AllowDBNull = false;
-                this.columnjudge_score_id.AllowDBNull = false;
                 this.columnfull_name.AllowDBNull = false;
                 this.columnfull_name.MaxLength = 2147483647;
                 this.columnage_name.AllowDBNull = false;
@@ -1135,14 +1133,13 @@ namespace HONK.Reports {
                 this.columnkumu_name.AllowDBNull = false;
                 this.columnkumu_name.MaxLength = 2147483647;
                 this.columnentry_date.AllowDBNull = false;
-                this.columnjudge_name.AllowDBNull = false;
                 this.columnjudge_name.MaxLength = 2147483647;
                 this.columnhula_auana_net.ReadOnly = true;
                 this.columnhula_kahiko_net.ReadOnly = true;
                 this.columnhula_palua_net.ReadOnly = true;
                 this.columncombined_hula_score.ReadOnly = true;
-                this.columnoverall_score.ReadOnly = true;
                 this.columncombined_hula_break_score.ReadOnly = true;
+                this.columnoverall_score.ReadOnly = true;
                 this.columnoverall_break_score.ReadOnly = true;
             }
             
@@ -1299,7 +1296,13 @@ namespace HONK.Reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int judge_id {
                 get {
-                    return ((int)(this[this.tablevw_ContestantDetailsAllScores.judge_idColumn]));
+                    try {
+                        return ((int)(this[this.tablevw_ContestantDetailsAllScores.judge_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'judge_id\' in table \'vw_ContestantDetailsAllScores\' is DBNul" +
+                                "l.", e);
+                    }
                 }
                 set {
                     this[this.tablevw_ContestantDetailsAllScores.judge_idColumn] = value;
@@ -1310,7 +1313,13 @@ namespace HONK.Reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int judge_score_id {
                 get {
-                    return ((int)(this[this.tablevw_ContestantDetailsAllScores.judge_score_idColumn]));
+                    try {
+                        return ((int)(this[this.tablevw_ContestantDetailsAllScores.judge_score_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'judge_score_id\' in table \'vw_ContestantDetailsAllScores\' is" +
+                                " DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablevw_ContestantDetailsAllScores.judge_score_idColumn] = value;
@@ -1449,7 +1458,13 @@ namespace HONK.Reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string judge_name {
                 get {
-                    return ((string)(this[this.tablevw_ContestantDetailsAllScores.judge_nameColumn]));
+                    try {
+                        return ((string)(this[this.tablevw_ContestantDetailsAllScores.judge_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'judge_name\' in table \'vw_ContestantDetailsAllScores\' is DBN" +
+                                "ull.", e);
+                    }
                 }
                 set {
                     this[this.tablevw_ContestantDetailsAllScores.judge_nameColumn] = value;
@@ -1898,23 +1913,6 @@ namespace HONK.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int hula_palua_tie {
-                get {
-                    try {
-                        return ((int)(this[this.tablevw_ContestantDetailsAllScores.hula_palua_tieColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'hula_palua_tie\' in table \'vw_ContestantDetailsAllScores\' is" +
-                                " DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablevw_ContestantDetailsAllScores.hula_palua_tieColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int hula_auana_net {
                 get {
                     try {
@@ -1966,6 +1964,23 @@ namespace HONK.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int hula_palua_tie {
+                get {
+                    try {
+                        return ((int)(this[this.tablevw_ContestantDetailsAllScores.hula_palua_tieColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'hula_palua_tie\' in table \'vw_ContestantDetailsAllScores\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ContestantDetailsAllScores.hula_palua_tieColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int hula_palua_net {
                 get {
                     try {
@@ -2000,23 +2015,6 @@ namespace HONK.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal overall_score {
-                get {
-                    try {
-                        return ((decimal)(this[this.tablevw_ContestantDetailsAllScores.overall_scoreColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'overall_score\' in table \'vw_ContestantDetailsAllScores\' is " +
-                                "DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablevw_ContestantDetailsAllScores.overall_scoreColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int combined_hula_break_score {
                 get {
                     try {
@@ -2029,6 +2027,23 @@ namespace HONK.Reports {
                 }
                 set {
                     this[this.tablevw_ContestantDetailsAllScores.combined_hula_break_scoreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal overall_score {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablevw_ContestantDetailsAllScores.overall_scoreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'overall_score\' in table \'vw_ContestantDetailsAllScores\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_ContestantDetailsAllScores.overall_scoreColumn] = value;
                 }
             }
             
@@ -2047,6 +2062,30 @@ namespace HONK.Reports {
                 set {
                     this[this.tablevw_ContestantDetailsAllScores.overall_break_scoreColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isjudge_idNull() {
+                return this.IsNull(this.tablevw_ContestantDetailsAllScores.judge_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setjudge_idNull() {
+                this[this.tablevw_ContestantDetailsAllScores.judge_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isjudge_score_idNull() {
+                return this.IsNull(this.tablevw_ContestantDetailsAllScores.judge_score_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setjudge_score_idNull() {
+                this[this.tablevw_ContestantDetailsAllScores.judge_score_idColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2083,6 +2122,18 @@ namespace HONK.Reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setentry_num_satNull() {
                 this[this.tablevw_ContestantDetailsAllScores.entry_num_satColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isjudge_nameNull() {
+                return this.IsNull(this.tablevw_ContestantDetailsAllScores.judge_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setjudge_nameNull() {
+                this[this.tablevw_ContestantDetailsAllScores.judge_nameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2399,18 +2450,6 @@ namespace HONK.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Ishula_palua_tieNull() {
-                return this.IsNull(this.tablevw_ContestantDetailsAllScores.hula_palua_tieColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Sethula_palua_tieNull() {
-                this[this.tablevw_ContestantDetailsAllScores.hula_palua_tieColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Ishula_auana_netNull() {
                 return this.IsNull(this.tablevw_ContestantDetailsAllScores.hula_auana_netColumn);
             }
@@ -2447,6 +2486,18 @@ namespace HONK.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ishula_palua_tieNull() {
+                return this.IsNull(this.tablevw_ContestantDetailsAllScores.hula_palua_tieColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Sethula_palua_tieNull() {
+                this[this.tablevw_ContestantDetailsAllScores.hula_palua_tieColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Ishula_palua_netNull() {
                 return this.IsNull(this.tablevw_ContestantDetailsAllScores.hula_palua_netColumn);
             }
@@ -2471,18 +2522,6 @@ namespace HONK.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isoverall_scoreNull() {
-                return this.IsNull(this.tablevw_ContestantDetailsAllScores.overall_scoreColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setoverall_scoreNull() {
-                this[this.tablevw_ContestantDetailsAllScores.overall_scoreColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Iscombined_hula_break_scoreNull() {
                 return this.IsNull(this.tablevw_ContestantDetailsAllScores.combined_hula_break_scoreColumn);
             }
@@ -2491,6 +2530,18 @@ namespace HONK.Reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setcombined_hula_break_scoreNull() {
                 this[this.tablevw_ContestantDetailsAllScores.combined_hula_break_scoreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isoverall_scoreNull() {
+                return this.IsNull(this.tablevw_ContestantDetailsAllScores.overall_scoreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setoverall_scoreNull() {
+                this[this.tablevw_ContestantDetailsAllScores.overall_scoreColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2705,14 +2756,14 @@ namespace HONK.Reports.ContestantReportDatasetTableAdapters {
             tableMapping.ColumnMappings.Add("costume_kahiko_tie", "costume_kahiko_tie");
             tableMapping.ColumnMappings.Add("costume_palua_tie", "costume_palua_tie");
             tableMapping.ColumnMappings.Add("hula_auana_tie", "hula_auana_tie");
-            tableMapping.ColumnMappings.Add("hula_palua_tie", "hula_palua_tie");
             tableMapping.ColumnMappings.Add("hula_auana_net", "hula_auana_net");
             tableMapping.ColumnMappings.Add("hula_kahiko_tie", "hula_kahiko_tie");
             tableMapping.ColumnMappings.Add("hula_kahiko_net", "hula_kahiko_net");
+            tableMapping.ColumnMappings.Add("hula_palua_tie", "hula_palua_tie");
             tableMapping.ColumnMappings.Add("hula_palua_net", "hula_palua_net");
             tableMapping.ColumnMappings.Add("combined_hula_score", "combined_hula_score");
-            tableMapping.ColumnMappings.Add("overall_score", "overall_score");
             tableMapping.ColumnMappings.Add("combined_hula_break_score", "combined_hula_break_score");
+            tableMapping.ColumnMappings.Add("overall_score", "overall_score");
             tableMapping.ColumnMappings.Add("overall_break_score", "overall_break_score");
             this._adapter.TableMappings.Add(tableMapping);
         }
@@ -2721,7 +2772,7 @@ namespace HONK.Reports.ContestantReportDatasetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::HONK.Properties.Settings.Default.HONKDBContext;
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["HONKConnectionString"].ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
