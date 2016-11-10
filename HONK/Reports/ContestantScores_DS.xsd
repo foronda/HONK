@@ -17,8 +17,8 @@
                     <CommandText>SELECT        id, judge_id, judge_score_id, master_score_id, full_name, age_name, gender_name, division_name, halau_name, kumu_name, entry_date, entry_num_fri, entry_num_sat, judge_name, palapala, interview, oli, 
                          music, hula_auana, hula_auana_deduction, hula_kahiko, hula_kahiko_deduction, hula_palua, hula_palua_deduction, costume_auana, costume_kahiko, costume_palua, out_of_order_deduction, 
                          judge_score_interview, judge_score_costume_auana, judge_score_costume_kahiko, judge_score_costume_palua, judge_score_hula_auana, judge_score_hula_kahiko, judge_score_hula_palua, interview_tie, 
-                         costume_auana_tie, costume_kahiko_tie, costume_palua_tie, hula_auana_tie, hula_palua_tie, hula_auana_net, hula_kahiko_tie, hula_kahiko_net, hula_palua_net, combined_hula_score, overall_score, 
-                         combined_hula_break_score, overall_break_score
+                         costume_auana_tie, costume_kahiko_tie, costume_palua_tie, hula_auana_tie, hula_auana_net, hula_kahiko_tie, hula_kahiko_net, hula_palua_tie, hula_palua_net, combined_hula_score, 
+                         combined_hula_break_score, overall_score, overall_break_score
 FROM            vw_ContestantDetailsAllScores
 WHERE        (entry_date = @entry_date) AND (id = @id)</CommandText>
                     <Parameters>

@@ -2089,7 +2089,6 @@
                                                     <PaddingBottom>2pt</PaddingBottom>
                                                   </Style>
                                                 </Textbox>
-                                                <rd:Selected>true</rd:Selected>
                                               </CellContents>
                                             </TablixHeader>
                                             <TablixMembers>
@@ -4558,10 +4557,6 @@
           <DataField>hula_auana_tie</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="hula_palua_tie">
-          <DataField>hula_palua_tie</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
         <Field Name="hula_auana_net">
           <DataField>hula_auana_net</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
@@ -4574,6 +4569,10 @@
           <DataField>hula_kahiko_net</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="hula_palua_tie">
+          <DataField>hula_palua_tie</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
         <Field Name="hula_palua_net">
           <DataField>hula_palua_net</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
@@ -4582,13 +4581,13 @@
           <DataField>combined_hula_score</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="overall_score">
-          <DataField>overall_score</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
         <Field Name="combined_hula_break_score">
           <DataField>combined_hula_break_score</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="overall_score">
+          <DataField>overall_score</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="overall_break_score">
           <DataField>overall_break_score</DataField>
@@ -4597,7 +4596,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>ContestantReportDataset</rd:DataSetName>
-        <rd:SchemaPath>D:\GitHub Repos\HONK\HONK\Reports\ContestantReportDataset.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\GitHub Repos\HONK\HONK\Reports\ContestantScores_DS.xsd</rd:SchemaPath>
         <rd:TableName>vw_ContestantDetailsAllScores</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

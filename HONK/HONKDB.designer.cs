@@ -6037,9 +6037,9 @@ namespace HONK
 		
 		private int _id;
 		
-		private int _judge_id;
+		private System.Nullable<int> _judge_id;
 		
-		private int _judge_score_id;
+		private System.Nullable<int> _judge_score_id;
 		
 		private System.Nullable<int> _master_score_id;
 		
@@ -6075,43 +6075,23 @@ namespace HONK
 		
 		private System.Nullable<int> _hula_auana_deduction;
 		
-		private System.Nullable<int> _hula_auana_net;
-		
-		private System.Nullable<int> _hula_auana_tie;
-		
 		private System.Nullable<int> _hula_kahiko;
 		
 		private System.Nullable<int> _hula_kahiko_deduction;
-		
-		private System.Nullable<int> _hula_kahiko_net;
-		
-		private System.Nullable<int> _hula_kahiko_tie;
 		
 		private System.Nullable<int> _hula_palua;
 		
 		private System.Nullable<int> _hula_palua_deduction;
 		
-		private System.Nullable<int> _hula_palua_net;
-		
-		private System.Nullable<int> _hula_palua_tie;
-		
 		private System.Nullable<int> _costume_auana;
-		
-		private System.Nullable<int> _costume_auana_tie;
 		
 		private System.Nullable<int> _costume_kahiko;
 		
-		private System.Nullable<int> _costume_kahiko_tie;
-		
 		private System.Nullable<int> _costume_palua;
-		
-		private System.Nullable<int> _costume_palua_tie;
 		
 		private System.Nullable<int> _out_of_order_deduction;
 		
 		private System.Nullable<int> _judge_score_interview;
-		
-		private System.Nullable<int> _interview_tie;
 		
 		private System.Nullable<int> _judge_score_costume_auana;
 		
@@ -6124,6 +6104,26 @@ namespace HONK
 		private System.Nullable<int> _judge_score_hula_kahiko;
 		
 		private System.Nullable<int> _judge_score_hula_palua;
+		
+		private System.Nullable<int> _interview_tie;
+		
+		private System.Nullable<int> _costume_auana_tie;
+		
+		private System.Nullable<int> _costume_kahiko_tie;
+		
+		private System.Nullable<int> _costume_palua_tie;
+		
+		private System.Nullable<int> _hula_auana_tie;
+		
+		private System.Nullable<int> _hula_auana_net;
+		
+		private System.Nullable<int> _hula_kahiko_tie;
+		
+		private System.Nullable<int> _hula_kahiko_net;
+		
+		private System.Nullable<int> _hula_palua_tie;
+		
+		private System.Nullable<int> _hula_palua_net;
 		
 		private System.Nullable<int> _combined_hula_score;
 		
@@ -6153,8 +6153,8 @@ namespace HONK
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_judge_id", DbType="Int NOT NULL")]
-		public int judge_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_judge_id", DbType="Int")]
+		public System.Nullable<int> judge_id
 		{
 			get
 			{
@@ -6169,8 +6169,8 @@ namespace HONK
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_judge_score_id", DbType="Int NOT NULL")]
-		public int judge_score_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_judge_score_id", DbType="Int")]
+		public System.Nullable<int> judge_score_id
 		{
 			get
 			{
@@ -6345,7 +6345,7 @@ namespace HONK
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_judge_name", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_judge_name", DbType="VarChar(MAX)")]
 		public string judge_name
 		{
 			get
@@ -6457,38 +6457,6 @@ namespace HONK
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_auana_net", DbType="Int")]
-		public System.Nullable<int> hula_auana_net
-		{
-			get
-			{
-				return this._hula_auana_net;
-			}
-			set
-			{
-				if ((this._hula_auana_net != value))
-				{
-					this._hula_auana_net = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_auana_tie", DbType="Int")]
-		public System.Nullable<int> hula_auana_tie
-		{
-			get
-			{
-				return this._hula_auana_tie;
-			}
-			set
-			{
-				if ((this._hula_auana_tie != value))
-				{
-					this._hula_auana_tie = value;
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_kahiko", DbType="Int")]
 		public System.Nullable<int> hula_kahiko
 		{
@@ -6517,38 +6485,6 @@ namespace HONK
 				if ((this._hula_kahiko_deduction != value))
 				{
 					this._hula_kahiko_deduction = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_kahiko_net", DbType="Int")]
-		public System.Nullable<int> hula_kahiko_net
-		{
-			get
-			{
-				return this._hula_kahiko_net;
-			}
-			set
-			{
-				if ((this._hula_kahiko_net != value))
-				{
-					this._hula_kahiko_net = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_kahiko_tie", DbType="Int")]
-		public System.Nullable<int> hula_kahiko_tie
-		{
-			get
-			{
-				return this._hula_kahiko_tie;
-			}
-			set
-			{
-				if ((this._hula_kahiko_tie != value))
-				{
-					this._hula_kahiko_tie = value;
 				}
 			}
 		}
@@ -6585,38 +6521,6 @@ namespace HONK
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_palua_net", DbType="Int")]
-		public System.Nullable<int> hula_palua_net
-		{
-			get
-			{
-				return this._hula_palua_net;
-			}
-			set
-			{
-				if ((this._hula_palua_net != value))
-				{
-					this._hula_palua_net = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_palua_tie", DbType="Int")]
-		public System.Nullable<int> hula_palua_tie
-		{
-			get
-			{
-				return this._hula_palua_tie;
-			}
-			set
-			{
-				if ((this._hula_palua_tie != value))
-				{
-					this._hula_palua_tie = value;
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_auana", DbType="Int")]
 		public System.Nullable<int> costume_auana
 		{
@@ -6629,22 +6533,6 @@ namespace HONK
 				if ((this._costume_auana != value))
 				{
 					this._costume_auana = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_auana_tie", DbType="Int")]
-		public System.Nullable<int> costume_auana_tie
-		{
-			get
-			{
-				return this._costume_auana_tie;
-			}
-			set
-			{
-				if ((this._costume_auana_tie != value))
-				{
-					this._costume_auana_tie = value;
 				}
 			}
 		}
@@ -6665,22 +6553,6 @@ namespace HONK
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_kahiko_tie", DbType="Int")]
-		public System.Nullable<int> costume_kahiko_tie
-		{
-			get
-			{
-				return this._costume_kahiko_tie;
-			}
-			set
-			{
-				if ((this._costume_kahiko_tie != value))
-				{
-					this._costume_kahiko_tie = value;
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_palua", DbType="Int")]
 		public System.Nullable<int> costume_palua
 		{
@@ -6693,22 +6565,6 @@ namespace HONK
 				if ((this._costume_palua != value))
 				{
 					this._costume_palua = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_palua_tie", DbType="Int")]
-		public System.Nullable<int> costume_palua_tie
-		{
-			get
-			{
-				return this._costume_palua_tie;
-			}
-			set
-			{
-				if ((this._costume_palua_tie != value))
-				{
-					this._costume_palua_tie = value;
 				}
 			}
 		}
@@ -6741,22 +6597,6 @@ namespace HONK
 				if ((this._judge_score_interview != value))
 				{
 					this._judge_score_interview = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_interview_tie", DbType="Int")]
-		public System.Nullable<int> interview_tie
-		{
-			get
-			{
-				return this._interview_tie;
-			}
-			set
-			{
-				if ((this._interview_tie != value))
-				{
-					this._interview_tie = value;
 				}
 			}
 		}
@@ -6853,6 +6693,166 @@ namespace HONK
 				if ((this._judge_score_hula_palua != value))
 				{
 					this._judge_score_hula_palua = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_interview_tie", DbType="Int")]
+		public System.Nullable<int> interview_tie
+		{
+			get
+			{
+				return this._interview_tie;
+			}
+			set
+			{
+				if ((this._interview_tie != value))
+				{
+					this._interview_tie = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_auana_tie", DbType="Int")]
+		public System.Nullable<int> costume_auana_tie
+		{
+			get
+			{
+				return this._costume_auana_tie;
+			}
+			set
+			{
+				if ((this._costume_auana_tie != value))
+				{
+					this._costume_auana_tie = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_kahiko_tie", DbType="Int")]
+		public System.Nullable<int> costume_kahiko_tie
+		{
+			get
+			{
+				return this._costume_kahiko_tie;
+			}
+			set
+			{
+				if ((this._costume_kahiko_tie != value))
+				{
+					this._costume_kahiko_tie = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_costume_palua_tie", DbType="Int")]
+		public System.Nullable<int> costume_palua_tie
+		{
+			get
+			{
+				return this._costume_palua_tie;
+			}
+			set
+			{
+				if ((this._costume_palua_tie != value))
+				{
+					this._costume_palua_tie = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_auana_tie", DbType="Int")]
+		public System.Nullable<int> hula_auana_tie
+		{
+			get
+			{
+				return this._hula_auana_tie;
+			}
+			set
+			{
+				if ((this._hula_auana_tie != value))
+				{
+					this._hula_auana_tie = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_auana_net", DbType="Int")]
+		public System.Nullable<int> hula_auana_net
+		{
+			get
+			{
+				return this._hula_auana_net;
+			}
+			set
+			{
+				if ((this._hula_auana_net != value))
+				{
+					this._hula_auana_net = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_kahiko_tie", DbType="Int")]
+		public System.Nullable<int> hula_kahiko_tie
+		{
+			get
+			{
+				return this._hula_kahiko_tie;
+			}
+			set
+			{
+				if ((this._hula_kahiko_tie != value))
+				{
+					this._hula_kahiko_tie = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_kahiko_net", DbType="Int")]
+		public System.Nullable<int> hula_kahiko_net
+		{
+			get
+			{
+				return this._hula_kahiko_net;
+			}
+			set
+			{
+				if ((this._hula_kahiko_net != value))
+				{
+					this._hula_kahiko_net = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_palua_tie", DbType="Int")]
+		public System.Nullable<int> hula_palua_tie
+		{
+			get
+			{
+				return this._hula_palua_tie;
+			}
+			set
+			{
+				if ((this._hula_palua_tie != value))
+				{
+					this._hula_palua_tie = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hula_palua_net", DbType="Int")]
+		public System.Nullable<int> hula_palua_net
+		{
+			get
+			{
+				return this._hula_palua_net;
+			}
+			set
+			{
+				if ((this._hula_palua_net != value))
+				{
+					this._hula_palua_net = value;
 				}
 			}
 		}
