@@ -12,7 +12,7 @@ namespace HONK
     public partial class ContestantScores : System.Web.UI.Page
     {
         HONKDBDataContext db = new HONKDBDataContext();
-        protected static int EventYear = DateTime.Now.AddYears(-1).Year;
+        //protected static int EventYear = DateTime.Now.Year;
 
         protected void Page_PreRender(object sender, EventArgs e)
         {
@@ -36,7 +36,6 @@ namespace HONK
 
                 var contestant = from c in db.vw_ContestantJudgeScores
                                  where c.id == contestant_id
-                                 //where c.entry_date.Year == EventYear
                                  select c;
 
                 // INSERT Contestant_JudgeScores w/ NULL VALUES
