@@ -58,7 +58,7 @@
             <li role="presentation"><a href="#opiokane" aria-controls="settings" role="tab" data-toggle="tab">'OPIO KANE</a></li>
             <li role="presentation"><a href="#opiowahine" aria-controls="messages" role="tab" data-toggle="tab">'OPIO WAHINE</a></li>
             <li role="presentation"><a href="#costume" aria-controls="settings" role="tab" data-toggle="tab">COSTUME</a></li>
-            <li role="presentation"><a href="#palua" aria-controls="settings" role="tab" data-toggle="tab">PALUA</a></li>
+            <li role="presentation"><a href="#palua" aria-controls="settings" role="tab" data-toggle="tab">PĀLUA</a></li>
         </ul>
 
         <!-- Tab panes -->
@@ -68,7 +68,7 @@
                     <div class="panel-body">
                         <asp:UpdatePanel runat="server" ID="MasterGVUP" ChildrenAsTriggers="true" UpdateMode="Always">
                             <ContentTemplate>
-                                <asp:GridView ID="MasterGV" runat="server" AllowPaging="True" DataSourceID="MasterDS" AutoGenerateColumns="False" CssClass="table table-striped table-hover" AllowSorting="True"
+                                <asp:GridView ID="MasterGV" runat="server" AllowPaging="False" DataSourceID="MasterDS" AutoGenerateColumns="False" CssClass="table table-striped table-hover" AllowSorting="True"
                                     DataKeyNames="id" EmptyDateText="" OnRowCommand="MasterGV_RowCommand" OnRowDataBound="MasterGV_RowDataBound">
                                     <Columns>
                                         <asp:TemplateField HeaderText="Actions" ShowHeader="False">
@@ -96,7 +96,7 @@
                                         <asp:BoundField DataField="overall_break_score" HeaderText="Overall Score Tie" SortExpression="overall_break_score" />
                                         <asp:BoundField DataField="halau_name" HeaderText="Halau" SortExpression="halau_name" />
                                         <asp:BoundField DataField="kumu_name" HeaderText="Kumu" SortExpression="kumu_name" />
-                                        <asp:BoundField DataField="music" HeaderText="Music" />
+                                        <asp:BoundField DataField="music" HeaderText="Music" SortExpression="music" />
                                     </Columns>
                                     <EmptyDataTemplate>
                                         <div class="alert alert-dismissible alert-danger">
@@ -316,7 +316,7 @@
                             <div class="panel panel-primary">
                                 <div class="panel-heading" role="tab" id="headingThree">
                                     <h4 class="panel-title">
-                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Costume (Palua)
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Costume (Pālua)
                                         </a>
                                     </h4>
                                 </div>

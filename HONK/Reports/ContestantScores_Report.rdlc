@@ -1783,7 +1783,7 @@
                                       <Paragraph>
                                         <TextRuns>
                                           <TextRun>
-                                            <Value>1407</Value>
+                                            <Value>1439</Value>
                                             <Style>
                                               <FontFamily>Century GOthic</FontFamily>
                                               <FontSize>9pt</FontSize>
@@ -2507,7 +2507,7 @@
                                             <Paragraph>
                                               <TextRuns>
                                                 <TextRun>
-                                                  <Value>32</Value>
+                                                  <Value>64</Value>
                                                   <Style>
                                                     <FontFamily>Century GOthic</FontFamily>
                                                     <FontSize>9pt</FontSize>
@@ -4323,7 +4323,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=Format(Fields!entry_date.Value, "yyyy") &amp; " CONTESTANT SCORE REPORT (NON-PĀLUA DIVISION)"</Value>
+                  <Value>=Format(Fields!entry_date.Value, "yyyy") &amp; " CONTESTANT SCORE REPORT (SOLOIST DIVISION)"</Value>
                   <Style>
                     <FontFamily>Century GOthic</FontFamily>
                     <FontSize>16pt</FontSize>

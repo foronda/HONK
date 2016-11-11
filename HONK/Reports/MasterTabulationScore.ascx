@@ -7,13 +7,20 @@
     <LocalReport ReportPath="Reports\MasterTabulationScore.rdlc">
         <DataSources>
             <rsweb:ReportDataSource DataSourceId="MasterScoreDetailsDS" Name="MasterReportDataset_Tabulation" />
-            <rsweb:ReportDataSource DataSourceId="MasterScoreDetailsDS" Name="MasterReportPaluaDataset_Tabulation" />
+            <rsweb:ReportDataSource DataSourceId="MasterScorePaluaDetailsDS" Name="MasterReportPaluaDataset_Tabulation" />
         </DataSources>
     </LocalReport>
 </rsweb:ReportViewer>
-<asp:LinqDataSource ID="MasterScoreDetailsDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" TableName="vw_MasterScoreDetails" Where="entry_date == @entry_date">
+<asp:LinqDataSource ID="MasterScoreDetailsDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" TableName="vw_MasterScoreDetails" Where="entry_date == @entry_date && gender_name != @gender_name">
     <WhereParameters>
         <asp:Parameter Name="entry_date" Type="DateTime" ConvertEmptyStringToNull="true" />
+        <asp:Parameter Name="gender_name" Type="String" DefaultValue="Palua" />
+    </WhereParameters>
+</asp:LinqDataSource>
+<asp:LinqDataSource ID="MasterScorePaluaDetailsDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" TableName="vw_MasterScoreDetails" Where="entry_date == @entry_date && gender_name == @gender_name">
+    <WhereParameters>
+        <asp:Parameter Name="entry_date" Type="DateTime" ConvertEmptyStringToNull="true" />
+        <asp:Parameter Name="gender_name" Type="String" DefaultValue="Palua" />
     </WhereParameters>
 </asp:LinqDataSource>
 
