@@ -31,6 +31,7 @@ namespace HONK.Reports
         public void SetDateParameter(DateTime date)
         {
             MasterScoreDetailsDS.WhereParameters["entry_date"].DefaultValue = date.ToShortDateString();
+            MasterScorePaluaDetailsDS.WhereParameters["entry_date"].DefaultValue = date.ToShortDateString();
         }
 
         public void DownloadReport(string entry_year)
