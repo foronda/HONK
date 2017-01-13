@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="jumbotron">
-        <h1>HULA O NA KEIKI </h1>
+        <h1><strong>HULA ‘O NA KEIKI</strong> </h1>
         <p class="lead"><%= DateTime.Now.Year %> Application Forms</p>
         <%--<p><a href="http://www.asp.net" class="btn btn-primary btn-large">Learn more &raquo;</a></p>--%>
     </div>
