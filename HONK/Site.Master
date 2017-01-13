@@ -11,13 +11,14 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <%--<webopt:BundleReference runat="server" Path="~/Content/css" />--%>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <%-- Enabled during development to enable CSS Intellisense --%>
-    <link href="Content/bootstrap.css" rel="stylesheet" />
-    <link href="Content/bootstrap-custom-styles.css" rel="stylesheet" />
-    <link href="Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="~/Content/animate.css" rel="stylesheet">
+    <link href="~/Content/style.css" rel="stylesheet">
 </head>
 <body>
     <form runat="server" class="form-horizontal">
@@ -43,59 +44,103 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <img src="Images/honk3.png" style="height: 80px;" class="navbar-brand" />
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/EventResults">Event Results</a></li>
-                        <li><a runat="server" href="~/AwardRecipients">Award Recipients</a></li>
-                        <%--<li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Reports<span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a runat="server" href="~/MasterScores">Master Tabulation</a></li>
-                                <li><a runat="server" href="#">Judge's Scores</a></li>
-                                <li><a runat="server" href="#">Etc...</a></li>
+
+
+
+
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="clear"><span class="block m-t-xs"><strong class="font-bold">Hula O' Na Keiki</strong>
+                                </span><span class="text-muted text-xs block">Art Director <b class="caret"></b></span></span></a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a href="#">Logout</a></li>
                             </ul>
-                        </li>--%>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Manage Data<span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a runat="server" href="~/Contestants">Contestants</a></li>
-                                <li><a runat="server" href="~/ContestantScores">Contestant Scores</a></li>
-                                <li><a runat="server" href="#">Halau's</a></li>
-                                <li><a runat="server" href="#">Kumu's</a></li>
-                                <li><a runat="server" href="#">Event Awards</a></li>
-                            </ul>
+                        </div>
+                        <div class="logo-element">
+                            HONK
+                        </div>
+                    </li>
+                    <li>
+                        <a runat="server" href="~/"><i class="fa fa-th-large"></i><span class="nav-label">Home</span></a>
+                    </li>
+                    <li>
+                        <a runat="server" href="~/AwardRecipients"><i class="fa fa-files-o"></i><span class="nav-label">Event Results</span></a>
+                    <li>
+                        <a runat="server" href="~/AwardRecipients"><i class="fa fa-child"></i><span class="nav-label">Award Recipients</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-bar-chart-o"></i><span class="nav-label">Manage Data</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a runat="server" href="~/Contestants">Contestants</a></li>
+                            <li><a runat="server" href="~/ContestantScores">Contestant Scores</a></li>
+                            <li><a runat="server" href="#">Halau's</a></li>
+                            <li><a runat="server" href="#">Kumu's</a></li>
+                            <li><a runat="server" href="#">Event Awards</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a runat="server" href="~/HONKReports"><i class="fa fa-pie-chart"></i><span class="nav-label">Reports</span><span class="fa arrow"></span></a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+        <div id="page-wrapper" class="gray-bg">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i></a>
+                        <%--  <form role="search" class="navbar-form-custom" method="post" action="#">
+                            <div class="form-group">
+                                <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
+                            </div>
+                        </form>--%>
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-sign-out"></i>Log out
+                            </a>
                         </li>
-                        <li><a runat="server" href="~/HONKReports">Reports</a></li>
+
                     </ul>
-                    <ul class="nav navbar-nav  navbar-right">
-                        <li class="navbar-text" style="line-height: 50px;">Hello,
-                            <asp:LoginName runat="server" />
-                            !</li>
-                    </ul>
+
+                </nav>
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center m-t-lg">
+                            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="container body-content">
-            <br />
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Developed by Ka'anapali Beach Hotel</p>
-            </footer>
+            <div class="footer">
+                <%--<div class="pull-right">
+                    10GB of <strong>250GB</strong> Free.
+                </div>--%>
+                <div>
+                    <strong>Copyright</strong> Ka'anapali Beach Hotel &copy; 2015-2017
+                </div>
+            </div>
+
         </div>
 
     </form>
+    <!-- Mainly scripts -->
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="Scripts/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="Scripts/inspinia.js"></script>
+    <script src="Scripts/plugins/pace/pace.min.js"></script>
 </body>
 </html>
