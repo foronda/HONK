@@ -29,7 +29,7 @@
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="text-danger" ErrorMessage="The password field is required." />
             </div>
             <div class="form-group">
-                <asp:CheckBox runat="server" ID="RememberMe" CssClass="i-checks" />
+                <asp:CheckBox runat="server" ID="RememberMe" CssClass="y" />
                 <asp:Label runat="server" AssociatedControlID="RememberMe">Remember me?</asp:Label>
             </div>
             <asp:Button runat="server" OnClick="LogIn" Text="Login" CssClass="btn btn-primary block full-width m-b" />

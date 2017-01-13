@@ -44,10 +44,6 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-
-
-
-
         <nav class="navbar-default navbar-static-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav metismenu" id="side-menu">
@@ -126,7 +122,7 @@
                     10GB of <strong>250GB</strong> Free.
                 </div>--%>
                 <div>
-                    <strong>Copyright</strong> Ka'anapali Beach Hotel &copy; 2015-2017
+                    <strong>Copyright</strong> KĀ‘ANAPALI BEACH HOTEL &copy; 2015-2017
                 </div>
             </div>
 
