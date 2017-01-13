@@ -1,6 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Application.aspx.cs" Inherits="HONK_v2.Application" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="jumbotron">
+        <h1>HULA O NA KEIKI </h1>
+        <p class="lead"><%= DateTime.Now.Year %> Application Forms</p>
+        <%--<p><a href="http://www.asp.net" class="btn btn-primary btn-large">Learn more &raquo;</a></p>--%>
+    </div>
     <%--<h3 class="well-sm">Soloist Haumana Application</h3>--%>
     <div class="wrapper wrapper-content animated fadeIn">
         <div class="row">
@@ -41,7 +46,7 @@
                                                     <label class="col-sm-3 control-label">Entrant's Inoa</label>
                                                     <div class="col-sm-9">
                                                         <input type="text" class="form-control">
-                                                        <span class="help-block m-b-none">The above is the preferred name to be used in all publications. Hotel reserves the right to make adjustments based on printing space.</span>
+                                                        <span class="help-block m-b-none"><small>The above is the preferred name to be used in all publications. Hotel reserves the right to make adjustments based on printing space.</small></span>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -163,7 +168,7 @@
                                                         <textarea class="form-control input-lg" rows="5"></textarea>
                                                     </div>
                                                 </div>
-                                                 <div class="form-group">
+                                                <div class="form-group">
                                                     <div class="row">
                                                         <label class="control-label">Why was the oli selected for this presentation?</label>
                                                     </div>
