@@ -64,7 +64,7 @@
                         <a runat="server" href="~/"><i class="fa fa-th-large"></i><span class="nav-label">Home</span></a>
                     </li>
                     <li>
-                        <a runat="server" href="~/AwardRecipients"><i class="fa fa-files-o"></i><span class="nav-label">Event Results</span></a>
+                        <a runat="server" href="~/EventResults"><i class="fa fa-files-o"></i><span class="nav-label">Event Results</span></a>
                     <li>
                         <a runat="server" href="~/AwardRecipients"><i class="fa fa-child"></i><span class="nav-label">Award Recipients</span></a>
                     </li>
