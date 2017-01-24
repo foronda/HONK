@@ -99,14 +99,14 @@
                             <li class=""><a data-toggle="tab" href="#tab-3">Soloist Information Form</a></li>
                         </ul>
                         <div class="tab-content">
-                            <div id="tab-1" class="tab-pane active">
+                            <div id="tab-1" class="tab-pane">
                                 <div class="panel-body">
                                     <div class="panel panel-primary">
                                         <div class="panel-heading">
-                                            <h3>Soloist Haumana Bio</h3>
+                                            <h3>Soloist Haumana Bio <span class="small pull-right text-uppercase badge">Deadline to submit:  July 1, <%= DateTime.Now.Year %></span></h3>
                                         </div>
                                         <div class="panel-body">
-                                            <p class="font-bold  alert alert-warning m-b-sm">
+                                            <p class="small alert alert-warning">
                                                 Keiki entrants must be 5 to 12 years old on or before <strong>November 10, 2017</strong>. ‘Ōpio entrants must be 13 to 17 years old on or before <strong>November 10, 2017</strong>.
                                             </p>
                                             <div class="row">
@@ -222,9 +222,9 @@
                                             </div>
                                         </div>
 
-                                        <div class="panel-footer">
+                                        <%-- <div class="panel-footer">
                                             <strong class="text-danger">Deadline to submit:  July 1, 2017</strong>
-                                        </div>
+                                        </div>--%>
                                     </div>
                                 </div>
                             </div>
@@ -232,179 +232,124 @@
                                 <div class="panel-body">
                                     <div class="panel panel-primary">
                                         <div class="panel-heading">
-                                            <h3>Parent Consent Form <span class="pull-right text-uppercase">Deadline to submit:  August 1, 2017</span></h3>
+                                            <h3>Parent Consent Form <span class="small pull-right text-uppercase badge">Deadline to submit:  July 1, <%= DateTime.Now.Year %></span></h3>
                                         </div>
                                         <div class="panel-body">
                                         </div>
-                                        <div class="panel-footer">
+                                        <%-- <div class="panel-footer">
                                             <strong>Deadline to submit:  August 1, 2017</strong>
-                                        </div>
+                                        </div>--%>
                                     </div>
 
                                 </div>
                             </div>
-                            <div id="tab-3" class="tab-pane">
+                            <div id="tab-3" class="tab-pane active">
                                 <div class="panel-body">
                                     <div class="panel panel-primary">
                                         <div class="panel-heading">
-                                            <h3></h3>
+                                            <h3>Soloist Information Form <span class="small pull-right text-uppercase badge">Deadline to submit:  August 1, <%= DateTime.Now.Year %></span></h3>
                                         </div>
                                         <div class="panel-body">
-                                            <div class="row">
-                                                <div class="col-lg-6">
-                                                    <div class="ibox float-e-margins">
-                                                        <div class="ibox-title">
-                                                            <h5>HULA KAHIKO INFO:<small></small></h5>
-                                                        </div>
-                                                        <div class="ibox-content">
-                                                            <div class="form-horizontal">
-                                                                <div class="form-group">
-                                                                    <label class="col-sm-3 control-label">Title of Oli</label>
-                                                                    <div class="col-sm-9">
-                                                                        <input type="text" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label class="col-sm-3 control-label">Oli Style</label>
-                                                                    <div class="col-sm-9">
-                                                                        <input type="text" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label class="col-sm-3 control-label">Title of Ka‘i</label>
-                                                                    <div class="col-sm-9">
-                                                                        <input type="text" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label class="col-sm-3 control-label">Title of Ho‘i</label>
-                                                                    <div class="col-sm-9">
-                                                                        <input type="text" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label class="control-label">What will the ho‘opa‘a use as the accomplaniment?</label>
-                                                                    <div class="col-sm-12">
-                                                                        <textarea class="form-control input-lg" rows="5"></textarea>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <div class="row">
-                                                                        <label class="control-label">If applicant is using an implement in the hula, describe how it will be used:</label>
-                                                                    </div>
-                                                                    <div class="col-sm-12">
-                                                                        <textarea class="form-control input-lg" rows="5"></textarea>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <div class="row">
-                                                                        <label class="control-label">Why was the oli selected for this presentation?</label>
-                                                                    </div>
-                                                                    <div class="col-sm-12">
-                                                                        <textarea class="form-control input-lg" rows="5"></textarea>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-
+                                            <div class="col-sm-6">
+                                                <div class="ibox float-e-margins">
+                                                    <div class="ibox-title">
+                                                        <h5>HULA KAHIKO INFO:<small></small></h5>
                                                     </div>
-
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <div class="ibox float-e-margins">
-                                                        <div class="ibox-title">
-                                                            <h5>HULA ‘AUANA INFO:
-                                                            </h5>
-
-                                                        </div>
-
-                                                        <div class="ibox-content">
-
-                                                            <div class="form-horizontal">
-                                                                <div class="form-group">
-                                                                    <p class="label label-default">
-                                                                        Any hapa haole song that was composed between <strong>1929-1959</strong> cannot be duplicated by another hālau as a ka‘i/ho‘i or main mele.
-                                                                        <br />
-                                                                        &nbsp; Provide words and arrangement to all mele by <strong>August 1, 2017.</strong>
-                                                                    </p>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label class="col-sm-3 control-label">Title of Ka‘i & Ho‘i</label>
-                                                                    <div class="col-sm-3">
-                                                                        <input type="text" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label class="col-sm-3 control-label">Composer</label>
-                                                                    <div class="col-sm-3">
-                                                                        <input type="text" class="form-control">
-                                                                    </div>
-                                                                    <label class="col-sm-3 control-label">Year Written</label>
-                                                                    <div class="col-sm-3">
-                                                                        <input type="text" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label class="col-sm-3 control-label">Title of main Mele</label>
-                                                                    <div class="col-sm-9">
-                                                                        <input type="text" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label class="col-sm-3 control-label">Composer</label>
-                                                                    <div class="col-sm-3">
-                                                                        <input type="text" class="form-control">
-                                                                    </div>
-                                                                    <label class="col-sm-3 control-label">Year Written</label>
-                                                                    <div class="col-sm-3">
-                                                                        <input type="text" class="form-control">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <div class="row">
-                                                                        <label class="control-label">Who would you like to dedicate this competition’s performance to and why?</label>
-                                                                    </div>
-                                                                    <div class="col-sm-12">
-                                                                        <textarea class="form-control input-lg" rows="4"></textarea>
-                                                                    </div>
-
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <div class="row">
-                                                                        <label class="control-label">Describe a typical day in your papa hula.:</label>
-                                                                    </div>
-                                                                    <div class="col-sm-12">
-                                                                        <textarea class="form-control input-lg" rows="4"></textarea>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <div class="row">
-                                                                        <label class="control-label">Why do you dance hula?</label>
-                                                                    </div>
-                                                                    <div class="col-sm-12">
-                                                                        <textarea class="form-control input-lg" rows="4"></textarea>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <div class="row">
-                                                                        <label class="control-label">What 3 things do you love most about your kumu hula and why?</label>
-                                                                    </div>
-                                                                    <div class="col-sm-12">
-                                                                        <textarea class="form-control input-lg" rows="4"></textarea>
-                                                                    </div>
-                                                                </div>
+                                                    <div class="ibox-content">
+                                                        <div class="form-horizontal">
+                                                            <div class="form-group">
+                                                                <label>Title of Oli</label>
+                                                                <input type="text" class="form-control">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Oli Style</label>
+                                                                <input type="text" class="form-control">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Title of Ka‘i</label>
+                                                                <input type="text" class="form-control">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Title of Ho‘i</label>
+                                                                <input type="text" class="form-control">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>What will the ho‘opa‘a use as the accomplaniment?</label>
+                                                                <textarea class="form-control input-lg" rows="5"></textarea>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>If applicant is using an implement in the hula, describe how it will be used:</label>
+                                                                <textarea class="form-control input-lg" rows="5"></textarea>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Why was the oli selected for this presentation?</label>
+                                                                <textarea class="form-control input-lg" rows="5"></textarea>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="ibox float-e-margins">
+                                                    <div class="ibox-title">
+                                                        <h5>HULA ‘AUANA INFO:
+                                                        </h5>
+                                                    </div>
+                                                    <div class="ibox-content">
+                                                        <div class="form-horizontal">
+                                                            <div class="form-group">
+                                                                <p class="alert alert-warning small">
+                                                                    Any hapa haole song that was composed between <strong>1929-1959</strong> cannot be duplicated by another hālau as a ka‘i/ho‘i or main mele. Provide words and arrangement to all mele by <strong>August 1, 2017.</strong>
+                                                                </p>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Title of Ka‘i & Ho‘i</label>
+                                                                <input type="text" class="form-control">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Composer</label>
+                                                                <input type="text" class="form-control">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Year Written</label>
+                                                                <input type="text" class="form-control">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Title of main Mele</label>
+                                                                <input type="text" class="form-control">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Composer</label>
+                                                                <input type="text" class="form-control">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Year Written</label>
+                                                                <input type="text" class="form-control">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Who would you like to dedicate this competition’s performance to and why?</label>
+                                                                <textarea class="form-control input-lg" rows="4"></textarea>
 
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Describe a typical day in your papa hula.:</label>
+                                                                <textarea class="form-control input-lg" rows="4"></textarea>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Why do you dance hula?</label>
+                                                                <textarea class="form-control input-lg" rows="4"></textarea>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>What 3 things do you love most about your kumu hula and why?</label>
+                                                                <textarea class="form-control input-lg" rows="4"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="row">
-                                            </div>
-                                            <div class="hr-line-dashed"></div>
-                                            <div class="form-group">
-                                                <div class="col-sm-4 col-sm-offset-2">
+                                            <div class="col-sm-12">
+                                                <div class="hr-line-dashed"></div>
+                                                <div class="pull-right">
                                                     <button class="btn btn-white" type="submit">Cancel</button>
                                                     <button class="btn btn-primary" type="submit">Save changes</button>
                                                 </div>
