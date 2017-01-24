@@ -106,92 +106,122 @@
                                             <h3>Soloist Haumana Bio</h3>
                                         </div>
                                         <div class="panel-body">
-                                            <div class="col-lg-12">
-                                                <div class="ibox float-e-margins">
-                                                    <div class="ibox-title">
-                                                        <h5 class="text-center"><small>Keiki entrants must be 5 to 12 years old on or before <strong>November 10, 2017</strong>. 
-                                                                ‘Ōpio entrants must be 13 to 17 years old on or before <strong>November 10, 2017</strong>.
-                                                        </small></h5>
-                                                    </div>
-                                                    <div class="ibox-content">
-                                                        <div class="form-horizontal">
-                                                            <div class="form-group">
-                                                                <label class="col-sm-3 control-label">Hula Division</label>
-                                                                <div class="col-sm-3">
-                                                                    <select class="form-control m-b" name="account">
-                                                                        <option>Select Division</option>
-                                                                        <option>Keiki Kane</option>
-                                                                        <option>Keiki Wahine</option>
-                                                                        <option>Keiki Palua</option>
-                                                                        <option>Opio Kane</option>
-                                                                        <option>Opio Wahine</option>
-                                                                        <option>Opio Palua</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="col-sm-3 control-label">Entrant's Inoa</label>
-                                                                <div class="col-sm-9">
-                                                                    <input type="text" class="form-control">
-                                                                    <span class="help-block m-b-none"><small>The above is the preferred name to be used in all publications. Hotel reserves the right to make adjustments based on printing space.</small></span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="col-sm-3 control-label">Hālau Inoa</label>
-                                                                <div class="col-sm-3">
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                                <label class="col-sm-3 control-label">Kumu Inoa</label>
-                                                                <div class="col-sm-3">
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="col-sm-3 control-label">School Attending</label>
-                                                                <div class="col-sm-3">
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                                <label class="col-sm-3 control-label">Grade</label>
-                                                                <div class="col-sm-3">
-                                                                    <select class="form-control m-b" name="account">
-                                                                        <option>Select Grade</option>
-                                                                        <option>Kindergarten</option>
-                                                                        <option>Grade 1</option>
-                                                                        <option>Grade 2</option>
-                                                                        <option>Grade 3</option>
-                                                                        <option>Grade 4</option>
-                                                                        <option>Grade 5</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="col-sm-3 control-label">Parents/Guardians</label>
-                                                                <div class="col-sm-3">
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                                <label class="col-sm-3 control-label">Contact Numbers</label>
-                                                                <div class="col-sm-3">
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="col-sm-3 control-label">Parent/Guardian Email Address</label>
-                                                                <div class="col-sm-3">
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <div class="hr-line-dashed"></div>
-                                                                <div class="col-sm-4 col-sm-offset-2">
-                                                                    <button class="btn btn-white" type="submit">Cancel</button>
-                                                                    <button class="btn btn-primary" type="submit">Save changes</button>
-                                                                </div>
-                                                            </div>
+                                            <p class="font-bold  alert alert-warning m-b-sm">
+                                                Keiki entrants must be 5 to 12 years old on or before <strong>November 10, 2017</strong>. ‘Ōpio entrants must be 13 to 17 years old on or before <strong>November 10, 2017</strong>.
+                                            </p>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Hula Division</label>
+                                                        <div>
+                                                            <select class="form-control m-b" name="account">
+                                                                <option>Select Division</option>
+                                                                <option>Keiki Kane</option>
+                                                                <option>Keiki Wahine</option>
+                                                                <option>Keiki Palua</option>
+                                                                <option>Opio Kane</option>
+                                                                <option>Opio Wahine</option>
+                                                                <option>Opio Palua</option>
+                                                            </select>
                                                         </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Entrant's Inoa</label>
+                                                        <input type="text" class="form-control">
+                                                        <span class="help-block m-b-none"><small>The above is the preferred name to be used in all publications. Hotel reserves the right to make adjustments based on printing space.</small></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Hālau Inoa</label>
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Kumu Inoa</label>
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <br />
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>School Attending</label>
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Parents/Guardians</label>
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Contact Number (Best)</label>
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>T-Shirt Type</label>
+                                                        <div class="i-checks">
+                                                            <label>
+                                                                <input type="radio" value="option1" name="a">
+                                                                <i></i>Child
+                                                            </label>
+                                                        </div>
+                                                        <div class="i-checks">
+                                                            <label>
+                                                                <input type="radio" checked="" value="option2" name="a">
+                                                                <i></i>Adult
+                                                            </label>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Grade</label>
+                                                        <select class="form-control m-b" name="account">
+                                                            <option>Select Grade</option>
+                                                            <option>Kindergarten</option>
+                                                            <option>Grade 1</option>
+                                                            <option>Grade 2</option>
+                                                            <option>Grade 3</option>
+                                                            <option>Grade 4</option>
+                                                            <option>Grade 5</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Parent/Guardian Email Address</label>
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Contact Number (2nd Best)</label>
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>T-Shirt Size</label>
+                                                        <select class="form-control m-b" name="account">
+                                                            <option>Select Size</option>
+                                                            <option>Small</option>
+                                                            <option>Medium</option>
+                                                            <option>Large</option>
+                                                            <option>X-Large</option>
+                                                            <option>2X-Large</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
+
+
+                                            <div class="col-sm-12">
+                                                <div class="hr-line-dashed"></div>
+                                                <div class="pull-right">
+                                                    <button class="btn btn-white" type="submit">Cancel</button>
+                                                    <button class="btn btn-primary" type="submit">Save changes</button>
+                                                </div>
+                                            </div>
                                         </div>
+
                                         <div class="panel-footer">
                                             <strong class="text-danger">Deadline to submit:  July 1, 2017</strong>
                                         </div>
@@ -253,9 +283,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <div class="row">
-                                                                        <label class="control-label">What will the ho‘opa‘a use as the accomplaniment?</label>
-                                                                    </div>
+                                                                    <label class="control-label">What will the ho‘opa‘a use as the accomplaniment?</label>
                                                                     <div class="col-sm-12">
                                                                         <textarea class="form-control input-lg" rows="5"></textarea>
                                                                     </div>
