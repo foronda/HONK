@@ -8,13 +8,26 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using HONK_v2.Models;
 
+using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
+
+using System.Data.Entity;
+using System.Linq;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.Spatial;
+using System.Data.Entity.ModelConfiguration.Conventions;
+
 namespace HONK_v2.Models
 {
     // You can add User data for the user by adding more properties to your User class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        [Required]
+        public string Name { get; set; }
         public ClaimsIdentity GenerateUserIdentity(ApplicationUserManager manager)
         {
+            // Custom properties for profile information
+
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = manager.CreateIdentity(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
@@ -30,15 +43,38 @@ namespace HONK_v2.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("HONKConnectionString", throwIfV1Schema: false)
         {
+            bool initDB = false;
+            if (initDB)
+            {
+                //Database.SetInitializer(new IdentityDbInitializer());
+                Database.Initialize(false);
+            }
+        }
+        protected override void OnModelCreating(System.Data.Entity.DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<ApplicationUser>().ToTable("Users");
+            modelBuilder.Entity<IdentityRole>().ToTable("Roles");
+            modelBuilder.Entity<IdentityUserRole>().ToTable("UserRoles");
+            modelBuilder.Entity<IdentityUserClaim>().ToTable("UserClaims");
+            modelBuilder.Entity<IdentityUserLogin>().ToTable("UserLogins");
+
+            // RapUser Entity Mappings
+            modelBuilder.Entity<ApplicationUser>()
+                .Property(e => e.Name)
+                .IsRequired();
         }
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+
     }
+
 }
 
 #region Helpers

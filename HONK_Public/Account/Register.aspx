@@ -14,13 +14,13 @@
             <h3>HULA O NĀ KEIKI</h3>
             <p>Create account to submit an application.</p>
             <div class="form-group">
-                <asp:TextBox runat="server" ID="Name" CssClass="form-control" type="email" placeholder="Name" required="" />
+                <asp:TextBox runat="server" ID="Name" CssClass="form-control" placeholder="Name" required="" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Name"
                     CssClass="text-danger" ErrorMessage="The name field is required." />
                 <%--<input type="text" class="form-control" placeholder="Name" required="">--%>
             </div>
             <div class="form-group">
-                <asp:TextBox runat="server" ID="Email" CssClass="form-control" type="email" placeholder="Email" />
+                <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" placeholder="Email" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
                     CssClass="text-danger" ErrorMessage="The email field is required." />
                 <%--<input type="email" class="form-control" placeholder="Email" required="">--%>

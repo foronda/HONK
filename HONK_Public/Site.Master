@@ -49,17 +49,14 @@
                             <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
                                 <i class="fa fa-reorder"></i>
                             </button>
-                            <a class="navbar-brand" rel="home" href="#" title="KĀ‘ANAPALI BEACH HOTEL" style="height:60px;">
-                                <img style="max-width: 100px; margin-top:-12px" class="img-responsive"
+                            <a class="navbar-brand" rel="home" href="#" title="KĀ‘ANAPALI BEACH HOTEL" style="height: 60px;">
+                                <img style="max-width: 100px; margin-top: -12px" class="img-responsive"
                                     src="img/kbh_logo_white.png">
                             </a>
-                           
+
                         </div>
                         <div class="navbar-collapse collapse" id="navbar">
                             <ul class="nav navbar-nav">
-                                <li class="active">
-                                    <a aria-expanded="false" role="button" href="layouts.html">Back to main Layout page</a>
-                                </li>
                                 <li class="dropdown">
                                     <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown">Menu item <span class="caret"></span></a>
                                     <ul role="menu" class="dropdown-menu">
@@ -98,13 +95,24 @@
                                 </li>
 
                             </ul>
-                            <ul class="nav navbar-top-links navbar-right">
-                                <li>
-                                    <a href="login.html">
-                                        <i class="fa fa-sign-out"></i>Log out
-                                    </a>
-                                </li>
-                            </ul>
+                            <asp:LoginView runat="server" ViewStateMode="Disabled">
+                                <AnonymousTemplate>
+                                    <ul class="nav navbar-top-links navbar-right">
+                                        <li><a runat="server" href="~/Account/Register">Register</a></li>
+                                        <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                                    </ul>
+                                </AnonymousTemplate>
+                                <LoggedInTemplate>
+                                    <ul class="nav navbar-top-links navbar-right">
+                                        <li>
+                                            <a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a>
+                                        </li>
+                                        <li>
+                                            <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                        </li>
+                                    </ul>
+                                </LoggedInTemplate>
+                            </asp:LoginView>
                         </div>
                     </nav>
                 </div>
