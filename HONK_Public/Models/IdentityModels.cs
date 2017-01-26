@@ -43,12 +43,12 @@ namespace HONK_v2.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("HONKConnectionString", throwIfV1Schema: false)
+            : base("IdentityConnectionString", throwIfV1Schema: false)
         {
             bool initDB = false;
             if (initDB)
             {
-                //Database.SetInitializer(new IdentityDbInitializer());
+                Database.SetInitializer(new IdentityDbInitializer());
                 Database.Initialize(false);
             }
         }

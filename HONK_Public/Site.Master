@@ -7,7 +7,7 @@
 <head runat="server">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> - HULA O NĀ KEIKI</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -84,14 +84,8 @@
                                         <li><a href="">Menu item</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown">
-                                    <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown">Menu item <span class="caret"></span></a>
-                                    <ul role="menu" class="dropdown-menu">
-                                        <li><a href="">Menu item</a></li>
-                                        <li><a href="">Menu item</a></li>
-                                        <li><a href="">Menu item</a></li>
-                                        <li><a href="">Menu item</a></li>
-                                    </ul>
+                                <li>
+                                    <a aria-expanded="false" role="button" href="Default">About</a>
                                 </li>
 
                             </ul>

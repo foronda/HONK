@@ -8,14 +8,70 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using HONK_v2.Models;
 
+// SendGrid (SMTP) namespaces
+using System.Net;
+using System.Configuration;
+using System.Diagnostics;
+
+// SendGrid API v3
+using System.Web.Script.Serialization;
+using SendGrid.Helpers.Mail; // Include if you want to use the Mail Helper
+
 namespace HONK_v2
 {
     public class EmailService : IIdentityMessageService
     {
-        public Task SendAsync(IdentityMessage message)
+        public async Task SendAsync(IdentityMessage message)
         {
             // Plug in your email service here to send an email.
-            return Task.FromResult(0);
+            //return Task.FromResult(0);
+
+            // SendGrid API v2 & v3
+            await configSendGridasync(message);
+        }
+
+        // Use NuGet to install SendGrid (Basic C# client lib) 
+        private async Task configSendGridasync(IdentityMessage message)
+        {
+            String apiKey = Environment.GetEnvironmentVariable("sendGridApi", EnvironmentVariableTarget.User);
+            dynamic sg = new SendGrid.SendGridAPIClient(apiKey, "https://api.sendgrid.com");
+
+            Email from = new Email("bforonda@kbhmaui.com", "HONK Administrator");
+            String subject = message.Subject;
+            Email to = new Email(message.Destination);
+            Content content = new Content("text/html", message.Body);
+            Mail mail = new Mail(from, subject, to, content);
+
+            dynamic response = await sg.client.mail.send.post(requestBody: mail.Get());
+
+            /* SendGrid API v2
+            var myMessage = new SendGridMessage();
+            myMessage.AddTo(message.Destination);
+            myMessage.From = new System.Net.Mail.MailAddress(
+                                "foronda@hawaii.edu", "HBIN Administrator");
+            myMessage.Subject = message.Subject;
+            myMessage.Text = message.Body;
+            myMessage.Html = message.Body;
+
+            var credentials = new NetworkCredential(
+                       ConfigurationManager.AppSettings["emailServiceUserName"],
+                       ConfigurationManager.AppSettings["emailServicePassword"]
+                       );
+
+            // Create a Web transport for sending email.
+            var transportWeb = new Web(credentials);
+
+            // Send the email.
+            if (transportWeb != null)
+            {
+                await transportWeb.DeliverAsync(myMessage);
+            }
+            else
+            {
+                Trace.TraceError("Failed to create Web transport.");
+                await Task.FromResult(0);
+            }
+            */
         }
     }
 
