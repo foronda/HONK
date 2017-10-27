@@ -22,7 +22,7 @@
     <%-- END PAGE HEADER SECTION--%>
 
     <%-- START CONTESTANT DROPDOWN  SECTION--%>
-    <div class="col-lg-8 col-lg-offset-2">
+    <div class="col-lg-10 col-lg-offset-1">
         <div class="well well-sm" style="padding-top: 20px;">
             <div class="row form-group">
                 <label class="col-sm-2 control-label">Select Contestant: </label>
@@ -551,7 +551,7 @@
             <button type="button" class="close" onclick='$(".alert").hide();'>×</button>
             <strong>Well done!</strong> Scores has been updated <a href="#" class="alert-link">this important alert message</a>.
         </div>
-        <a id="SubmitBtn" runat="server" href="#" class="btn btn-lg btn-primary btn-block btn-outline" onserverclick="SubmitBtn_ServerClick" visible="false" onclick='$(".alert").show();'><i class="fa fa-check"></i>&nbsp;Submit Contestant Scores</a>
+        <a id="SubmitBtn" runat="server" href="#" class="btn btn-lg btn-primary btn-block" onserverclick="SubmitBtn_ServerClick" visible="false" onclick='$(".alert").show();'><i class="fa fa-check"></i>&nbsp;Submit Contestant Scores</a>
         <br />
         <%-- END UPDATE SCORES SECTION --%>
     </div>
