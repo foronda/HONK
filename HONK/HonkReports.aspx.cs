@@ -15,15 +15,44 @@ namespace HONK
             {
                 EntryYearTb.Text = DateTime.Now.Year.ToString();
             }
+            else
+            {
+                RefreshReports();
+            }
         }
 
+        /// <summary>
+        /// Parses year string
+        /// </summary>
+        /// <param name="date"></param>
+        /// <returns>DateTime</returns>
+        private DateTime ParseDate(string date)
+        {
+            DateTime newDate;
+
+            if (String.IsNullOrEmpty(date)) { newDate = DateTime.Now; }
+            else { DateTime.TryParse("01/01/" + date, out newDate); }
+
+            return newDate;
+        }
+
+        /// <summary>
+        /// Parses the selected event year and passes this information to the whereparameters of the reports.
+        /// </summary>
+        private void RefreshReports()
+        {
+            MasterTabulationScore.SetDateParameter(ParseDate(EntryYearTb.Text));
+            ConstestantScoresReport.SetDateParameter(ParseDate(EntryYearTb.Text));
+            ConstestantScoresPaluaReport.SetDateParameter(ParseDate(EntryYearTb.Text));
+
+            MasterTabulationScore.Refresh();
+            ConstestantScoresReport.Refresh();
+            ConstestantScoresPaluaReport.Refresh();
+        }
 
         protected void EntryYearTb_TextChanged(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(EntryYearTb.Text))
-            {
-                EntryYearTb.Text = DateTime.Now.Year.ToString();
-            }
+            RefreshReports();
         }
 
         /// <summary>
@@ -35,6 +64,27 @@ namespace HONK
         {
             ConstestantScoresReport.Refresh();
             ConstestantScoresPaluaReport.Refresh();
+        }
+
+        protected void exportMasterTab_Click(object sender, EventArgs e)
+        {
+
+            LinkButton lb = (LinkButton)sender;
+            if (lb.ID == "exportMasterTab")
+            {
+                MasterTabulationScore.DownloadReport(ParseDate(EntryYearTb.Text).ToShortDateString());
+            
+            }
+            else if (lb.ID == "exportCTab")
+            {
+                //ConstestantScoresReport.DownloadReport(ParseDate(EntryYearTb.Text).ToShortDateString(), null);
+            
+            }
+            else if (lb.ID == "exportCPaluaTab")
+            {
+                //ConstestantScoresReport.DownloadReport(ParseDate(EntryYearTb.Text).ToShortDateString(), Convert.ToInt32(e.CommandArgument));
+
+            }
         }
     }
 }

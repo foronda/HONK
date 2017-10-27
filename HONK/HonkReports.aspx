@@ -5,6 +5,18 @@
 <%@ Register Src="~/Reports/ContestantScoresPalua_WUC.ascx" TagName="ConstestantScoresPaluaReport" TagPrefix="uc3" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+    <%-- MASTER TABULATION REPORT POPUP --%>
+<%--    <div id="masterTabScoreReport" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="assRepLbl" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="H1">Master Tabulation Score Report</h3>
+        </div>
+        <div class="modal-body">
+            <uc1:MasterTabulationScore ID="MasterTabulationScore1" runat="server"></uc1:MasterTabulationScore>
+        </div>
+    </div>--%>
+
     <%-- START PAGE HEADERS --%>
     <div class="page-header">
         <div class="row">
@@ -16,7 +28,7 @@
     <%-- END PAGE HEADER SECTION--%>
 
 
-     <%-- START CONTESTANT DROPDOWN  SECTION--%>
+    <%-- START CONTESTANT DROPDOWN  SECTION--%>
     <div class="well well-sm" style="padding-top: 20px;">
         <div class="row form-group">
             <h5 class="col-lg-2">SELECT EVENT YEAR:</h5>
@@ -39,10 +51,20 @@
     </div>
     <%-- END CONTESTANT DROPDOWN SECTION--%>
 
+    <%-- START REPORT EXPORT BREADCRUMB --%>
+    <ul class="breadcrumb">
+        <li>
+            <asp:LinkButton ID="exportMasterTab" runat="server" OnClick="exportMasterTab_Click" Text="EXPORT MASTER TABULATION REPORT" />
+            <%--            <asp:LinkButton ID="exportCTab" runat="server" OnClick="exportMasterTab_Click" Text="EXPORT MASTER TABULATION REPORT" />
+            <asp:LinkButton ID="exportCPaluaTab" runat="server" OnClick="exportMasterTab_Click" Text="EXPORT MASTER TABULATION REPORT" />--%>
+        </li>
+    </ul>
+    <%-- END REPORT EXPORT BREADCRUMB --%>
+
     <!-- Nav tabs -->
     <ul class="nav nav-pills" role="tablist">
         <li role="presentation" class="active"><a href="#master" aria-controls="home" role="tab" data-toggle="tab">MASTER TABULATION REPORT</a></li>
-        <li role="presentation"><a href="#nonpalua" aria-controls="profile" role="tab" data-toggle="tab">CONTESTANT SCORE REPORTS (NON-PĀLUA)</a></li>
+        <li role="presentation"><a href="#nonpalua" aria-controls="profile" role="tab" data-toggle="tab">CONTESTANT SCORE REPORTS (PĀKANI)</a></li>
         <li role="presentation"><a href="#palua" aria-controls="messages" role="tab" data-toggle="tab">CONTESTANT SCORE REPORTS (PĀLUA)</a></li>
     </ul>
 
@@ -53,7 +75,7 @@
                 <div class="panel-body">
                     <asp:UpdatePanel runat="server" ID="MasterGVUP" ChildrenAsTriggers="true" UpdateMode="Always">
                         <ContentTemplate>
-            <uc1:MasterTabulationScore ID="MasterTabulationScore" runat="server"></uc1:MasterTabulationScore>
+                            <uc1:MasterTabulationScore ID="MasterTabulationScore" runat="server"></uc1:MasterTabulationScore>
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </div>
