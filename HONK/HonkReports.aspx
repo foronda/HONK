@@ -7,7 +7,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <%-- MASTER TABULATION REPORT POPUP --%>
-<%--    <div id="masterTabScoreReport" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="assRepLbl" aria-hidden="true">
+    <div id="masterTabScoreReport" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="assRepLbl" aria-hidden="true">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             <h3 id="H1">Master Tabulation Score Report</h3>
@@ -15,16 +15,13 @@
         <div class="modal-body">
             <uc1:MasterTabulationScore ID="MasterTabulationScore1" runat="server"></uc1:MasterTabulationScore>
         </div>
-    </div>--%>
+    </div>
 
     <%-- START PAGE HEADERS --%>
-    <div class="page-header">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1>Event Reports</h1>
-            </div>
-        </div>
+    <div class="jumbotron">
+        <h1 style="text-align: center"><strong>HONK REPORTS</strong></h1>
     </div>
+
     <%-- END PAGE HEADER SECTION--%>
 
 
