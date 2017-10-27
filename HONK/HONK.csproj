@@ -166,6 +166,7 @@
     <Content Include="font-awesome\css\font-awesome.min.css" />
     <Content Include="font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Halau.aspx" />
     <Content Include="HonkReports.aspx" />
     <Content Include="Images\honk2.png" />
     <Content Include="Images\honk2014.jpg" />
@@ -397,6 +398,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="DBMethods.cs" />
+    <Compile Include="Halau.aspx.cs">
+      <DependentUpon>Halau.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Halau.aspx.designer.cs">
+      <DependentUpon>Halau.aspx</DependentUpon>
+    </Compile>
     <Compile Include="HONKDB.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -55,7 +55,6 @@
     <%-- START CONTESTANT ACCORDION --%>
 
     <div class="col-lg-10 col-lg-offset-1">
-
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             <div class="panel panel-primary">
                 <div class="panel-heading" role="tab" id="headingOne">
@@ -343,7 +342,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
     <%-- END CONTESTANT ACCORDION --%>
