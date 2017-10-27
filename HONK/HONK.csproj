@@ -246,6 +246,7 @@
     <Content Include="Content\slick\fonts\slick.eot" />
     <Content Include="Content\slick\fonts\slick.ttf" />
     <Content Include="Content\slick\fonts\slick.woff" />
+    <None Include="Properties\PublishProfiles\Publish-to-WebAppSvr.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
