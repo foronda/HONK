@@ -54,7 +54,7 @@
 
     <%-- START CONTESTANT ACCORDION --%>
 
-    <div class="col-lg-8 col-lg-offset-2">
+    <div class="col-lg-10 col-lg-offset-1">
 
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             <div class="panel panel-primary">
@@ -153,13 +153,12 @@
                                             </div>
                                         </div>
                                         <div class="row form-group">
-                                            <div class="col-lg-10 col-lg-offset-2">
-                                                <asp:Button ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Add Contestant" CssClass="btn btn-primary" />
-                                                &nbsp;<asp:Button ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" CssClass="btn btn-primary" />
+                                            <div class="col-lg-6 col-lg-offset-1">
+                                                <asp:Button ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Add Contestant" CssClass="btn btn-block btn-primary" />
                                             </div>
-                                        </div>
-                                        <div class="row form-group required ">
-                                            <label class="col-lg-3 col-sm-offset-1 control-label">Indicates required field</label>
+                                            <div class="col-lg-3">
+                                                <asp:Button ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" CssClass="btn btn-block btn-outline btn-danger" />
+                                            </div>
                                         </div>
                                     </InsertItemTemplate>
                                     <EditItemTemplate>
@@ -245,14 +244,16 @@
                                             </div>
                                         </div>
                                         <div class="row form-group">
-                                            <div class="col-lg-10 col-lg-offset-2">
-                                                <asp:Button ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update Contestant" CssClass="btn btn-primary" />
-                                                &nbsp;<asp:Button ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" CssClass="btn btn-primary" />
+                                            <div class="col-lg-6 col-lg-offset-1">
+                                                <asp:Button ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update Contestant" CssClass="btn btn-block btn-primary" />
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <asp:Button ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" CssClass="btn btn-block btn-danger btn-outline" />
                                             </div>
                                         </div>
-                                        <div class="row form-group required ">
+                                        <%--  <div class="row form-group required ">
                                             <label class="col-lg-3 col-sm-offset-1 control-label">Indicates required field</label>
-                                        </div>
+                                        </div>--%>
                                     </EditItemTemplate>
                                 </asp:FormView>
                             </ContentTemplate>
@@ -298,43 +299,45 @@
                                     <div class="col-lg-3">
                                     </div>
                                 </div>--%>
-                                <asp:GridView ID="ContestantGV" runat="server" AllowPaging="True" DataSourceID="ContestantsLDS" AutoGenerateColumns="False" CssClass="table table-hover table-condensed"
-                                    AllowSorting="True" DataKeyNames="id" OnRowCommand="ContestantGV_RowCommand" OnRowDataBound="ContestantGV_RowDataBound" PageSize="10">
-                                    <Columns>
-                                        <asp:TemplateField HeaderText="Actions" ShowHeader="False" HeaderStyle-Width="50dddddddddddddddddpx">
-                                            <ItemTemplate>
-                                                <asp:UpdatePanel ID="EditContestantUP" runat="server" UpdateMode="Always">
-                                                    <ContentTemplate>
-                                                        <asp:LinkButton ID="EditLB" runat="server" CausesValidation="False" CommandName="AsyncEdit" CommandArgument='<%# Eval("id")%>'><i class="fa fa-pencil"></i> </asp:LinkButton>&nbsp; &nbsp;
+                                <div class="ibox-content">
+                                    <asp:GridView ID="ContestantGV" runat="server" AllowPaging="True" DataSourceID="ContestantsLDS" AutoGenerateColumns="False" CssClass="table table-striped table-bordered table-hover"
+                                        AllowSorting="True" DataKeyNames="id" OnRowCommand="ContestantGV_RowCommand" OnRowDataBound="ContestantGV_RowDataBound" PageSize="10">
+                                        <Columns>
+                                            <asp:TemplateField HeaderText="Actions" ShowHeader="False" HeaderStyle-Width="50px">
+                                                <ItemTemplate>
+                                                    <asp:UpdatePanel ID="EditContestantUP" runat="server" UpdateMode="Always">
+                                                        <ContentTemplate>
+                                                            <asp:LinkButton ID="EditLB" runat="server" CausesValidation="False" CommandName="AsyncEdit" CommandArgument='<%# Eval("id")%>'><i class="fa fa-pencil"></i> </asp:LinkButton>&nbsp; &nbsp;
                                                         <asp:LinkButton ID="DeleteLB" runat="server" CausesValidation="False" CommandName="CascadeDelete" Text="Delete" CommandArgument='<%# Eval("id")%>' CssClass="has-popover-warning"><i class="fa fa-trash"></i></asp:LinkButton>
-                                                    </ContentTemplate>
-                                                    <Triggers>
-                                                        <asp:AsyncPostBackTrigger ControlID="EditLB" />
-                                                    </Triggers>
-                                                </asp:UpdatePanel>
-                                                <%--<asp:LinkButton ID="LinkButton4" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete"></asp:LinkButton>--%>
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
-                                        <asp:BoundField DataField="full_name" HeaderText="Name" SortExpression="full_name" />
-                                        <asp:BoundField DataField="Age.name" HeaderText="Age" SortExpression="Age.name" />
-                                        <asp:BoundField DataField="Gender.name" HeaderText="Gender" SortExpression="Gender.name" />
-                                        <asp:BoundField DataField="Division.name" HeaderText="Division" SortExpression="Division.name" />
-                                        <asp:BoundField DataField="Halau.name" HeaderText="Halau" SortExpression="Halau.name" />
-                                        <asp:BoundField DataField="Kumu.full_name" HeaderText="Kumu" SortExpression="Kumu.full_name" />
-                                        <asp:BoundField DataField="entry_date" HeaderText="Entry Year" SortExpression="entry_date" DataFormatString="{0:yyyy}" />
-                                        <asp:BoundField DataField="entry_num_fri" HeaderText="Fri Entry No." SortExpression="entry_num_fri" />
-                                        <asp:BoundField DataField="entry_num_sat" HeaderText="Sat Entry No." SortExpression="entry_num_sat" />
-                                    </Columns>
+                                                        </ContentTemplate>
+                                                        <Triggers>
+                                                            <asp:AsyncPostBackTrigger ControlID="EditLB" />
+                                                        </Triggers>
+                                                    </asp:UpdatePanel>
+                                                    <%--<asp:LinkButton ID="LinkButton4" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete"></asp:LinkButton>--%>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:BoundField DataField="full_name" HeaderText="Name" SortExpression="full_name" />
+                                            <asp:BoundField DataField="Age.name" HeaderText="Age" SortExpression="Age.name" />
+                                            <asp:BoundField DataField="Gender.name" HeaderText="Gender" SortExpression="Gender.name" />
+                                            <asp:BoundField DataField="Division.name" HeaderText="Division" SortExpression="Division.name" />
+                                            <asp:BoundField DataField="Halau.name" HeaderText="Halau" SortExpression="Halau.name" />
+                                            <asp:BoundField DataField="Kumu.full_name" HeaderText="Kumu" SortExpression="Kumu.full_name" />
+                                            <asp:BoundField DataField="entry_date" HeaderText="Entry Year" SortExpression="entry_date" DataFormatString="{0:yyyy}" />
+                                            <asp:BoundField DataField="entry_num_fri" HeaderText="Fri Entry No." SortExpression="entry_num_fri" />
+                                            <asp:BoundField DataField="entry_num_sat" HeaderText="Sat Entry No." SortExpression="entry_num_sat" />
+                                        </Columns>
 
-                                    <PagerStyle BackColor="#f9f9f9" HorizontalAlign="Center" />
-                                    <%--<RowStyle BackColor="#FFFBD6" ForeColor="#333333" />--%>
-                                    <EmptyDataTemplate>
-                                        <div class="alert alert-dismissible alert-default">
-                                            <button type="button" class="close" data-dismiss="alert">×</button>
-                                            <strong>Oh snap!</strong> Search yielded no results. Please check entered text and try submitting again.
-                                        </div>
-                                    </EmptyDataTemplate>
-                                </asp:GridView>
+                                        <PagerStyle BackColor="#f9f9f9" HorizontalAlign="Center"/>
+                                        <%--<RowStyle BackColor="#FFFBD6" ForeColor="#333333" />--%>
+                                        <EmptyDataTemplate>
+                                            <div class="alert alert-dismissible alert-default">
+                                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                                <strong>Oh snap!</strong> Search yielded no results. Please check entered text and try submitting again.
+                                            </div>
+                                        </EmptyDataTemplate>
+                                    </asp:GridView>
+                                </div>
                             </ContentTemplate>
                         </asp:UpdatePanel>
                     </div>

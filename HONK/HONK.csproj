@@ -123,6 +123,7 @@
     </Content>
     <Content Include="AwardRecipients.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap-custom-styles.css" />
     <Content Include="Content\bootstrap-datetimepicker.css" />
     <Content Include="Content\bootstrap-datetimepicker.min.css" />
@@ -131,6 +132,11 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\slick\ajax-loader.gif" />
+    <Content Include="Content\slick\fonts\slick.svg" />
+    <Content Include="Content\slick\slick-theme.css" />
+    <Content Include="Content\slick\slick.css" />
+    <Content Include="Content\style.css" />
     <Content Include="Contestants.aspx" />
     <Content Include="ContestantScores.aspx" />
     <Content Include="css\animate.css" />
@@ -159,7 +165,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="HonkReports.aspx" />
     <Content Include="Images\honk2.png" />
-    <Content Include="Images\honk2015.jpg" />
+    <Content Include="Images\honk2014.jpg" />
+    <Content Include="Images\honk2014m.jpg" />
+    <Content Include="Images\honk2016.jpg" />
+    <Content Include="Images\honk2016grp.jpg" />
+    <Content Include="Images\honk2016m.jpg" />
+    <Content Include="Images\honk2016_winners.jpg" />
     <Content Include="Images\honk3.png" />
     <Content Include="Images\honk_banner.png" />
     <Content Include="Images\honk_footer.png" />
@@ -176,6 +187,7 @@
     <Content Include="js\plugins\datapicker\bootstrap-datepicker.js" />
     <Content Include="js\plugins\metisMenu\jquery.metisMenu.js" />
     <Content Include="js\plugins\pace\pace.min.js" />
+    <Content Include="js\plugins\slick\slick.min.js" />
     <Content Include="js\plugins\slimscroll\jquery.slimscroll.js" />
     <Content Include="js\plugins\slimscroll\jquery.slimscroll.min.js" />
     <Content Include="minor.html" />
@@ -231,6 +243,9 @@
     <Content Include="font-awesome\scss\_screen-reader.scss" />
     <Content Include="font-awesome\scss\_stacked.scss" />
     <Content Include="font-awesome\scss\_variables.scss" />
+    <Content Include="Content\slick\fonts\slick.eot" />
+    <Content Include="Content\slick\fonts\slick.ttf" />
+    <Content Include="Content\slick\fonts\slick.woff" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

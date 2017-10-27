@@ -52,7 +52,7 @@
     <%-- END CONTESTANT DROPDOWN SECTION--%>
 
     <%-- START REPORT EXPORT BREADCRUMB --%>
-    <div class="col-lg-8 col-lg-offset-2" style="padding-bottom:20px;">
+    <div class="col-lg-10 col-lg-offset-1" style="padding-bottom:20px;">
         <ul class="breadcrumb">
             <li>
                 <asp:LinkButton ID="exportMasterTab" runat="server" OnClick="exportMasterTab_Click" Text="EXPORT MASTER TABULATION REPORT" />
@@ -63,7 +63,7 @@
     <%-- END REPORT EXPORT BREADCRUMB --%>
 
     <%-- JUDGES SCORES SECTION --%>
-    <div class="col-lg-8 col-lg-offset-2">
+    <div class="col-lg-10 col-lg-offset-1">
         <div runat="server" id="divJudgeScores" class="panel panel-primary" visible="false">
             <div class="panel-heading" role="tab" id="headingJudge">
                 <h3 class="panel-title"><a data-toggle="collapse" href="#judgeCollapse" aria-expanded="true" aria-controls="judgeCollapse">Judges Scores
@@ -255,7 +255,7 @@
         </div>
     </div>
     <%-- END JUDGES SCORES SECTION --%>
-    <div class="col-lg-8 col-lg-offset-2">
+    <div class="col-lg-10 col-lg-offset-1">
         <%-- MASTER SCORES SECTION --%>
         <div runat="server" id="divMasterScores" class="panel panel-primary" visible="false">
             <div class="panel-heading" role="tab" id="headingMaster">
