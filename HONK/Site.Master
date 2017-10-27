@@ -81,7 +81,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a runat="server" href="~/HONKReports"><i class="fa fa-pie-chart"></i><span class="nav-label">Reports</span><span class="fa arrow"></span></a>
+                        <a runat="server" href="~/HONKReports"><i class="fa fa-pie-chart"></i><span class="nav-label">Reports</span></a>
                     </li>
                 </ul>
 
