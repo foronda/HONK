@@ -13,33 +13,6 @@ namespace HONK {
     public partial class Contestants {
         
         /// <summary>
-        /// SearchUP control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel SearchUP;
-        
-        /// <summary>
-        /// searchTB control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox searchTB;
-        
-        /// <summary>
-        /// clrSearchBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button clrSearchBtn;
-        
-        /// <summary>
         /// ContestantFVUP control.
         /// </summary>
         /// <remarks>
@@ -65,6 +38,24 @@ namespace HONK {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel ContestantGVUP;
+        
+        /// <summary>
+        /// searchTB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox searchTB;
+        
+        /// <summary>
+        /// clrSearchBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button clrSearchBtn;
         
         /// <summary>
         /// ContestantGV control.

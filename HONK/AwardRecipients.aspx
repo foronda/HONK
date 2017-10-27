@@ -5,7 +5,7 @@
     <br />
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="LinqDataSource1" CssClass="table table-striped table-hover" AllowSorting="True" >
         <Columns>
-            <asp:BoundField DataField="EntryDate" HeaderText="entry_date" SortExpression="EntryDate" DataFormatString="{0:yyyy}" />
+            <asp:BoundField DataField="EntryDate" HeaderText="Entry Year" SortExpression="EntryDate" DataFormatString="{0:yyyy}" />
             <asp:BoundField DataField="AwardName" HeaderText="Award Name" SortExpression="AwardName" />
             <asp:BoundField DataField="Name" HeaderText="Winner" SortExpression="Name" />
             <asp:BoundField DataField="Place" HeaderText="Place" SortExpression="Place" />
