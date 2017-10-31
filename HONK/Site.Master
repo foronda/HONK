@@ -51,9 +51,15 @@
                 <ul class="nav metismenu" id="side-menu">
                     <li class="nav-header">
                         <div class="dropdown profile-element">
+                            <center>
+                            <span>
+                            <img alt="image" src="Images/kbh_logo_white.png" style="width:125px; height:auto;" />
+                             </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="clear"><span class="block m-t-xs"><strong class="font-bold">HULA O' NĀ KEIKI <%= DateTime.Now.Year %></strong>
                                 </span></span></a>
+                            </center>
+
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                 <li><a href="#">Logout</a></li>
                             </ul>
@@ -114,7 +120,6 @@
                     <div class="col-lg-12">
                         <div class="text-center m-t-lg">
                             <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                              
                             </asp:ContentPlaceHolder>
                         </div>
                     </div>
@@ -126,8 +131,10 @@
                 <%--<div class="pull-right">
                     10GB of <strong>250GB</strong> Free.
                 </div>--%>
-                <div>
+                <div style="padding:5px;">
+                    <center>
                     <strong>Copyright</strong> KĀ‘ANAPALI BEACH HOTEL &copy; 2015-<%=DateTime.Now.Year %>
+                    </center>
                 </div>
             </div>
 
@@ -147,8 +154,6 @@
 
     <!-- slick carousel-->
     <script src="js/plugins/slick/slick.min.js"></script>
-
-
     <script>
         $(document).ready(function () {
 

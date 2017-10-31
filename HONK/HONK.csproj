@@ -182,6 +182,8 @@
     <Content Include="Images\honk_logo_bw.png" />
     <Content Include="Images\honk_text.png" />
     <Content Include="Images\kbh_logo.png" />
+    <Content Include="Images\kbh_logo_black.png" />
+    <Content Include="Images\kbh_logo_white.png" />
     <Content Include="img\profile_small.jpg" />
     <Content Include="index.html" />
     <Content Include="js\bootstrap.js" />
