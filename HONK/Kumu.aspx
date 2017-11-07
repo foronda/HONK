@@ -1,8 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Halau.aspx.cs" Inherits="HONK.Halau1" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Kumu.aspx.cs" Inherits="HONK.Kumu1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="jumbotron">
-        <h1 style="text-align: center"><strong>HALAU'S</strong></h1>
+        <h1 style="text-align: center"><strong>KUMU'S</strong></h1>
     </div>
 
     <div class="col-lg-10 col-lg-offset-1">
@@ -10,20 +9,20 @@
             <div class="panel panel-primary">
                 <div class="panel-heading" role="tab" id="headingOne">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Add/Edit Halau's
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Add/Edit Kumu's
                         </a>
                     </h4>
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body">
-                        <asp:UpdatePanel ID="HalauFVUP" runat="server" UpdateMode="Conditional">
+                        <asp:UpdatePanel ID="KumuFVUP" runat="server" UpdateMode="Conditional">
                             <ContentTemplate>
-                                <asp:FormView ID="HalauFV" runat="server" DataSourceID="AEHalauDS" DefaultMode="Insert" CssClass="col-lg-12" DataKeyNames="id" OnItemInserted="HalauFV_ItemInserted" OnItemUpdated="HalauFV_ItemUpdated">
+                                <asp:FormView ID="KumuFV" runat="server" DataSourceID="AEKumuDS" DefaultMode="Insert" CssClass="col-lg-12" DataKeyNames="id" OnItemUpdated="KumuFV_ItemUpdated" OnItemInserted="KumuFV_ItemInserted">
                                     <InsertItemTemplate>
                                         <div class="row form-group required">
                                             <label class="col-lg-2 control-label">Name</label>
                                             <div class="col-lg-4">
-                                                <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" Text='<%# Bind("name") %>' placeholder="Halau Name"></asp:TextBox>
+                                                <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" Text='<%# Bind("full_name") %>' placeholder="Kumu Name"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="row form-group">
@@ -39,7 +38,7 @@
                                         <div class="row form-group required">
                                             <label class="col-lg-2 control-label">Name</label>
                                             <div class="col-lg-4">
-                                                <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" Text='<%# Bind("name") %>' placeholder="Halau Name"></asp:TextBox>
+                                                <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" Text='<%# Bind("full_name") %>' placeholder="Kumu Name"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="row form-group">
@@ -69,7 +68,7 @@
                 </div>
                 <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                     <div class="panel-body">
-                        <asp:UpdatePanel runat="server" ID="HalauGVUP" ChildrenAsTriggers="true" UpdateMode="Always">
+                        <asp:UpdatePanel runat="server" ID="KumuGVUP" ChildrenAsTriggers="true" UpdateMode="Always">
                             <ContentTemplate>
 
                                 <div class="ibox-content">
@@ -77,7 +76,7 @@
 
                                         <div class="col-sm-12">
                                             <div class="input-group">
-                                                <asp:TextBox ID="searchTB" runat="server" CssClass="form-control" data-provide="typeahead" placeholder="Search halau..." AutoPostBack="true" OnTextChanged="searchTB_TextChanged"></asp:TextBox>
+                                                <asp:TextBox ID="searchTB" runat="server" CssClass="form-control" data-provide="typeahead" placeholder="Search kumu..." AutoPostBack="true" OnTextChanged="searchTB_TextChanged"></asp:TextBox>
                                                 <span class="input-group-btn">
                                                     <asp:Button ID="clrSearchBtn" runat="server" class="btn btn-primary" Text="Clear" OnClick="clrSearchBtn_Click"></asp:Button>
                                                 </span>
@@ -87,8 +86,8 @@
 
                                 </div>
                                 <div class="ibox-content">
-                                    <asp:GridView ID="HalauGV" runat="server" AllowPaging="True" DataSourceID="HalauDS" AutoGenerateColumns="False" CssClass="table table-striped table-bordered table-hover"
-                                        AllowSorting="True" DataKeyNames="id" OnRowCommand="Halau_RowCommand" OnRowDataBound="Halau_RowDataBound" PageSize="10">
+                                    <asp:GridView ID="KumuGV" runat="server" AllowPaging="True" DataSourceID="HalauDS" AutoGenerateColumns="False" CssClass="table table-striped table-bordered table-hover"
+                                        AllowSorting="True" DataKeyNames="id" OnRowCommand="KumuGV_RowCommand" OnRowDataBound="KumuGV_RowDataBound">
                                         <Columns>
                                             <asp:TemplateField HeaderText="Actions" ShowHeader="False" HeaderStyle-Width="50px">
                                                 <ItemTemplate>
@@ -104,7 +103,7 @@
                                                     <%--<asp:LinkButton ID="LinkButton4" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete"></asp:LinkButton>--%>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:BoundField DataField="name" HeaderText="Name" SortExpression="name" />
+                                            <asp:BoundField DataField="full_name" HeaderText="Name" SortExpression="full_name" />
                                         </Columns>
 
                                         <PagerStyle BackColor="#f9f9f9" HorizontalAlign="Center" />
@@ -127,56 +126,25 @@
 
 
     <script type="text/javascript">
-        function ShowHalau() {
+        function ShowKumu() {
             $('#collapseOne').collapse('show');
             if ($('#collapseTwo').is(":visible")) {
                 $('#collapseTwo').collapse('hide');
             }
         }
 
-        function ShowHalauGV() {
+        function ShowKumuGV() {
             $('#collapseTwo').collapse('show');
             if ($('#collapseOne').is(":visible")) {
                 $('#collapseOne').collapse('hide');
             }
         }
-
-        function LoadPopovers() {
-            $('#narrativeInfo').popover(
-                        {
-                            title: 'Narrative Content',
-                            trigger: 'hover',
-                            html: true,
-                            placement: 'right',
-                            content: 'Narrative Content section'
-                        });
-            $('#MainContent_ContestantGV_DeleteLB_0').popover(
-            {
-                title: 'Add Imp. Schedule Records',
-                trigger: 'hover',
-                html: true,
-                placement: 'top',
-                content: 'Selecting "Add Records" will redirect you to the Add / Edit Imp. Schedule Records tab.  There you can add or edit Imp. Schedule records for the selected Group.'
-            });
-        }
-        $(document).ready(function () {
-            //$("input:not([type]), input[type='text']").addClass("form-control");
-            // LoadPopovers();
-
-            $('body').popover({
-                title: 'WARNING!',
-                trigger: 'hover',
-                html: true,
-                content: 'Deleting this contestant will also delete related Judge Scores, Master Scores, and Awards! This action is irreversible. Proceed with caution.',
-                //template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title alert alert-warning"></h3><div class="popover-content "></div></div>',
-                selector: '.has-popover-warning'
-            });
-        });
     </script>
-    <asp:LinqDataSource ID="AEHalauDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EnableDelete="True" EnableInsert="True" EnableUpdate="True" EntityTypeName="" TableName="Halaus" Where="id == @id">
+
+    <asp:LinqDataSource ID="AEKumuDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EnableDelete="True" EnableInsert="True" EnableUpdate="True" EntityTypeName="" TableName="Kumus" Where="id == @id">
         <WhereParameters>
             <asp:Parameter DefaultValue="0" Name="id" Type="Int32" />
         </WhereParameters>
     </asp:LinqDataSource>
-    <asp:LinqDataSource ID="HalauDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EnableDelete="True" EnableInsert="True" EnableUpdate="True" EntityTypeName="" TableName="Halaus" OnSelecting="HalauDS_Selecting"></asp:LinqDataSource>
+    <asp:LinqDataSource ID="KumuDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EnableDelete="True" EnableInsert="True" EnableUpdate="True" EntityTypeName="" TableName="Kumus" OnSelecting="KumuDS_Selecting"></asp:LinqDataSource>
 </asp:Content>

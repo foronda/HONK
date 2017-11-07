@@ -21,7 +21,11 @@ namespace HONK
             HalauFV.DataBind();
             HalauFVUP.Update();
         }
-
+        protected void HalauFV_ItemInserted(object sender, FormViewInsertedEventArgs e)
+        {
+            HalauFV.DataBind();
+            HalauFVUP.Update();
+        }
         protected void HalauFV_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
         {
             HalauFV.ChangeMode(FormViewMode.Insert);
@@ -98,10 +102,11 @@ namespace HONK
                  where u.name.Contains(query)
                  orderby u.name
                  select u));
+
+
+
+
         #endregion
-
-
-
 
 
     }

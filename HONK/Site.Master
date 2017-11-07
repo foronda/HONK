@@ -107,7 +107,7 @@
                             <li><a runat="server" href="~/Contestants">Contestants</a></li>
                             <li><a runat="server" href="~/ContestantScores">Contestant Scores</a></li>
                             <li><a runat="server" href="~/Halau">Halau's</a></li>
-                            <li><a runat="server" href="#">Kumu's</a></li>
+                            <li><a runat="server" href="~/Kumu">Kumu's</a></li>
                             <%--<li><a runat="server" href="#">Event Awards</a></li>--%>
                         </ul>
                     </li>
