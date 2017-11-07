@@ -43,6 +43,12 @@ namespace HONK
             TextBox entry_date = (TextBox)ContestantFV.FindControl("entryDateTb");
             e.Values["entry_date"] = DateTime.Parse("01/01/" + entry_date.Text);
         }
+
+        protected void ContestantFV_ItemInserted(object sender, FormViewInsertedEventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "WarningMsg", "CInsSuccess(" + "'" + e.Values["full_name"] + "'" + ");", true);
+        }
+
         protected void ContestantFV_ItemUpdating(object sender, FormViewUpdateEventArgs e)
         {
             TextBox entry_date = (TextBox)ContestantFV.FindControl("entryDateTb");
@@ -51,7 +57,9 @@ namespace HONK
         protected void ContestantFV_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
         {
             ContestantFV.ChangeMode(FormViewMode.Insert);
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "WarningMsg", "CUpdateSuccess(" + "'" + e.NewValues["full_name"] + "'" + ");", true);
         }
+
         #endregion
 
         #region CONTESTANT GRIDVIEW METHOD(S)
@@ -201,5 +209,7 @@ namespace HONK
             //DisableDelLB.Visible = false;
             //EnableDelLB.Visible = true;
         }
+
+
     }
 }

@@ -68,7 +68,7 @@
                         <asp:UpdatePanel ID="ContestantFVUP" runat="server" UpdateMode="Conditional">
                             <ContentTemplate>
                                 <asp:FormView ID="ContestantFV" runat="server" DataSourceID="AEContestantsLDS" DefaultMode="Insert" CssClass="col-lg-12" DataKeyNames="id"
-                                    OnItemInserting="ContestantFV_ItemInserting" OnItemUpdating="ContestantFV_ItemUpdating" OnItemUpdated="ContestantFV_ItemUpdated">
+                                    OnItemInserting="ContestantFV_ItemInserting" OnItemInserted="ContestantFV_ItemInserted" OnItemUpdating="ContestantFV_ItemUpdating" OnItemUpdated="ContestantFV_ItemUpdated">
                                     <InsertItemTemplate>
                                         <div class="row form-group required">
                                             <label class="col-lg-2 control-label">Name</label>
@@ -327,7 +327,7 @@
                                             <asp:BoundField DataField="entry_num_sat" HeaderText="Sat Entry No." SortExpression="entry_num_sat" />
                                         </Columns>
 
-                                        <PagerStyle BackColor="#f9f9f9" HorizontalAlign="Center"/>
+                                        <PagerStyle BackColor="#f9f9f9" HorizontalAlign="Center" />
                                         <%--<RowStyle BackColor="#FFFBD6" ForeColor="#333333" />--%>
                                         <EmptyDataTemplate>
                                             <div class="alert alert-dismissible alert-default">
@@ -405,6 +405,31 @@
         </div>
     </div>
     <%-- END OF MODAL FORMVIEWS --%>
+
+    <%-- START CONTESTANT JAVASCRIPTS --%>
+    <script type="text/javascript">
+        // Upon successful insert, show confirmation. Triggered from code behind.
+        function CUpdateSuccess(cont) {
+            BootstrapDialog.show({
+                type: BootstrapDialog.TYPE_SUCCESS,
+                title: 'Success!',
+                cssClass: 'confirm-dialog',
+                message: 'Contestant - ' + cont + ' has been updated.'
+            });
+        };
+
+        function CInsSuccess(cont) {
+            BootstrapDialog.show({
+                type: BootstrapDialog.TYPE_SUCCESS,
+                title: 'Success!',
+                cssClass: 'confirm-dialog',
+                message: 'Contestant - ' + cont + ' has been added to the database.'
+            });
+        };
+
+    </script>
+    <%-- END CONTESTANT JAVASCRIPTS --%>
+
 
     <%-- LINQ DATA SOURCES --%>
     <asp:LinqDataSource ID="ContestantsLDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" TableName="Contestants" EnableInsert="True" EnableUpdate="True" OnSelecting="ContestantsLDS_Selecting">

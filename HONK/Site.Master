@@ -21,6 +21,30 @@
     <link href="~/Content/slick/slick-theme.css" rel="stylesheet">
     <link href="~/Content/animate.css" rel="stylesheet">
     <link href="~/Content/style.css" rel="stylesheet">
+    <link href="Content/bootstrap-dialog.css" rel="stylesheet">
+
+    <style>
+        /* Custom CSS for override BootstrapDialog.Confirm modal popups*/
+        /*Override modal to center of screen*/
+        .modal {
+            position: fixed;
+            top: 25%;
+        }
+
+        .notification-dialog .modal-dialog {
+            width: 1024px;
+            max-height: calc(100vh - 210px);
+            overflow-y: auto;
+        }
+
+        .confirm-dialog .modal-dialog {
+            width: 600px;
+        }
+
+        .modal-backdrop {
+            z-index: -1;
+        }
+    </style>
 </head>
 <body>
     <form runat="server" class="form-horizontal">
@@ -147,6 +171,7 @@
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/plugins/metisMenu/jquery.metisMenu.js"></script>
     <script src="Scripts/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="Scripts/bootstrap-dialog.js"></script>
 
     <!-- Custom and plugin javascript -->
     <script src="Scripts/inspinia.js"></script>
