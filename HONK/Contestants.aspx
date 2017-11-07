@@ -67,7 +67,7 @@
                     <div class="panel-body">
                         <asp:UpdatePanel ID="ContestantFVUP" runat="server" UpdateMode="Conditional">
                             <ContentTemplate>
-                                <asp:FormView ID="ContestantFV" runat="server" DataSourceID="AEContestantsLDS" DefaultMode="Insert" CssClass="col-lg-12"
+                                <asp:FormView ID="ContestantFV" runat="server" DataSourceID="AEContestantsLDS" DefaultMode="Insert" CssClass="col-lg-12" DataKeyNames="id"
                                     OnItemInserting="ContestantFV_ItemInserting" OnItemUpdating="ContestantFV_ItemUpdating" OnItemUpdated="ContestantFV_ItemUpdated">
                                     <InsertItemTemplate>
                                         <div class="row form-group required">

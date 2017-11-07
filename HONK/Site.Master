@@ -73,9 +73,10 @@
                     </li>
                     <li>
                         <a runat="server" href="~/EventResults"><i class="fa fa-files-o"></i><span class="nav-label">Event Results</span></a>
-                    <li>
-                        <a runat="server" href="~/AwardRecipients"><i class="fa fa-child"></i><span class="nav-label">Award Recipients</span></a>
                     </li>
+                    <%-- <li>
+                        <a runat="server" href="~/AwardRecipients"><i class="fa fa-child"></i><span class="nav-label">Award Recipients</span></a>
+                    </li>--%>
                     <li>
                         <a href="#"><i class="fa fa-bar-chart-o"></i><span class="nav-label">Manage Data</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
@@ -83,7 +84,7 @@
                             <li><a runat="server" href="~/ContestantScores">Contestant Scores</a></li>
                             <li><a runat="server" href="~/Halau">Halau's</a></li>
                             <li><a runat="server" href="#">Kumu's</a></li>
-                            <li><a runat="server" href="#">Event Awards</a></li>
+                            <%--<li><a runat="server" href="#">Event Awards</a></li>--%>
                         </ul>
                     </li>
                     <li>
@@ -131,7 +132,7 @@
                 <%--<div class="pull-right">
                     10GB of <strong>250GB</strong> Free.
                 </div>--%>
-                <div style="padding:5px;">
+                <div style="padding: 5px;">
                     <center>
                     <strong>Copyright</strong> KĀ‘ANAPALI BEACH HOTEL &copy; 2015-<%=DateTime.Now.Year %>
                     </center>
