@@ -414,7 +414,7 @@
                 type: BootstrapDialog.TYPE_SUCCESS,
                 title: 'Success!',
                 cssClass: 'confirm-dialog',
-                message: 'Contestant - ' + cont + ' has been updated.'
+                message: 'Contestant <b> ' + cont + '</b> has been updated.'
             });
         };
 
@@ -423,7 +423,7 @@
                 type: BootstrapDialog.TYPE_SUCCESS,
                 title: 'Success!',
                 cssClass: 'confirm-dialog',
-                message: 'Contestant - ' + cont + ' has been added to the database.'
+                message: 'Contestant <b> ' + cont + '</b> has been added to the database.'
             });
         };
 

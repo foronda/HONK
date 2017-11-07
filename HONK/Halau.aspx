@@ -127,6 +127,25 @@
 
 
     <script type="text/javascript">
+        // Upon successful insert, show confirmation. Triggered from code behind.
+        function HalauUpdateSuccess(halau) {
+            BootstrapDialog.show({
+                type: BootstrapDialog.TYPE_SUCCESS,
+                title: 'Success!',
+                cssClass: 'confirm-dialog',
+                message: 'Halau <b>' + halau + '</b> has been updated.'
+            });
+        };
+
+        function HalauInsSuccess(halau) {
+            BootstrapDialog.show({
+                type: BootstrapDialog.TYPE_SUCCESS,
+                title: 'Success!',
+                cssClass: 'confirm-dialog',
+                message: 'Halau <b>' + halau + '</b> has been added to the database.'
+            });
+        };
+
         function ShowHalau() {
             $('#collapseOne').collapse('show');
             if ($('#collapseTwo').is(":visible")) {

@@ -23,13 +23,11 @@ namespace HONK
         }
         protected void HalauFV_ItemInserted(object sender, FormViewInsertedEventArgs e)
         {
-            HalauFV.DataBind();
-            HalauFVUP.Update();
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "WarningMsg", "HalueInsSuccess(" + "'" + e.Values["name"] + "'" + ");", true);
         }
         protected void HalauFV_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
         {
-            HalauFV.ChangeMode(FormViewMode.Insert);
-            HalauGV.DataBind();
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "WarningMsg", "HalauUpdateSuccess(" + "'" + e.NewValues["name"] + "'" + ");", true);
         }
 
         #endregion

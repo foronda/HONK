@@ -15,7 +15,7 @@
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body">
-                        <asp:UpdatePanel ID="KumuFVUP" runat="server" UpdateMode="Conditional">
+                        <asp:UpdatePanel ID="KumuFVUP" runat="server" UpdateMode="Always">
                             <ContentTemplate>
                                 <asp:FormView ID="KumuFV" runat="server" DataSourceID="AEKumuDS" DefaultMode="Insert" CssClass="col-lg-12" DataKeyNames="id" OnItemUpdated="KumuFV_ItemUpdated" OnItemInserted="KumuFV_ItemInserted">
                                     <InsertItemTemplate>
@@ -27,7 +27,7 @@
                                         </div>
                                         <div class="row form-group">
                                             <div class="col-lg-6 col-lg-offset-1">
-                                                <asp:Button ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Add Halau" CssClass="btn btn-block btn-primary" />
+                                                <asp:Button ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Add Kumu" CssClass="btn btn-block btn-primary" />
                                             </div>
                                             <div class="col-lg-3">
                                                 <asp:Button ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" CssClass="btn btn-block btn-outline btn-danger" />
@@ -43,7 +43,7 @@
                                         </div>
                                         <div class="row form-group">
                                             <div class="col-lg-6 col-lg-offset-1">
-                                                <asp:Button ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update Halau" CssClass="btn btn-block btn-primary" />
+                                                <asp:Button ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update Kumu" CssClass="btn btn-block btn-primary" />
                                             </div>
                                             <div class="col-lg-3">
                                                 <asp:Button ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" CssClass="btn btn-block btn-danger btn-outline" />
@@ -62,7 +62,7 @@
             <div class="panel panel-primary">
                 <div class="panel-heading" role="tab" id="headingTwo">
                     <h4 class="panel-title">
-                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Halau Records
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Kumu Records
                         </a>
                     </h4>
                 </div>
@@ -70,7 +70,6 @@
                     <div class="panel-body">
                         <asp:UpdatePanel runat="server" ID="KumuGVUP" ChildrenAsTriggers="true" UpdateMode="Always">
                             <ContentTemplate>
-
                                 <div class="ibox-content">
                                     <div class="row">
 
@@ -86,7 +85,7 @@
 
                                 </div>
                                 <div class="ibox-content">
-                                    <asp:GridView ID="KumuGV" runat="server" AllowPaging="True" DataSourceID="HalauDS" AutoGenerateColumns="False" CssClass="table table-striped table-bordered table-hover"
+                                    <asp:GridView ID="KumuGV" runat="server" AllowPaging="True" DataSourceID="KumuDS" AutoGenerateColumns="False" CssClass="table table-striped table-bordered table-hover"
                                         AllowSorting="True" DataKeyNames="id" OnRowCommand="KumuGV_RowCommand" OnRowDataBound="KumuGV_RowDataBound">
                                         <Columns>
                                             <asp:TemplateField HeaderText="Actions" ShowHeader="False" HeaderStyle-Width="50px">
@@ -139,6 +138,27 @@
                 $('#collapseOne').collapse('hide');
             }
         }
+
+
+        // Upon successful insert, show confirmation. Triggered from code behind.
+        function KumuUpdateSuccess(kumu) {
+            BootstrapDialog.show({
+                type: BootstrapDialog.TYPE_SUCCESS,
+                title: 'Success!',
+                cssClass: 'confirm-dialog',
+                message: 'Kumu <b>' + kumu + '</b> has been updated.'
+            });
+        };
+
+        function KumuInsSuccess(kumu) {
+            BootstrapDialog.show({
+                type: BootstrapDialog.TYPE_SUCCESS,
+                title: 'Success!',
+                cssClass: 'confirm-dialog',
+                message: 'Kumu <b>' + kumu + '</b> has been added to the database.'
+            });
+        };
+
     </script>
 
     <asp:LinqDataSource ID="AEKumuDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EnableDelete="True" EnableInsert="True" EnableUpdate="True" EntityTypeName="" TableName="Kumus" Where="id == @id">
