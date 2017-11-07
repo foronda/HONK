@@ -267,7 +267,7 @@
                     <asp:UpdatePanel ID="ContesantMasterScoreFVUP" runat="server" UpdateMode="Always">
                         <ContentTemplate>
                             <asp:FormView ID="ContestantMasterScoreFV" runat="server" DataSourceID="MasterScoresLDS" DefaultMode="ReadOnly" DataKeyNames="id" CssClass="col-lg-12"
-                                OnItemInserting="ContestantMasterScoreFV_ItemInserting">
+                                OnItemInserting="ContestantMasterScoreFV_ItemInserting" OnItemUpdated="ContestantMasterScoreFV_ItemUpdated" OnItemInserted="ContestantMasterScoreFV_ItemInserted">
                                 <InsertItemTemplate>
                                     <div class="container" id="isPaluaMS" runat="server" visible="false">
                                         <div class="row form-group">
@@ -523,7 +523,7 @@
                                         </div>
                                         <div class="row form-group">
                                             <div class="col-sm-3 col-sm-offset-2" title="Please ensure that Judges Scores are filled out completely to reflect correct scores.">
-                                                <asp:Button ID="CalcMasterScores" runat="server" OnClick="CalculateHiLow_MasterScores" CssClass="form-control btn btn-sm btn-primary" Text="Calculate Master Scores" />
+                                                <asp:Button ID="CalcMasterScores" runat="server" OnClick="CalculateHiLow_MasterScores" CssClass="btn btn-sm btn-primary btn-block" Text="Calculate Master Scores" />
                                                 <div class="checkbox">
                                                     <label class="">
                                                         <asp:CheckBox ID="HiLow" runat="server" Checked="true" />
@@ -549,7 +549,7 @@
 
         <div id="submitAlert" class="alert alert-dismissible alert-success" style="display: none;">
             <button type="button" class="close" onclick='$(".alert").hide();'>×</button>
-            <strong>Well done!</strong> Scores has been updated <a href="#" class="alert-link">this important alert message</a>.
+            <strong>Well done!</strong> Scores has been updated.
         </div>
         <a id="SubmitBtn" runat="server" href="#" class="btn btn-lg btn-primary btn-block" onserverclick="SubmitBtn_ServerClick" visible="false" onclick='$(".alert").show();'><i class="fa fa-check"></i>&nbsp;Submit Contestant Scores</a>
         <br />
@@ -559,7 +559,34 @@
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
         })
+
     </script>
+
+
+    
+    <%-- START CONTESTANT SCORES JAVASCRIPTS --%>
+    <script type="text/javascript">
+        // Upon successful insert, show confirmation. Triggered from code behind.
+        function CScoreUpdateSuccess(cont) {
+            BootstrapDialog.show({
+                type: BootstrapDialog.TYPE_SUCCESS,
+                title: 'Success!',
+                cssClass: 'confirm-dialog',
+                message: 'Contestant scores has been updated.'
+            });
+        };
+
+        function CScoreInsSuccess(cont) {
+            BootstrapDialog.show({
+                type: BootstrapDialog.TYPE_SUCCESS,
+                title: 'Success!',
+                cssClass: 'confirm-dialog',
+                message: 'Contestant scores for has been added to the database.'
+            });
+        };
+
+    </script>
+    <%-- END CONTESTANT SCORES JAVASCRIPTS --%>
     <%-- START OF LINQ DECLARATIONS --%>
     <asp:LinqDataSource ID="ContestantScoreDetailsLDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" TableName="vw_ContestantDetailsAllScores" EnableInsert="True" EnableUpdate="True" Where="id == @id">
         <WhereParameters>

@@ -116,6 +116,26 @@ namespace HONK
         {
             e.Values["contestant_id"] = ContestantDDL.SelectedValue;
         }
+        protected void ContestantMasterScoreFV_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "WarningMsg", "CScoreUpdateSuccess(" + "'" + GetContestantById(Convert.ToInt32(e.NewValues["contestant_id"])) + "'" + ");", true);
+        }
+
+        protected void ContestantMasterScoreFV_ItemInserted(object sender, FormViewInsertedEventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "WarningMsg", "CScoreInsSuccess(" + "'" + GetContestantById(Convert.ToInt32(e.Values["contestant_id"])) + "'" + ");", true);
+
+        }
+
+        // Helper method to return contestant name by id
+        private string GetContestantById(Int32 id)
+        {
+            using (HONKDBDataContext db = new HONKDBDataContext())
+            {
+                return db.Contestants.Where(c => c.id == id).Select(c => c.full_name).FirstOrDefault();
+            }
+        }
+
 
         protected void MasterScoresLDS_Selected(object sender, LinqDataSourceStatusEventArgs e)
         {
@@ -470,5 +490,7 @@ namespace HONK
         {
             MasterTabulationScore.DownloadReport("01/01/" + EntryYearTb.Text);
         }
+
+
     }
 }
