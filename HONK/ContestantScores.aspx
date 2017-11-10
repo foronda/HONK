@@ -599,7 +599,9 @@
             <asp:ControlParameter ControlID="ContestantDDL" DefaultValue="0" Name="contestant_id" PropertyName="SelectedValue" Type="Int32" />
         </WhereParameters>
         <InsertParameters>
+            <asp:Parameter Name="palapala" ConvertEmptyStringToNull="true" />
             <asp:Parameter Name="interview" ConvertEmptyStringToNull="true" />
+            <asp:Parameter Name="music" ConvertEmptyStringToNull="true" />
             <asp:Parameter Name="oli" ConvertEmptyStringToNull="true" />
             <asp:Parameter Name="hula_auana" ConvertEmptyStringToNull="true" />
             <asp:Parameter Name="hula_auana_deduction" ConvertEmptyStringToNull="true" />
@@ -613,7 +615,9 @@
             <asp:Parameter Name="out_of_order_deduction" ConvertEmptyStringToNull="true" />
         </InsertParameters>
         <UpdateParameters>
+            <asp:Parameter Name="palapala" ConvertEmptyStringToNull="true" />
             <asp:Parameter Name="interview" ConvertEmptyStringToNull="true" />
+            <asp:Parameter Name="music" ConvertEmptyStringToNull="true" />
             <asp:Parameter Name="oli" ConvertEmptyStringToNull="true" />
             <asp:Parameter Name="hula_auana" ConvertEmptyStringToNull="true" />
             <asp:Parameter Name="hula_auana_deduction" ConvertEmptyStringToNull="true" />

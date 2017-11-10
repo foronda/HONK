@@ -432,7 +432,7 @@
 
 
     <%-- LINQ DATA SOURCES --%>
-    <asp:LinqDataSource ID="ContestantsLDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" TableName="Contestants" EnableInsert="True" EnableUpdate="True" OnSelecting="ContestantsLDS_Selecting">
+    <asp:LinqDataSource ID="ContestantsLDS" runat="server" ContextTypeName="HONK.HONKDBDataContext" EntityTypeName="" TableName="Contestants" EnableInsert="True" EnableUpdate="True" OnSelecting="ContestantsLDS_Selecting" OrderBy="entry_date desc">
         <InsertParameters>
             <asp:Parameter Name="entry_num_fri" ConvertEmptyStringToNull="true" />
             <asp:Parameter Name="entry_num_sat" ConvertEmptyStringToNull="true" />

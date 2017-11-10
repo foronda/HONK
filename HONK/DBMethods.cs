@@ -779,11 +779,11 @@ namespace HONK
 
             if (js != null)
             {
-                js.interview = HonkExtension.StringToInt(interview);
-                js.costume_auana = HonkExtension.StringToInt(costume_auana);
-                js.costume_kahiko = HonkExtension.StringToInt(costume_kahiko);
-                js.hula_auana = HonkExtension.StringToInt(hula_auana);
-                js.hula_kahiko = HonkExtension.StringToInt(hula_kahiko);
+                js.interview = HonkExtension.StringToDec(interview);
+                js.costume_auana = HonkExtension.StringToDec(costume_auana);
+                js.costume_kahiko = HonkExtension.StringToDec(costume_kahiko);
+                js.hula_auana = HonkExtension.StringToDec(hula_auana);
+                js.hula_kahiko = HonkExtension.StringToDec(hula_kahiko);
 
                 try
                 {
@@ -814,8 +814,8 @@ namespace HONK
 
             if (js != null)
             {
-                js.costume_palua = HonkExtension.StringToInt(costume_palua);
-                js.hula_palua = HonkExtension.StringToInt(hula_palua);
+                js.costume_palua = HonkExtension.StringToDec(costume_palua);
+                js.hula_palua = HonkExtension.StringToDec(hula_palua);
 
                 try
                 {
@@ -839,7 +839,7 @@ namespace HONK
 
             if (js != null)
             {
-                js.interview = HonkExtension.StringToInt(interview);
+                js.interview = HonkExtension.StringToDec(interview);
 
                 try
                 {
@@ -1038,9 +1038,9 @@ namespace HONK
                 return collection.AddWithValue(parameterName, value);
         }
 
-        public static int? StringToInt(string value)
+        public static Decimal? StringToDec(string value)
         {
-            if (!String.IsNullOrEmpty(value)) return Convert.ToInt32(value);
+            if (!String.IsNullOrEmpty(value)) return Convert.ToDecimal(value);
             else return null;
         }
     }

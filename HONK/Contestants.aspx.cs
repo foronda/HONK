@@ -190,8 +190,6 @@ namespace HONK
             {
                 divDD.SelectedValue = "";
             }
-
-            ContestantFVUP.Update();
         }
 
 
