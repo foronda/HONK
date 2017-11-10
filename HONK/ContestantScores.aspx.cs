@@ -297,7 +297,7 @@ namespace HONK
 
                 foreach (var bs in score)
                 {
-                    return bs.HasValue ? bs.ToString() : "N/A";
+                    return bs.HasValue ? String.Format("{0:0.##}", bs) : "N/A";
                 }
                 return string.Empty;
             }
@@ -310,9 +310,9 @@ namespace HONK
                             where s.contestant_id == Convert.ToInt32(ContestantDDL.SelectedValue)
                             select s.costume_auana_tie;
 
-                foreach (var bs in score)
+                foreach (var bs in score) 
                 {
-                    return bs.HasValue ? bs.ToString() : "N/A";
+                    return bs.HasValue ? String.Format("{0:0.##}", bs) : "N/A";
                 }
                 return string.Empty;
             }
@@ -327,7 +327,7 @@ namespace HONK
 
                 foreach (var bs in score)
                 {
-                    return bs.HasValue ? bs.ToString() : "N/A";
+                    return bs.HasValue ? String.Format("{0:0.##}", bs) : "N/A";
                 }
                 return string.Empty;
             }
@@ -342,7 +342,7 @@ namespace HONK
 
                 foreach (var bs in score)
                 {
-                    return bs.HasValue ? bs.ToString() : "N/A";
+                    return bs.HasValue ? String.Format("{0:0.##}", bs) : "N/A";
                 }
                 return string.Empty;
             }
@@ -356,7 +356,7 @@ namespace HONK
                             select s.hula_kahiko_tie;
                 foreach (var bs in score)
                 {
-                    return bs.HasValue ? bs.ToString() : "N/A";
+                    return bs.HasValue ? String.Format("{0:0.##}", bs) : "N/A";
                 }
                 return string.Empty;
 
@@ -371,7 +371,7 @@ namespace HONK
                             select s.hula_palua_tie;
                 foreach (var bs in score)
                 {
-                    return bs.HasValue ? bs.ToString() : "N/A";
+                    return bs.HasValue ? String.Format("{0:0.##}", bs) : "N/A";
                 }
                 return string.Empty;
             }
@@ -385,7 +385,7 @@ namespace HONK
                             select s.costume_palua_tie;
                 foreach (var bs in score)
                 {
-                    return bs.HasValue ? bs.ToString() : "N/A";
+                    return bs.HasValue ? String.Format("{0:0.##}", bs) : "N/A";
                 }
                 return string.Empty;
             }

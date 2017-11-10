@@ -274,7 +274,7 @@
                                             <label class="col-sm-2 control-label">Total Hula Palua: </label>
                                             <div class="col-sm-3">
                                                 <div class="input-group">
-                                                    <asp:TextBox ID="masterHulaP" runat="server" class="form-control" Text='<%# Bind("hula_palua") %>'></asp:TextBox>
+                                                    <asp:TextBox ID="masterHulaP" runat="server" class="form-control" Text='<%# Bind("hula_palua","{0:0.###.0}") %>'></asp:TextBox>
                                                     <span class="input-group-addon"><span class="badge" />
                                                         <asp:Label runat="server" ID="masterHulaPTie" CssClass="control-label" Text='<%# HulaAuanaTie %>' ToolTip="Hula Palua Breaking Score" data-toggle="tooltip"></asp:Label></span>
                                                 </div>
@@ -282,7 +282,7 @@
                                             <label class="col-sm-2 control-label">Deduction for Overtime: </label>
                                             <div class="col-sm-3">
                                                 <div class="input-group">
-                                                    <asp:TextBox ID="masterHulaPDed" runat="server" class="form-control" Text='<%# Bind("hula_palua_deduction") %>'></asp:TextBox>
+                                                    <asp:TextBox ID="masterHulaPDed" runat="server" class="form-control" Text='<%# Bind("hula_palua_deduction","{0:0.###.0}") %>'></asp:TextBox>
                                                     <span class="input-group-addon"><span class="badge" />
                                                         <asp:Label runat="server" ID="Label2" CssClass="control-label" Text='<%# HulaAuanaTie %>' ToolTip="Hula Palua Net Score" data-toggle="tooltip"></asp:Label></span>
                                                 </div>
@@ -292,7 +292,7 @@
                                             <label class="col-sm-2 control-label">Total Costume: </label>
                                             <div class="col-sm-3">
                                                 <div class="input-group">
-                                                    <asp:TextBox ID="masterCostumeP" runat="server" class="form-control" Text='<%# Bind("costume_palua") %>'></asp:TextBox>
+                                                    <asp:TextBox ID="masterCostumeP" runat="server" class="form-control" Text='<%# Bind("costume_palua","{0:0.###.0}") %>'></asp:TextBox>
                                                     <span class="input-group-addon"><span class="badge" />
                                                         <asp:Label runat="server" ID="masterCostumePTie" CssClass="control-label" Text='<%# HulaAuanaTie %>' ToolTip="Costume Palua Breaking Score" data-toggle="tooltip"></asp:Label></span>
                                                 </div>
@@ -304,21 +304,21 @@
                                             <label class="col-sm-2 control-label">Total Interview: </label>
                                             <div class="col-sm-3">
                                                 <div class="input-group">
-                                                    <asp:TextBox ID="masterInterview" runat="server" class="form-control" Text='<%# Bind("interview") %>'></asp:TextBox>
+                                                    <asp:TextBox ID="masterInterview" runat="server" class="form-control" Text='<%# Bind("interview","{0:0.###.0}") %>'></asp:TextBox>
                                                     <span class="input-group-addon"><span class="badge" />
                                                         <asp:Label runat="server" ID="masterInterviewTie" CssClass="control-label" Text='<%# InterviewTie %>' ToolTip="Interview Breaking Score" data-toggle="tooltip"></asp:Label></span>
                                                 </div>
                                             </div>
                                             <label class="col-sm-2 control-label">Oli: </label>
                                             <div class="col-sm-3">
-                                                <asp:TextBox ID="masterOli" runat="server" class="form-control" Text='<%# Bind("oli") %>'></asp:TextBox>
+                                                <asp:TextBox ID="masterOli" runat="server" class="form-control" Text='<%# Bind("oli","{0:0.###.0}") %>'></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="row form-group">
                                             <label class="col-sm-2 control-label">Total Costume (Auana): </label>
                                             <div class="col-sm-3">
                                                 <div class="input-group">
-                                                    <asp:TextBox ID="masterCostumeA" runat="server" class="form-control" Text='<%# Bind("costume_auana") %>'></asp:TextBox>
+                                                    <asp:TextBox ID="masterCostumeA" runat="server" class="form-control" Text='<%# Bind("costume_auana","{0:0.###.0}") %>'></asp:TextBox>
                                                     <span class="input-group-addon"><span class="badge" />
                                                         <asp:Label runat="server" ID="masterCostumeATie" CssClass="control-label" Text='<%# CostmeAuanaTie %>' ToolTip="Costume (Auana) Breaking Score" data-toggle="tooltip"></asp:Label></span>
                                                 </div>
@@ -326,7 +326,7 @@
                                             <label class="col-sm-2 control-label">Total Costume (Kahiko): </label>
                                             <div class="col-sm-3">
                                                 <div class="input-group">
-                                                    <asp:TextBox ID="masterCostumeK" runat="server" class="form-control" Text='<%# Bind("costume_kahiko") %>'></asp:TextBox>
+                                                    <asp:TextBox ID="masterCostumeK" runat="server" class="form-control" Text='<%# Bind("costume_kahiko","{0:0.###.0}") %>'></asp:TextBox>
                                                     <span class="input-group-addon"><span class="badge" />
                                                         <asp:Label runat="server" ID="masterCostumeKTie" CssClass="control-label" Text='<%# CostmeKahikoTie %>' ToolTip="Costume (Kahiko) Breaking Score" data-toggle="tooltip"></asp:Label></span>
                                                 </div>
@@ -338,7 +338,7 @@
                                             <label class="col-sm-2 control-label">Total Hula (Auana): </label>
                                             <div class="col-sm-3">
                                                 <div class="input-group">
-                                                    <asp:TextBox ID="masterHulaA" runat="server" class="form-control" Text='<%# Bind("hula_auana") %>'></asp:TextBox>
+                                                    <asp:TextBox ID="masterHulaA" runat="server" class="form-control" Text='<%# Bind("hula_auana","{0:0.###.0}") %>'></asp:TextBox>
                                                     <span class="input-group-addon"><span class="badge" />
                                                         <asp:Label runat="server" ID="masterHulaATie" CssClass="control-label" Text='<%# HulaAuanaTie %>' ToolTip="Hula (Auana) Breaking Score" data-toggle="tooltip"></asp:Label></span>
                                                 </div>
@@ -346,7 +346,7 @@
                                             <label class="col-sm-2 control-label">Deduction for Overtime: </label>
                                             <div class="col-sm-3">
                                                 <div class="input-group">
-                                                    <asp:TextBox ID="masterHulaADed" runat="server" class="form-control" Text='<%# Bind("hula_auana_deduction") %>'></asp:TextBox>
+                                                    <asp:TextBox ID="masterHulaADed" runat="server" class="form-control" Text='<%# Bind("hula_auana_deduction","{0:0.###.0}") %>'></asp:TextBox>
                                                     <span class="input-group-addon"><span class="badge" />
                                                         <asp:Label runat="server" ID="masterHulaANet" CssClass="control-label" Text='<%# HulaAuanaTie %>' ToolTip="Hula Auana Net Score" data-toggle="tooltip"></asp:Label></span>
                                                 </div>
@@ -356,7 +356,7 @@
                                             <label class="col-sm-2 control-label">Total Hula (Kahiko): </label>
                                             <div class="col-sm-3">
                                                 <div class="input-group">
-                                                    <asp:TextBox ID="masterHulaK" runat="server" class="form-control" Text='<%# Bind("hula_kahiko") %>'></asp:TextBox>
+                                                    <asp:TextBox ID="masterHulaK" runat="server" class="form-control" Text='<%# Bind("hula_kahiko","{0:0.###.0}") %>'></asp:TextBox>
                                                     <span class="input-group-addon"><span class="badge" />
                                                         <asp:Label runat="server" ID="masterHulaKTie" CssClass="control-label" Text='<%# HulaKahikoTie %>' ToolTip="Hula (Kahiko) Breaking Score" data-toggle="tooltip"></asp:Label></span>
                                                 </div>
@@ -364,7 +364,7 @@
                                             <label class="col-sm-2 control-label">Deduction for Overtime: </label>
                                             <div class="col-sm-3">
                                                 <div class="input-group">
-                                                    <asp:TextBox ID="masterHulaKDed" runat="server" class="form-control" Text='<%# Bind("hula_kahiko_deduction") %>'></asp:TextBox>
+                                                    <asp:TextBox ID="masterHulaKDed" runat="server" class="form-control" Text='<%# Bind("hula_kahiko_deduction","{0:0.###.0}") %>'></asp:TextBox>
                                                     <span class="input-group-addon"><span class="badge" />
                                                         <asp:Label runat="server" ID="masterHulaKNet" CssClass="control-label" Text='<%# HulaAuanaTie %>' ToolTip="Hula Kahiko Net Score" data-toggle="tooltip"></asp:Label></span>
                                                 </div>
@@ -375,17 +375,17 @@
                                         <div class="row form-group">
                                             <label class="col-sm-2 control-label">Palapala: </label>
                                             <div class="col-sm-3">
-                                                <asp:TextBox ID="masterPalapala" runat="server" class="form-control" Text='<%# Bind("palapala") %>'></asp:TextBox>
+                                                <asp:TextBox ID="masterPalapala" runat="server" class="form-control" Text='<%# Bind("palapala","{0:0.###.0}") %>'></asp:TextBox>
                                             </div>
                                             <label class="col-sm-2 control-label">Music: </label>
                                             <div class="col-sm-3">
-                                                <asp:TextBox ID="masterMusic" runat="server" class="form-control" Text='<%# Bind("music") %>'></asp:TextBox>
+                                                <asp:TextBox ID="masterMusic" runat="server" class="form-control" Text='<%# Bind("music","{0:0.###.0}") %>'></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="row form-group">
                                             <label class="col-sm-2 control-label">Out of Order Deduction: </label>
                                             <div class="col-sm-3">
-                                                <asp:TextBox ID="TextBox1" runat="server" class="form-control" Text='<%# Bind("out_of_order_deduction") %>'></asp:TextBox>
+                                                <asp:TextBox ID="TextBox1" runat="server" class="form-control" Text='<%# Bind("out_of_order_deduction","{0:0.###.0}") %>'></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="row form-group">
@@ -393,7 +393,7 @@
                                                 <asp:Button ID="CalcMasterScores" runat="server" OnClick="CalculateHiLow_MasterScores" CssClass="btn btn-sm btn-primary btn-block" Text="Calculate Master Scores" />
                                                 <div class="checkbox">
                                                     <label class="">
-                                                        <asp:CheckBox ID="HiLow" runat="server" Checked="true" />
+                                                        <asp:CheckBox ID="HiLow" runat="server" Checked="false" />
                                                         Drop High & Low Scores?
                                                     </label>
                                                 </div>
@@ -407,7 +407,7 @@
                                             <label class="col-sm-2 control-label">Total Hula Palua: </label>
                                             <div class="col-sm-3">
                                                 <div class="input-group">
-                                                    <asp:TextBox ID="masterHulaP" runat="server" class="form-control" Text='<%# Bind("hula_palua") %>'></asp:TextBox>
+                                                    <asp:TextBox ID="masterHulaP" runat="server" class="form-control" Text='<%# Bind("hula_palua","{0:0.###.0}") %>'></asp:TextBox>
                                                     <span class="input-group-addon"><span class="badge" />
                                                         <asp:Label runat="server" ID="masterHulaPTie" CssClass="control-label" Text='<%# HulaPaluaTie %>' ToolTip="Hula Palua Breaking Score" data-toggle="tooltip"></asp:Label></span>
                                                 </div>
@@ -415,7 +415,7 @@
                                             <label class="col-sm-2 control-label">Deduction for Overtime: </label>
                                             <div class="col-sm-3">
                                                 <div class="input-group">
-                                                    <asp:TextBox ID="masterHulaPDed" runat="server" class="form-control" Text='<%# Bind("hula_palua_deduction") %>'></asp:TextBox>
+                                                    <asp:TextBox ID="masterHulaPDed" runat="server" class="form-control" Text='<%# Bind("hula_palua_deduction","{0:0.###}") %>'></asp:TextBox>
                                                     <span class="input-group-addon"><span class="badge" />
                                                         <asp:Label runat="server" ID="Label2" CssClass="control-label" Text='<%# HulaAuanaTie %>' ToolTip="Hula Palua Net Score" data-toggle="tooltip"></asp:Label></span>
                                                 </div>
@@ -425,7 +425,7 @@
                                             <label class="col-sm-2 control-label">Total Costume: </label>
                                             <div class="col-sm-3">
                                                 <div class="input-group">
-                                                    <asp:TextBox ID="masterCostumeP" runat="server" class="form-control" Text='<%# Bind("costume_palua") %>'></asp:TextBox>
+                                                    <asp:TextBox ID="masterCostumeP" runat="server" class="form-control" Text='<%# Bind("costume_palua","{0:0.###}") %>'></asp:TextBox>
                                                     <span class="input-group-addon"><span class="badge" />
                                                         <asp:Label runat="server" ID="masterCostumePTie" CssClass="control-label" Text='<%# CostumePaluaTie %>' ToolTip="Costume Palua Breaking Score" data-toggle="tooltip"></asp:Label></span>
                                                 </div>
@@ -437,21 +437,21 @@
                                             <label class="col-sm-2 control-label">Total Interview: </label>
                                             <div class="col-sm-3">
                                                 <div class="input-group">
-                                                    <asp:TextBox ID="masterInterview" runat="server" class="form-control" Text='<%# Bind("interview") %>'></asp:TextBox>
+                                                    <asp:TextBox ID="masterInterview" runat="server" class="form-control" Text='<%# Bind("interview","{0:0.###}") %>'></asp:TextBox>
                                                     <span class="input-group-addon"><span class="badge" />
                                                         <asp:Label runat="server" ID="masterInterviewTie" CssClass="control-label" Text='<%# InterviewTie %>' ToolTip="Interview Breaking Score" data-toggle="tooltip"></asp:Label></span>
                                                 </div>
                                             </div>
                                             <label class="col-sm-2 control-label">Oli: </label>
                                             <div class="col-sm-3">
-                                                <asp:TextBox ID="masterOli" runat="server" class="form-control" Text='<%# Bind("oli") %>'></asp:TextBox>
+                                                <asp:TextBox ID="masterOli" runat="server" class="form-control" Text='<%# Bind("oli","{0:0.###}") %>'></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="row form-group">
                                             <label class="col-sm-2 control-label">Total Costume (Auana): </label>
                                             <div class="col-sm-3">
                                                 <div class="input-group">
-                                                    <asp:TextBox ID="masterCostumeA" runat="server" class="form-control" Text='<%# Bind("costume_auana") %>'></asp:TextBox>
+                                                    <asp:TextBox ID="masterCostumeA" runat="server" class="form-control" Text='<%# Bind("costume_auana","{0:0.###}") %>'></asp:TextBox>
                                                     <span class="input-group-addon"><span class="badge" />
                                                         <asp:Label runat="server" ID="masterCostumeATie" CssClass="control-label" Text='<%# CostmeAuanaTie %>' ToolTip="Costume (Auana) Breaking Score" data-toggle="tooltip"></asp:Label></span>
                                                 </div>
@@ -459,7 +459,7 @@
                                             <label class="col-sm-2 control-label">Total Costume (Kahiko): </label>
                                             <div class="col-sm-3">
                                                 <div class="input-group">
-                                                    <asp:TextBox ID="masterCostumeK" runat="server" class="form-control" Text='<%# Bind("costume_kahiko") %>'></asp:TextBox>
+                                                    <asp:TextBox ID="masterCostumeK" runat="server" class="form-control" Text='<%# Bind("costume_kahiko","{0:0.###}") %>'></asp:TextBox>
                                                     <span class="input-group-addon"><span class="badge" />
                                                         <asp:Label runat="server" ID="masterCostumeKTie" CssClass="control-label" Text='<%# CostmeKahikoTie %>' ToolTip="Costume (Kahiko) Breaking Score" data-toggle="tooltip"></asp:Label></span>
                                                 </div>
@@ -471,7 +471,7 @@
                                             <label class="col-sm-2 control-label">Total Hula (Auana): </label>
                                             <div class="col-sm-3">
                                                 <div class="input-group">
-                                                    <asp:TextBox ID="masterHulaA" runat="server" class="form-control" Text='<%# Bind("hula_auana") %>'></asp:TextBox>
+                                                    <asp:TextBox ID="masterHulaA" runat="server" class="form-control" Text='<%# Bind("hula_auana","{0:0.###}") %>'></asp:TextBox>
                                                     <span class="input-group-addon"><span class="badge" />
                                                         <asp:Label runat="server" ID="masterHulaATie" CssClass="control-label" Text='<%# HulaAuanaTie %>' ToolTip="Hula (Auana) Breaking Score" data-toggle="tooltip"></asp:Label></span>
                                                 </div>
@@ -479,7 +479,7 @@
                                             <label class="col-sm-2 control-label">Deduction for Overtime: </label>
                                             <div class="col-sm-3">
                                                 <div class="input-group">
-                                                    <asp:TextBox ID="masterHulaADed" runat="server" class="form-control" Text='<%# Bind("hula_auana_deduction") %>'></asp:TextBox>
+                                                    <asp:TextBox ID="masterHulaADed" runat="server" class="form-control" Text='<%# Bind("hula_auana_deduction","{0:0.###}") %>'></asp:TextBox>
                                                     <span class="input-group-addon"><span class="badge" />
                                                         <asp:Label runat="server" ID="masterHulaANet" CssClass="control-label" Text='<%# HulaAuanaTie %>' ToolTip="Hula Auana Net Score" data-toggle="tooltip"></asp:Label></span>
                                                 </div>
@@ -489,7 +489,7 @@
                                             <label class="col-sm-2 control-label">Total Hula (Kahiko): </label>
                                             <div class="col-sm-3">
                                                 <div class="input-group">
-                                                    <asp:TextBox ID="masterHulaK" runat="server" class="form-control" Text='<%# Bind("hula_kahiko") %>'></asp:TextBox>
+                                                    <asp:TextBox ID="masterHulaK" runat="server" class="form-control" Text='<%# Bind("hula_kahiko","{0:0.###}") %>'></asp:TextBox>
                                                     <span class="input-group-addon"><span class="badge" />
                                                         <asp:Label runat="server" ID="masterHulaKTie" CssClass="control-label" Text='<%# HulaKahikoTie %>' ToolTip="Hula (Kahiko) Breaking Score" data-toggle="tooltip"></asp:Label></span>
                                                 </div>
@@ -497,7 +497,7 @@
                                             <label class="col-sm-2 control-label">Deduction for Overtime: </label>
                                             <div class="col-sm-3">
                                                 <div class="input-group">
-                                                    <asp:TextBox ID="masterHulaKDed" runat="server" class="form-control" Text='<%# Bind("hula_kahiko_deduction") %>'></asp:TextBox>
+                                                    <asp:TextBox ID="masterHulaKDed" runat="server" class="form-control" Text='<%# Bind("hula_kahiko_deduction","{0:0.###}") %>'></asp:TextBox>
                                                     <span class="input-group-addon"><span class="badge" />
                                                         <asp:Label runat="server" ID="masterHulaKNet" CssClass="control-label" Text='<%# HulaAuanaTie %>' ToolTip="Hula Kahiko Net Score" data-toggle="tooltip"></asp:Label></span>
                                                 </div>
@@ -508,17 +508,17 @@
                                         <div class="row form-group">
                                             <label class="col-sm-2 control-label">Palapala: </label>
                                             <div class="col-sm-3">
-                                                <asp:TextBox ID="masterPalapala" runat="server" class="form-control" Text='<%# Bind("palapala") %>'></asp:TextBox>
+                                                <asp:TextBox ID="masterPalapala" runat="server" class="form-control" Text='<%# Bind("palapala","{0:0.###}") %>'></asp:TextBox>
                                             </div>
                                             <label class="col-sm-2 control-label">Music: </label>
                                             <div class="col-sm-3">
-                                                <asp:TextBox ID="masterMusic" runat="server" class="form-control" Text='<%# Bind("music") %>'></asp:TextBox>
+                                                <asp:TextBox ID="masterMusic" runat="server" class="form-control" Text='<%# Bind("music","{0:0.###}") %>'></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="row form-group">
                                             <label class="col-sm-2 control-label">Out of Order Deduction: </label>
                                             <div class="col-sm-3">
-                                                <asp:TextBox ID="TextBox1" runat="server" class="form-control" Text='<%# Bind("out_of_order_deduction") %>'></asp:TextBox>
+                                                <asp:TextBox ID="TextBox1" runat="server" class="form-control" Text='<%# Bind("out_of_order_deduction","{0:0.###}") %>'></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="row form-group">
@@ -526,7 +526,7 @@
                                                 <asp:Button ID="CalcMasterScores" runat="server" OnClick="CalculateHiLow_MasterScores" CssClass="btn btn-sm btn-primary btn-block" Text="Calculate Master Scores" />
                                                 <div class="checkbox">
                                                     <label class="">
-                                                        <asp:CheckBox ID="HiLow" runat="server" Checked="true" />
+                                                        <asp:CheckBox ID="HiLow" runat="server" Checked="false" />
                                                         Drop High & Low Scores?
                                                     </label>
                                                 </div>
