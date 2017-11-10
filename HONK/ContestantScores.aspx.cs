@@ -45,6 +45,16 @@ namespace HONK
                 ContestantScoresFV.ChangeMode(FormViewMode.Edit);
                 ContestantScoresFV.DataBind();
 
+                // Check if Master Scores record exist for the contestant. Change Formview Mode accordingly.
+                if (DBMethods.MasterScoreExist(contestant_id))
+                {
+                    ContestantMasterScoreFV.ChangeMode(FormViewMode.Edit);
+                }
+                else
+                {
+                    ContestantMasterScoreFV.ChangeMode(FormViewMode.Insert);
+                }
+
                 ContestantMasterScoreFV.DataBind();
 
                 //Check if Gender Name is Palua

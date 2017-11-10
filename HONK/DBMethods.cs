@@ -644,6 +644,15 @@ namespace HONK
 
 
         // LINQ METHODS
+
+        public static bool MasterScoreExist(int contestant_id)
+        {
+            using (HONKDBDataContext db = new HONKDBDataContext())
+            {
+                return db.MasterScores.Where(c => c.contestant_id == contestant_id).Any();
+            }
+        }
+
         public static bool IsPalua(int contestant_id)
         {
             HONKDBDataContext db = new HONKDBDataContext();

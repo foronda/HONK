@@ -65,7 +65,7 @@
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body">
-                        <asp:UpdatePanel ID="ContestantFVUP" runat="server" UpdateMode="Conditional">
+                        <asp:UpdatePanel ID="ContestantFVUP" runat="server" UpdateMode="Always">
                             <ContentTemplate>
                                 <asp:FormView ID="ContestantFV" runat="server" DataSourceID="AEContestantsLDS" DefaultMode="Insert" CssClass="col-lg-12" DataKeyNames="id"
                                     OnItemInserting="ContestantFV_ItemInserting" OnItemInserted="ContestantFV_ItemInserted" OnItemUpdating="ContestantFV_ItemUpdating" OnItemUpdated="ContestantFV_ItemUpdated">

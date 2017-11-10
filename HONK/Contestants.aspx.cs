@@ -36,7 +36,6 @@ namespace HONK
         protected void UpdateContestantFV(object sender, FormViewInsertedEventArgs e)
         {
             ContestantFV.DataBind();
-            ContestantFVUP.Update();
         }
         protected void ContestantFV_ItemInserting(object sender, FormViewInsertEventArgs e)
         {
@@ -47,6 +46,7 @@ namespace HONK
         protected void ContestantFV_ItemInserted(object sender, FormViewInsertedEventArgs e)
         {
             ScriptManager.RegisterStartupScript(this, typeof(Page), "WarningMsg", "CInsSuccess(" + "'" + e.Values["full_name"] + "'" + ");", true);
+            ContestantGV.DataBind();
         }
 
         protected void ContestantFV_ItemUpdating(object sender, FormViewUpdateEventArgs e)
@@ -58,6 +58,7 @@ namespace HONK
         {
             ContestantFV.ChangeMode(FormViewMode.Insert);
             ScriptManager.RegisterStartupScript(this, typeof(Page), "WarningMsg", "CUpdateSuccess(" + "'" + e.NewValues["full_name"] + "'" + ");", true);
+            ContestantGV.DataBind();
         }
 
         #endregion

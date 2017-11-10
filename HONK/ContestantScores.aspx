@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Contestant Scores" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ContestantScores.aspx.cs" Inherits="HONK.ContestantScores" %>
+﻿<%@ Page Title="Contestant Scores" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ContestantScores.aspx.cs" Inherits="HONK.ContestantScores" EnableViewState="true" %>
 
 <%@ Register Src="~/Reports/MasterTabulationScore.ascx" TagName="MasterTabulationScore" TagPrefix="uc1" %>
 
@@ -390,7 +390,7 @@
                                         </div>
                                         <div class="row form-group">
                                             <div class="col-sm-3 col-sm-offset-2" title="Please ensure that Judges Scores are filled out completely to reflect correct scores.">
-                                                <asp:Button ID="CalcMasterScores" runat="server" OnClick="CalculateHiLow_MasterScores" CssClass="form-control btn btn-sm btn-primary" Text="Calculate Master Scores" />
+                                                <asp:Button ID="CalcMasterScores" runat="server" OnClick="CalculateHiLow_MasterScores" CssClass="btn btn-sm btn-primary btn-block" Text="Calculate Master Scores" />
                                                 <div class="checkbox">
                                                     <label class="">
                                                         <asp:CheckBox ID="HiLow" runat="server" Checked="true" />
@@ -538,6 +538,7 @@
                         </ContentTemplate>
                         <Triggers>
                             <asp:AsyncPostBackTrigger ControlID="SubmitBtn" />
+                            <asp:PostBackTrigger ControlID="ContestantDDL" />
                         </Triggers>
                     </asp:UpdatePanel>
                 </div>
